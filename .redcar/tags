@@ -1,0 +1,20 @@
+1288479361
+CopyFile	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	  class CopyFile
+CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	module CopyProcess
+contains_valid_headers(value)	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	  def contains_valid_headers(value)
+content_headers	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
+contents	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
+ctas	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
+find_content(separator)	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def find_content(separator)
+footer	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
+headers_out	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def headers_out
+initialize(contents, type, layer, variation)	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def initialize(contents, type, layer, variation)
+layer	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
+paragraphs	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
+parse_content_headers	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def parse_content_headers
+parse_ctas	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def parse_ctas
+parse_footer	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def parse_footer
+parse_paragraphs	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def parse_paragraphs
+to_s	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def to_s
+type	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
+variation	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer

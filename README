@@ -1,1 +1,11 @@
 A small ruby program used for parsing copy documents, and putting the content into a CSV file to be uploaded. Used for a DAC Propietary platform. http://www.dacgroup.com/page-torrent.htm
+
+Requires ruby to run. http://rubyinstaller.org/downloads/ (windows)
+For Mac OSX and Linux, I recommend rvm: http://rvm.beginrescueend.com/
+
+One installed, either download the source, or use git to grab it. Open up command prompt/terminal, browse to the directory and run using:
+
+ruby run.rb
+
+Then enter in paths to the text files, separated by semicolons. Example:
+dumpsters.txt;recycling.txt;garbage-pickup.txt
