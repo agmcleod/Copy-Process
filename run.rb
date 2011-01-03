@@ -18,7 +18,7 @@ unless contents.nil? || contents == ''
   file_names = contents.split(';')
   file_names.each do |file_name|
     file_contents = ""
-    begin 
+    begin
       File.open(file_name.strip, 'r+') { |file| file.each_line { |line| file_contents = "#{file_contents}#{line}" }  }
       headers = contains_valid_headers(file_contents)
       unless headers
