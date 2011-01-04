@@ -41,15 +41,6 @@ module CopyProcess
     end
   end
   
-  def create_new_content_element(str)
-    if str.index(':').nil?
-      return nil
-    else
-      ce = ContentElement.new(str[0..str.index(':')-1], str[str.index(':')+1..str.size-1])
-      return ce
-    end
-  end
-  
   # Encloses the string in double quotes, in case it contains a comma
   # @param [String] - the string to enclose
   # @return [String]
@@ -70,8 +61,37 @@ module CopyProcess
       @type = type
       @layer = layer
       @variation = variation
-      
-      init_elements
+      @elements = []
+      parse_file
+      # init_elements
+    end
+    
+    def parse_file
+      done = false
+      idx = 0
+      contents = @contents.split(/\n/)
+      contents = contents[5..contents.size-1]
+      contents = contents.join('\n')
+      content_elements = []
+      until done
+        et = /([A-Z]{1,}|\s){1,}:/.match(contents, idx)
+        if et.nil?
+          done = true
+        else
+          et = et.to_s
+          unless et.empty?
+            idx = contents.index(et, idx) + et.size + 1
+            next_et = /([A-Z]{1,}|\s){1,}:/.match(contents, idx)
+            if next_et.nil?
+              next_et = contents.size 
+            else
+              next_et = next_et.to_s
+              next_et = contents.index(next_et, idx)
+            end
+            @elements << ContentElement.new(et.strip.gsub(/:/,''), contents[idx-1..next_et].gsub(/\n/, ''))
+          end
+        end
+      end
     end
     
     def init_elements

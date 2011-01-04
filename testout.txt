@@ -1,0 +1,15 @@
+HEAD: 		AmeriSpec [Home inspection] in [City] 
+INTRO: Nothing ensures and provides the confidence to close a real estate deal like a [home inspection] by an AmeriSpec in [city]. AmeriSpec is the #1 Canadian  home inspection company and has been around for the past 20 years.  Each and every one of our inspectors are trained to not only meet but to exceed the high Standards of practice of the Canadian Association of Home Inspectors. To arrange an appointment for a [home inspection] in [city], enter your postal code to contact your local AmeriSpec inspector today.
+CONTACT: 	[phone]			[postal code]	[online form]	
+CTA H: Book your [home inspection] in [city] 
+CTA B: Enter the first three digits of your postal code for a [home inspection] in [city].
+SUB: 		[Home inspection] in [city] you can depend on
+BODY: Your AmeriSpec [Home Inspection] in [city] will access over 400 items including the foundation, roof, and structural components, plus visible electrical, plumbing and mechanical operating systems of the home. All of our inspectors have been trained to execute a [home inspection] in [city] that meets the highest standards in the industry and exceeds the standards set by the Canadian Association of Home and Property Inspectors (CAPHI).
+BULLET H: A [Home Inspection] in [City] by AmeriSpec provides the following benefits, including:
+BULLET: Less Buyer DiscomfortReduced Buyer RemorseLess NegotiationReduced Listing TimeContact AmeriSpec to learn more
+SUB: The AmeriSpec [Home inspection] in [City]
+BODY: You can be sure and confident about using an AmeriSpec inspector to perform your [home inspection] in [city]. Our highly-experienced team of certified inspectors have examined more homes than any other home inspection company in North America and continue to set the  standards for the home inspection industry. The home inspection findings will be packaged in an, easy-to-reference binder and features a detailed evaluation of the home, a Home Repair Manual, a Seasonal Maintenance Checklist, and our Home Owner Rewards Program which provides a wide range of discounts offered by our partners.
+LINK FEATURE: Did you know that our inspectors also perform Home Energy Audits in [City]? Learn more, now
+FOOT: Have a stress-free and successful closing. Contact your local AmeriSpec to get a [home inspection] in [city], now. Learn how you can earn 500 Aeroplan® Miles with a [home inspection] in [city] from AmeriSpec!
+DOWNLOAD H: The AmeriSpec InfoCentre
+DOWNLOAD B: Download our brochures for more detailed information about the [home inspection] in [city].
