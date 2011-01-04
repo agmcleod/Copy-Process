@@ -19,7 +19,12 @@ unless contents.nil? || contents == ''
   file_names.each do |file_name|
     file_contents = ""
     begin
-      File.open(file_name.strip, 'r+') { |file| file.each_line { |line| file_contents = "#{file_contents}#{line}" }  }
+      File.open(file_name.strip, 'r+') do |file| 
+        file.each_line do |line|
+          line = line.gsub(/\t|\n/, '').strip
+          file_contents = "#{file_contents}#{line}\n" unless line == ''
+        end
+      end
       headers = contains_valid_headers(file_contents)
       unless headers
         raise "Headers not found in file: #{file_name}"
@@ -35,10 +40,8 @@ end
 File.open('out.csv', 'w+') do |f|
   f.write "ParentType,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
   files.each do |file_obj|
-    file_obj.out_methods.each do |method|
-      file_obj.send(method).each do |h|
-        f.write ",,,,#{h}\n"
-      end
+    file_obj.elements_out.each do |ele|
+      f.write ",,,,#{ele}\n"
     end
   end
 end
