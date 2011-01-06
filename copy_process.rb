@@ -45,6 +45,7 @@ module CopyProcess
   # @param [String] - the string to enclose
   # @return [String]
   def enclose(string)
+    string = string.gsub(/\u2019/, '&rsquo;')
     if string.index(',')
       return "\"#{string}\""
     else
@@ -66,6 +67,8 @@ module CopyProcess
       # init_elements
     end
     
+    # Parses a text file of the pasted contents from the word doc, and formats it properly.
+    # @return void
     def parse_file
       done = false
       idx = 0
@@ -88,16 +91,10 @@ module CopyProcess
               next_et = next_et.to_s
               next_et = contents.index(next_et, idx)
             end
-            @elements << ContentElement.new(et.strip.gsub(/:/,''), contents[idx-1..next_et].gsub(/\n/, ''))
+            @elements << ContentElement.new(et.strip.gsub(/:/,''), contents[idx-1..next_et-1].gsub(/\n|\\n/, ''))
           end
         end
       end
-    end
-    
-    def init_elements
-      @elements = []
-      eles = @contents.split(/\n/)
-      eles[5..eles.size-1].each { |e| @elements << create_new_content_element(e) }
     end
     
     # returns the string to use in the note field of the CSV
@@ -106,21 +103,29 @@ module CopyProcess
       return "#{@variation}-#{@type}"
     end
     
+    # Formats the content element types to be put in the csv
+    # @return [Array] output_array
     def elements_out
+      # create the arrays required
       element_names = []
       output_array = []
+      # loop through each content element object
       @elements.each do |element|
+        # checks if element names contains the current element object. If not, add it and set the number of occurances to 1
         if !includes_inner?(element.name, element_names)
           element_names << [element.name, 1]
         else
+          # if it's in the array already, find it and increment the counter
           current_element = element_names[get_inner_index(element.name, element_names)]
           element_names[get_inner_index(element.name, element_names)] = [current_element[0], current_element[1]+1]
         end
+        # if an element contains its own numbering, don't bother with a counter
         if element.name.index(/[1-9]/)
           counter = ''
         else  
           counter = element_names[get_inner_index(element.name, element_names)][1]
-        end  
+        end
+        # if the content is marked up to be split, split it up.
         if element.content.index('*')
           content_sentence_split_helper(element.content, element.name, counter).each do |sentence|
             output_array << sentence
@@ -139,6 +144,7 @@ module CopyProcess
       sentences = contents.split('*')
       s_counter = 0
       sentences.each do |sentence|
+        # remove whitespace
         sentence.strip!
         s_counter += 1
         to_return << "#{@layer} #{ele_name}#{counter} S#{s_counter},#{enclose(sentence)},#{self.note}"

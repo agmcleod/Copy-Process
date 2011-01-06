@@ -1,0 +1,36 @@
+/*
+Type: Home Inspection
+Layer: Province
+Variation: 1
+*/
+HEAD:			AmeriSpec [home inspection] in [Province] seals the deal
+
+INTRO:	Nothing helps close the deal for potential homebuyers like a home inspection] in [Province] by [AmeriSpec].* Despite how perfect a home may seem to be on the surface or how emotionally attached the homebuyer is, there is always a sense of doubt.* That’s when an AmeriSpec [home inspection] in [Province] can make the difference.* A trustworthy and detailed [Home inspection] in [Province] can provide homebuyers with the peace of mind and confidence they deserve when making such as large and rare purchase.   
+
+CONTACT:		[phone]
+			[postal code]
+	[online form]	
+
+CTA H:	Schedule your [home inspection] in [Province] today 
+
+CTA B:	For local information about our [home inspection] in [province], choose your city from the list. 
+
+SUB:			Why get a [Home Inspection] in [Province]?
+
+BODY:	More real estate professionals are suggesting home buyers to invest in a [home inspection] in [province] before they make a final purchase.* The reason is simple: a [home inspection] helps  buyers learn more about the property up front, which facilitates a quicker and confident purchasing decision.
+
+	A [Home inspection] in [province] gives sellers, especially those who have had a prelisting inspection, the benefit of  a quicker sale with less surprises as closing nears.* In addition, the real estate agent, closing attorney, finance and insurance professionals benefit from a [home inspection] in [province] through efficient transactions that provide simple closings and happier homebuyers.
+
+
+
+LINK FEATURE:	You probably didn’t know  that we also provide Home Energy Audits in [Province]? Learn more, today
+
+
+FOOT:	A [Home inspection] in [Province] translates into a positive purchase experience for homebuyers, sellers and everyone else involved. If you are ready to learn more about what AmeriSpec can do for you, choose your city from the list to receive detailed information about a [home inspection] in [Province].
+
+	Plus, earn 500 Aeroplan® Miles with a [home inspection] in [Province] from AmeriSpec!
+
+
+DOWNLOAD H:	The AmeriSpec InfoCentre
+
+DOWNLOAD B:	Download our brochures for more detailed information about [home inspection] in [province].
