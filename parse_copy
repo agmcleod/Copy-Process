@@ -48,23 +48,28 @@ else
   puts 'contents were nil'
 end
 
+def element_type_has_no_variaton(type_name)
+  
+end
+
 if files.size > 0
   final_rows = []
-  hash = {}
+  types_and_keywords = []
+  keywords = []
+  types = []
   files.each do |file_obj|
     file_obj.elements_out.each do |ele|
-      final_rows << ele[0]
-      if hash[ele[1]].nil?
-        hash[ele[1]] = 1
-      else
-       hash[ele[1]] += 1
-      end
+      keywords << ele.kw unless keywords.include?(ele.kw)
+      types << ele.type_name unless types.include?(ele.type_name)
+      final_rows << ele.content
+      types_and_keywords << "#{ele.type_name}+#{ele.kw}" unless types_and_keywords.include?("#{ele.type_name}+#{ele.kw}")
     end
   end
-  largest = hash.sort_by { |k,v| v }[hash.size-1][1]
-  hash.each do |k,v|
-    if v < largest
-      final_rows << "#{k},<!-- empty -->,empty element for restrictions"
+  keywords.each do |k|
+    types.each do |t|
+      unless types_and_keywords.include?("#{t}+#{k}")
+        final_rows << "#{t},<!-- empty -->,empty element for: #{t}+#{k}"
+      end
     end
   end
   

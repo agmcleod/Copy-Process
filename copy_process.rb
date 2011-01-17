@@ -1,4 +1,5 @@
 require 'content_element'
+require 'content_row'
 
 module CopyProcess  
   def get_inner_index(value, arr)
@@ -52,6 +53,8 @@ module CopyProcess
       return string
     end
   end
+  
+  
   
   class CopyFile
     attr_accessor :contents, :type, :layer, :variation, :file_name
@@ -128,11 +131,11 @@ module CopyProcess
         # if the content is marked up to be split, split it up.
         if element.content.index('*')
           content_sentence_split_helper(element.content, element.name, counter).each do |sentence|
-            output_array << [sentence[0], sentence[1]]
+            output_array << sentence
           end
         else
           et_name = "#{@layer} #{element.name}#{counter}"
-          output_array << ["#{et_name},#{enclose(element.content)},#{self.note}", et_name]
+          output_array << ContentRow.new("#{et_name},#{enclose(element.content)},#{self.note}", et_name, self.type)
         end
       end
       output_array
@@ -149,7 +152,7 @@ module CopyProcess
         sentence.strip!
         s_counter += 1
         et_name = "#{@layer} #{ele_name}#{counter} S#{s_counter}"
-        to_return << ["#{@layer} #{ele_name}#{counter} S#{s_counter},#{enclose(sentence)},#{self.note}", et_name]
+        to_return << ContentRow.new("#{et_name},#{enclose(sentence)},#{self.note}", et_name, self.type)
       end
       return to_return
     end
