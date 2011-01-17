@@ -1,5 +1,4 @@
 #!/Users/aaronmcleod/.rvm/rubies/ruby-1.9.2-p136/bin/ruby
-puts `ruby -v`
 $:.unshift(File.dirname(__FILE__))
 require "copy_process"
 include CopyProcess
@@ -18,9 +17,15 @@ headers = ""
 
 # if they entered a value, continue on
 unless contents.nil? || contents == ''
-  # set the string to empty, so it doesn't concatenate with previous data
-  file_names = contents.split(';')
+  file_names = ''
+  if contents.match(/^\*\.[a-z]{1,}/).nil?
+    file_names = contents.split(';')
+  else
+    file_names = Dir[contents]
+  end
+  
   file_names.each do |file_name|
+    # set the string to empty, so it doesn't concatenate with previous data
     file_contents = ""
     begin
       File.open(file_name.strip, 'r+') do |file| 
@@ -39,13 +44,34 @@ unless contents.nil? || contents == ''
       puts "  Error => File not found: #{file_name}"
     end 
   end
+else
+  puts 'contents were nil'
 end
 
-File.open('out.csv', 'w+') do |f|
-  f.write "ParentType,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
+if files.size > 0
+  final_rows = []
+  hash = {}
   files.each do |file_obj|
     file_obj.elements_out.each do |ele|
-      f.write ",,,,#{ele}\n"
+      final_rows << ele[0]
+      if hash[ele[1]].nil?
+        hash[ele[1]] = 1
+      else
+       hash[ele[1]] += 1
+      end
     end
   end
+  largest = hash.sort_by { |k,v| v }[hash.size-1][1]
+  hash.each do |k,v|
+    if v < largest
+      final_rows << "#{k},<!-- empty -->,empty element for restrictions"
+    end
+  end
+  
+  File.open('out.csv', 'w+') do |f|
+    f.write "ParentType,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
+    final_rows.each { |e| f.write ",,,,#{e}\n" }
+  end
+else
+  puts 'no file objects'
 end

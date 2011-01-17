@@ -128,10 +128,11 @@ module CopyProcess
         # if the content is marked up to be split, split it up.
         if element.content.index('*')
           content_sentence_split_helper(element.content, element.name, counter).each do |sentence|
-            output_array << sentence
+            output_array << [sentence[0], sentence[1]]
           end
         else
-          output_array << "#{@layer} #{element.name}#{counter},#{enclose(element.content)},#{self.note}"
+          et_name = "#{@layer} #{element.name}#{counter}"
+          output_array << ["#{et_name},#{enclose(element.content)},#{self.note}", et_name]
         end
       end
       output_array
@@ -141,14 +142,14 @@ module CopyProcess
     # It loops through the given content, splits it by an asterisk, and appends the appropriate content
     def content_sentence_split_helper(contents, ele_name, counter)
       to_return = []
-      contents = contents.gsub(/\.\*/, '.\*')
-      sentences = contents.split('\*')
+      sentences = contents.split(/(?<=[.!?])\*/)
       s_counter = 0
       sentences.each do |sentence|
         # remove whitespace
         sentence.strip!
         s_counter += 1
-        to_return << "#{@layer} #{ele_name}#{counter} S#{s_counter},#{enclose(sentence)},#{self.note}"
+        et_name = "#{@layer} #{ele_name}#{counter} S#{s_counter}"
+        to_return << ["#{@layer} #{ele_name}#{counter} S#{s_counter},#{enclose(sentence)},#{self.note}", et_name]
       end
       return to_return
     end
