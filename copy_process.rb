@@ -1,6 +1,6 @@
-require './content_element'
-module CopyProcess
-  
+require 'content_element'
+
+module CopyProcess  
   def get_inner_index(value, arr)
     idx = nil
     arr.each_with_index do |e, i|
@@ -141,7 +141,8 @@ module CopyProcess
     # It loops through the given content, splits it by an asterisk, and appends the appropriate content
     def content_sentence_split_helper(contents, ele_name, counter)
       to_return = []
-      sentences = contents.split('*')
+      contents = contents.gsub(/\.\*/, '.\*')
+      sentences = contents.split('\*')
       s_counter = 0
       sentences.each do |sentence|
         # remove whitespace
