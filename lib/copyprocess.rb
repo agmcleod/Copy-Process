@@ -22,23 +22,27 @@ module CopyProcess
   # @return [Array]
   def contains_valid_headers(value)
     split_value = value.split(/\n/)
-    if(split_value[0].index('/*').nil? || split_value[4].index('*/').nil?)
+    if split_value.size == 0 || split_value[4].nil?
       return false
     else
-      start_index = value.index('/*')
-      return false if start_index.nil?
-      end_index = value.index('*/', start_index+2)
-      return false if end_index.nil?
-      value = value[start_index+2..end_index-1]
-    
-      type_i = value.index('Type:')
-      layer_i = value.index('Layer:')
-      variation_i = value.index('Variation:')
-      return false if type_i.nil? || layer_i.nil? || variation_i.nil?
-      # sets the type, layer, variation as an array
-      headers = [value[type_i+5..layer_i-1], value[layer_i+6..variation_i-1], value[variation_i+10..value.size]]
-      # return it with each value stripped of nextline characters and extra white space
-      return headers.collect { |c| c.gsub(/\n|\t/, '').strip }
+      if(split_value[0].index('/*').nil? || split_value[4].index('*/').nil?)
+        return false
+      else
+        start_index = value.index('/*')
+        return false if start_index.nil?
+        end_index = value.index('*/', start_index+2)
+        return false if end_index.nil?
+        value = value[start_index+2..end_index-1]
+      
+        type_i = value.index('Type:')
+        layer_i = value.index('Layer:')
+        variation_i = value.index('Variation:')
+        return false if type_i.nil? || layer_i.nil? || variation_i.nil?
+        # sets the type, layer, variation as an array
+        headers = [value[type_i+5..layer_i-1], value[layer_i+6..variation_i-1], value[variation_i+10..value.size]]
+        # return it with each value stripped of nextline characters and extra white space
+        return headers.collect { |c| c.gsub(/\n|\t/, '').strip }
+      end
     end
   end
   
@@ -57,6 +61,7 @@ module CopyProcess
   
   
   class CopyFile
+    include CopyProcess
     attr_accessor :contents, :type, :layer, :variation, :file_name
     attr_reader :elements
     def initialize(contents, type, layer, variation, file_name)
@@ -94,7 +99,7 @@ module CopyProcess
               next_et = next_et.to_s
               next_et = contents.index(next_et, idx)
             end
-            @elements << ContentElement.new(et.strip.gsub(/:/,''), contents[idx-1..next_et-1].gsub(/\n|\\n/, ''))
+            @elements << ContentElement.new(et.strip.gsub(/:/,''), contents[idx-1..next_et-1].gsub(/\n|\\n/, '').strip)
           end
         end
       end
@@ -106,6 +111,33 @@ module CopyProcess
       return "#{@variation}-#{@type}"
     end
     
+    # checks if element names contains the current element object. If not, add it and set the number of occurances to 1
+    # @param element_names [Array] - contains arrays of an element type name, and how many times it has occured. The name is unique
+    # @param name [String] - The name of the element type
+    # @return element_names [Array] - return the updated array
+    def set_element_name_and_counter(element_names, name)
+      if !includes_inner?(name, element_names)
+        element_names << [name, 1]
+      else
+        # if it's in the array already, find it and increment the counter
+        current_element = element_names[get_inner_index(name, element_names)]
+        element_names[get_inner_index(name, element_names)] = [current_element[0], current_element[1]+1]
+      end
+      element_names
+    end
+    
+    # if an element contains its own numbering, don't bother with a counter
+    # @param element_names [Array] - contains arrays of an element type name, and how many times it has occured. The name is unique
+    # @param name [String] - The name of the element type
+    # @return counter [String] - Empty if the name has a counter, or returns the current count
+    def set_element_counter(element_names, name)
+      if name.index(/[1-9]/)
+        ''
+      else  
+        element_names[get_inner_index(name, element_names)][1]
+      end
+    end
+    
     # Formats the content element types to be put in the csv
     # @return [Array] output_array
     def elements_out
@@ -114,20 +146,8 @@ module CopyProcess
       output_array = []
       # loop through each content element object
       @elements.each do |element|
-        # checks if element names contains the current element object. If not, add it and set the number of occurances to 1
-        if !includes_inner?(element.name, element_names)
-          element_names << [element.name, 1]
-        else
-          # if it's in the array already, find it and increment the counter
-          current_element = element_names[get_inner_index(element.name, element_names)]
-          element_names[get_inner_index(element.name, element_names)] = [current_element[0], current_element[1]+1]
-        end
-        # if an element contains its own numbering, don't bother with a counter
-        if element.name.index(/[1-9]/)
-          counter = ''
-        else  
-          counter = element_names[get_inner_index(element.name, element_names)][1]
-        end
+        element_names = set_element_name_and_counter(element_names, element.name)
+        counter = set_element_counter(element_names, element.name)
         # if the content is marked up to be split, split it up.
         if element.content.index('*')
           content_sentence_split_helper(element.content, element.name, counter).each do |sentence|
@@ -146,46 +166,15 @@ module CopyProcess
     def content_sentence_split_helper(contents, ele_name, counter)
       to_return = []
       sentences = contents.split(/(?<=[.!?])\*/)
-      s_counter = 0
-      sentences.each do |sentence|
+      sentences.each_with_index do |sentence, s_counter|
         # remove whitespace
         sentence.strip!
-        s_counter += 1
-        et_name = "#{@layer} #{ele_name}#{counter} S#{s_counter}"
+        et_name = "#{@layer} #{ele_name}#{counter} S#{s_counter + 1}"
         to_return << ContentRow.new("#{et_name},#{enclose(sentence)},#{self.note}", et_name, self.type)
       end
       return to_return
     end
     
-    # This grabs the content between two given separators from a given string.
-    # It returns each section found as an array
-    # @param[String] content - the text file content
-    # @param[String] separator - the separator to look for
-    # @return [Array]
-    def find_content(separator)
-      # used for indexing offset
-      sz = separator.size
-      done = false
-      content_array = []
-      last_index = 0
-      until done
-        idx = @contents.index(separator, last_index)
-        if idx.nil?
-          done = true
-        else
-          closing_idx = @contents.index(separator, idx+sz)
-          if closing_idx.nil?
-            puts "Document #{@file_name} not properly formatted, missing a: #{separator}"
-            done = true
-            return false
-          else
-            content_array << @contents[idx+sz..closing_idx-1].gsub(/\n|\t/, '')
-            last_index = closing_idx + 1
-          end
-        end
-      end
-      return content_array
-    end
   end
   # end of CopyFile class
 end
