@@ -3,29 +3,7 @@ require 'spec_helper'
 module CopyProcess
   describe CopyProcess do
     include CopyProcess
-    describe "#contains_valid_headers" do
-      it "should return false if empty" do
-        contains_valid_headers('').should == false
-      end
-      context "Contains header names on one line but no values" do
-        it "should return false" do
-          contains_valid_headers('/* Type: Layer: Variation */').should_not be_true
-        end
-      end
-      context "Contains valid header names & format, no values" do
-        it "should return false" do
-          contains_valid_headers("/*\nType: \nLayer: \nVariation \n*/").should_not be_true
-        end
-      end
-
-      context "Contains valid header names, format and values" do
-        it "should return true" do
-          valid_headers = "/*\nType: Some Keyword \nLayer: State \nVariation: 1 \n*/"
-          contains_valid_headers(valid_headers).should be_true
-        end
-      end
-    end
-
+    
     describe "#enclose" do
       context "text contains a comma" do
         it "should enclose in double quotes" do
@@ -54,6 +32,21 @@ module CopyProcess
       before(:each) do
         @valid_headers = "/*\nType: Some Keyword \nLayer: State \nVariation: 1 \n*/\n"
         @cf = CopyFile.new(@valid_headers + 'some content', 'Some keyword', 'State layer', '3', 'copytext.txt')
+      end
+      
+      # helper methods
+      def four_sentence_array
+        paragraph = "A sentence* with an asterisk.* Another sentence.* This paragraph rocks, what do you think?* It's cool!"
+        sentences = @cf.content_sentence_split_helper(paragraph, 'P1', '')
+      end
+
+      def expected_format(cf, element_name, counter, s_counter, sentence)
+        if s_counter == 0
+          s_counter = ''
+        else
+          s_counter = " S#{s_counter}"
+        end
+        "#{cf.layer} #{element_name}#{counter}#{s_counter},#{enclose(sentence)},#{cf.note}"
       end
       
       describe "#initialize" do
@@ -120,6 +113,7 @@ module CopyProcess
           @cf.note.should == '3-Some keyword'
         end
       end
+      
       context "A set element_names array" do
         before(:each) do 
           @element_names = [
@@ -128,6 +122,7 @@ module CopyProcess
             ['Footer', 5]
           ]
         end
+        
         describe "#set_element_name_and_counter" do
           it "should append a new name and counter of 1" do
             names = @cf.set_element_name_and_counter(@element_names, 'Body')
@@ -152,33 +147,57 @@ module CopyProcess
             @cf.set_element_counter(@element_names, 'Body2') == 2
           end
         end
-        
-        describe "#content_sentence_split_helper" do
-          context "Sentence with valid separators" do
-            def four_sentence_array
-              paragraph = "A sentence* with an asterisk.* Another sentence.* This paragraph rocks, what do you think?* It's cool!"
-              sentences = @cf.content_sentence_split_helper(paragraph, 'P1', '')
-            end
+      end
+      describe "#content_sentence_split_helper" do
+        context "Sentence with valid separators" do
+          it "should return an array with 4 sentences" do              
+            four_sentence_array.size.should == 4
+          end
+          
+          it "should be formatted correctly" do
+            ce1 = four_sentence_array[0]
+            ce2 = four_sentence_array[1]
+            ce3 = four_sentence_array[2]
             
-            def expected_format(cf, element_name, counter, s_counter, sentence)
-              "#{cf.layer} #{element_name}#{counter} S#{s_counter},#{enclose(sentence)},#{cf.note}"
-            end
-            
-            it "should return an array with 4 sentences" do              
-              four_sentence_array.size.should == 4
-            end
-            
-            it "should be formatted correctly" do
-              ce1 = four_sentence_array[0]
-              ce2 = four_sentence_array[1]
-              ce3 = four_sentence_array[2]
-              
-              ce1.content.should == expected_format(@cf, 'P1', '', 1, 'A sentence* with an asterisk.')
-              ce2.content.should == expected_format(@cf, 'P1', '', 2, 'Another sentence.')
-              ce3.content.should == expected_format(@cf, 'P1', '', 3, 'This paragraph rocks, what do you think?')
-            end
+            ce1.content.should == expected_format(@cf, 'P1', '', 1, 'A sentence* with an asterisk.')
+            ce2.content.should == expected_format(@cf, 'P1', '', 2, 'Another sentence.')
+            ce3.content.should == expected_format(@cf, 'P1', '', 3, 'This paragraph rocks, what do you think?')
           end
         end
+      end
+      
+      describe "#append_content_to_array" do
+        context "Empty content array" do
+          before(:each) do
+            element = ContentElement.new('HEADER', 'A header')
+            @array = @cf.append_content_to_array([], element, 1)
+          end
+          it "should be the size of 1" do
+            @array.size.should == 1
+          end
+          
+          it "should be a ContentRow object" do
+            @array.first.class.should == ContentRow
+          end          
+        end
+      end
+    
+      describe "#elements_out" do
+        context "Elements variable populated with 5 ContentElements" do
+          before(:each) do
+            @cf.contents = "#{@valid_headers}HEAD: A header\nBODY: Some body\nCTA: Callto actionBODY: Another body FOOTER: A footer"
+            @cf.parse_file
+          end
+          
+          it "should return a collection of 5" do
+            @cf.elements_out.size.should == 5
+          end
+          
+          it "first element should return correct contents" do
+            cr = @cf.elements_out.first
+            cr.content.should == expected_format(@cf, 'HEAD1', '', 0, 'A header')              
+          end
+        end      
       end
     end
   end

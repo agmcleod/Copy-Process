@@ -1,7 +1,9 @@
 require 'copyprocess/content_element'
 require 'copyprocess/content_row'
+require 'copyprocess/processor'
 
 module CopyProcess  
+  # Gets the index of a value inside an array of the given array
   def get_inner_index(value, arr)
     idx = nil
     arr.each_with_index do |e, i|
@@ -17,34 +19,7 @@ module CopyProcess
     arr.each { |e| bool = true if e[0] == value  }
     return bool
   end
-  # This method confirms the content of the text file has valid HEADER values.
-  # @param [String] value - a string containing the contents from the text file
-  # @return [Array]
-  def contains_valid_headers(value)
-    split_value = value.split(/\n/)
-    if split_value.size == 0 || split_value[4].nil?
-      return false
-    else
-      if(split_value[0].index('/*').nil? || split_value[4].index('*/').nil?)
-        return false
-      else
-        start_index = value.index('/*')
-        return false if start_index.nil?
-        end_index = value.index('*/', start_index+2)
-        return false if end_index.nil?
-        value = value[start_index+2..end_index-1]
-      
-        type_i = value.index('Type:')
-        layer_i = value.index('Layer:')
-        variation_i = value.index('Variation:')
-        return false if type_i.nil? || layer_i.nil? || variation_i.nil?
-        # sets the type, layer, variation as an array
-        headers = [value[type_i+5..layer_i-1], value[layer_i+6..variation_i-1], value[variation_i+10..value.size]]
-        # return it with each value stripped of nextline characters and extra white space
-        return headers.collect { |c| c.gsub(/\n|\t/, '').strip }
-      end
-    end
-  end
+  
   
   # Encloses the string in double quotes, in case it contains a comma
   # @param [String] - the string to enclose
@@ -57,8 +32,6 @@ module CopyProcess
       return string
     end
   end
-  
-  
   
   class CopyFile
     include CopyProcess
@@ -149,16 +122,25 @@ module CopyProcess
         element_names = set_element_name_and_counter(element_names, element.name)
         counter = set_element_counter(element_names, element.name)
         # if the content is marked up to be split, split it up.
-        if element.content.index('*')
-          content_sentence_split_helper(element.content, element.name, counter).each do |sentence|
-            output_array << sentence
-          end
-        else
-          et_name = "#{@layer} #{element.name}#{counter}"
-          output_array << ContentRow.new("#{et_name},#{enclose(element.content)},#{self.note}", et_name, self.type)
-        end
+        output_array = append_content_to_array(output_array, element, counter)
       end
       output_array
+    end
+    
+    # Appends the contents to the array as required. Either splits the sentences of a paragraph, or adds the current element
+    # @param [Array] output_array - the array to append to
+    # @param [ContentElement] element - the element object to add to the array
+    # @param [int] counter - the counter needed to mark the element type
+    # @return [Array] output_array
+    def append_content_to_array(output_array, element, counter)
+      if element.content.index('*')
+        content_sentence_split_helper(element.content, element.name, counter).each do |sentence|
+          output_array << sentence
+        end
+      else
+        et_name = "#{@layer} #{element.name}#{counter}"
+        output_array << ContentRow.new(et_name, "#{et_name},#{enclose(element.content)},#{self.note}", self.type)
+      end
     end
     
     # this is used to parse content that contains multiple sentences that should be split
@@ -170,7 +152,7 @@ module CopyProcess
         # remove whitespace
         sentence.strip!
         et_name = "#{@layer} #{ele_name}#{counter} S#{s_counter + 1}"
-        to_return << ContentRow.new("#{et_name},#{enclose(sentence)},#{self.note}", et_name, self.type)
+        to_return << ContentRow.new(et_name, "#{et_name},#{enclose(sentence)},#{self.note}", self.type)
       end
       return to_return
     end
