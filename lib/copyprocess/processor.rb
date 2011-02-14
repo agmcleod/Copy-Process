@@ -23,17 +23,7 @@ module CopyProcess
       file_contents = ""
       headers = ""
 
-      # if they entered a value, continue on
-      unless contents.nil? || contents == ''
-        file_names = set_file_names(contents)    
-        file_names.each do |file_name|
-          # set the string to empty, so it doesn't concatenate with previous data
-          file_contents = ""
-          files = parse_each_file(file_name, files)
-        end
-      else
-        @output.puts 'contents were nil'
-      end
+      files = initialize_file_objects(files, contents)
 
       if files.size > 0
         final_rows = []
@@ -48,13 +38,7 @@ module CopyProcess
             types_and_keywords << "#{ele.type_name}+#{ele.kw}" unless types_and_keywords.include?("#{ele.type_name}+#{ele.kw}")
           end
         end
-        keywords.each do |k|
-          types.each do |t|
-            unless types_and_keywords.include?("#{t}+#{k}")
-              final_rows << "#{t},<!-- empty -->,empty for: #{k}"
-            end
-          end
-        end
+        final_rows = add_missing_elements(final_rows, keywords_types, types_and_keywords)
 
         File.open('out.csv', 'w+') do |f|
           f.write "ParentType,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
@@ -102,6 +86,36 @@ module CopyProcess
         end
       end
       file_contents
+    end
+    
+    # Passes the entered file names by the user, and returns an array of CopyFile objects
+    # @param files [Array] - array to append CopyFiles to
+    # @param contents [String] - file names or file type.
+    def initialize_file_objects(files, contents)
+      # if they entered a value, continue on
+      unless contents.nil? || contents == ''
+        file_names = set_file_names(contents)    
+        file_names.each do |file_name|
+          # set the string to empty, so it doesn't concatenate with previous data
+          file_contents = ""
+          files = parse_each_file(file_name, files)
+        end        
+      else
+        raise 'contents were nil'
+      end
+      return files
+    end
+    
+    # Adds missing element variations for restriction purposes.
+    def add_missing_elements(final_rows, keywords_types, types_and_keywords)
+      keywords.each do |k|
+        types.each do |t|
+          unless types_and_keywords.include?("#{t}+#{k}")
+            final_rows << "#{t},<!-- empty -->,empty for: #{k}"
+          end
+        end
+      end
+      final_rows
     end
     
     # This method confirms the content of the text file has valid HEADER values.

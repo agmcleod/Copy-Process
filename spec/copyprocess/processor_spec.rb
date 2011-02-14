@@ -69,6 +69,43 @@ module CopyProcess
       end
     end
     
+    describe "#initialize_file_objects" do
+      it "should raise an error message if contents are nil" do
+        lambda { processor.initialize_file_objects([], nil) }.should raise_error
+      end
+      
+      it "should raise an error message if contents are empty" do
+        lambda { processor.initialize_file_objects([], '') }.should raise_error
+      end
+      
+      context "needs 3 files" do
+        before(:all) do
+          # create files first
+          @contents = "somefile1.txt;somefile2.txt;somefile3.txt"
+          @contents.split(';').each do |fn|
+            File.open(fn, 'w+') { |f| f.write(content_to_write) }
+          end
+        end
+        it "should return an array of 3" do
+          processor.initialize_file_objects([], @contents).size.should == 3
+        end
+        
+        it "should return a CopyFile object" do
+          processor.initialize_file_objects([], @contents).first.class.should == CopyFile
+        end
+        
+        after(:all) do
+          @contents.split(';').each do |fn|
+            File.delete(fn)
+          end
+        end
+      end
+    end
+    
+    describe "#add_missing_elements" do
+      pending
+    end
+    
     describe "#contains_valid_headers" do
       it "should return false if empty" do
         processor.contains_valid_headers('').should == false
