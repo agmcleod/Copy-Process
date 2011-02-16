@@ -103,7 +103,32 @@ module CopyProcess
     end
     
     describe "#add_missing_elements" do
-      pending
+      it "should return an empty array" do
+        keywords = ['lawncare', 'outdoor pestcontrol']
+        types = ['national', 'state', 'city']
+        tk = ["national+lawncare", "national+outdoor pestcontrol", 
+          "state+lawncare", "state+outdoor pestcontrol",
+          "city+lawncare", "city+outdoor pestcontrol"]
+        processor.add_missing_elements([], keywords, types, tk).size.should == 0
+      end
+      
+      it "should return an array of 1" do
+        keywords = ['lawncare', 'outdoor pestcontrol']
+        types = ['national', 'state', 'city']
+        tk = ["national+lawncare", "national+outdoor pestcontrol", 
+          "state+lawncare", "state+outdoor pestcontrol",
+          "city+lawncare"]
+        processor.add_missing_elements([], keywords, types, tk).size.should == 1
+      end
+      
+      it "should return a string containing city+outdoor pestcontrol" do
+        keywords = ['lawncare', 'outdoor pestcontrol']
+        types = ['national', 'state', 'city']
+        tk = ["national+lawncare", "national+outdoor pestcontrol", 
+          "state+lawncare", "state+outdoor pestcontrol",
+          "city+lawncare"]
+        processor.add_missing_elements([], keywords, types, tk).first.should == "city,<!-- empty -->,empty for: outdoor pestcontrol"
+      end
     end
     
     describe "#contains_valid_headers" do
@@ -136,6 +161,88 @@ module CopyProcess
         processor.append_file_contents('testfile_rspec.txt', contents).should == contents
         File.delete('testfile_rspec.txt')
       end
+    end
+    
+    describe "#retrieve_content_rows" do
+      def create_test_files
+        File.open('recycling1.txt', 'w+') do |f|
+          txt = 
+          "/*\n" +
+          "Type: Recycling\n" +
+          "Layer: State\n" +
+          "Variation: 1\n" +
+          "*/\n" +
+          "HEADER: Recycling header\n" +
+          "BODY: Recycling sentence* one.* A second sentence about\n" +
+          "recycling.* A third sentence about recycling.\n" +
+          "CTA: A call to action\n" +
+          "BODY: Recycling sentence* one.* A second sentence about\n" +
+          "recycling.* A third sentence about recycling.* A rhetorical question about\n" +
+          "recycling?\n" +
+          "FOOTER: Some footer\n" +
+          "CTA2: A second call to action\n"
+          f.write(txt)
+        end
+        File.open('recycling2.txt', 'w+') do |f|
+          txt =
+          "/*\n" +
+          "Type: Recycling\n" +
+          "Layer: State\n" +
+          "Variation: 2\n" +
+          "*/\n" +
+          "HEADER: A second recycling header\n" +
+          "BODY: Recycling sentence one, again.* A second sentence about\n" +
+          "recycling, i think.* A third sentence about recycling.* A fouth sentence about \n" +
+          "recycling.\n" +
+          "CTA: A call to action - important.\n" +
+          "BODY: Recycling sentence* onesise.* A second sentence about\n" +
+          "recycling.* A third sentence about recycling?* A follow up sentence\n" +
+          "FOOTER: Some sort of footer\n" +
+          "CTA2: A second call to action\n"
+          f.write(txt)
+        end
+        File.open('garbage1.txt', 'w+') do |f|
+          txt =
+          "/*\n" +
+          "Type: Garbage Pickup\n" +
+          "Layer: State\n" +
+          "Variation: 1\n" +
+          "*/\n" +
+          "HEADER: A garbage pickup header\n" +
+          "BODY: garbage sentence one.* A second sentence about\n" +
+          "garbage, i think.* A third sentence about picking up garbage.* A fouth sentence about \n" +
+          "it.* A fifth sentence\n" +
+          "CTA: A call to action - important (garbage).\n" +
+          "BODY: Garbage sentence* onesise.* A second sentence about\n" +
+          "garbage.* A third sentence about garbage?* A follow up sentence\n" +
+          "FOOTER: Some sort of footer - garbage related\n" +
+          "CTA2: A second call to action\n"
+          f.write(txt)
+        end
+      end
+      
+      before(:all) do
+        create_test_files
+        @files = processor.initialize_file_objects([], 'recycling1.txt;recycling2.txt;garbage1.txt')
+      end
+      
+      before(:each) do
+        # @files = processor.initialize_file_objects([], 'recycling1.txt;recycling2.txt;garbage1.txt')
+      end
+      
+      it "should return 36 rows/sentences" do
+        processor.retrieve_content_rows(@files)
+      end
+      
+      after(:all) do
+        File.delete('recycling1.txt')
+        File.delete('recycling2.txt')
+        File.delete('garbage1.txt')
+      end
+    end
+    
+    describe "#start" do
+      pending
     end
   end
 end

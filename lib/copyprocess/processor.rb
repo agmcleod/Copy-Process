@@ -25,21 +25,8 @@ module CopyProcess
 
       files = initialize_file_objects(files, contents)
 
-      if files.size > 0
-        final_rows = []
-        types_and_keywords = []
-        keywords = []
-        types = []
-        files.each do |file_obj|
-          file_obj.elements_out.each do |ele|
-            keywords << ele.kw unless keywords.include?(ele.kw)
-            types << ele.type_name unless types.include?(ele.type_name)
-            final_rows << ele.content
-            types_and_keywords << "#{ele.type_name}+#{ele.kw}" unless types_and_keywords.include?("#{ele.type_name}+#{ele.kw}")
-          end
-        end
-        final_rows = add_missing_elements(final_rows, keywords_types, types_and_keywords)
-
+      if files.size > 0        
+        final_rows = retrieve_content_rows(files)
         File.open('out.csv', 'w+') do |f|
           f.write "ParentType,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
           final_rows.each { |e| f.write ",,,,#{e}\n" }
@@ -47,6 +34,22 @@ module CopyProcess
       else
         @output.puts 'no file objects'
       end
+    end
+    
+    def retrieve_content_rows(files)
+      final_rows = []
+      types_and_keywords = []
+      keywords = []
+      types = []
+      files.each do |file_obj|
+        file_obj.elements_out.each do |ele|
+          keywords << ele.kw unless keywords.include?(ele.kw)
+          types << ele.type_name unless types.include?(ele.type_name)
+          final_rows << ele.content
+          types_and_keywords << "#{ele.type_name}+#{ele.kw}" unless types_and_keywords.include?("#{ele.type_name}+#{ele.kw}")
+        end
+      end
+      add_missing_elements(final_rows, keywords, types, types_and_keywords)
     end
     
     def parse_each_file(file_name, files)
@@ -107,7 +110,7 @@ module CopyProcess
     end
     
     # Adds missing element variations for restriction purposes.
-    def add_missing_elements(final_rows, keywords_types, types_and_keywords)
+    def add_missing_elements(final_rows, keywords, types, types_and_keywords)
       keywords.each do |k|
         types.each do |t|
           unless types_and_keywords.include?("#{t}+#{k}")
