@@ -176,6 +176,11 @@ module CopyProcess
             @array.size.should == 1
           end
           
+          it "should be the size of 4" do
+            ce = ContentElement.new('BODY', 'A sentence.* Sentence 2.* A question?* Yes')
+            @cf.append_content_to_array([], ce, 1).size.should == 4
+          end
+          
           it "should be a ContentRow object" do
             @array.first.class.should == ContentRow
           end          
@@ -197,7 +202,13 @@ module CopyProcess
             cr = @cf.elements_out.first
             cr.content.should == expected_format(@cf, 'HEAD1', '', 0, 'A header')              
           end
-        end      
+        end  
+        
+        it "should return a collection 8" do
+          @cf.contents = "#{@valid_headers}HEAD: A header\nBODY: Some body.* With a sentence.* And a question?* and a sentence\nCTA: Callto actionBODY: Another body FOOTER: A footer"
+          @cf.parse_file
+          @cf.elements_out.size.should == 8
+        end    
       end
     end
   end

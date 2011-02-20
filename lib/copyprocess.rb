@@ -57,15 +57,16 @@ module CopyProcess
       contents = contents[5..contents.size-1]
       contents = contents.join('\n')
       content_elements = []
+      r = /(([A-Z]|[0-9]){1,}|\s){1,}:/
       until done
-        et = /([A-Z]{1,}|\s){1,}:/.match(contents, idx)
+        et = r.match(contents, idx)
         if et.nil?
           done = true
         else
           et = et.to_s
           unless et.empty?
             idx = contents.index(et, idx) + et.size + 1
-            next_et = /([A-Z]{1,}|\s){1,}:/.match(contents, idx)
+            next_et = r.match(contents, idx)
             if next_et.nil?
               next_et = contents.size 
             else
@@ -141,6 +142,7 @@ module CopyProcess
         et_name = "#{@layer} #{element.name}#{counter}"
         output_array << ContentRow.new(et_name, "#{et_name},#{enclose(element.content)},#{self.note}", self.type)
       end
+      output_array
     end
     
     # this is used to parse content that contains multiple sentences that should be split

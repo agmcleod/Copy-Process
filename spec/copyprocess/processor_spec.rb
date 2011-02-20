@@ -3,8 +3,8 @@ require 'spec_helper'
 module CopyProcess
   describe Processor do
     let(:output) { double('output').as_null_object }
-    let(:processor) { Processor.new(output) }
     let(:input) { double('input').as_null_object }
+    let(:processor) { Processor.new(output, input) }
     
     def valid_headers
       "/*\nType: Some Keyword \nLayer: State \nVariation: 1 \n*/"
@@ -12,6 +12,63 @@ module CopyProcess
     
     def content_to_write
       valid_headers + "\nsome text"
+    end
+    
+    def create_test_files
+      File.open('recycling1.txt', 'w+') do |f|
+        txt = 
+        "/*\n" +
+        "Type: Recycling\n" +
+        "Layer: State\n" +
+        "Variation: 1\n" +
+        "*/\n" +
+        "HEADER: Recycling header.\n" +
+        "BODY: Recycling sentence* one.* A second sentence about\n" +
+        "recycling.* A third sentence about recycling.\n" +
+        "CTA: A call to action\n" +
+        "BODY: Recycling sentence* one.* A second sentence about\n" +
+        "recycling.* A third sentence about recycling.* A rhetorical question about\n" +
+        "recycling?\n" +
+        "FOOTER: Some footer\n" +
+        "CTA2: A second call to action\n"
+        f.write(txt)
+      end
+      File.open('recycling2.txt', 'w+') do |f|
+        txt =
+        "/*\n" +
+        "Type: Recycling\n" +
+        "Layer: State\n" +
+        "Variation: 2\n" +
+        "*/\n" +
+        "HEADER: A second recycling header.\n" +
+        "BODY: Recycling sentence one, again.* A second sentence about\n" +
+        "recycling, i think.* A third sentence about recycling.* A fouth sentence about \n" +
+        "recycling.\n" +
+        "CTA: A call to action - important.\n" +
+        "BODY: Recycling sentence* onesise.* A second sentence about\n" +
+        "recycling.* A third sentence about recycling?* A follow up sentence\n" +
+        "FOOTER: Some sort of footer\n" +
+        "CTA2: A second call to action\n"
+        f.write(txt)
+      end
+      File.open('garbage1.txt', 'w+') do |f|
+        txt =
+        "/*\n" +
+        "Type: Garbage Pickup\n" +
+        "Layer: State\n" +
+        "Variation: 1\n" +
+        "*/\n" +
+        "HEADER: A garbage pickup header.\n" +
+        "BODY: garbage sentence one.* A second sentence about\n" +
+        "garbage, i think.* A third sentence about picking up garbage.* A fouth sentence about \n" +
+        "it.* A fifth sentence\n" +
+        "CTA: A call to action - important (garbage).\n" +
+        "BODY: Garbage sentence* onesise.* A second sentence about\n" +
+        "garbage.* A third sentence about garbage?* A follow up sentence\n" +
+        "FOOTER: Some sort of footer - garbage related\n" +
+        "CTA2: A second call to action\n"
+        f.write(txt)          
+      end
     end
     
     describe "#parse_each_file" do
@@ -71,11 +128,11 @@ module CopyProcess
     
     describe "#initialize_file_objects" do
       it "should raise an error message if contents are nil" do
-        lambda { processor.initialize_file_objects([], nil) }.should raise_error
+        lambda { processor.initialize_file_objects(nil) }.should raise_error
       end
       
       it "should raise an error message if contents are empty" do
-        lambda { processor.initialize_file_objects([], '') }.should raise_error
+        lambda { processor.initialize_file_objects('') }.should raise_error
       end
       
       context "needs 3 files" do
@@ -87,11 +144,11 @@ module CopyProcess
           end
         end
         it "should return an array of 3" do
-          processor.initialize_file_objects([], @contents).size.should == 3
+          processor.initialize_file_objects(@contents).size.should == 3
         end
         
         it "should return a CopyFile object" do
-          processor.initialize_file_objects([], @contents).first.class.should == CopyFile
+          processor.initialize_file_objects(@contents).first.class.should == CopyFile
         end
         
         after(:all) do
@@ -153,85 +210,59 @@ module CopyProcess
       end
     end
     
-    describe "#append_file_contents" do
+    describe "#get_file_contents" do
+      before(:each) do
+        @c = "/*\nType: Some Keyword \nLayer: State \nVariation: 1 \n*/\nHEADER: A header\nBODY: A body"
+        File.open('testfile_rspec.txt', 'w+') { |f| f.write(@c) }
+      end
       it "should return a string with the contents" do
-        f = File.open('testfile_rspec.txt', 'w+')
-        f.write("/*\nType: Some Keyword \nLayer: State \nVariation: 1 \n*/\nHEADER: A header\nBODY: A body")
-        contents = "/*\nType: Some Keyword \nLayer: State \nVariation: 1 \n*/\nHEADER: A header\nBODY: A body"
-        processor.append_file_contents('testfile_rspec.txt', contents).should == contents
+        processor.get_file_contents('testfile_rspec.txt').should == @c
+      end
+      after(:each) { File.delete('testfile_rspec.txt') }
+    end
+    
+    describe "#retrieve_content_rows" do
+      
+      before(:all) do
+        create_test_files
+        File.open('testfile_rspec.txt', 'w+')  do |f|
+          f.write("/*\nType: Some Keyword \nLayer: State \nVariation: 1 \n*/\nHEADER: A header\nBODY: A body")
+        end
+        # @files = processor.initialize_file_objects('recycling1.txt;recycling2.txt;garbage1.txt')
+      end
+      
+      before(:each) do
+        @files = processor.initialize_file_objects('recycling1.txt;recycling2.txt;garbage1.txt')
+      end
+      
+      it "should return 37 rows/sentences. 36 regular, 1 empty" do
+        processor.retrieve_content_rows(@files).size.should == 37
+      end
+      
+      it "should return 2 rows" do
+        processor.retrieve_content_rows(processor.initialize_file_objects('testfile_rspec.txt')).size.should == 2
+      end
+      
+      after(:all) do
+        File.delete('recycling1.txt')
+        File.delete('recycling2.txt')
+        File.delete('garbage1.txt')
         File.delete('testfile_rspec.txt')
       end
     end
     
-    describe "#retrieve_content_rows" do
-      def create_test_files
-        File.open('recycling1.txt', 'w+') do |f|
-          txt = 
-          "/*\n" +
-          "Type: Recycling\n" +
-          "Layer: State\n" +
-          "Variation: 1\n" +
-          "*/\n" +
-          "HEADER: Recycling header\n" +
-          "BODY: Recycling sentence* one.* A second sentence about\n" +
-          "recycling.* A third sentence about recycling.\n" +
-          "CTA: A call to action\n" +
-          "BODY: Recycling sentence* one.* A second sentence about\n" +
-          "recycling.* A third sentence about recycling.* A rhetorical question about\n" +
-          "recycling?\n" +
-          "FOOTER: Some footer\n" +
-          "CTA2: A second call to action\n"
-          f.write(txt)
-        end
-        File.open('recycling2.txt', 'w+') do |f|
-          txt =
-          "/*\n" +
-          "Type: Recycling\n" +
-          "Layer: State\n" +
-          "Variation: 2\n" +
-          "*/\n" +
-          "HEADER: A second recycling header\n" +
-          "BODY: Recycling sentence one, again.* A second sentence about\n" +
-          "recycling, i think.* A third sentence about recycling.* A fouth sentence about \n" +
-          "recycling.\n" +
-          "CTA: A call to action - important.\n" +
-          "BODY: Recycling sentence* onesise.* A second sentence about\n" +
-          "recycling.* A third sentence about recycling?* A follow up sentence\n" +
-          "FOOTER: Some sort of footer\n" +
-          "CTA2: A second call to action\n"
-          f.write(txt)
-        end
-        File.open('garbage1.txt', 'w+') do |f|
-          txt =
-          "/*\n" +
-          "Type: Garbage Pickup\n" +
-          "Layer: State\n" +
-          "Variation: 1\n" +
-          "*/\n" +
-          "HEADER: A garbage pickup header\n" +
-          "BODY: garbage sentence one.* A second sentence about\n" +
-          "garbage, i think.* A third sentence about picking up garbage.* A fouth sentence about \n" +
-          "it.* A fifth sentence\n" +
-          "CTA: A call to action - important (garbage).\n" +
-          "BODY: Garbage sentence* onesise.* A second sentence about\n" +
-          "garbage.* A third sentence about garbage?* A follow up sentence\n" +
-          "FOOTER: Some sort of footer - garbage related\n" +
-          "CTA2: A second call to action\n"
-          f.write(txt)
-        end
-      end
-      
+    describe "#output_files_to_csv" do
       before(:all) do
         create_test_files
-        @files = processor.initialize_file_objects([], 'recycling1.txt;recycling2.txt;garbage1.txt')
       end
-      
       before(:each) do
-        # @files = processor.initialize_file_objects([], 'recycling1.txt;recycling2.txt;garbage1.txt')
+        @files = processor.initialize_file_objects('recycling1.txt;recycling2.txt;garbage1.txt')
       end
       
-      it "should return 36 rows/sentences" do
-        processor.retrieve_content_rows(@files)
+      after(:each) do
+        if File.exists?('out.csv')
+          File.delete('out.csv')
+        end
       end
       
       after(:all) do
@@ -239,10 +270,17 @@ module CopyProcess
         File.delete('recycling2.txt')
         File.delete('garbage1.txt')
       end
-    end
-    
-    describe "#start" do
-      pending
+      
+      it "should create an out.csv file" do
+        processor.output_files_to_csv(@files)        
+        File.exists?('out.csv').should be_true
+      end
+      
+      it "out.csv should have 38 rows" do
+        processor.output_files_to_csv(@files)
+        File.readlines('out.csv').size.should == 38
+      end
+      
     end
   end
 end

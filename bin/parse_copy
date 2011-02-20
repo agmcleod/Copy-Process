@@ -3,5 +3,5 @@ $:.unshift(File.expand_path('../../lib', __FILE__))
 require "copyprocess"
 include CopyProcess
 
-processor = CopyProcess::Processor.new(STDOUT)
+processor = CopyProcess::Processor.new(STDOUT, STDIN)
 processor.start

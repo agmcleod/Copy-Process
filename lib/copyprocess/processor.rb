@@ -7,9 +7,9 @@ module CopyProcess
       input.gets.chomp
     end
 
-    def initialize(output)
+    def initialize(output, input)
       @output = output
-      @input = STDIN      
+      @input = input      
     end
     
     def start
@@ -23,8 +23,12 @@ module CopyProcess
       file_contents = ""
       headers = ""
 
-      files = initialize_file_objects(files, contents)
+      files = initialize_file_objects(contents)
 
+      output_files_to_csv(files)
+    end
+    
+    def output_files_to_csv(files)
       if files.size > 0        
         final_rows = retrieve_content_rows(files)
         File.open('out.csv', 'w+') do |f|
@@ -54,7 +58,7 @@ module CopyProcess
     
     def parse_each_file(file_name, files)
       begin
-        file_contents = append_file_contents(file_name, file_contents)
+        file_contents = get_file_contents(file_name)
         headers = contains_valid_headers(file_contents)
         return append_file_if_valid(file_contents, headers, files, file_name)
       rescue Errno::ENOENT
@@ -81,21 +85,16 @@ module CopyProcess
       end
     end
 
-    def append_file_contents(file_name, file_contents)
-      File.open(file_name.strip, 'r+') do |file| 
-        file.each_line do |line|
-          line = line.gsub(/\t|\n/, '').strip
-          file_contents = "#{file_contents}#{line}\n" unless line == ''
-        end
-      end
-      file_contents
+    # Returns all the file contents as a simple string
+    def get_file_contents(file_name)
+      IO.read(file_name.strip)
     end
     
     # Passes the entered file names by the user, and returns an array of CopyFile objects
-    # @param files [Array] - array to append CopyFiles to
     # @param contents [String] - file names or file type.
-    def initialize_file_objects(files, contents)
+    def initialize_file_objects(contents)
       # if they entered a value, continue on
+      files = []
       unless contents.nil? || contents == ''
         file_names = set_file_names(contents)    
         file_names.each do |file_name|
