@@ -149,7 +149,7 @@ module CopyProcess
     # It loops through the given content, splits it by an asterisk, and appends the appropriate content
     def content_sentence_split_helper(contents, ele_name, counter)
       to_return = []
-      sentences = contents.split(/(?<=[.!?])\*/)
+      sentences = contents.split(/(?<=[.!?])(?!\*)/)
       sentences.each_with_index do |sentence, s_counter|
         # remove whitespace
         sentence.strip!
