@@ -82,7 +82,11 @@ module CopyProcess
     # returns the string to use in the note field of the CSV
     # @return [String]
     def note
-      return "#{@variation}-#{@type}"
+      if @type == ""
+        return ""
+      else
+        return "#{@variation}-#{@type}"
+      end
     end
     
     # checks if element names contains the current element object. If not, add it and set the number of occurances to 1
@@ -134,7 +138,7 @@ module CopyProcess
     # @param [int] counter - the counter needed to mark the element type
     # @return [Array] output_array
     def append_content_to_array(output_array, element, counter)
-      if element.content.index('*')
+      if element.content.index(/[.!?]/)
         content_sentence_split_helper(element.content, element.name, counter).each do |sentence|
           output_array << sentence
         end
