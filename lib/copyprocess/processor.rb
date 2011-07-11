@@ -32,7 +32,7 @@ module CopyProcess
       if files.size > 0        
         final_rows = retrieve_content_rows(files)
         File.open('out.csv', 'w+') do |f|
-          f.write "ParentType,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
+          f.write "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
           final_rows.each { |e| f.write ",,,,#{e}\n" }
         end
       else

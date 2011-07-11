@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>lib/copyprocess.rb</string>
+	<string>bin/parse_copy</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,7 +21,7 @@
 	<integer>208</integer>
 	<key>metaData</key>
 	<dict>
-		<key>lib/copyprocess.rb</key>
+		<key>bin/parse_copy</key>
 		<dict>
 			<key>caret</key>
 			<dict>
@@ -30,12 +30,28 @@
 				<key>line</key>
 				<integer>0</integer>
 			</dict>
+			<key>columnSelection</key>
+			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
+			<key>selectFrom</key>
+			<dict>
+				<key>column</key>
+				<integer>57</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>selectTo</key>
+			<dict>
+				<key>column</key>
+				<integer>0</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
 		</dict>
-		<key>spec/spec_helper.rb</key>
+		<key>lib/copyprocess.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
@@ -53,7 +69,7 @@
 	<key>openDocuments</key>
 	<array>
 		<string>lib/copyprocess.rb</string>
-		<string>spec/spec_helper.rb</string>
+		<string>bin/parse_copy</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>

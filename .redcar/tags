@@ -1,20 +1,57 @@
-1288479361
-CopyFile	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	  class CopyFile
-CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	module CopyProcess
-contains_valid_headers(value)	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	  def contains_valid_headers(value)
-content_headers	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
-contents	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
-ctas	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
-find_content(separator)	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def find_content(separator)
-footer	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
-headers_out	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def headers_out
-initialize(contents, type, layer, variation)	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def initialize(contents, type, layer, variation)
-layer	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
-paragraphs	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
-parse_content_headers	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def parse_content_headers
-parse_ctas	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def parse_ctas
-parse_footer	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def parse_footer
-parse_paragraphs	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def parse_paragraphs
-to_s	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    def to_s
-type	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
-variation	/Users/aaronmcleod/Documents/work/copy_process/copy_process.rb	    attr_accessor :contents, :type, :layer, :variation, :content_headers, :paragraphs, :ctas, :footer
+1301331344
+ContentElement	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/content_element.rb	  class ContentElement
+ContentRow	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/content_row.rb	  class ContentRow
+CopyFile	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	  class CopyFile
+CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	module CopyProcess 
+CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/content_element.rb	module CopyProcess
+CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/content_row.rb	module CopyProcess
+CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	module CopyProcess
+CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/content_element_spec.rb	module CopyProcess
+CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/content_row_spec.rb	module CopyProcess
+CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/copyprocess_spec.rb	module CopyProcess
+CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	module CopyProcess
+Processor	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	  class Processor
+add_missing_elements	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def add_missing_elements(final_rows, keywords, types, types_and_keywords)
+append_content_to_array	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    def append_content_to_array(output_array, element, counter)
+append_file_if_valid	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def append_file_if_valid(file_contents, headers, files, file_name)
+contains_valid_headers	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def contains_valid_headers(value)
+content	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/content_element.rb	    attr_reader :name, :content
+content	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/content_row.rb	    attr_reader(:type_name, :content, :kw)
+content_sentence_split_helper	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    def content_sentence_split_helper(contents, ele_name, counter)
+content_to_write	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	    def content_to_write
+contents	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
+create_test_files	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	    def create_test_files
+elements	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    attr_reader :elements
+elements_out	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    def elements_out
+enclose	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	  def enclose(string)
+expected_format	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/copyprocess_spec.rb	      def expected_format(cf, element_name, counter, s_counter, sentence)
+file_name	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
+file_names	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	      def file_names
+four_sentence_array	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/copyprocess_spec.rb	      def four_sentence_array
+get_file_contents	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def get_file_contents(file_name)
+get_inner_index	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	  def get_inner_index(value, arr)
+greeting	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def greeting(input)
+includes_inner?	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	  def includes_inner?(value, arr)
+initialize	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    def initialize(contents, type, layer, variation, file_name)
+initialize	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/content_element.rb	    def initialize(name, content)
+initialize	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/content_row.rb	    def initialize(type_name, content, kw)
+initialize	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def initialize(output, input)
+initialize_file_objects	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def initialize_file_objects(contents)
+input	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    attr_accessor :input
+kw	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/content_row.rb	    attr_reader(:type_name, :content, :kw)
+layer	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
+name	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/content_element.rb	    attr_reader :name, :content
+note	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    def note
+output_files_to_csv	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def output_files_to_csv(files)
+parse_each_file	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def parse_each_file(file_name, files)
+parse_file	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    def parse_file
+retrieve_content_rows	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def retrieve_content_rows(files)
+set_element_counter	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    def set_element_counter(element_names, name)
+set_element_name_and_counter	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    def set_element_name_and_counter(element_names, name)
+set_file_names	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def set_file_names(contents)
+start	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/processor.rb	    def start
+test_number_of_elements_with_content	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/copyprocess_spec.rb	        def test_number_of_elements_with_content(content, expectation)
+type	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
+type_name	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess/content_row.rb	    attr_reader(:type_name, :content, :kw)
+valid_headers	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	    def valid_headers
+variation	/Users/aaronmcleod/Documents/work/copy_process/lib/copyprocess.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
