@@ -23,11 +23,11 @@ module CopyProcess
         "Variation: 1\n" +
         "*/\n" +
         "HEADER: Recycling header.\n" +
-        "BODY: Recycling sentence* one.* A second sentence about\n" +
-        "recycling.* A third sentence about recycling.\n" +
+        "BODY: Recycling sentence* one. A second sentence about\n" +
+        "recycling. A third sentence about recycling.\n" +
         "CTA: A call to action\n" +
-        "BODY: Recycling sentence* one.* A second sentence about\n" +
-        "recycling.* A third sentence about recycling.* A rhetorical question about\n" +
+        "BODY: Recycling sentence* one. A second sentence about\n" +
+        "recycling. A third sentence about recycling. A rhetorical question about\n" +
         "recycling?\n" +
         "FOOTER: Some footer\n" +
         "CTA2: A second call to action\n"
@@ -41,12 +41,12 @@ module CopyProcess
         "Variation: 2\n" +
         "*/\n" +
         "HEADER: A second recycling header.\n" +
-        "BODY: Recycling sentence one, again.* A second sentence about\n" +
-        "recycling, i think.* A third sentence about recycling.* A fouth sentence about \n" +
+        "BODY: Recycling sentence one, again. A second sentence about\n" +
+        "recycling, i think. A third sentence about recycling. A fouth sentence about \n" +
         "recycling.\n" +
         "CTA: A call to action - important.\n" +
-        "BODY: Recycling sentence* onesise.* A second sentence about\n" +
-        "recycling.* A third sentence about recycling?* A follow up sentence\n" +
+        "BODY: Recycling sentence* onesise. A second sentence about\n" +
+        "recycling. A third sentence about recycling?* A follow up sentence\n" +
         "FOOTER: Some sort of footer\n" +
         "CTA2: A second call to action\n"
         f.write(txt)
@@ -59,12 +59,12 @@ module CopyProcess
         "Variation: 1\n" +
         "*/\n" +
         "HEADER: A garbage pickup header.\n" +
-        "BODY: garbage sentence one.* A second sentence about\n" +
-        "garbage, i think.* A third sentence about picking up garbage.* A fouth sentence about \n" +
-        "it.* A fifth sentence\n" +
+        "BODY: garbage sentence one. A second sentence about\n" +
+        "garbage, i think. A third sentence about picking up garbage. A fouth sentence about \n" +
+        "it. A fifth sentence\n" +
         "CTA: A call to action - important (garbage).\n" +
-        "BODY: Garbage sentence* onesise.* A second sentence about\n" +
-        "garbage.* A third sentence about garbage?* A follow up sentence\n" +
+        "BODY: Garbage sentence onesise. A second sentence about\n" +
+        "garbage. A third sentence about garbage?* A follow up sentence\n" +
         "FOOTER: Some sort of footer - garbage related\n" +
         "CTA2: A second call to action\n"
         f.write(txt)          
@@ -228,7 +228,6 @@ module CopyProcess
         File.open('testfile_rspec.txt', 'w+')  do |f|
           f.write("/*\nType: Some Keyword \nLayer: State \nVariation: 1 \n*/\nHEADER: A header\nBODY: A body")
         end
-        # @files = processor.initialize_file_objects('recycling1.txt;recycling2.txt;garbage1.txt')
       end
       
       before(:each) do

@@ -36,7 +36,7 @@ module CopyProcess
       
       # helper methods
       def four_sentence_array
-        paragraph = "A sentence* with an asterisk.* Another sentence.* This paragraph rocks, what do you think?* It's cool!"
+        paragraph = "A sentence* with an asterisk. Another sentence. This paragraph rocks, what do you think? It's cool!"
         sentences = @cf.content_sentence_split_helper(paragraph, 'P1', '')
       end
 
@@ -177,7 +177,7 @@ module CopyProcess
           end
           
           it "should be the size of 4" do
-            ce = ContentElement.new('BODY', 'A sentence.* Sentence 2.* A question?* Yes')
+            ce = ContentElement.new('BODY', 'A sentence. Sentence 2. A question? Yes')
             @cf.append_content_to_array([], ce, 1).size.should == 4
           end
           
@@ -205,7 +205,7 @@ module CopyProcess
         end  
         
         it "should return a collection 8" do
-          @cf.contents = "#{@valid_headers}HEAD: A header\nBODY: Some body.* With a sentence.* And a question?* and a sentence\nCTA: Callto actionBODY: Another body FOOTER: A footer"
+          @cf.contents = "#{@valid_headers}HEAD: A header\nBODY: Some body. With a sentence. And a question? and a sentence\nCTA: Callto actionBODY: Another body FOOTER: A footer"
           @cf.parse_file
           @cf.elements_out.size.should == 8
         end    

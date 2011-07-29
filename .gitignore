@@ -4,3 +4,5 @@ testfile2.txt
 testfile3.txt
 bin/test_run.rb
 *.txt
+db/migrate
+cl
