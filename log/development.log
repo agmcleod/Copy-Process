@@ -1,0 +1,98 @@
+  [1m[36m (108.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (243.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateSites (20110729181752)
+  [1m[35m (56.6ms)[0m  CREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110729181752')[0m
+  [1m[35m (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (76.5ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (61.0ms)[0m  CREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (241.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (113.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.2ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (2.3ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.8ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (88.2ms)[0m  CREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (163.4ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (124.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (2.7ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (1.7ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (85.0ms)[0m  CREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (162.6ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (135.9ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (2.6ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.8ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (97.1ms)[0m  CREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (191.1ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (114.2ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateSites (20110729181752)
+Migrating to CreateDocuments (20110729183446)
+  [1m[35m (68.5ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110729183446')[0m
+  [1m[35m (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (2.6ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (2.2ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (91.1ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB
+  [1m[36m (217.6ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (141.4ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (105.3ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[36m (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[36m (0.8ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+Migrating to CreateSites (20110729181752)
+Migrating to CreateDocuments (20110729183446)
+Migrating to AddSiteIdToDocuments (20110729185151)
+  [1m[35m (94.4ms)[0m  ALTER TABLE `documents` ADD `site_id` int(11)
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20110729185151')[0m
+  [1m[35m (0.5ms)[0m  SELECT `schema_migrations`.`version` FROM `schema_migrations` 
+  [1m[36m (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (53.4ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.4ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (89.1ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (241.2ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (111.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (111.0ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.4ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (3.3ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.6ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (100.0ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (212.1ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (113.1ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (113.0ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (32.1ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.5ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (95.7ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (238.6ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (107.4ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (104.4ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m

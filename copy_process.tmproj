@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>currentDocument</key>
-	<string>bin/parse_copy</string>
+	<string>features/support/paths.rb</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -21,37 +21,35 @@
 	<integer>208</integer>
 	<key>metaData</key>
 	<dict>
-		<key>bin/parse_copy</key>
+		<key>app/models/document.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
 				<key>column</key>
-				<integer>0</integer>
+				<integer>18</integer>
 				<key>line</key>
-				<integer>0</integer>
+				<integer>3</integer>
 			</dict>
-			<key>columnSelection</key>
-			<false/>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
 			<key>firstVisibleLine</key>
 			<integer>0</integer>
-			<key>selectFrom</key>
-			<dict>
-				<key>column</key>
-				<integer>57</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
-			<key>selectTo</key>
-			<dict>
-				<key>column</key>
-				<integer>0</integer>
-				<key>line</key>
-				<integer>0</integer>
-			</dict>
 		</dict>
-		<key>lib/copyprocess.rb</key>
+		<key>config/routes.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>39</integer>
+				<key>line</key>
+				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>db/schema.rb</key>
 		<dict>
 			<key>caret</key>
 			<dict>
@@ -59,6 +57,48 @@
 				<integer>0</integer>
 				<key>line</key>
 				<integer>0</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>features/add_documents_to_site.feature</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>30</integer>
+				<key>line</key>
+				<integer>9</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>0</integer>
+		</dict>
+		<key>features/step_definitions/web_steps.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>12</integer>
+				<key>line</key>
+				<integer>113</integer>
+			</dict>
+			<key>firstVisibleColumn</key>
+			<integer>0</integer>
+			<key>firstVisibleLine</key>
+			<integer>113</integer>
+		</dict>
+		<key>features/support/paths.rb</key>
+		<dict>
+			<key>caret</key>
+			<dict>
+				<key>column</key>
+				<integer>9</integer>
+				<key>line</key>
+				<integer>11</integer>
 			</dict>
 			<key>firstVisibleColumn</key>
 			<integer>0</integer>
@@ -68,12 +108,16 @@
 	</dict>
 	<key>openDocuments</key>
 	<array>
-		<string>lib/copyprocess.rb</string>
-		<string>bin/parse_copy</string>
+		<string>features/add_documents_to_site.feature</string>
+		<string>features/step_definitions/web_steps.rb</string>
+		<string>features/support/paths.rb</string>
+		<string>app/models/document.rb</string>
+		<string>config/routes.rb</string>
+		<string>db/schema.rb</string>
 	</array>
 	<key>showFileHierarchyDrawer</key>
 	<true/>
 	<key>windowFrame</key>
-	<string>{{218, 52}, {1062, 726}}</string>
+	<string>{{219, 4}, {1061, 774}}</string>
 </dict>
 </plist>
