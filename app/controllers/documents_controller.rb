@@ -14,6 +14,7 @@ class DocumentsController < ApplicationController
   # GET /documents/1.json
   def show
     @document = Document.find(params[:id])
+    @site = Site.find(params[:site_id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +26,7 @@ class DocumentsController < ApplicationController
   # GET /documents/new.json
   def new
     @document = Document.new
+    @site = Site.find(params[:site_id])
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,16 +37,17 @@ class DocumentsController < ApplicationController
   # GET /documents/1/edit
   def edit
     @document = Document.find(params[:id])
+    @site = Site.find(params[:site_id])
   end
 
   # POST /documents
   # POST /documents.json
   def create
     @document = Document.new(params[:document])
-
+    @document.site_id = params[:site_id]
     respond_to do |format|
       if @document.save
-        format.html { redirect_to @document, notice: 'Document was successfully created.' }
+        format.html { redirect_to site_document_url(@document.site_id, @document), notice: 'Document was successfully created.' }
         format.json { render json: @document, status: :created, location: @document }
       else
         format.html { render action: "new" }
@@ -57,7 +60,7 @@ class DocumentsController < ApplicationController
   # PUT /documents/1.json
   def update
     @document = Document.find(params[:id])
-
+    @site = Document.find(params[:site_id])
     respond_to do |format|
       if @document.update_attributes(params[:document])
         format.html { redirect_to @document, notice: 'Document was successfully updated.' }

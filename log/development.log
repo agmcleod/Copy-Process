@@ -96,3 +96,936 @@ Migrating to AddSiteIdToDocuments (20110729185151)
   [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
   [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
   [1m[36m (0.9ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (49.5ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.8ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (81.1ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (389.1ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (153.0ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (364.1ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.4ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (5.0ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.4ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (77.1ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (162.0ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (109.8ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (114.0ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-07-29 18:50:41 -0400
+Served asset /rails.png - 404 Not Found (0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/rails.png"):
+  
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (27.3ms)
+
+
+Started GET "/sites" for 127.0.0.1 at 2011-07-29 18:50:45 -0400
+  Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` [0m
+Rendered sites/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 28ms (Views: 25.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-29 18:50:45 -0400
+Served asset /application.js - 404 Not Found (0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/application.js"):
+  
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-29 18:50:45 -0400
+Served asset /application.css - 404 Not Found (0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/application.css"):
+  
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/sites/new" for 127.0.0.1 at 2011-07-29 18:50:47 -0400
+  Processing by SitesController#new as HTML
+Rendered sites/_form.html.erb (16.4ms)
+Rendered sites/new.html.erb within layouts/application (32.9ms)
+Completed 200 OK in 37ms (Views: 34.4ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-29 18:50:47 -0400
+Served asset /application.js - 404 Not Found (0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/application.js"):
+  
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-29 18:50:47 -0400
+Served asset /application.css - 404 Not Found (0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/application.css"):
+  
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (1.2ms)
+
+
+Started POST "/sites" for 127.0.0.1 at 2011-07-29 18:50:50 -0400
+  Processing by SitesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Pp6Z3w/AY9vNyID4EtvXt6JIigKzuHp9zLx56e0aVbY=", "site"=>{"name"=>"Test", "url"=>"test"}, "commit"=>"Create Site"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-07-29 22:50:50', 'Test', '2011-07-29 22:50:50', 'test')[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/sites/1
+Completed 302 Found in 37ms
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-29 18:50:50 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+Rendered sites/show.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 26ms (Views: 13.7ms | ActiveRecord: 6.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-29 18:50:50 -0400
+Served asset /application.js - 404 Not Found (0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/application.js"):
+  
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.8ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-29 18:50:50 -0400
+Served asset /application.css - 404 Not Found (0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/application.css"):
+  
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/sites" for 127.0.0.1 at 2011-07-29 18:50:53 -0400
+  Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` 
+Rendered sites/index.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 76ms (Views: 11.8ms | ActiveRecord: 62.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-29 18:50:53 -0400
+Served asset /application.js - 404 Not Found (0ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/application.js"):
+  
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-29 18:50:53 -0400
+Served asset /application.css - 404 Not Found (1ms)
+
+ActionController::RoutingError (No route matches [GET] "/assets/application.css"):
+  
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc4/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/sites" for 127.0.0.1 at 2011-07-29 18:54:03 -0400
+  Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.8ms)[0m  [1mSELECT `sites`.* FROM `sites` [0m
+Rendered sites/index.html.erb within layouts/application (27.3ms)
+Completed 200 OK in 93ms (Views: 88.4ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-29 18:54:04 -0400
+Compiled ~/Documents/work/copy_process/app/assets/javascripts/application.js  (4ms)  (pid 890)
+Compiled ~/.rvm/gems/ruby-1.9.2-p136/gems/jquery-rails-1.0.12/vendor/assets/javascripts/jquery.js  (1ms)  (pid 890)
+Compiled ~/.rvm/gems/ruby-1.9.2-p136/gems/jquery-rails-1.0.12/vendor/assets/javascripts/jquery_ujs.js  (0ms)  (pid 890)
+Compiled ~/Documents/work/copy_process/app/assets/javascripts/documents.js.coffee  (641ms)  (pid 890)
+Compiled ~/Documents/work/copy_process/app/assets/javascripts/sites.js.coffee  (168ms)  (pid 890)
+Compiled ~/Documents/work/copy_process/app/assets/javascripts/application.js  (0ms)  (pid 890)
+Served asset /application.js - 200 OK (946ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-29 18:54:05 -0400
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/application.css  (2ms)  (pid 890)
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/documents.css.scss  (19ms)  (pid 890)
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/scaffolds.css.scss  (23ms)  (pid 890)
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/sites.css.scss  (1ms)  (pid 890)
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/application.css  (0ms)  (pid 890)
+Served asset /application.css - 200 OK (93ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-29 18:54:08 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+Rendered sites/show.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-29 18:54:08 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-29 18:57:52 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 43ms
+
+ActionView::MissingTemplate (Missing template sites/show, application/show with {:handlers=>[:erb, :builder], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/Users/aaronmcleod/Documents/work/copy_process/app/views"
+):
+  app/controllers/sites_controller.rb:18:in `show'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-29 18:57:56 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+Completed 500 Internal Server Error in 10ms
+
+ActionView::MissingTemplate (Missing template sites/show, application/show with {:handlers=>[:erb, :builder], :formats=>[:html], :locale=>[:en, :en]}. Searched in:
+  * "/Users/aaronmcleod/Documents/work/copy_process/app/views"
+):
+  app/controllers/sites_controller.rb:18:in `show'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/missing_template.erb within rescues/layout (0.5ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-29 18:58:19 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+ERROR: compiling _app_views_sites_show_html_haml___2656950507862959824_2157715980 RAISED /Users/aaronmcleod/Documents/work/copy_process/app/views/sites/show.html.haml:14: syntax error, unexpected $undefined, expecting ')'
+...'Edit', edit_site_path(@site) \|
+...                               ^
+Function body:           def _app_views_sites_show_html_haml___2656950507862959824_2157715980(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "sites/show";_old_output_buffer = @output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>false, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.push_text("<p id='notice'>#{_hamlout.adjust_tabs(1); _hamlout.format_script_false_true_false_true_false_true_false((notice
+));}</p>\n<p>\n  <b>#{_hamlout.adjust_tabs(2); 
+
+_hamlout.format_script_false_true_false_true_false_true_false(("Name:"
+));}</b>\n  #{_hamlout.format_script_false_false_false_true_false_true_false(( @site.name
+));}\n</p>\n<p>\n  <b>#{_hamlout.adjust_tabs(1); 
+
+_hamlout.format_script_false_true_false_true_false_true_false(("Url:"
+));}</b>\n  #{_hamlout.format_script_false_false_false_true_false_true_false(( @site.url
+));}\n</p>\n<p>\n  #{
+
+_hamlout.format_script_false_false_false_true_false_true_false((button_to "Add Document", new_document_path(@site)
+));}\n</p>\n#{_hamlout.adjust_tabs(-1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( link_to 'Edit', edit_site_path(@site) \|
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_false(( link_to 'Back', sites_path
+));}\n", 0, false);::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/template.rb:282:in `module_eval'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/template.rb:282:in `compile'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/template.rb:190:in `compile!'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/template.rb:143:in `block in render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications.rb:57:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/template.rb:142:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications.rb:55:in `block in instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications.rb:55:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/rendering.rb:99:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/aaronmcleod/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.1.0.rc5/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/mime_responds.rb:268:in `block in retrieve_response_from_mimes'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/mime_responds.rb:195:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/mime_responds.rb:195:in `respond_to'
+/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb:18:in `show'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/callbacks.rb:416:in `_run__3078085574338716996__process_action__3144682456309153477__callbacks'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications.rb:55:in `block in instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications.rb:55:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/params_wrapper.rb:202:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.1.0.rc5/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/base.rb:121:in `process'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal.rb:193:in `dispatch'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal.rb:236:in `block in action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.8.1/lib/rack/mount/route_set.rb:152:in `block in call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:117:in `optimized_each'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.8.1/lib/rack/mount/route_set.rb:141:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/routing/route_set.rb:531:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/etag.rb:23:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/conditionalget.rb:25:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/session/abstract/id.rb:195:in `context'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/session/abstract/id.rb:190:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/cookies.rb:326:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.1.0.rc5/lib/active_record/query_cache.rb:62:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.1.0.rc5/lib/active_record/connection_adapters/abstract/connection_pool.rb:466:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.1.0.rc5/lib/rails/rack/logger.rb:13:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/runtime.rb:17:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/lock.rb:15:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/static.rb:53:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.1.0.rc5/lib/rails/engine.rb:455:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.1.0.rc5/lib/rails/rack/content_length.rb:16:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.1.0.rc5/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/handler/webrick.rb:59:in `service'
+/Users/aaronmcleod/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/aaronmcleod/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/aaronmcleod/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered sites/show.html.haml within layouts/application (3.7ms)
+Completed 500 Internal Server Error in 72ms
+
+ActionView::Template::Error (/Users/aaronmcleod/Documents/work/copy_process/app/views/sites/show.html.haml:14: syntax error, unexpected $undefined, expecting ')'
+...'Edit', edit_site_path(@site) \|
+...                               ^):
+    11: %p
+    12:   =button_to "Add Document", new_document_path(@site)
+    13: 
+    14: = link_to 'Edit', edit_site_path(@site) \|
+    15: = link_to 'Back', sites_path
+  app/controllers/sites_controller.rb:18:in `show'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.5ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-29 18:58:59 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (50.6ms)
+Completed 500 Internal Server Error in 63ms
+
+ActionView::Template::Error (undefined method `new_document_path' for #<#<Class:0x00000102575e10>:0x0000010255f570>):
+    9:   = @site.url
+    10: 
+    11: %p
+    12:   =button_to "Add Document", new_document_path(@site)
+    13: 
+    14: = link_to 'Edit', edit_site_path(@site) + "|"
+    15: = link_to 'Back', sites_path
+  app/views/sites/show.html.haml:12:in `_app_views_sites_show_html_haml___2656950507862959824_2167064160'
+  app/controllers/sites_controller.rb:18:in `show'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (4.9ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-29 18:59:07 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (1.8ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (11.0ms)
+Completed 200 OK in 26ms (Views: 19.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-29 18:59:08 -0400
+Served asset /application.css - 304 Not Modified (10ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-29 18:59:08 -0400
+Served asset /application.js - 304 Not Modified (8ms)
+
+
+Started POST "/sites/1/documents/new" for 127.0.0.1 at 2011-07-29 18:59:14 -0400
+
+ActionController::RoutingError (No route matches [POST] "/sites/1/documents/new"):
+  
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/routing_error.erb within rescues/layout (0.7ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-29 18:59:46 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (9.6ms)
+Completed 200 OK in 22ms (Views: 17.6ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-29 18:59:46 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-07-29 18:59:47 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/documents.css.scss  (0ms)  (pid 930)
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/scaffolds.css.scss  (0ms)  (pid 930)
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/sites.css.scss  (0ms)  (pid 930)
+Compiled ~/.rvm/gems/ruby-1.9.2-p136/gems/jquery-rails-1.0.12/vendor/assets/javascripts/jquery.js  (0ms)  (pid 930)
+Compiled ~/.rvm/gems/ruby-1.9.2-p136/gems/jquery-rails-1.0.12/vendor/assets/javascripts/jquery_ujs.js  (0ms)  (pid 930)
+Compiled ~/Documents/work/copy_process/app/assets/javascripts/documents.js.coffee  (0ms)  (pid 930)
+Compiled ~/Documents/work/copy_process/app/assets/javascripts/sites.js.coffee  (0ms)  (pid 930)
+Rendered documents/_form.html.erb (171.5ms)
+Rendered documents/new.html.erb within layouts/application (186.2ms)
+Completed 500 Internal Server Error in 195ms
+
+ActionView::Template::Error (undefined method `documents_path' for #<#<Class:0x000001024baf48>:0x000001024a7bf0>):
+    1: <%= form_for(@document) do |f| %>
+    2:   <% if @document.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
+  app/views/documents/_form.html.erb:1:in `_app_views_documents__form_html_erb__4386736516313089799_2165882040'
+  app/views/documents/new.html.erb:3:in `_app_views_documents_new_html_erb__3030787920138542474_2166694120'
+  app/controllers/documents_controller.rb:29:in `new'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.7ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-07-29 19:01:40 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+Rendered documents/_form.html.erb (56.2ms)
+Rendered documents/new.html.erb within layouts/application (57.1ms)
+Completed 500 Internal Server Error in 65ms
+
+ActionView::Template::Error (undefined method `documents_path' for #<#<Class:0x000001026f1c58>:0x000001026dca60>):
+    1: <%= form_for(@document) do |f| %>
+    2:   <% if @document.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
+  app/views/documents/_form.html.erb:1:in `_app_views_documents__form_html_erb__4386736516313089799_2165882040'
+  app/views/documents/new.html.erb:3:in `_app_views_documents_new_html_erb__3030787920138542474_2166694120'
+  app/controllers/documents_controller.rb:29:in `new'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.0ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-07-29 19:02:35 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+Rendered documents/_form.html.erb (57.0ms)
+Rendered documents/new.html.haml within layouts/application (60.0ms)
+Completed 500 Internal Server Error in 114ms
+
+ActionView::Template::Error (undefined method `documents_path' for #<#<Class:0x0000010121ef38>:0x000001013cf7d8>):
+    1: <%= form_for(@document) do |f| %>
+    2:   <% if @document.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
+  app/views/documents/_form.html.erb:1:in `_app_views_documents__form_html_erb__4386736516313089799_2165882040'
+  app/views/documents/new.html.haml:3:in `_app_views_documents_new_html_haml___860339500755139147_2158046080'
+  app/controllers/documents_controller.rb:29:in `new'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.5ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (6.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-29 19:02:50 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-29 19:02:51 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (10.0ms)
+Completed 200 OK in 24ms (Views: 18.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-29 19:02:51 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-07-29 19:02:52 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+Rendered documents/_form.html.erb (104.2ms)
+Rendered documents/new.html.haml within layouts/application (105.2ms)
+Completed 500 Internal Server Error in 113ms
+
+ActionView::Template::Error (undefined method `documents_path' for #<#<Class:0x000001014af130>:0x000001014978f0>):
+    1: <%= form_for(@document) do |f| %>
+    2:   <% if @document.errors.any? %>
+    3:     <div id="error_explanation">
+    4:       <h2><%= pluralize(@document.errors.count, "error") %> prohibited this document from being saved:</h2>
+  app/views/documents/_form.html.erb:1:in `_app_views_documents__form_html_erb__4386736516313089799_2165882040'
+  app/views/documents/new.html.haml:3:in `_app_views_documents_new_html_haml___860339500755139147_2158046080'
+  app/controllers/documents_controller.rb:29:in `new'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.0ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-07-29 19:04:50 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+Rendered documents/_form.html.haml (1.7ms)
+Rendered documents/new.html.haml within layouts/application (3.2ms)
+Completed 500 Internal Server Error in 10ms
+
+ActionView::Template::Error (Illegal nesting: content can't be both given on the same line as %h2 and nested within it.):
+    2:   - if @document.errors.any?
+    3:     #error_explanation
+    4:       %h2= pluralize(@document.errors.count, "error") |
+    5:         prohibited this document from being saved:
+    6: 
+    7:       %ul
+    8:       - @document.errors.full_messages.each do |msg|
+  app/views/documents/_form.html.haml:5
+  app/views/documents/new.html.haml:3:in `_app_views_documents_new_html_haml___860339500755139147_2158046080'
+  app/controllers/documents_controller.rb:29:in `new'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.0ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-07-29 19:05:02 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+Rendered documents/_form.html.haml (109.5ms)
+Rendered documents/new.html.haml within layouts/application (110.5ms)
+Completed 500 Internal Server Error in 118ms
+
+ActionView::Template::Error (undefined method `documents_path' for #<#<Class:0x0000010113f928>:0x0000010113b1c0>):
+    1: = form_for(@document) do |f|
+    2:   - if @document.errors.any?
+    3:     #error_explanation
+    4:       %h2= pluralize(@document.errors.count, "error") |
+  app/views/documents/_form.html.haml:1:in `_app_views_documents__form_html_haml___1885541479589414877_2156502120'
+  app/views/documents/new.html.haml:3:in `_app_views_documents_new_html_haml___860339500755139147_2158046080'
+  app/controllers/documents_controller.rb:29:in `new'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.0ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-07-29 19:05:44 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+Rendered documents/_form.html.haml (66.0ms)
+Rendered documents/new.html.haml within layouts/application (67.0ms)
+Completed 500 Internal Server Error in 92ms
+
+ActionView::Template::Error (wrong number of arguments (1 for 0)):
+    1: = form_for(@site, @document) do |f|
+    2:   - if @document.errors.any?
+    3:     #error_explanation
+    4:       %h2= pluralize(@document.errors.count, "error") |
+  app/views/documents/_form.html.haml:1:in `_app_views_documents__form_html_haml___1885541479589414877_2157126620'
+  app/views/documents/new.html.haml:3:in `_app_views_documents_new_html_haml___860339500755139147_2158046080'
+  app/controllers/documents_controller.rb:31:in `new'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.0ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.1ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-07-29 19:07:52 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+Rendered documents/_form.html.haml (28.7ms)
+Rendered documents/new.html.haml within layouts/application (127.5ms)
+Completed 500 Internal Server Error in 154ms
+
+ActionView::Template::Error (undefined local variable or method `documents_path' for #<#<Class:0x000001012c6a30>:0x000001012b37c8>):
+    2: 
+    3: = render 'form'
+    4: 
+    5: = link_to 'Back', documents_path
+  app/views/documents/new.html.haml:5:in `_app_views_documents_new_html_haml___860339500755139147_2158046080'
+  app/controllers/documents_controller.rb:31:in `new'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.1ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (5.1ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-07-29 19:09:03 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+Rendered documents/_form.html.haml (64.6ms)
+Rendered documents/new.html.haml within layouts/application (67.8ms)
+Completed 200 OK in 94ms (Views: 73.9ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-29 19:09:04 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-29 19:09:04 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+  [1m[36m (0.7ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (53.1ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.4ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (107.5ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (268.4ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (105.6ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (126.3ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-29 19:57:17 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-07-30 00:24:40 -0400
+Served asset /rails.png - 200 OK (22ms)
+
+
+Started GET "/sites" for 127.0.0.1 at 2011-07-30 00:25:40 -0400
+  Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` [0m
+Rendered sites/index.html.erb within layouts/application (9.9ms)
+Completed 200 OK in 106ms (Views: 102.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-30 00:25:40 -0400
+Served asset /application.js - 304 Not Modified (40ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-30 00:25:40 -0400
+Served asset /application.css - 304 Not Modified (6ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-30 00:25:42 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+ERROR: compiling _app_views_sites_show_html_haml___4165069602337044640_2154407580 RAISED /Users/aaronmcleod/Documents/work/copy_process/app/views/sites/show.html.haml:12: syntax error, unexpected tASSOC
+...th(@site), method: :get, id: => 'add_document'
+...                               ^
+Function body:           def _app_views_sites_show_html_haml___4165069602337044640_2154407580(local_assigns, output_buffer)
+            _old_virtual_path, @virtual_path = @virtual_path, "sites/show";_old_output_buffer = @output_buffer;;begin;extend Haml::Helpers;_hamlout = @haml_buffer = Haml::Buffer.new(@haml_buffer, {:autoclose=>["meta", "img", "link", "br", "hr", "input", "area", "param", "col", "base"], :preserve=>["textarea", "pre", "code"], :attr_wrapper=>"'", :ugly=>false, :format=>:html5, :encoding=>"UTF-8", :escape_html=>true, :escape_attrs=>true});_erbout = _hamlout.buffer;__in_erb_template = true;;_hamlout.push_text("<p id='notice'>#{_hamlout.adjust_tabs(1); _hamlout.format_script_false_true_false_true_false_true_false((notice
+));}</p>\n<p>\n  <b>Name:</b>\n  #{_hamlout.adjust_tabs(1); 
+
+
+_hamlout.format_script_false_false_false_true_false_true_false(( @site.name
+));}\n</p>\n<p>\n  <b>Url:</b>\n  #{
+
+
+_hamlout.format_script_false_false_false_true_false_true_false(( @site.url
+));}\n</p>\n<p>\n  #{
+
+_hamlout.format_script_false_false_false_true_false_true_false((button_to "Add Document", new_site_document_path(@site), method: :get, id: => 'add_document'
+));}\n</p>\n#{_hamlout.adjust_tabs(-1); 
+_hamlout.format_script_false_false_false_true_false_true_false(( link_to 'Edit', edit_site_path(@site) + "|"
+));}\n#{_hamlout.format_script_false_false_false_true_false_true_false(( link_to 'Back', sites_path
+));}\n", 0, false);::Haml::Util.html_safe(_erbout);ensure;@haml_buffer = @haml_buffer.upper;end;
+          ensure
+            @virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/template.rb:282:in `module_eval'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/template.rb:282:in `compile'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/template.rb:190:in `compile!'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/template.rb:143:in `block in render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications.rb:57:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/template.rb:142:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:40:in `block (2 levels) in render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/abstract_renderer.rb:33:in `block in instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications.rb:55:in `block in instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications.rb:55:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/abstract_renderer.rb:33:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:39:in `block in render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:47:in `render_with_layout'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:38:in `render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:12:in `block in render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/abstract_renderer.rb:22:in `wrap_formats'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/template_renderer.rb:9:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/renderer.rb:36:in `render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_view/renderer/renderer.rb:17:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/rendering.rb:120:in `_render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/streaming.rb:250:in `_render_template'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/rendering.rb:114:in `render_to_body'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/renderers.rb:30:in `render_to_body'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/compatibility.rb:43:in `render_to_body'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/rendering.rb:99:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/rendering.rb:16:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:40:in `block (2 levels) in render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/core_ext/benchmark.rb:5:in `block in ms'
+/Users/aaronmcleod/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/benchmark.rb:309:in `realtime'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:40:in `block in render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.1.0.rc5/lib/active_record/railties/controller_runtime.rb:24:in `cleanup_view_runtime'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/mime_responds.rb:268:in `block in retrieve_response_from_mimes'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/mime_responds.rb:195:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/mime_responds.rb:195:in `respond_to'
+/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb:18:in `show'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/implicit_render.rb:4:in `send_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/base.rb:167:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/rendering.rb:10:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/callbacks.rb:18:in `block in process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/callbacks.rb:416:in `_run__769714323738263928__process_action__1613236138838204502__callbacks'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/callbacks.rb:386:in `_run_process_action_callbacks'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:30:in `block in process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications.rb:55:in `block in instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/notifications.rb:55:in `instrument'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/params_wrapper.rb:202:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.1.0.rc5/lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/base.rb:121:in `process'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/abstract_controller/rendering.rb:45:in `process'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal.rb:193:in `dispatch'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_controller/metal.rb:236:in `block in action'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/routing/route_set.rb:65:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/routing/route_set.rb:65:in `dispatch'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/routing/route_set.rb:29:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.8.1/lib/rack/mount/route_set.rb:152:in `block in call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:93:in `block in recognize'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:117:in `optimized_each'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.8.1/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-mount-0.8.1/lib/rack/mount/route_set.rb:141:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/routing/route_set.rb:531:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/etag.rb:23:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/conditionalget.rb:25:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/flash.rb:243:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/session/abstract/id.rb:195:in `context'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/session/abstract/id.rb:190:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/cookies.rb:326:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.1.0.rc5/lib/active_record/query_cache.rb:62:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activerecord-3.1.0.rc5/lib/active_record/connection_adapters/abstract/connection_pool.rb:466:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/callbacks.rb:392:in `_run_call_callbacks'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/callbacks.rb:81:in `run_callbacks'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/callbacks.rb:28:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/reloader.rb:68:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/show_exceptions.rb:47:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.1.0.rc5/lib/rails/rack/logger.rb:13:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/methodoverride.rb:24:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/runtime.rb:17:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/activesupport-3.1.0.rc5/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/lock.rb:15:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/static.rb:53:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.1.0.rc5/lib/rails/engine.rb:455:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.1.0.rc5/lib/rails/rack/content_length.rb:16:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/railties-3.1.0.rc5/lib/rails/rack/log_tailer.rb:14:in `call'
+/Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/rack-1.3.2/lib/rack/handler/webrick.rb:59:in `service'
+/Users/aaronmcleod/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+/Users/aaronmcleod/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+/Users/aaronmcleod/.rvm/rubies/ruby-1.9.2-p136/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+Rendered sites/show.html.haml within layouts/application (3.4ms)
+Completed 500 Internal Server Error in 16ms
+
+ActionView::Template::Error (/Users/aaronmcleod/Documents/work/copy_process/app/views/sites/show.html.haml:12: syntax error, unexpected tASSOC
+...th(@site), method: :get, id: => 'add_document'
+...                               ^):
+    9:   = @site.url
+    10: 
+    11: %p
+    12:   =button_to "Add Document", new_site_document_path(@site), method: :get, id: => 'add_document'
+    13: 
+    14: = link_to 'Edit', edit_site_path(@site) + "|"
+    15: = link_to 'Back', sites_path
+  app/controllers/sites_controller.rb:18:in `show'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (49.5ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (53.9ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-30 00:25:54 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (9.7ms)
+Completed 200 OK in 22ms (Views: 18.0ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-30 00:25:54 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-30 00:25:54 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (14.3ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (96.7ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (170.7ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (100.1ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (103.9ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.9ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (31.3ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.7ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (116.4ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (247.2ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (154.3ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (189.0ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (1.4ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (73.3ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (5.4ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (84.3ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (174.2ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (141.4ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (113.9ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (4.8ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.4ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (84.5ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (151.0ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (110.8ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (113.3ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.6ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (71.9ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.4ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (92.3ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (174.3ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (143.0ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (147.6ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (78.5ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.4ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (112.4ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (242.9ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (115.3ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (172.2ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (3.6ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.4ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (109.7ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (223.3ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (123.8ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (135.3ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (32.6ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.6ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (92.8ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (307.7ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (120.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (125.4ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (15.1ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (127.8ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (208.5ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (155.1ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (431.2ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.5ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (4.2ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (105.5ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (140.2ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (110.3ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (115.1ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m

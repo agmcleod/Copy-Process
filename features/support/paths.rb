@@ -10,6 +10,10 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
+    
+    when /^(.*) site page$/
+      s = Site.find_by_name($1)
+      site_path(s)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

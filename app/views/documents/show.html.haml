@@ -1,0 +1,9 @@
+%p#notice= notice
+
+%p
+  %b Content:
+  = @document.content
+
+
+= link_to 'Edit', edit_site_document_path(@site, @document) + "|"
+= link_to 'Back', site_documents_path(@site)

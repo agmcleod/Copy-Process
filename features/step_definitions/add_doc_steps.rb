@@ -5,5 +5,5 @@ When /^site "([^"]*)" exists$/ do |name|
 end
 
 When /^I copy and paste a document$/ do
-  
+  fill_in "document_content", with: Document.test_data
 end

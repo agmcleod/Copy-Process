@@ -6,8 +6,8 @@ Feature: Add Documents To Site
   Scenario: Valid document format
     Given I am on the homepage
     When site "My Test" exists
-    And I follow "My Test"
-    And I press "Add Document"
+    And I am on My Test site page
+    And I press "add_document"    
     When I copy and paste a document
-    And I press "Create"
+    And I press "Create Document"
     Then I should see "Document was successfully created."

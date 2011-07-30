@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @site.name
+
+%p
+  %b Url:
+  = @site.url
+
+%p
+  =button_to "Add Document", new_site_document_path(@site), method: :get, id: 'add_document'
+
+= link_to 'Edit', edit_site_path(@site) + "|"
+= link_to 'Back', sites_path
