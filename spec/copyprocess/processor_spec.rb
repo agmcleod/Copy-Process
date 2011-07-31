@@ -88,12 +88,6 @@ module CopyProcess
           processor.parse_each_file(@fn, @files).first.class.should == CopyFile
         end
       end
-      
-      it "should catch an ENOENT if there's an IO error, and respond with a msg" do
-        fn = "somenotextexistantfile"
-        output.should_receive(:puts).with("  Error => File not found: #{fn}")
-        processor.parse_each_file(fn, [])
-      end
     end
     
     describe "#set_file_names" do
@@ -116,13 +110,6 @@ module CopyProcess
       
       it "should return an array of one size" do
         processor.append_file_if_valid(content_to_write, valid_headers, [], 'somefilename').size.should == 1
-      end
-    end
-  
-    describe "#greeting" do
-      it "should output a greeting" do
-        output.should_receive(:puts).with("Please enter in the file path to the text document you wish to parse. \nSeparate multiple file names by using a semicolon.")
-        processor.greeting(input)          
       end
     end
     

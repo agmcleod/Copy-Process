@@ -43,8 +43,9 @@ class DocumentsController < ApplicationController
   # POST /documents
   # POST /documents.json
   def create
+    @site = Site.find(params[:site_id])
     @document = Document.new(params[:document])
-    @document.site_id = params[:site_id]
+    @document.site_id = @site.id
     respond_to do |format|
       if @document.save
         format.html { redirect_to site_document_url(@document.site_id, @document), notice: 'Document was successfully created.' }

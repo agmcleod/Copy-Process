@@ -1029,3 +1029,157 @@ Served asset /application.js - 304 Not Modified (0ms)
   [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
   [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
   [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (26.5ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (133.8ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (262.7ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (175.2ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (295.4ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (175.7ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.5ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (65.6ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (176.8ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (139.3ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (151.8ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.2ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (1.4ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-07-30 19:52:47 -0400
+Served asset /rails.png - 304 Not Modified (42ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-07-30 19:52:53 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (18.4ms)
+Completed 200 OK in 88ms (Views: 82.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-30 19:52:53 -0400
+Served asset /application.css - 304 Not Modified (19ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-30 19:52:53 -0400
+Served asset /application.js - 304 Not Modified (47ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-07-30 19:52:56 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[35mSite Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+Rendered documents/_form.html.haml (29.9ms)
+Rendered documents/new.html.haml within layouts/application (46.5ms)
+Completed 200 OK in 138ms (Views: 56.6ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-07-30 19:52:56 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-07-30 19:52:56 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started POST "/sites/1/documents" for 127.0.0.1 at 2011-07-30 19:53:01 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f0S5HBR3AuOxI7g8heqdJn5t0oJVyjsRwQgpNnUP9e4=", "document"=>{"content"=>"Test\r\n"}, "commit"=>"Create Document", "site_id"=>"1"}
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 17ms
+
+NameError (uninitialized constant CopyProcess::Processor):
+  app/models/document.rb:40:in `document_is_in_valid_format'
+  app/controllers/documents_controller.rb:49:in `block in create'
+  app/controllers/documents_controller.rb:48:in `create'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.7ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.3ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.7ms)
+
+
+Started POST "/sites/1/documents" for 127.0.0.1 at 2011-07-30 19:53:32 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f0S5HBR3AuOxI7g8heqdJn5t0oJVyjsRwQgpNnUP9e4=", "document"=>{"content"=>"Test\r\n"}, "commit"=>"Create Document", "site_id"=>"1"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 22ms
+
+NameError (uninitialized constant CopyProcess::Processor):
+  app/models/document.rb:38:in `document_is_in_valid_format'
+  app/controllers/documents_controller.rb:49:in `block in create'
+  app/controllers/documents_controller.rb:48:in `create'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.2ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (5.3ms)
+
+
+Started POST "/sites/1/documents" for 127.0.0.1 at 2011-07-30 19:53:34 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f0S5HBR3AuOxI7g8heqdJn5t0oJVyjsRwQgpNnUP9e4=", "document"=>{"content"=>"Test\r\n"}, "commit"=>"Create Document", "site_id"=>"1"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 17ms
+
+NameError (uninitialized constant CopyProcess::Processor):
+  app/models/document.rb:38:in `document_is_in_valid_format'
+  app/controllers/documents_controller.rb:49:in `block in create'
+  app/controllers/documents_controller.rb:48:in `create'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (2.1ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p136/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (8.9ms)
+  [1m[36m (0.3ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (5.7ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.3ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (172.8ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (231.1ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (102.0ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (142.9ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.6ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (70.4ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.5ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (94.9ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (163.2ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (125.1ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (142.2ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.5ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (79.2ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.4ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (105.8ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (241.1ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (127.5ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (137.3ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.8ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m
+  [1m[36m (0.2ms)[0m  [1mSELECT `schema_migrations`.`version` FROM `schema_migrations` [0m
+  [1m[35m (75.2ms)[0m  DROP DATABASE IF EXISTS `copy_process_test`
+  [1m[36m (0.5ms)[0m  [1mCREATE DATABASE `copy_process_test` DEFAULT CHARACTER SET `utf8` COLLATE `utf8_unicode_ci`[0m
+  [1m[35m (82.4ms)[0m  CREATE TABLE `documents` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `content` text, `created_at` datetime, `updated_at` datetime, `site_id` int(11)) ENGINE=InnoDB
+  [1m[36m (211.3ms)[0m  [1mCREATE TABLE `sites` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `url` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [1m[35m (225.0ms)[0m  CREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB
+  [1m[36m (234.1ms)[0m  [1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [1m[35m (0.3ms)[0m  SELECT version FROM `schema_migrations`
+  [1m[36m (0.7ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729185151')[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO `schema_migrations` (version) VALUES ('20110729181752')
+  [1m[36m (0.5ms)[0m  [1mINSERT INTO `schema_migrations` (version) VALUES ('20110729183446')[0m

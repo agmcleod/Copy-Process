@@ -2,16 +2,6 @@ module CopyProcess
   class Processor
     attr_accessor :input
     
-    def greeting(input)
-      @output.puts("Please enter in the file path to the text document you wish to parse. \nSeparate multiple file names by using a semicolon.")
-      input.gets.chomp
-    end
-
-    def initialize(output, input)
-      @output = output
-      @input = input      
-    end
-    
     def start
       file_contents_retrieved = false
 
@@ -57,13 +47,9 @@ module CopyProcess
     end
     
     def parse_each_file(file_name, files)
-      begin
-        file_contents = get_file_contents(file_name)
-        headers = contains_valid_headers(file_contents)
-        return append_file_if_valid(file_contents, headers, files, file_name)
-      rescue Errno::ENOENT
-        @output.puts "  Error => File not found: #{file_name}"
-      end
+      file_contents = get_file_contents(file_name)
+      headers = contains_valid_headers(file_contents)
+      return append_file_if_valid(file_contents, headers, files, file_name)
     end
 
     # Returns the file names in the correct format
