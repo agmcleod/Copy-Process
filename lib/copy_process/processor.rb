@@ -45,7 +45,7 @@ module CopyProcess
       unless headers
         raise "Headers not found in file: #{file_name}"
       else
-        files << CopyProcess::CopyFile.new(file_contents, headers[0], headers[1], headers[2], file_name)
+        files << CopyFile.new(file_contents, headers[0], headers[1], headers[2], file_name)
       end
     end
     

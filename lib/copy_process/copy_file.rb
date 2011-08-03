@@ -1,5 +1,7 @@
 module CopyProcess
   class CopyFile
+    require 'copy_process'
+    
     attr_accessor :contents, :type, :layer, :variation, :file_name
     attr_reader :elements
     def initialize(contents, type, layer, variation, file_name)

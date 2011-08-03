@@ -4519,3 +4519,914 @@ Started POST "/compile_documents/27" for 127.0.0.1 at 2011-08-03 12:53:54 -0400
   [1m[35mDocument Load (0.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 27
 Completed 500 Internal Server Error in 34ms
   [1m[36m (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:16:57', 'My Test', '2011-08-03 19:16:57', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/28" for 127.0.0.1 at 2011-08-03 15:16:57 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 28 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (6.1ms)
+Completed 200 OK in 76ms (Views: 73.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sites/28/documents/new" for 127.0.0.1 at 2011-08-03 15:16:58 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"28"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 28 LIMIT 1
+Rendered documents/_form.html.haml (28.6ms)
+Rendered documents/new.html.haml within layouts/application (45.7ms)
+Completed 200 OK in 55ms (Views: 50.8ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/sites/28/documents" for 127.0.0.1 at 2011-08-03 15:16:58 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"28"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 28 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:16:58', 28, '2011-08-03 19:16:58')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/sites/28/documents/28
+Completed 302 Found in 17ms
+
+
+Started GET "/sites/28/documents/28" for 127.0.0.1 at 2011-08-03 15:16:58 -0400
+  Processing by DocumentsController#show as HTML
+  Parameters: {"site_id"=>"28", "id"=>"28"}
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 28 LIMIT 1[0m
+  [1m[35mSite Load (0.2ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 28 LIMIT 1
+Rendered documents/show.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.7ms)
+  [1m[36m (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:16:58', 'My Test', '2011-08-03 19:16:58', NULL)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+
+
+Started GET "/sites/29" for 127.0.0.1 at 2011-08-03 15:16:58 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"29"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 29 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sites/29/documents/new" for 127.0.0.1 at 2011-08-03 15:16:58 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"29"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 29 LIMIT 1[0m
+Rendered documents/_form.html.haml (3.5ms)
+Rendered documents/new.html.haml within layouts/application (4.5ms)
+Completed 200 OK in 8ms (Views: 5.7ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sites/29/documents" for 127.0.0.1 at 2011-08-03 15:16:58 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"HEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"29"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 29 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Rendered documents/_form.html.haml (61.4ms)
+Rendered documents/new.html.haml within layouts/application (62.5ms)
+Completed 200 OK in 67ms (Views: 64.1ms | ActiveRecord: 0.7ms)
+  [1m[36m (1.1ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:16:58', 'My Test', '2011-08-03 19:16:58', NULL)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 30
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:16:58', NULL, '2011-08-03 19:16:58')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 3\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:16:58', NULL, '2011-08-03 19:16:58')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  UPDATE `documents` SET `site_id` = 30, `updated_at` = '2011-08-03 19:16:58' WHERE `documents`.`id` = 29
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE `documents` SET `site_id` = 30, `updated_at` = '2011-08-03 19:16:58' WHERE `documents`.`id` = 30[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+
+
+Started GET "/sites/30" for 127.0.0.1 at 2011-08-03 15:16:58 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"30"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 30 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/compile_documents/30" for 127.0.0.1 at 2011-08-03 15:16:58 -0400
+  Processing by SitesController#compile_documents as HTML
+  Parameters: {"id"=>"30"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 30 LIMIT 1[0m
+  [1m[35mDocument Load (0.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 30
+Completed 500 Internal Server Error in 36ms
+  [1m[36m (1.3ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:19:22', 'My Test', '2011-08-03 19:19:22', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/31" for 127.0.0.1 at 2011-08-03 15:19:22 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"31"}
+  [1m[36mSite Load (0.7ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 31 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 75ms (Views: 72.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/sites/31/documents/new" for 127.0.0.1 at 2011-08-03 15:19:23 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"31"}
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 31 LIMIT 1
+Rendered documents/_form.html.haml (26.6ms)
+Rendered documents/new.html.haml within layouts/application (43.6ms)
+Completed 200 OK in 52ms (Views: 48.5ms | ActiveRecord: 2.4ms)
+
+
+Started POST "/sites/31/documents" for 127.0.0.1 at 2011-08-03 15:19:23 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"31"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 31 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:19:23', 31, '2011-08-03 19:19:23')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/sites/31/documents/31
+Completed 302 Found in 16ms
+
+
+Started GET "/sites/31/documents/31" for 127.0.0.1 at 2011-08-03 15:19:23 -0400
+  Processing by DocumentsController#show as HTML
+  Parameters: {"site_id"=>"31", "id"=>"31"}
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 31 LIMIT 1[0m
+  [1m[35mSite Load (0.2ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 31 LIMIT 1
+Rendered documents/show.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 8ms (Views: 5.8ms | ActiveRecord: 0.7ms)
+  [1m[36m (1.2ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:19:23', 'My Test', '2011-08-03 19:19:23', NULL)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+
+
+Started GET "/sites/32" for 127.0.0.1 at 2011-08-03 15:19:23 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"32"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 32 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sites/32/documents/new" for 127.0.0.1 at 2011-08-03 15:19:23 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"32"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 32 LIMIT 1[0m
+Rendered documents/_form.html.haml (3.0ms)
+Rendered documents/new.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 6ms (Views: 5.0ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sites/32/documents" for 127.0.0.1 at 2011-08-03 15:19:23 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"HEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"32"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 32 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Rendered documents/_form.html.haml (4.1ms)
+Rendered documents/new.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 11ms (Views: 6.8ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:19:23', 'My Test', '2011-08-03 19:19:23', NULL)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 33
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:19:23', NULL, '2011-08-03 19:19:23')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 3\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:19:23', NULL, '2011-08-03 19:19:23')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  UPDATE `documents` SET `site_id` = 33, `updated_at` = '2011-08-03 19:19:23' WHERE `documents`.`id` = 32
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE `documents` SET `site_id` = 33, `updated_at` = '2011-08-03 19:19:23' WHERE `documents`.`id` = 33[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+
+
+Started GET "/sites/33" for 127.0.0.1 at 2011-08-03 15:19:23 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"33"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 33 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/compile_documents/33" for 127.0.0.1 at 2011-08-03 15:19:23 -0400
+  Processing by SitesController#compile_documents as HTML
+  Parameters: {"id"=>"33"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 33 LIMIT 1[0m
+  [1m[35mDocument Load (0.4ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 33
+Completed 500 Internal Server Error in 17ms
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:20:25', 'My Test', '2011-08-03 19:20:25', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/34" for 127.0.0.1 at 2011-08-03 15:20:25 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"34"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 34 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 73ms (Views: 71.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sites/34/documents/new" for 127.0.0.1 at 2011-08-03 15:20:26 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"34"}
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 34 LIMIT 1
+Rendered documents/_form.html.haml (26.3ms)
+Rendered documents/new.html.haml within layouts/application (43.4ms)
+Completed 200 OK in 52ms (Views: 48.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/sites/34/documents" for 127.0.0.1 at 2011-08-03 15:20:26 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"34"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 34 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:20:26', 34, '2011-08-03 19:20:26')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/sites/34/documents/34
+Completed 302 Found in 16ms
+
+
+Started GET "/sites/34/documents/34" for 127.0.0.1 at 2011-08-03 15:20:26 -0400
+  Processing by DocumentsController#show as HTML
+  Parameters: {"site_id"=>"34", "id"=>"34"}
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 34 LIMIT 1[0m
+  [1m[35mSite Load (0.2ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 34 LIMIT 1
+Rendered documents/show.html.haml within layouts/application (4.2ms)
+Completed 200 OK in 9ms (Views: 6.2ms | ActiveRecord: 0.6ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:20:26', 'My Test', '2011-08-03 19:20:26', NULL)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+
+
+Started GET "/sites/35" for 127.0.0.1 at 2011-08-03 15:20:26 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"35"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 35 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 3.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sites/35/documents/new" for 127.0.0.1 at 2011-08-03 15:20:26 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"35"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 35 LIMIT 1[0m
+Rendered documents/_form.html.haml (3.0ms)
+Rendered documents/new.html.haml within layouts/application (3.9ms)
+Completed 200 OK in 7ms (Views: 4.9ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sites/35/documents" for 127.0.0.1 at 2011-08-03 15:20:26 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"HEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"35"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 35 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Rendered documents/_form.html.haml (64.1ms)
+Rendered documents/new.html.haml within layouts/application (65.2ms)
+Completed 200 OK in 70ms (Views: 66.4ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:20:26', 'My Test', '2011-08-03 19:20:26', NULL)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 36
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:20:26', NULL, '2011-08-03 19:20:26')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 3\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:20:26', NULL, '2011-08-03 19:20:26')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  UPDATE `documents` SET `site_id` = 36, `updated_at` = '2011-08-03 19:20:26' WHERE `documents`.`id` = 35
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE `documents` SET `site_id` = 36, `updated_at` = '2011-08-03 19:20:26' WHERE `documents`.`id` = 36[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+
+
+Started GET "/sites/36" for 127.0.0.1 at 2011-08-03 15:20:26 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"36"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 36 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/compile_documents/36" for 127.0.0.1 at 2011-08-03 15:20:26 -0400
+  Processing by SitesController#compile_documents as HTML
+  Parameters: {"id"=>"36"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 36 LIMIT 1[0m
+  [1m[35mDocument Load (0.4ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 36
+Completed 500 Internal Server Error in 35ms
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:21:06', 'My Test', '2011-08-03 19:21:06', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/37" for 127.0.0.1 at 2011-08-03 15:21:06 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"37"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 37 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 75ms (Views: 72.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sites/37/documents/new" for 127.0.0.1 at 2011-08-03 15:21:07 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"37"}
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 37 LIMIT 1
+Rendered documents/_form.html.haml (28.2ms)
+Rendered documents/new.html.haml within layouts/application (45.4ms)
+Completed 200 OK in 54ms (Views: 50.5ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/sites/37/documents" for 127.0.0.1 at 2011-08-03 15:21:07 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"37"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 37 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:21:07', 37, '2011-08-03 19:21:07')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/sites/37/documents/37
+Completed 302 Found in 16ms
+
+
+Started GET "/sites/37/documents/37" for 127.0.0.1 at 2011-08-03 15:21:07 -0400
+  Processing by DocumentsController#show as HTML
+  Parameters: {"site_id"=>"37", "id"=>"37"}
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 37 LIMIT 1[0m
+  [1m[35mSite Load (0.2ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 37 LIMIT 1
+Rendered documents/show.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.7ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:21:07', 'My Test', '2011-08-03 19:21:07', NULL)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+
+
+Started GET "/sites/38" for 127.0.0.1 at 2011-08-03 15:21:07 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"38"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 38 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sites/38/documents/new" for 127.0.0.1 at 2011-08-03 15:21:07 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"38"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 38 LIMIT 1[0m
+Rendered documents/_form.html.haml (2.9ms)
+Rendered documents/new.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sites/38/documents" for 127.0.0.1 at 2011-08-03 15:21:07 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"HEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"38"}
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 38 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Rendered documents/_form.html.haml (63.0ms)
+Rendered documents/new.html.haml within layouts/application (64.2ms)
+Completed 200 OK in 69ms (Views: 65.5ms | ActiveRecord: 1.3ms)
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:21:07', 'My Test', '2011-08-03 19:21:07', NULL)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 39
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:21:07', NULL, '2011-08-03 19:21:07')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 3\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:21:07', NULL, '2011-08-03 19:21:07')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.4ms)[0m  UPDATE `documents` SET `site_id` = 39, `updated_at` = '2011-08-03 19:21:07' WHERE `documents`.`id` = 38
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE `documents` SET `site_id` = 39, `updated_at` = '2011-08-03 19:21:07' WHERE `documents`.`id` = 39[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+
+
+Started GET "/sites/39" for 127.0.0.1 at 2011-08-03 15:21:07 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"39"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 39 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/compile_documents/39" for 127.0.0.1 at 2011-08-03 15:21:07 -0400
+  Processing by SitesController#compile_documents as HTML
+  Parameters: {"id"=>"39"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 39 LIMIT 1[0m
+  [1m[35mDocument Load (0.4ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 39
+Completed 500 Internal Server Error in 34ms
+  [1m[36m (0.9ms)[0m  [1mROLLBACK[0m
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:22:14', 'My Test', '2011-08-03 19:22:14', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/40" for 127.0.0.1 at 2011-08-03 15:22:14 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"40"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 40 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (5.7ms)
+Completed 200 OK in 76ms (Views: 73.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sites/40/documents/new" for 127.0.0.1 at 2011-08-03 15:22:14 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"40"}
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 40 LIMIT 1
+Rendered documents/_form.html.haml (27.2ms)
+Rendered documents/new.html.haml within layouts/application (44.2ms)
+Completed 200 OK in 53ms (Views: 49.0ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/sites/40/documents" for 127.0.0.1 at 2011-08-03 15:22:14 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"40"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 40 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 27ms
+  [1m[35m (0.6ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:22:14', 'My Test', '2011-08-03 19:22:14', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/41" for 127.0.0.1 at 2011-08-03 15:22:14 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"41"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 41 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/sites/41/documents/new" for 127.0.0.1 at 2011-08-03 15:22:14 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"41"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 41 LIMIT 1
+Rendered documents/_form.html.haml (2.8ms)
+Rendered documents/new.html.haml within layouts/application (4.0ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sites/41/documents" for 127.0.0.1 at 2011-08-03 15:22:14 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"HEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"41"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 41 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered documents/_form.html.haml (63.4ms)
+Rendered documents/new.html.haml within layouts/application (64.5ms)
+Completed 200 OK in 68ms (Views: 65.5ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:22:14', 'My Test', '2011-08-03 19:22:14', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 42[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:22:14', NULL, '2011-08-03 19:22:14')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 3\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:22:14', NULL, '2011-08-03 19:22:14')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mUPDATE `documents` SET `site_id` = 42, `updated_at` = '2011-08-03 19:22:14' WHERE `documents`.`id` = 40[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  UPDATE `documents` SET `site_id` = 42, `updated_at` = '2011-08-03 19:22:14' WHERE `documents`.`id` = 41
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/42" for 127.0.0.1 at 2011-08-03 15:22:14 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"42"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 42 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (2.2ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/compile_documents/42" for 127.0.0.1 at 2011-08-03 15:22:14 -0400
+  Processing by SitesController#compile_documents as HTML
+  Parameters: {"id"=>"42"}
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 42 LIMIT 1
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 42[0m
+Completed 500 Internal Server Error in 31ms
+  [1m[35m (0.9ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:37:05', 'My Test', '2011-08-03 19:37:05', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/43" for 127.0.0.1 at 2011-08-03 15:37:05 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"43"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 43 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (5.5ms)
+Completed 200 OK in 95ms (Views: 93.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sites/43/documents/new" for 127.0.0.1 at 2011-08-03 15:37:06 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"43"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 43 LIMIT 1
+Rendered documents/_form.html.haml (28.0ms)
+Rendered documents/new.html.haml within layouts/application (47.3ms)
+Completed 200 OK in 56ms (Views: 52.6ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/sites/43/documents" for 127.0.0.1 at 2011-08-03 15:37:06 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"43"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 43 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 26ms
+  [1m[35m (1.8ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:37:06', 'My Test', '2011-08-03 19:37:06', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/44" for 127.0.0.1 at 2011-08-03 15:37:06 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"44"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 44 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sites/44/documents/new" for 127.0.0.1 at 2011-08-03 15:37:06 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"44"}
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 44 LIMIT 1
+Rendered documents/_form.html.haml (2.8ms)
+Rendered documents/new.html.haml within layouts/application (3.7ms)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/sites/44/documents" for 127.0.0.1 at 2011-08-03 15:37:06 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"HEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"44"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 44 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered documents/_form.html.haml (4.8ms)
+Rendered documents/new.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.6ms)
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 19:37:06', 'My Test', '2011-08-03 19:37:06', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 45[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:37:06', NULL, '2011-08-03 19:37:06')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 3\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 19:37:06', NULL, '2011-08-03 19:37:06')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mUPDATE `documents` SET `site_id` = 45, `updated_at` = '2011-08-03 19:37:06' WHERE `documents`.`id` = 42[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  UPDATE `documents` SET `site_id` = 45, `updated_at` = '2011-08-03 19:37:06' WHERE `documents`.`id` = 43
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/45" for 127.0.0.1 at 2011-08-03 15:37:06 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"45"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 45 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/compile_documents/45" for 127.0.0.1 at 2011-08-03 15:37:06 -0400
+  Processing by SitesController#compile_documents as HTML
+  Parameters: {"id"=>"45"}
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 45 LIMIT 1
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 45[0m
+Completed 500 Internal Server Error in 46ms
+  [1m[35m (35.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 21:51:48', 'My Test', '2011-08-03 21:51:48', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-08-03 17:51:48 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (7.4ms)
+Completed 200 OK in 107ms (Views: 104.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-08-03 17:51:49 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[35mSite Load (0.8ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+Rendered documents/_form.html.haml (53.0ms)
+Rendered documents/new.html.haml within layouts/application (94.2ms)
+Completed 200 OK in 125ms (Views: 120.7ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/sites/1/documents" for 127.0.0.1 at 2011-08-03 17:51:49 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"1"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.4ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Completed 500 Internal Server Error in 47ms
+  [1m[35m (0.8ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 21:51:49', 'My Test', '2011-08-03 21:51:49', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-03 17:51:49 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-03 17:51:49 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+Rendered documents/_form.html.haml (3.0ms)
+Rendered documents/new.html.haml within layouts/application (3.8ms)
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-03 17:51:49 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"HEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK TO SAVEPOINT active_record_1[0m
+Rendered documents/_form.html.haml (4.0ms)
+Rendered documents/new.html.haml within layouts/application (5.0ms)
+Completed 200 OK in 10ms (Views: 6.3ms | ActiveRecord: 0.8ms)
+  [1m[35m (0.9ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 21:51:49', 'My Test', '2011-08-03 21:51:49', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 3[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 21:51:49', NULL, '2011-08-03 21:51:49')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 3\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 21:51:49', NULL, '2011-08-03 21:51:49')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.3ms)[0m  [1mUPDATE `documents` SET `site_id` = 3, `updated_at` = '2011-08-03 21:51:49' WHERE `documents`.`id` = 1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  UPDATE `documents` SET `site_id` = 3, `updated_at` = '2011-08-03 21:51:49' WHERE `documents`.`id` = 2
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/3" for 127.0.0.1 at 2011-08-03 17:51:49 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/compile_documents/3" for 127.0.0.1 at 2011-08-03 17:51:49 -0400
+  Processing by SitesController#compile_documents as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSite Load (0.6ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3[0m
+Completed 500 Internal Server Error in 121ms
+  [1m[35m (1.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.8ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 21:53:07', 'My Test', '2011-08-03 21:53:07', NULL)
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.7ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-08-03 17:53:07 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+Rendered sites/show.html.haml within layouts/application (5.9ms)
+Completed 200 OK in 74ms (Views: 71.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-08-03 17:53:07 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[35mSite Load (0.8ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+Rendered documents/_form.html.haml (30.3ms)
+Rendered documents/new.html.haml within layouts/application (47.2ms)
+Completed 200 OK in 56ms (Views: 50.6ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/sites/1/documents" for 127.0.0.1 at 2011-08-03 17:53:07 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"1"}
+  [1m[36mSite Load (0.8ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 21:53:07', 1, '2011-08-03 21:53:07')[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+Redirected to http://www.example.com/sites/1/documents/1
+Completed 302 Found in 17ms
+
+
+Started GET "/sites/1/documents/1" for 127.0.0.1 at 2011-08-03 17:53:07 -0400
+  Processing by DocumentsController#show as HTML
+  Parameters: {"site_id"=>"1", "id"=>"1"}
+  [1m[36mDocument Load (0.8ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 1 LIMIT 1[0m
+  [1m[35mSite Load (0.5ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+Rendered documents/show.html.haml within layouts/application (5.2ms)
+Completed 200 OK in 26ms (Views: 22.9ms | ActiveRecord: 1.3ms)
+  [1m[36m (18.3ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 21:53:07', 'My Test', '2011-08-03 21:53:07', NULL)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-03 17:53:07 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (2.3ms)
+Completed 200 OK in 5ms (Views: 3.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-03 17:53:07 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+Rendered documents/_form.html.haml (3.3ms)
+Rendered documents/new.html.haml within layouts/application (4.3ms)
+Completed 200 OK in 7ms (Views: 5.3ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-03 17:53:07 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"HEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Rendered documents/_form.html.haml (3.7ms)
+Rendered documents/new.html.haml within layouts/application (4.7ms)
+Completed 200 OK in 9ms (Views: 5.8ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-03 21:53:07', 'My Test', '2011-08-03 21:53:07', NULL)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 3
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 21:53:07', NULL, '2011-08-03 21:53:07')
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 3\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-03 21:53:07', NULL, '2011-08-03 21:53:07')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  UPDATE `documents` SET `site_id` = 3, `updated_at` = '2011-08-03 21:53:07' WHERE `documents`.`id` = 2
+  [1m[36m (0.2ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.5ms)[0m  [1mUPDATE `documents` SET `site_id` = 3, `updated_at` = '2011-08-03 21:53:07' WHERE `documents`.`id` = 3[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.2ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.7ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+
+
+Started GET "/sites/3" for 127.0.0.1 at 2011-08-03 17:53:07 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSite Load (0.7ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+Rendered sites/show.html.haml within layouts/application (2.4ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/compile_documents/3" for 127.0.0.1 at 2011-08-03 17:53:07 -0400
+  Processing by SitesController#compile_documents as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+  [1m[35mDocument Load (0.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3
+Completed 500 Internal Server Error in 41ms
+  [1m[36m (1.7ms)[0m  [1mROLLBACK[0m
