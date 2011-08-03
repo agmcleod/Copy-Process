@@ -1,5 +1,7 @@
 require 'spec_helper'
 
-describe Site do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe "Site" do
+  describe "#to_csv" do
+    
+  end
 end

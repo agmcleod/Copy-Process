@@ -1,33 +1,12 @@
 module CopyProcess
   class Processor
     attr_accessor :input
-    
-    def start
-      file_contents_retrieved = false
-
-      # initalizes file array
-      files = []
-      # get filenames
-      contents = greeting(@input)
-      # initialize variables
-      file_contents = ""
-      headers = ""
-
-      files = initialize_file_objects(contents)
-
-      output_files_to_csv(files)
-    end
-    
-    def output_files_to_csv(files)
-      if files.size > 0        
-        final_rows = retrieve_content_rows(files)
-        File.open('out.csv', 'w+') do |f|
-          f.write "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
-          final_rows.each { |e| f.write ",,,,#{e}\n" }
-        end
-      else
-        @output.puts 'no file objects'
+    def compile_files_to_csv(files)
+      output = "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
+      retrieve_content_rows(files).each do |r|
+        output << ",,,,#{r}\n"
       end
+      output
     end
     
     def retrieve_content_rows(files)
@@ -46,10 +25,9 @@ module CopyProcess
       add_missing_elements(final_rows, keywords, types, types_and_keywords)
     end
     
-    def parse_each_file(file_name, files)
-      file_contents = get_file_contents(file_name)
-      headers = contains_valid_headers(file_contents)
-      return append_file_if_valid(file_contents, headers, files, file_name)
+    def parse_each_document(content, files)
+      headers = contains_valid_headers(content)
+      append_file_if_valid(content, headers, files, '')
     end
 
     # Returns the file names in the correct format
@@ -67,31 +45,8 @@ module CopyProcess
       unless headers
         raise "Headers not found in file: #{file_name}"
       else
-        files << CopyFile.new(file_contents, headers[0], headers[1], headers[2], file_name)
+        files << CopyProcess::CopyFile.new(file_contents, headers[0], headers[1], headers[2], file_name)
       end
-    end
-
-    # Returns all the file contents as a simple string
-    def get_file_contents(file_name)
-      IO.read(file_name.strip)
-    end
-    
-    # Passes the entered file names by the user, and returns an array of CopyFile objects
-    # @param contents [String] - file names or file type.
-    def initialize_file_objects(contents)
-      # if they entered a value, continue on
-      files = []
-      unless contents.nil? || contents == ''
-        file_names = set_file_names(contents)    
-        file_names.each do |file_name|
-          # set the string to empty, so it doesn't concatenate with previous data
-          file_contents = ""
-          files = parse_each_file(file_name, files)
-        end        
-      else
-        raise 'contents were nil'
-      end
-      return files
     end
     
     # Adds missing element variations for restriction purposes.

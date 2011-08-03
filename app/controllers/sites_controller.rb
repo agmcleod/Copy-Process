@@ -80,4 +80,9 @@ class SitesController < ApplicationController
       format.json { head :ok }
     end
   end
+  
+  def compile_documents
+    @site = Site.find(params[:id])
+    render csv: @site
+  end
 end

@@ -6,7 +6,7 @@ Feature: Add Documents To Site
   Scenario: Valid document format
     Given I am on the homepage
     When site "My Test" exists
-    And I am on My Test site page
+    And I go to My Test site page
     And I press "add_document"    
     When I copy and paste a document
     And I press "Create Document"
@@ -16,7 +16,7 @@ Feature: Add Documents To Site
   Scenario: Invalid document format
     Given I am on the homepage
     When site "My Test" exists
-    And I am on My Test site page
+    And I go to My Test site page
     And I press "add_document"    
     When I copy and paste an invalid document
     And I press "Create Document"

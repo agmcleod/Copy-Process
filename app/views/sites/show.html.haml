@@ -10,6 +10,9 @@
 
 %p
   =button_to "Add Document", new_site_document_path(@site), method: :get, id: 'add_document'
+  
+%p
+  =button_to "Compile Documents", compile_documents_path(@site), id: 'compile_documents'
 
 = link_to 'Edit', edit_site_path(@site) + "|"
 = link_to 'Back', sites_path

@@ -3,6 +3,8 @@ CopyProcess::Application.routes.draw do
   resources :sites do
     resources :documents
   end
+  
+  match '/compile_documents/:id' => 'sites#compile_documents', :as => :compile_documents, :via => :post
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

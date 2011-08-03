@@ -71,7 +71,7 @@ module CopyProcess
       end
     end
     
-    describe "#parse_each_file" do
+    describe "#parse_each_document" do
       context "requires an example file" do
         before(:each) do
           @fn = 'testfile.txt'
@@ -80,12 +80,13 @@ module CopyProcess
         end
         
         after(:each) { File.delete(@fn) }
+        
         it "should return an array with the size of one" do
-          processor.parse_each_file(@fn, @files).size.should == 1
+          processor.parse_each_document(content_to_write, @files).size.should == 1
         end
       
         it "should return a object of type CopyFile" do
-          processor.parse_each_file(@fn, @files).first.class.should == CopyFile
+          processor.parse_each_document(content_to_write, @files).first.class.should == CopyFile
         end
       end
     end
@@ -113,38 +114,6 @@ module CopyProcess
       end
     end
     
-    describe "#initialize_file_objects" do
-      it "should raise an error message if contents are nil" do
-        lambda { processor.initialize_file_objects(nil) }.should raise_error
-      end
-      
-      it "should raise an error message if contents are empty" do
-        lambda { processor.initialize_file_objects('') }.should raise_error
-      end
-      
-      context "needs 3 files" do
-        before(:all) do
-          # create files first
-          @contents = "somefile1.txt;somefile2.txt;somefile3.txt"
-          @contents.split(';').each do |fn|
-            File.open(fn, 'w+') { |f| f.write(content_to_write) }
-          end
-        end
-        it "should return an array of 3" do
-          processor.initialize_file_objects(@contents).size.should == 3
-        end
-        
-        it "should return a CopyFile object" do
-          processor.initialize_file_objects(@contents).first.class.should == CopyFile
-        end
-        
-        after(:all) do
-          @contents.split(';').each do |fn|
-            File.delete(fn)
-          end
-        end
-      end
-    end
     
     describe "#add_missing_elements" do
       it "should return an empty array" do
@@ -197,17 +166,6 @@ module CopyProcess
       end
     end
     
-    describe "#get_file_contents" do
-      before(:each) do
-        @c = "/*\nType: Some Keyword \nLayer: State \nVariation: 1 \n*/\nHEADER: A header\nBODY: A body"
-        File.open('testfile_rspec.txt', 'w+') { |f| f.write(@c) }
-      end
-      it "should return a string with the contents" do
-        processor.get_file_contents('testfile_rspec.txt').should == @c
-      end
-      after(:each) { File.delete('testfile_rspec.txt') }
-    end
-    
     describe "#retrieve_content_rows" do
       
       before(:all) do
@@ -218,7 +176,12 @@ module CopyProcess
       end
       
       before(:each) do
-        @files = processor.initialize_file_objects('recycling1.txt;recycling2.txt;garbage1.txt')
+        # @files = processor.initialize_file_objects('recycling1.txt;recycling2.txt;garbage1.txt')
+        @files = []
+        %w{recycling1.txt recycling2.txt garbage1.txt}.each do |fn|
+          d = Document.new(content: IO.read(fn))
+          processor.parse_each_document(d.content, @files)
+        end
       end
       
       it "should return 37 rows/sentences. 36 regular, 1 empty" do
@@ -226,7 +189,9 @@ module CopyProcess
       end
       
       it "should return 2 rows" do
-        processor.retrieve_content_rows(processor.initialize_file_objects('testfile_rspec.txt')).size.should == 2
+        t = []
+        processor.parse_each_document(IO.read('testfile_rspec.txt'), t)
+        processor.retrieve_content_rows(t).size.should == 2
       end
       
       after(:all) do
@@ -235,38 +200,6 @@ module CopyProcess
         File.delete('garbage1.txt')
         File.delete('testfile_rspec.txt')
       end
-    end
-    
-    describe "#output_files_to_csv" do
-      before(:all) do
-        create_test_files
-      end
-      before(:each) do
-        @files = processor.initialize_file_objects('recycling1.txt;recycling2.txt;garbage1.txt')
-      end
-      
-      after(:each) do
-        if File.exists?('out.csv')
-          File.delete('out.csv')
-        end
-      end
-      
-      after(:all) do
-        File.delete('recycling1.txt')
-        File.delete('recycling2.txt')
-        File.delete('garbage1.txt')
-      end
-      
-      it "should create an out.csv file" do
-        processor.output_files_to_csv(@files)        
-        File.exists?('out.csv').should be_true
-      end
-      
-      it "out.csv should have 38 rows" do
-        processor.output_files_to_csv(@files)
-        File.readlines('out.csv').size.should == 38
-      end
-      
     end
   end
 end
