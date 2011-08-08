@@ -205,6 +205,10 @@ module CopyProcess
         processor.compile_files_to_csv(@files).class.should == String
       end
       
+      it "should return proper csv headers" do
+        processor.compile_files_to_csv(@files).split("\n")[0].should == "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes"
+      end
+      
       it "should return a string of 38 lines - 37 content, 1 header row" do
         processor.compile_files_to_csv(@files).split("\n").size.should == 38
       end
