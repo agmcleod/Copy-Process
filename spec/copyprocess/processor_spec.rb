@@ -163,7 +163,6 @@ module CopyProcess
       end
       
       before(:each) do
-        # @files = processor.initialize_file_objects('recycling1.txt;recycling2.txt;garbage1.txt')
         @files = []
         %w{recycling1.txt recycling2.txt garbage1.txt}.each do |fn|
           d = Document.new(content: IO.read(fn))
@@ -179,6 +178,35 @@ module CopyProcess
         t = []
         processor.parse_each_document(IO.read('testfile_rspec.txt'), t)
         processor.retrieve_content_rows(t).size.should == 2
+      end
+      
+      after(:all) do
+        File.delete('recycling1.txt')
+        File.delete('recycling2.txt')
+        File.delete('garbage1.txt')
+        File.delete('testfile_rspec.txt')
+      end
+    end
+    
+    describe "#compile_files_to_csv" do
+      before(:all) do
+        create_test_files
+      end
+      
+      before(:each) do
+        @files = []
+        %w{recycling1.txt recycling2.txt garbage1.txt}.each do |fn|
+          d = Document.new(content: IO.read(fn))
+          processor.parse_each_document(d.content, @files)
+        end
+      end
+      
+      it "should return a string" do
+        processor.compile_files_to_csv(@files).class.should == String
+      end
+      
+      it "should return a string of 38 lines - 37 content, 1 header row" do
+        processor.compile_files_to_csv(@files).split("\n").size.should == 38
       end
       
       after(:all) do
