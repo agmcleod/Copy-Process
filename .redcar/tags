@@ -1,10 +1,14 @@
-1312806941
+1312807144
 AddSiteIdToDocuments	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729185151_add_site_id_to_documents.rb	class AddSiteIdToDocuments 
 Application	/Users/aaronmcleod/Documents/work/copy_process/config/application.rb	  class Application 
 ApplicationController	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/application_controller.rb	class ApplicationController 
 ApplicationHelper	/Users/aaronmcleod/Documents/work/copy_process/app/helpers/application_helper.rb	module ApplicationHelper
+ContentElement	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_element.rb	  class ContentElement
+ContentRow	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	  class ContentRow
 CopyFile	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	  class CopyFile
 CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/config/application.rb	module CopyProcess
+CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_element.rb	module CopyProcess
+CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	module CopyProcess
 CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	module CopyProcess
 CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	module CopyProcess
 CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/content_element_spec.rb	module CopyProcess
@@ -42,6 +46,8 @@ cloneFixAttributes	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/asse
 compile_documents	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def compile_documents
 compile_files_to_csv	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def compile_files_to_csv(files)
 contains_valid_headers	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def contains_valid_headers(value)
+content	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_element.rb	    attr_reader :name, :content
+content	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	    attr_reader(:type_name, :content, :kw)
 content_sentence_split_helper	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def content_sentence_split_helper(contents, ele_name, counter)
 content_to_write	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	    def content_to_write
 contents	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
@@ -82,15 +88,19 @@ includes_inner?	/Users/aaronmcleod/Documents/work/copy_process/lib/helpers.rb	  
 index	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def index
 index	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def index
 init	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function init( selector, context )
+initialize	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_element.rb	    def initialize(name, content)
+initialize	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	    def initialize(type_name, content, kw)
 initialize	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def initialize(contents, type, layer, variation, file_name)
 input	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    attr_accessor :input
 isDisconnected	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function isDisconnected( node )
 isEmptyDataObject	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function isEmptyDataObject( obj )
 jQuerySub	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function jQuerySub( selector, context )
+kw	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	    attr_reader(:type_name, :content, :kw)
 layer	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
 liveConvert	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function liveConvert( type, selector )
 liveHandler	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function liveHandler( event )
 name	/Users/aaronmcleod/Documents/work/copy_process/app/models/document.rb	  def name
+name	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_element.rb	    attr_reader :name, :content
 new	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def new
 new	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def new
 note	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def note
@@ -116,6 +126,7 @@ test_number_of_elements_with_content	/Users/aaronmcleod/Documents/work/copy_proc
 to_csv	/Users/aaronmcleod/Documents/work/copy_process/app/models/site.rb	  def to_csv
 trigger	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function trigger( type, elem, args )
 type	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
+type_name	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	    attr_reader(:type_name, :content, :kw)
 update	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def update
 update	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def update
 valid_headers	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	    def valid_headers
