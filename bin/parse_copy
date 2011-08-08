@@ -1,7 +1,0 @@
-#!/Users/aaronmcleod/.rvm/rubies/ruby-1.9.2-p136/bin/ruby
-$:.unshift(File.expand_path('../../lib', __FILE__))
-require "copyprocess"
-include CopyProcess
-
-processor = CopyProcess::Processor.new(STDOUT, STDIN)
-processor.start

@@ -18,7 +18,7 @@ module CopyProcess
         file_obj.elements_out.each do |ele|
           keywords << ele.kw unless keywords.include?(ele.kw)
           types << ele.type_name unless types.include?(ele.type_name)
-          final_rows << ele.content
+          final_rows << ele.content #.gsub(/\t|\n|\r/, '')
           types_and_keywords << "#{ele.type_name}+#{ele.kw}" unless types_and_keywords.include?("#{ele.type_name}+#{ele.kw}")
         end
       end
@@ -34,6 +34,7 @@ module CopyProcess
     # @params [String] contents - entered file names
     # @return [Array] returns an array of the file names
     def set_file_names(contents)
+      raise "set_file_names called"
       if contents.match(/^\*\.[a-z]{1,}/).nil?
         contents.split(';')
       else

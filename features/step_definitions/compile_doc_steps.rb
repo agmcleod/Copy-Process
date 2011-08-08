@@ -12,5 +12,5 @@ When /^site "([^"]*)" has documents$/ do |name|
 end
 
 Then /^I should get a response with content-type "([^"]*)"$/ do |content_type|
-  page.response_headers['Content-Type'].should == content_type
+  page.response_headers['Content-Type'].index(content_type).should_not == nil
 end

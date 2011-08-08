@@ -3,7 +3,7 @@ class DocumentsController < ApplicationController
   # GET /documents.json
   def index
     @documents = Document.all
-
+    @site = Site.find(params[:site_id])
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @documents }
@@ -48,7 +48,7 @@ class DocumentsController < ApplicationController
     @document.site_id = @site.id
     respond_to do |format|
       if @document.save
-        format.html { redirect_to site_document_url(@document.site_id, @document), notice: 'Document was successfully created.' }
+        format.html { redirect_to site_url(@site), notice: 'Document was successfully created.' }
         format.json { render json: @document, status: :created, location: @document }
       else
         format.html { render action: "new" }
@@ -64,7 +64,7 @@ class DocumentsController < ApplicationController
     @site = Document.find(params[:site_id])
     respond_to do |format|
       if @document.update_attributes(params[:document])
-        format.html { redirect_to @document, notice: 'Document was successfully updated.' }
+        format.html { redirect_to site_url(@site), notice: 'Document was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render action: "edit" }

@@ -7,6 +7,14 @@ class Document < ActiveRecord::Base
   
   validate :document_is_in_valid_format
   
+  def name
+    if content.blank?
+      'Document'
+    else
+      content.split(/\n/)[1..3].join(' - ').gsub(/\/\*|\\\*/,'')
+    end
+  end
+  
   def self.test_data
     "/*\n" +
     "Type: Recycling\n" +

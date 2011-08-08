@@ -1,7 +1,7 @@
 module CopyProcess
   class CopyFile
-    require 'copy_process'
-    
+    require 'helpers'
+    include Helpers
     attr_accessor :contents, :type, :layer, :variation, :file_name
     attr_reader :elements
     def initialize(contents, type, layer, variation, file_name)
@@ -40,7 +40,7 @@ module CopyProcess
               next_et = next_et.to_s
               next_et = contents.index(next_et, idx)
             end
-            @elements << ContentElement.new(et.strip.gsub(/:/,''), contents[idx-1..next_et-1].gsub(/\n|\\n/, '').strip)
+            @elements << ContentElement.new(et.strip.gsub(/:/,''), contents[idx-1..next_et-1].gsub(/\n|\\n|\r|\t/, '').strip)
           end
         end
       end
@@ -61,12 +61,12 @@ module CopyProcess
     # @param name [String] - The name of the element type
     # @return element_names [Array] - return the updated array
     def set_element_name_and_counter(element_names, name)
-      if !CopyProcess::includes_inner?(name, element_names)
+      if !includes_inner?(name, element_names)
         element_names << [name, 1]
       else
         # if it's in the array already, find it and increment the counter
-        current_element = element_names[CopyProcess::get_inner_index(name, element_names)]
-        element_names[CopyProcess::get_inner_index(name, element_names)] = [current_element[0], current_element[1]+1]
+        current_element = element_names[get_inner_index(name, element_names)]
+        element_names[get_inner_index(name, element_names)] = [current_element[0], current_element[1]+1]
       end
       element_names
     end
@@ -79,7 +79,7 @@ module CopyProcess
       if name.index(/[1-9]/)
         ''
       else  
-        element_names[CopyProcess::get_inner_index(name, element_names)][1]
+        element_names[get_inner_index(name, element_names)][1]
       end
     end
 
@@ -111,7 +111,7 @@ module CopyProcess
         end
       else
         et_name = "#{@layer} #{element.name}#{counter}"
-        output_array << ContentRow.new(et_name, "#{et_name},#{CopyProcess::enclose(element.content)},#{self.note}", self.type)
+        output_array << ContentRow.new(et_name, "#{et_name},#{enclose(element.content)},#{self.note}", self.type)
       end
       output_array
     end
@@ -125,7 +125,7 @@ module CopyProcess
         # remove whitespace
         sentence.strip!
         et_name = "#{@layer} #{ele_name}#{counter} S#{s_counter + 1}"
-        to_return << ContentRow.new(et_name, "#{et_name},#{CopyProcess::enclose(sentence)},#{self.note}", self.type)
+        to_return << ContentRow.new(et_name, "#{et_name},#{enclose(sentence)},#{self.note}", self.type)
       end
       return to_return
     end

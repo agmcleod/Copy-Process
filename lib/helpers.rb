@@ -2,7 +2,7 @@
 # require 'copy_process/content_row'
 # require 'copy_process/processor'
 
-module CopyProcess
+module Helpers
   # Gets the index of a value inside an array of the given array
   def get_inner_index(value, arr)
     idx = nil
@@ -13,14 +13,14 @@ module CopyProcess
     end
     return idx
   end
-  
+
   def includes_inner?(value, arr)
     bool = false
     arr.each { |e| bool = true if e[0] == value  }
     return bool
   end
-  
-  
+
+
   # Encloses the string in double quotes, in case it contains a comma
   # @param [String] - the string to enclose
   # @return [String]
