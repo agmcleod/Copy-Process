@@ -6,3 +6,4 @@ bin/test_run.rb
 *.txt
 db/migrate
 cl
+.redcar/
