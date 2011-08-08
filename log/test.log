@@ -10775,3 +10775,274 @@ Rendered text template (0.0ms)
 Sent data My Test.csv (37.1ms)
 Completed 200 OK in 159ms (Views: 36.9ms | ActiveRecord: 0.8ms)
   [1m[35m (17.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (1.1ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-08 12:11:47', 'My Test', '2011-08-08 12:11:47', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-08-08 08:11:47 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mSite Load (0.6ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+  [1m[35mDocument Load (0.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 1
+Rendered sites/show.html.haml within layouts/application (192.6ms)
+Completed 200 OK in 276ms (Views: 273.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/sites/1/documents/new" for 127.0.0.1 at 2011-08-08 08:11:48 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"1"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+Rendered documents/_form.html.haml (46.7ms)
+Rendered documents/new.html.haml within layouts/application (89.1ms)
+Completed 200 OK in 99ms (Views: 95.2ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/sites/1/documents" for 127.0.0.1 at 2011-08-08 08:11:48 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"1"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-08 12:11:48', 1, '2011-08-08 12:11:48')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://www.example.com/sites/1
+Completed 302 Found in 19ms
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-08-08 08:11:48 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 1[0m
+Rendered sites/show.html.haml within layouts/application (5.6ms)
+Completed 200 OK in 61ms (Views: 59.1ms | ActiveRecord: 0.8ms)
+  [1m[35m (1.1ms)[0m  ROLLBACK
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-08 12:11:48', 'My Test', '2011-08-08 12:11:48', NULL)
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-08 08:11:48 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSite Load (0.5ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35mDocument Load (0.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2
+Rendered sites/show.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 8ms (Views: 6.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-08 08:11:48 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[36mSite Load (0.9ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+Rendered documents/_form.html.haml (3.6ms)
+Rendered documents/new.html.haml within layouts/application (4.7ms)
+Completed 200 OK in 8ms (Views: 5.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-08 08:11:48 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "document"=>{"content"=>"HEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n"}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK TO SAVEPOINT active_record_1
+Rendered documents/_form.html.haml (3.9ms)
+Rendered documents/new.html.haml within layouts/application (4.9ms)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.7ms)
+  [1m[36m (0.8ms)[0m  [1mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-08 12:11:48', 'My Test', '2011-08-08 12:11:48', NULL)[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 3
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 2\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-08 12:11:48', NULL, '2011-08-08 12:11:48')
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\nType: Recycling\nLayer: State\nVariation: 3\n*/\nHEADER: A second recycling header.\nBODY: Recycling sentence one, again. A second sentence about\nrecycling, i think. A third sentence about recycling. A fouth sentence about \nrecycling.\nCTA: A call to action - important.\nBODY: Recycling sentence* onesise. A second sentence about\nrecycling. A third sentence about recycling?* A follow up sentence\nFOOTER: Some sort of footer\nCTA2: A second call to action\n', '2011-08-08 12:11:48', NULL, '2011-08-08 12:11:48')[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.7ms)[0m  UPDATE `documents` SET `site_id` = 3, `updated_at` = '2011-08-08 12:11:48' WHERE `documents`.`id` = 2
+  [1m[36m (0.1ms)[0m  [1mRELEASE SAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  SAVEPOINT active_record_1
+  [1m[36m (0.2ms)[0m  [1mUPDATE `documents` SET `site_id` = 3, `updated_at` = '2011-08-08 12:11:48' WHERE `documents`.`id` = 3[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36m (0.1ms)[0m  [1mSAVEPOINT active_record_1[0m
+  [1m[35m (0.1ms)[0m  RELEASE SAVEPOINT active_record_1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`name` = 'My Test' LIMIT 1[0m
+
+
+Started GET "/sites/3" for 127.0.0.1 at 2011-08-08 08:11:48 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36mDocument Load (0.8ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3[0m
+Rendered sites/show.html.haml within layouts/application (7.3ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/compile_documents/3.csv" for 127.0.0.1 at 2011-08-08 08:11:48 -0400
+  Processing by SitesController#compile_documents as CSV
+  Parameters: {"utf8"=>"✓", "commit"=>"Compile Documents", "id"=>"3"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36mDocument Load (0.3ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3[0m
+Rendered text template (0.0ms)
+Sent data My Test.csv (53.9ms)
+Completed 200 OK in 117ms (Views: 53.6ms | ActiveRecord: 0.7ms)
+  [1m[35m (1.0ms)[0m  ROLLBACK

@@ -91,19 +91,6 @@ module CopyProcess
       end
     end
     
-    describe "#set_file_names" do
-      def file_names
-        "sometext.txt;somefile.txt;anotherfile.txt"
-      end
-      it "should return an array of 3 names" do
-        processor.set_file_names(file_names).size.should == 3
-      end
-      
-      it "should contain the textfile named: somefile.txt" do
-        processor.set_file_names(file_names).include?('somefile.txt').should be_true
-      end
-    end
-    
     describe "#append_file_if_valid" do
       it "should raise an error if headers are false" do
         lambda { processor.append_file_if_valid('', false, [], 'somefilename') }.should raise_error

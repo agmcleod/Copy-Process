@@ -1,4 +1,4 @@
-1312804744
+1312806389
 AddSiteIdToDocuments	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729185151_add_site_id_to_documents.rb	class AddSiteIdToDocuments 
 Application	/Users/aaronmcleod/Documents/work/copy_process/config/application.rb	  class Application 
 ApplicationController	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/application_controller.rb	class ApplicationController 
@@ -68,7 +68,6 @@ enclose	/Users/aaronmcleod/Documents/work/copy_process/lib/helpers.rb	  def encl
 evalScript	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function evalScript( i, elem )
 expected_format	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/copyprocess_spec.rb	      def expected_format(cf, element_name, counter, s_counter, sentence)
 file_name	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
-file_names	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	      def file_names
 findInputs	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function findInputs( elem )
 fixDefaultChecked	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function fixDefaultChecked( elem )
 four_sentence_array	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/copyprocess_spec.rb	      def four_sentence_array
