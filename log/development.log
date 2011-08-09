@@ -720,3 +720,633 @@ Started POST "/compile_documents/1.csv" for 127.0.0.1 at 2011-08-06 16:10:45 -04
 Rendered text template (0.0ms)
 Sent data Test.csv (30.0ms)
 Completed 200 OK in 211ms (Views: 29.9ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-08-08 22:11:55 -0400
+Served asset /rails.png - 200 OK (51ms)
+
+
+Started GET "/assets/rails.png" for 127.0.0.1 at 2011-08-09 11:50:09 -0400
+Served asset /rails.png - 200 OK (3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-09 11:50:22 -0400
+  Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` [0m
+Rendered sites/index.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 109ms (Views: 105.4ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:50:22 -0400
+Compiled ~/Documents/work/copy_process/app/assets/javascripts/application.js  (5ms)  (pid 1534)
+Compiled ~/.rvm/gems/ruby-1.9.2-p180/gems/jquery-rails-1.0.12/vendor/assets/javascripts/jquery.js  (1ms)  (pid 1534)
+Compiled ~/.rvm/gems/ruby-1.9.2-p180/gems/jquery-rails-1.0.12/vendor/assets/javascripts/jquery_ujs.js  (0ms)  (pid 1534)
+Compiled ~/Documents/work/copy_process/app/assets/javascripts/documents.js.coffee  (617ms)  (pid 1534)
+Compiled ~/Documents/work/copy_process/app/assets/javascripts/sites.js.coffee  (228ms)  (pid 1534)
+Compiled ~/Documents/work/copy_process/app/assets/javascripts/application.js  (0ms)  (pid 1534)
+Served asset /application.js - 200 OK (988ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-09 11:50:32 -0400
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/application.css  (1ms)  (pid 1543)
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/documents.css.scss  (54ms)  (pid 1543)
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/scaffolds.css.scss  (11ms)  (pid 1543)
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/sites.css.scss  (1ms)  (pid 1543)
+Compiled ~/Documents/work/copy_process/app/assets/stylesheets/application.css  (0ms)  (pid 1543)
+Served asset /application.css - 200 OK (134ms)
+
+
+Started GET "/sites/1" for 127.0.0.1 at 2011-08-09 11:51:04 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 1[0m
+Rendered sites/show.html.haml within layouts/application (267.5ms)
+Completed 200 OK in 300ms (Views: 248.3ms | ActiveRecord: 46.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:51:04 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites" for 127.0.0.1 at 2011-08-09 11:51:07 -0400
+  Processing by SitesController#index as HTML
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` 
+Rendered sites/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 21ms (Views: 17.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:51:07 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started DELETE "/sites/1" for 127.0.0.1 at 2011-08-09 11:51:31 -0400
+  Processing by SitesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "id"=>"1"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 1[0m
+  [1m[35mSQL (0.7ms)[0m  DELETE FROM `documents` WHERE `documents`.`id` = 1
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `documents` WHERE `documents`.`id` = 2[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `documents` WHERE `documents`.`id` = 3
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `sites` WHERE `sites`.`id` = 1[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://copy_process.dev/sites
+Completed 302 Found in 107ms
+
+
+Started GET "/sites" for 127.0.0.1 at 2011-08-09 11:51:31 -0400
+  Processing by SitesController#index as HTML
+  [1m[36mSite Load (0.2ms)[0m  [1mSELECT `sites`.* FROM `sites` [0m
+Rendered sites/index.html.erb within layouts/application (0.6ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:51:31 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/new" for 127.0.0.1 at 2011-08-09 11:56:04 -0400
+  Processing by SitesController#new as HTML
+Rendered sites/_form.html.erb (13.0ms)
+Rendered sites/new.html.erb within layouts/application (76.9ms)
+Completed 200 OK in 101ms (Views: 99.1ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:56:04 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sites" for 127.0.0.1 at 2011-08-09 11:56:15 -0400
+  Processing by SitesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "site"=>{"name"=>"Amerispec US", "url"=>"http://local.amerispec.com"}, "commit"=>"Create Site"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `sites` (`created_at`, `name`, `updated_at`, `url`) VALUES ('2011-08-09 15:56:15', 'Amerispec US', '2011-08-09 15:56:15', 'http://local.amerispec.com')[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 20ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 11:56:15 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35mDocument Load (0.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2
+Rendered sites/show.html.haml within layouts/application (28.7ms)
+Completed 200 OK in 81ms (Views: 75.4ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:56:15 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 11:56:18 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+Rendered documents/_form.html.haml (82.8ms)
+Rendered documents/new.html.haml within layouts/application (97.7ms)
+Completed 200 OK in 130ms (Views: 105.2ms | ActiveRecord: 6.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:56:18 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 11:59:04 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: City\r\nVariation: 1\r\n*/\r\nHEAD:\t\t\tAmeriSpec [service] in [city] \r\n\r\nINTRO:\tNothing closes a real estate deal like the confidence provided by an AmeriSpec [service] in [city]. AmeriSpec is one of America’s  leading home inspection companies and has been around for over 20 years.  All of the inspectors are trained to meet and exceed the Standards of Practice of the American Society of Home Inspectors. To book an appointment for a [service] in [city], enter your ZIP code to contact a local AmeriSpec inspector.\r\n\r\nCTA H:\tSchedule a [service] in [city] \r\n\r\nCTA B:\tEnter your zip code for a [service] in [city].\r\n\r\nSUB:\t\t\t[service] in [city] you can count on\r\n\r\nBODY:\tThe AmeriSpec [Home Inspection] in [city] is a visual inspection of over 400 items including the foundation, roof, and structural components, plus visible electrical, plumbing and mechanical operating systems of the property. Our inspectors are trained to perform a [service] in [city] that meets the highest standards in the industry and meet the standards set by the American Society of Home Inspectors (ASHI). \r\n\r\nBULLET H:\tAn AmeriSpec [Home Inspection] in [city] provides many benefits, including:\r\n\r\nBULLET:\t\r\n<ul><li>Less Buyer Discomfort</li>\r\n<li>Reduced Buyer Remorse</li>\r\n<li>Less Negotiation</li>\r\n<li>Reduced Listing Time</li>\r\n<li>Contact AmeriSpec to learn more</li></ul>\r\n\r\nSUB:\tThe AmeriSpec [service] in [city]\r\n\r\nBODY:\tYou can feel completely confident about choosing AmeriSpec to perform your [service] in [city]. Our highly-trained and certified inspectors have examined more homes than any other home inspection company in North America and are setting the standards for the home inspection industry. Our home inspection findings are packaged in an attractive, easy-to-reference, three-ring binder and features a comprehensive evaluation of the home, a Home Repair Manual, a Seasonal Maintenance Checklist, and our Home Owner Rewards Program which contains valuable savings offered by our partners.\r\n\r\n\r\nFOOT:\tEnsure a smooth, successful closing. Contact AmeriSpec to perform your [service] in [city], today. \r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCentre\r\n\r\nDOWNLOAD B:\tDownload our brochures for more detailed information about the [service] in [city]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\r\nType: Home Inspection\r\nLayer: City\r\nVariation: 1\r\n*/\r\nHEAD:			AmeriSpec [service] in [city] \r\n\r\nINTRO:	Nothing closes a real estate deal like the confidence provided by an AmeriSpec [service] in [city]. AmeriSpec is one of America’s leading home inspection companies and has been around for over 20 years. All of the inspectors are trained to meet and exceed the Standards of Practice of the American Society of Home Inspectors. To book an appointment for a [service] in [city], enter your ZIP code to contact a local AmeriSpec inspector.\r\n\r\nCTA H:	Schedule a [service] in [city] \r\n\r\nCTA B:	Enter your zip code for a [service] in [city].\r\n\r\nSUB:			[service] in [city] you can count on\r\n\r\nBODY:	The AmeriSpec [Home Inspection] in [city] is a visual inspection of over 400 items including the foundation, roof, and structural components, plus visible electrical, plumbing and mechanical operating systems of the property. Our inspectors are trained to perform a [service] in [city] that meets the highest standards in the industry and meet the standards set by the American Society of Home Inspectors (ASHI). \r\n\r\nBULLET H:	An AmeriSpec [Home Inspection] in [city] provides many benefits, including:\r\n\r\nBULLET:	\r\n<ul><li>Less Buyer Discomfort</li>\r\n<li>Reduced Buyer Remorse</li>\r\n<li>Less Negotiation</li>\r\n<li>Reduced Listing Time</li>\r\n<li>Contact AmeriSpec to learn more</li></ul>\r\n\r\nSUB:	The AmeriSpec [service] in [city]\r\n\r\nBODY:	You can feel completely confident about choosing AmeriSpec to perform your [service] in [city]. Our highly-trained and certified inspectors have examined more homes than any other home inspection company in North America and are setting the standards for the home inspection industry. Our home inspection findings are packaged in an attractive, easy-to-reference, three-ring binder and features a comprehensive evaluation of the home, a Home Repair Manual, a Seasonal Maintenance Checklist, and our Home Owner Rewards Program which contains valuable savings offered by our partners.\r\n\r\n\r\nFOOT:	Ensure a smooth, successful closing. Contact AmeriSpec to perform your [service] in [city], today. \r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCentre\r\n\r\nDOWNLOAD B:	Download our brochures for more detailed information about the [service] in [city].', '2011-08-09 15:59:04', 2, '2011-08-09 15:59:04')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 57ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 11:59:04 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2[0m
+Rendered sites/show.html.haml within layouts/application (35.8ms)
+Completed 200 OK in 48ms (Views: 39.8ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:04 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 11:59:06 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+Rendered documents/_form.html.haml (16.1ms)
+Rendered documents/new.html.haml within layouts/application (17.6ms)
+Completed 200 OK in 85ms (Views: 22.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:06 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 11:59:13 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: City\r\nVariation: 2\r\n*/\r\nHEAD:\t\t\tAmeriSpec [service] in [city] \r\n\r\nINTRO:\tNothing helps provide the confidence to help close a real estate deal like a [service] by AmeriSpec in [city]. AmeriSpec is America’s leading home inspection company and has been around for more than 25 years.  All of our inspectors are trained to meet and exceed the highest industry standards of practice of the American Society of Home Inspectors. To schedule an appointment for a [service] in [city], enter your ZIP code to contact your local AmeriSpec inspector now.\r\n\r\n\r\nCTA H:\tBook a [service] in [city] \r\n\r\nCTA B:\tEnter your zip code for a [service] in [city].\r\n\r\nSUB:\t\t\t[service] in [city] you can trust\r\n\r\nBODY:\tThe AmeriSpec [Home Inspection] in [city] is an inspection that accesses over 400 items including the foundation, roof, and structural components, plus visible electrical, plumbing and mechanical operating systems of the property. All of our inspectors are trained to perform a [service] in [city] that meets the highest standards in the industry.\r\n\r\nBULLET H:\tA [Home Inspection] in [city] by AmeriSpec helps provide many benefits, including:\r\n\r\nBULLET:\t\r\n<ul><li>Less Buyer Discomfort</li>\r\n<li>Reduced Buyer Remorse</li>\r\n<li>Less Negotiation</li>\r\n<li>Reduced Listing Time</li>\r\n<li>Contact AmeriSpec to learn more</li>\r\n</ul>\r\nSUB:\tThe AmeriSpec [service] in [city]\r\n\r\nBODY:\tYou can feel confident about using an AmeriSpec inspector to perform your [service] in [city]. Our highly-experienced and certified inspectors have examined more homes than any other home inspection company in North America and are setting the standards for the home inspection industry. The home inspection findings are packaged in an easy-to-reference binder and feature a broad evaluation of the home, a Home Repair Manual and a Seasonal Maintenance Checklist.\r\n\r\n\r\nFOOT:\tHave a smooth and successful closing. Contact AmeriSpec to perform your [service] in [city], now. \r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:\tDownload our brochures for more detailed information about the [service] in [city]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\r\nType: Home Inspection\r\nLayer: City\r\nVariation: 2\r\n*/\r\nHEAD:			AmeriSpec [service] in [city] \r\n\r\nINTRO:	Nothing helps provide the confidence to help close a real estate deal like a [service] by AmeriSpec in [city]. AmeriSpec is America’s leading home inspection company and has been around for more than 25 years. All of our inspectors are trained to meet and exceed the highest industry standards of practice of the American Society of Home Inspectors. To schedule an appointment for a [service] in [city], enter your ZIP code to contact your local AmeriSpec inspector now.\r\n\r\n\r\nCTA H:	Book a [service] in [city] \r\n\r\nCTA B:	Enter your zip code for a [service] in [city].\r\n\r\nSUB:			[service] in [city] you can trust\r\n\r\nBODY:	The AmeriSpec [Home Inspection] in [city] is an inspection that accesses over 400 items including the foundation, roof, and structural components, plus visible electrical, plumbing and mechanical operating systems of the property. All of our inspectors are trained to perform a [service] in [city] that meets the highest standards in the industry.\r\n\r\nBULLET H:	A [Home Inspection] in [city] by AmeriSpec helps provide many benefits, including:\r\n\r\nBULLET:	\r\n<ul><li>Less Buyer Discomfort</li>\r\n<li>Reduced Buyer Remorse</li>\r\n<li>Less Negotiation</li>\r\n<li>Reduced Listing Time</li>\r\n<li>Contact AmeriSpec to learn more</li>\r\n</ul>\r\nSUB:	The AmeriSpec [service] in [city]\r\n\r\nBODY:	You can feel confident about using an AmeriSpec inspector to perform your [service] in [city]. Our highly-experienced and certified inspectors have examined more homes than any other home inspection company in North America and are setting the standards for the home inspection industry. The home inspection findings are packaged in an easy-to-reference binder and feature a broad evaluation of the home, a Home Repair Manual and a Seasonal Maintenance Checklist.\r\n\r\n\r\nFOOT:	Have a smooth and successful closing. Contact AmeriSpec to perform your [service] in [city], now. \r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:	Download our brochures for more detailed information about the [service] in [city].', '2011-08-09 15:59:13', 2, '2011-08-09 15:59:13')[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 48ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 11:59:13 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35mDocument Load (0.4ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2
+Rendered sites/show.html.haml within layouts/application (36.8ms)
+Completed 200 OK in 50ms (Views: 42.7ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:13 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 11:59:19 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+Rendered documents/_form.html.haml (18.8ms)
+Rendered documents/new.html.haml within layouts/application (20.3ms)
+Completed 200 OK in 97ms (Views: 28.7ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:20 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 11:59:22 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: City\r\nVariation: 3\r\n*/\r\nHEAD:\t\t\tAmeriSpec [service] in [city] \r\n\r\nINTRO:\tNothing helps provide the confidence to close a real estate deal like a [service] by an AmeriSpec in [city]. AmeriSpec has been around for over 20 years.  Each and every one of our inspectors is trained to not only meet but also to exceed the high standards of practice of the American Society of Home Inspectors. To arrange an appointment for a [service] in [city], enter your zip code to contact your local AmeriSpec inspector today.\r\n\r\n\r\nCTA H:\tBook your [service] in [city] \r\n\r\nCTA B:\tEnter your zip code for a [service] in [city].\r\n\r\nSUB:\t\t\t[service] in [city] you can depend on\r\n\r\nBODY:\tYour AmeriSpec [Home Inspection] in [city] will cover more than 400 items including the foundation, roof, and structural components, plus visible electrical, plumbing and mechanical operating systems of the home. All of our inspectors have been trained to execute a [service] in [city] that meets the highest standards in the industry and exceeds the standards set by the American Society of Home Inspectors (ASHI).\r\n\r\nBULLET H:\tA [Home Inspection] in [city] by AmeriSpec helps provide the following benefits, including:\r\n\r\nBULLET:\t\r\n<ul><li>Less Buyer Discomfort</li>\r\n<li>Reduced Buyer Remorse</li>\r\n<li>Less Negotiation</li>\r\n<li>Reduced Listing Time</li>\r\n<li>Contact AmeriSpec to learn more</li></ul>\r\n\r\nSUB:\tThe AmeriSpec [service] in [city]\r\n\r\nBODY:\tYou can be sure and confident about using an AmeriSpec inspector to perform your [service] in [city]. Our highly-experienced team of certified inspectors have examined more homes than any other home inspection company in North America and continue to set the standards for the home inspection industry. The home inspection findings will be packaged in an easy-to-reference binder and feature a detailed evaluation of the home, a Home Repair Manual, a Seasonal Maintenance Checklist, and our Home Owner Rewards Program which provides a wide range of discounts offered by our partners.\r\n\r\nFOOT:\tHave a stress-free and successful closing. Contact your local AmeriSpec to get a [service] in [city], now. \r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:\tDownload our brochures for more detailed information about the [service] in [city]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\r\nType: Home Inspection\r\nLayer: City\r\nVariation: 3\r\n*/\r\nHEAD:			AmeriSpec [service] in [city] \r\n\r\nINTRO:	Nothing helps provide the confidence to close a real estate deal like a [service] by an AmeriSpec in [city]. AmeriSpec has been around for over 20 years. Each and every one of our inspectors is trained to not only meet but also to exceed the high standards of practice of the American Society of Home Inspectors. To arrange an appointment for a [service] in [city], enter your zip code to contact your local AmeriSpec inspector today.\r\n\r\n\r\nCTA H:	Book your [service] in [city] \r\n\r\nCTA B:	Enter your zip code for a [service] in [city].\r\n\r\nSUB:			[service] in [city] you can depend on\r\n\r\nBODY:	Your AmeriSpec [Home Inspection] in [city] will cover more than 400 items including the foundation, roof, and structural components, plus visible electrical, plumbing and mechanical operating systems of the home. All of our inspectors have been trained to execute a [service] in [city] that meets the highest standards in the industry and exceeds the standards set by the American Society of Home Inspectors (ASHI).\r\n\r\nBULLET H:	A [Home Inspection] in [city] by AmeriSpec helps provide the following benefits, including:\r\n\r\nBULLET:	\r\n<ul><li>Less Buyer Discomfort</li>\r\n<li>Reduced Buyer Remorse</li>\r\n<li>Less Negotiation</li>\r\n<li>Reduced Listing Time</li>\r\n<li>Contact AmeriSpec to learn more</li></ul>\r\n\r\nSUB:	The AmeriSpec [service] in [city]\r\n\r\nBODY:	You can be sure and confident about using an AmeriSpec inspector to perform your [service] in [city]. Our highly-experienced team of certified inspectors have examined more homes than any other home inspection company in North America and continue to set the standards for the home inspection industry. The home inspection findings will be packaged in an easy-to-reference binder and feature a detailed evaluation of the home, a Home Repair Manual, a Seasonal Maintenance Checklist, and our Home Owner Rewards Program which provides a wide range of discounts offered by our partners.\r\n\r\nFOOT:	Have a stress-free and successful closing. Contact your local AmeriSpec to get a [service] in [city], now. \r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:	Download our brochures for more detailed information about the [service] in [city].', '2011-08-09 15:59:22', 2, '2011-08-09 15:59:22')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 87ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 11:59:22 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36mDocument Load (0.6ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2[0m
+Rendered sites/show.html.haml within layouts/application (38.9ms)
+Completed 200 OK in 55ms (Views: 47.8ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:22 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 11:59:28 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+Rendered documents/_form.html.haml (17.0ms)
+Rendered documents/new.html.haml within layouts/application (18.4ms)
+Completed 200 OK in 46ms (Views: 24.0ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:29 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 11:59:31 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: City\r\nVariation: 4\r\n*/\r\nHEAD:\t\t\tAmeriSpec [service] in [city] \r\n\r\nINTRO:\tNothing helps give the confidence to close a real estate deal like a [service] by AmeriSpec in [city]. AmeriSpec is the leading American home inspection company in the country and has been around for over 20 years.  All of our inspectors are qualified to not only meet but to exceed the highest industry. To make an appointment for a [service] in [city], enter your zip code to contact your local AmeriSpec inspector today.\r\n\r\n\r\nCTA H:\tBook your [service] in [city] \r\n\r\nCTA B:\tEnter your zip code for a [service] in [city].\r\n\r\nSUB:\t\t\t[service] in [city] you can rely on\r\n\r\nBODY:\tYour AmeriSpec [Home Inspection] in [city] will review more than 400 areas of the property including the foundation, roof, and structural components, plus visible electrical, plumbing and mechanical operating systems. All of our inspectors are highly educated and have been trained to carry out a [service] in [city] that meets the highest standards in the industry.\r\n\r\nBULLET H:\tA [Home Inspection] in [city] performed by AmeriSpec helps provide the following benefits, including:\r\n\r\nBULLET:\t\r\n<ul><li>Less Buyer Discomfort</li>\r\n<li>Reduced Buyer Remorse</li>\r\n<li>Less Negotiation</li>\r\n<li>Reduced Listing Time</li>\r\n<li>Contact AmeriSpec to learn more</li></ul>\r\n\r\nSUB:\tThe AmeriSpec [service] in [city]\r\n\r\nBODY:\tYou can be certain and feel secure about using an AmeriSpec inspector to perform your [service] in [city]. Our highly-experienced and trained team of certified inspectors have examined more homes than any other home inspection company in North America and continue to set the standards for the home inspection industry. The home inspection results will be organized in an easy-to-reference binder and feature a detailed evaluation of the home, a Home Repair Manual and a Seasonal Maintenance Checklist.\r\n\r\n\r\nFOOT:\tExperience a successful closing. Please feel free to contact your local AmeriSpec to get a [service] in [city] n. \r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:\tDownload our brochures for more detailed information about the [service] in [city]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\r\nType: Home Inspection\r\nLayer: City\r\nVariation: 4\r\n*/\r\nHEAD:			AmeriSpec [service] in [city] \r\n\r\nINTRO:	Nothing helps give the confidence to close a real estate deal like a [service] by AmeriSpec in [city]. AmeriSpec is the leading American home inspection company in the country and has been around for over 20 years. All of our inspectors are qualified to not only meet but to exceed the highest industry. To make an appointment for a [service] in [city], enter your zip code to contact your local AmeriSpec inspector today.\r\n\r\n\r\nCTA H:	Book your [service] in [city] \r\n\r\nCTA B:	Enter your zip code for a [service] in [city].\r\n\r\nSUB:			[service] in [city] you can rely on\r\n\r\nBODY:	Your AmeriSpec [Home Inspection] in [city] will review more than 400 areas of the property including the foundation, roof, and structural components, plus visible electrical, plumbing and mechanical operating systems. All of our inspectors are highly educated and have been trained to carry out a [service] in [city] that meets the highest standards in the industry.\r\n\r\nBULLET H:	A [Home Inspection] in [city] performed by AmeriSpec helps provide the following benefits, including:\r\n\r\nBULLET:	\r\n<ul><li>Less Buyer Discomfort</li>\r\n<li>Reduced Buyer Remorse</li>\r\n<li>Less Negotiation</li>\r\n<li>Reduced Listing Time</li>\r\n<li>Contact AmeriSpec to learn more</li></ul>\r\n\r\nSUB:	The AmeriSpec [service] in [city]\r\n\r\nBODY:	You can be certain and feel secure about using an AmeriSpec inspector to perform your [service] in [city]. Our highly-experienced and trained team of certified inspectors have examined more homes than any other home inspection company in North America and continue to set the standards for the home inspection industry. The home inspection results will be organized in an easy-to-reference binder and feature a detailed evaluation of the home, a Home Repair Manual and a Seasonal Maintenance Checklist.\r\n\r\n\r\nFOOT:	Experience a successful closing. Please feel free to contact your local AmeriSpec to get a [service] in [city] n. \r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:	Download our brochures for more detailed information about the [service] in [city].', '2011-08-09 15:59:31', 2, '2011-08-09 15:59:31')[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 85ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 11:59:31 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35mDocument Load (0.5ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2
+Rendered sites/show.html.haml within layouts/application (37.5ms)
+Completed 200 OK in 51ms (Views: 41.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:31 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 11:59:37 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+Rendered documents/_form.html.haml (18.2ms)
+Rendered documents/new.html.haml within layouts/application (20.8ms)
+Completed 200 OK in 54ms (Views: 29.9ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:37 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 11:59:39 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: Franchise\r\nVariation: 1\r\n*/\r\nHEAD:\tAmeriSpec: Your local home inspection specialists \r\n\r\nINTRO:\tWhen it comes to a [service], it’s important to choose a company you can trust. You can count on the knowledgeable, experienced home inspectors from AmeriSpec to be on your side, ensuring a home that is safe and sound for homeowners and a successful closing for realtors.\r\n\r\nCTA H:\tCall or submit the online form to book a [service] from AmeriSpec. \r\n\r\nBODY:\tAmeriSpec offers the best [service] training in the industry, combining classroom instruction and hands on technical training in our state-of-the-art training facility. All inspectors have been trained to perform a professional home inspection that meets the highest standards in the industry. With this unmatched training and several years of experience, you can feel confident knowing that AmeriSpec can provide a [service] that will help you seal the deal.\r\n\r\nBULLET H:\tAn AmeriSpec inspector will review the following aspects of a home during the [service]:\r\n\r\nBULLET:\t\r\n<ul><li>Foundation (including foundation waterproofing)</li>\r\n<li>Asphalt driveway</li>\r\n<li>Furnace and ductwork</li>\r\n<li>Windows (deterioration, seals, damage, etc)</li>\r\n<li>Electrical outlets</li>\r\n<li>Contact AmeriSpecto learn more&hellip;</li></ul>\r\n\r\nFOOT:\tContact your local AmeriSpec for more information about home inspection, or to book an appointment. \r\n\r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCentre\r\n\r\nDOWNLOAD B:\tDownload AmeriSpec brochures for more detailed information about [service]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\r\nType: Home Inspection\r\nLayer: Franchise\r\nVariation: 1\r\n*/\r\nHEAD:	AmeriSpec: Your local home inspection specialists \r\n\r\nINTRO:	When it comes to a [service], it’s important to choose a company you can trust. You can count on the knowledgeable, experienced home inspectors from AmeriSpec to be on your side, ensuring a home that is safe and sound for homeowners and a successful closing for realtors.\r\n\r\nCTA H:	Call or submit the online form to book a [service] from AmeriSpec. \r\n\r\nBODY:	AmeriSpec offers the best [service] training in the industry, combining classroom instruction and hands on technical training in our state-of-the-art training facility. All inspectors have been trained to perform a professional home inspection that meets the highest standards in the industry. With this unmatched training and several years of experience, you can feel confident knowing that AmeriSpec can provide a [service] that will help you seal the deal.\r\n\r\nBULLET H:	An AmeriSpec inspector will review the following aspects of a home during the [service]:\r\n\r\nBULLET:	\r\n<ul><li>Foundation (including foundation waterproofing)</li>\r\n<li>Asphalt driveway</li>\r\n<li>Furnace and ductwork</li>\r\n<li>Windows (deterioration, seals, damage, etc)</li>\r\n<li>Electrical outlets</li>\r\n<li>Contact AmeriSpecto learn more&hellip;</li></ul>\r\n\r\nFOOT:	Contact your local AmeriSpec for more information about home inspection, or to book an appointment. \r\n\r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCentre\r\n\r\nDOWNLOAD B:	Download AmeriSpec brochures for more detailed information about [service].', '2011-08-09 15:59:39', 2, '2011-08-09 15:59:39')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 93ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 11:59:39 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36mDocument Load (0.6ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2[0m
+Rendered sites/show.html.haml within layouts/application (87.5ms)
+Completed 200 OK in 102ms (Views: 94.2ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:39 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 11:59:41 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+Rendered documents/_form.html.haml (17.5ms)
+Rendered documents/new.html.haml within layouts/application (18.9ms)
+Completed 200 OK in 55ms (Views: 26.3ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:42 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 11:59:47 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: Franchise\r\nVariation: 2\r\n*/\r\nHEAD:\tAmeriSpec: Partner with us for a professional home inspection\r\n\r\nINTRO:\t With over 20 years of experience, AmeriSpec is the name you can count on for a [service] that will help simplify your closing. You can trust our educated, expert home inspectors to be by your side, helping to ensure that your home is safe and in proper condition for homeowners, which can help result in a successful closing for real estate agents.\r\n\r\nCTA H:\tCall or submit the online form to book a [service] from AmeriSpec today. \r\n\r\nBODY:\tAmeriSpec is known for offering the best [service] training in the industry, with the combination of classroom instruction and hands-on technical training located in our state-of-the-art training facility. All of our inspectors have been trained to conduct a professional home inspection that exceeds standards in the industry. With this supreme training and a national brand with many years of experience, you will be confident knowing that AmeriSpec can provide a [service] that will help seal the deal.\r\n\r\nBULLET H:\tOne of our AmeriSpec inspectors will review the following aspects of your home during the [service]:\r\n\r\nBULLET:\t\r\n<ul><li>Foundation (including foundation waterproofing)</li>\r\n<li>Asphalt driveway</li>\r\n<li>Furnace and ductwork</li>\r\n<li>Windows (deterioration, seals, damage, etc.)</li>\r\n<li>Electrical outlets</li>\r\n<li>Contact AmeriSpec to learn more&hellip;</li></ul>\r\n\r\nFOOT:\tContact AmeriSpec for more information about a home inspection, or to book an appointment now. \r\n\r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:\tDownload AmeriSpec brochures for more detailed information about [service]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\r\nType: Home Inspection\r\nLayer: Franchise\r\nVariation: 2\r\n*/\r\nHEAD:	AmeriSpec: Partner with us for a professional home inspection\r\n\r\nINTRO:	 With over 20 years of experience, AmeriSpec is the name you can count on for a [service] that will help simplify your closing. You can trust our educated, expert home inspectors to be by your side, helping to ensure that your home is safe and in proper condition for homeowners, which can help result in a successful closing for real estate agents.\r\n\r\nCTA H:	Call or submit the online form to book a [service] from AmeriSpec today. \r\n\r\nBODY:	AmeriSpec is known for offering the best [service] training in the industry, with the combination of classroom instruction and hands-on technical training located in our state-of-the-art training facility. All of our inspectors have been trained to conduct a professional home inspection that exceeds standards in the industry. With this supreme training and a national brand with many years of experience, you will be confident knowing that AmeriSpec can provide a [service] that will help seal the deal.\r\n\r\nBULLET H:	One of our AmeriSpec inspectors will review the following aspects of your home during the [service]:\r\n\r\nBULLET:	\r\n<ul><li>Foundation (including foundation waterproofing)</li>\r\n<li>Asphalt driveway</li>\r\n<li>Furnace and ductwork</li>\r\n<li>Windows (deterioration, seals, damage, etc.)</li>\r\n<li>Electrical outlets</li>\r\n<li>Contact AmeriSpec to learn more&hellip;</li></ul>\r\n\r\nFOOT:	Contact AmeriSpec for more information about a home inspection, or to book an appointment now. \r\n\r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:	Download AmeriSpec brochures for more detailed information about [service].', '2011-08-09 15:59:47', 2, '2011-08-09 15:59:47')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 49ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 11:59:47 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35mDocument Load (0.5ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2
+Rendered sites/show.html.haml within layouts/application (83.3ms)
+Completed 200 OK in 98ms (Views: 90.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:47 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 11:59:53 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+Rendered documents/_form.html.haml (15.6ms)
+Rendered documents/new.html.haml within layouts/application (17.1ms)
+Completed 200 OK in 46ms (Views: 22.7ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:53 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 11:59:56 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: Franchise\r\nVariation: 3\r\n*/\r\nHEAD:\tAmeriSpec: The number one choice for a professional home inspection\r\n\r\nINTRO:\t When you need a [service] company, put your trust in AmeriSpec, an industry leader. You can be confident that our experienced home inspectors will help ensure that your home is safe for homeowners and in accordance with industry standards which can result in for a successful closing for real estate agents.     \r\n\r\nCTA H:\tCall now or fill in the online form to book a [service] from AmeriSpec today. \r\n\r\nBODY:\tAt AmeriSpec we provide the best [service] training out there, with classroom instruction and hands-on technical training located in our state-of-the-art training facility. Each and every one of our inspectors has been trained to perform a professional home inspection that goes above and beyond the standards in the industry. With the supreme training and a national brand with years of experience, you can be confident and trust that AmeriSpec can provide a [service] that will help seal the deal.\r\n\r\nBULLET H:\tAn AmeriSpec inspector will assess the following aspects of your home during the [service]:\r\n\r\nBULLET:\t\r\n<ul><li>Foundation (including foundation waterproofing)</li>\r\n<li>Asphalt driveway</li>\r\n<li>Furnace and ductwork</li>\r\n<li>Windows (deterioration, seals, damage, etc.)</li>\r\n<li>Electrical outlets</li>\r\n<li>Contact AmeriSpec to learn more&hellip;</li></ul>\r\n\r\nFOOT:\tContact AmeriSpec now for more information regarding a home inspection, or to book an appointment. \r\n\r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:\tDownload AmeriSpec brochures for more detailed information about [service]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\r\nType: Home Inspection\r\nLayer: Franchise\r\nVariation: 3\r\n*/\r\nHEAD:	AmeriSpec: The number one choice for a professional home inspection\r\n\r\nINTRO:	 When you need a [service] company, put your trust in AmeriSpec, an industry leader. You can be confident that our experienced home inspectors will help ensure that your home is safe for homeowners and in accordance with industry standards which can result in for a successful closing for real estate agents. \r\n\r\nCTA H:	Call now or fill in the online form to book a [service] from AmeriSpec today. \r\n\r\nBODY:	At AmeriSpec we provide the best [service] training out there, with classroom instruction and hands-on technical training located in our state-of-the-art training facility. Each and every one of our inspectors has been trained to perform a professional home inspection that goes above and beyond the standards in the industry. With the supreme training and a national brand with years of experience, you can be confident and trust that AmeriSpec can provide a [service] that will help seal the deal.\r\n\r\nBULLET H:	An AmeriSpec inspector will assess the following aspects of your home during the [service]:\r\n\r\nBULLET:	\r\n<ul><li>Foundation (including foundation waterproofing)</li>\r\n<li>Asphalt driveway</li>\r\n<li>Furnace and ductwork</li>\r\n<li>Windows (deterioration, seals, damage, etc.)</li>\r\n<li>Electrical outlets</li>\r\n<li>Contact AmeriSpec to learn more&hellip;</li></ul>\r\n\r\nFOOT:	Contact AmeriSpec now for more information regarding a home inspection, or to book an appointment. \r\n\r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:	Download AmeriSpec brochures for more detailed information about [service].', '2011-08-09 15:59:56', 2, '2011-08-09 15:59:56')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 45ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 11:59:56 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36mDocument Load (0.5ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2[0m
+Rendered sites/show.html.haml within layouts/application (41.6ms)
+Completed 200 OK in 97ms (Views: 89.2ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:56 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 11:59:57 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+Rendered documents/_form.html.haml (56.7ms)
+Rendered documents/new.html.haml within layouts/application (58.1ms)
+Completed 200 OK in 87ms (Views: 65.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 11:59:57 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 12:00:03 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: Franchise\r\nVariation: 4\r\n*/\r\nHEAD:\tAmeriSpec: Your number one choice for professional home inspections\r\n\r\nINTRO:\tAmeriSpec is America’s leading [service] company; we can help you experience a smooth and stress free closing with AmeriSpec.  You can rest assured that our knowledgeable home inspectors will help to make sure that your home is safe for homeowners and meets the industry standards which helps result in a successful closing.     \r\n\r\nCTA H:\tCall now or feel free to submit the online form to book a [service] from AmeriSpec today. \r\n\r\nBODY:\tAt AmeriSpec we believe in providing quality [service] training, with the combination of classroom instruction and hands-on technical training located in our high-tech training facility. All of our inspectors have been carefully trained to conduct a professional home inspection that exceeds the highest standards in the industry. With our intense training and a national brand with years of experience behind us, you can be confident and trust that AmeriSpec can provide a [service] that will help seal the deal.\r\n\r\nBULLET H:\tYour AmeriSpec inspector will assess the following areas of your home during the [service]:\r\n\r\nBULLET:\t\r\n<ul><li>Foundation (including foundation waterproofing)</li>\r\n<li>Asphalt driveway</li>\r\n<li>Furnace and ductwork</li>\r\n<li>Windows (deterioration, seals, damage, etc.)</li>\r\n<li>Electrical outlets</li>\r\n<li>Contact AmeriSpec to learn more&hellip;</li></ul>\r\n\r\nFOOT:\tContact AmeriSpec now for more information regarding a home inspection, or to book an appointment. \r\n\r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:\tDownload AmeriSpec brochures for more detailed information about [service]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\r\nType: Home Inspection\r\nLayer: Franchise\r\nVariation: 4\r\n*/\r\nHEAD:	AmeriSpec: Your number one choice for professional home inspections\r\n\r\nINTRO:	AmeriSpec is America’s leading [service] company; we can help you experience a smooth and stress free closing with AmeriSpec. You can rest assured that our knowledgeable home inspectors will help to make sure that your home is safe for homeowners and meets the industry standards which helps result in a successful closing. \r\n\r\nCTA H:	Call now or feel free to submit the online form to book a [service] from AmeriSpec today. \r\n\r\nBODY:	At AmeriSpec we believe in providing quality [service] training, with the combination of classroom instruction and hands-on technical training located in our high-tech training facility. All of our inspectors have been carefully trained to conduct a professional home inspection that exceeds the highest standards in the industry. With our intense training and a national brand with years of experience behind us, you can be confident and trust that AmeriSpec can provide a [service] that will help seal the deal.\r\n\r\nBULLET H:	Your AmeriSpec inspector will assess the following areas of your home during the [service]:\r\n\r\nBULLET:	\r\n<ul><li>Foundation (including foundation waterproofing)</li>\r\n<li>Asphalt driveway</li>\r\n<li>Furnace and ductwork</li>\r\n<li>Windows (deterioration, seals, damage, etc.)</li>\r\n<li>Electrical outlets</li>\r\n<li>Contact AmeriSpec to learn more&hellip;</li></ul>\r\n\r\nFOOT:	Contact AmeriSpec now for more information regarding a home inspection, or to book an appointment. \r\n\r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:	Download AmeriSpec brochures for more detailed information about [service].', '2011-08-09 16:00:03', 2, '2011-08-09 16:00:03')[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 45ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 12:00:03 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35mDocument Load (0.5ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2
+Rendered sites/show.html.haml within layouts/application (40.1ms)
+Completed 200 OK in 52ms (Views: 44.5ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 12:00:03 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 12:00:11 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+Rendered documents/_form.html.haml (16.6ms)
+Rendered documents/new.html.haml within layouts/application (18.0ms)
+Completed 200 OK in 85ms (Views: 23.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 12:00:11 -0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 12:00:16 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: State\r\nVariation: 1\r\n*/\r\nHEAD:\t\t\tAmeriSpec [service] in [state] helps close the deal\r\n\r\nINTRO:\tNothing seals the deal for potential homebuyers like an AmeriSpec [service] in [state]. No matter how perfect a home seems on the surface or how emotionally attached a homebuyer might be, there is always a lingering hint of uncertainty. That’s where an AmeriSpec [service] in [state] makes a difference. Reliable, thorough [service] in [state] instills homebuyers with peace of mind and the confidence needed to make a home their own.\r\n\r\n\r\nCTA H:\tBook a [service] in [state] \r\n\r\nCTA B:\tChoose your city for detailed, local information about booking a [service] in [state].\r\n\r\nSUB:\t\t\tThe facts about [Home Inspection] in [state]\r\n\r\nBODY:\tIncreasingly more real estate professionals are requiring home buyers to invest in a [service] in [state] before they purchase a property. The reason is simple: a [service] helps buyers learn about the property up front, which helps bring about a faster, easier purchasing decision.\r\n\r\nBODY:\t[service] in [state] helps sellers, especially those who’ve had a prelisting inspection, to benefit from a faster sale with fewer surprises as closing nears. Additionally, the real estate agent, closing attorney, and finance and insurance professionals benefit from [service] in [state] through efficient transactions that provide more simplified closings and happier homebuyers.\r\n\r\n\r\n\r\nLINK FEATURE:\tWe also provide Home Energy Audits in [state]. Learn more, today.\r\n\r\n\r\nFOOT:\t[service] in [state] creates a win/win purchase experience for homebuyers, sellers and the professionals involved. If you’re ready to learn more about what AmeriSpec can do for you, choose your city from the list to receive more detailed information about a [service] in [state].\r\n\t\r\nDOWNLOAD H:\tThe AmeriSpec InfoCentre\r\n\r\nDOWNLOAD B:\tDownload our brochures for more detailed information about [service] in [state]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\r\nType: Home Inspection\r\nLayer: State\r\nVariation: 1\r\n*/\r\nHEAD:			AmeriSpec [service] in [state] helps close the deal\r\n\r\nINTRO:	Nothing seals the deal for potential homebuyers like an AmeriSpec [service] in [state]. No matter how perfect a home seems on the surface or how emotionally attached a homebuyer might be, there is always a lingering hint of uncertainty. That’s where an AmeriSpec [service] in [state] makes a difference. Reliable, thorough [service] in [state] instills homebuyers with peace of mind and the confidence needed to make a home their own.\r\n\r\n\r\nCTA H:	Book a [service] in [state] \r\n\r\nCTA B:	Choose your city for detailed, local information about booking a [service] in [state].\r\n\r\nSUB:			The facts about [Home Inspection] in [state]\r\n\r\nBODY:	Increasingly more real estate professionals are requiring home buyers to invest in a [service] in [state] before they purchase a property. The reason is simple: a [service] helps buyers learn about the property up front, which helps bring about a faster, easier purchasing decision.\r\n\r\nBODY:	[service] in [state] helps sellers, especially those who’ve had a prelisting inspection, to benefit from a faster sale with fewer surprises as closing nears. Additionally, the real estate agent, closing attorney, and finance and insurance professionals benefit from [service] in [state] through efficient transactions that provide more simplified closings and happier homebuyers.\r\n\r\n\r\n\r\nLINK FEATURE:	We also provide Home Energy Audits in [state]. Learn more, today.\r\n\r\n\r\nFOOT:	[service] in [state] creates a win/win purchase experience for homebuyers, sellers and the professionals involved. If you’re ready to learn more about what AmeriSpec can do for you, choose your city from the list to receive more detailed information about a [service] in [state].\r\n	\r\nDOWNLOAD H:	The AmeriSpec InfoCentre\r\n\r\nDOWNLOAD B:	Download our brochures for more detailed information about [service] in [state].', '2011-08-09 16:00:16', 2, '2011-08-09 16:00:16')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 46ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 12:00:16 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36mDocument Load (0.6ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2[0m
+Rendered sites/show.html.haml within layouts/application (43.8ms)
+Completed 200 OK in 61ms (Views: 49.0ms | ActiveRecord: 9.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 12:00:17 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 12:00:20 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+Rendered documents/_form.html.haml (19.6ms)
+Rendered documents/new.html.haml within layouts/application (21.2ms)
+Completed 200 OK in 57ms (Views: 32.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 12:00:21 -0400
+Served asset /application.js - 304 Not Modified (2ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 12:00:26 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"z/*\r\nType: Home Inspection\r\nLayer: State\r\nVariation: 2\r\n*/\r\nHEAD:\t\t\tAmeriSpec [service] in [state] helps seal the deal\r\n\r\nINTRO:\tNothing helps seal the deal for potential homebuyers like a home inspection] in [state] by [AmeriSpec]. Regardless of how perfect a home seems to be on the surface or how emotionally attached a homebuyer might be, there is always a lingering hint of doubt. That’s where an AmeriSpec [service] in [state] can help make a difference. A reliable and thorough [service] in [state] can help provide homebuyers with peace of mind and the confidence they need in order to make a home their own.\r\n\r\n\r\nCTA H:\tSchedule a [service] in [state] today \r\n\r\nCTA B:\tFor local information about a home inspection] in [state], choose your city from the list.\r\n\r\nSUB:\t\t\tThe details about a [Home Inspection] in [state]\r\n\r\nBODY:\tIncreasingly more real estate professionals are advising home buyers to invest in a [service] in [state] before they purchase a home. The reason is simple: a [service] will help buyers learn about the property up front, which helps facilitate a faster and more confident purchasing decision.\r\n\r\nBODY:\tA [service] in [state] allows sellers, especially those who have a prelisting inspection, to benefit from a quicker sale with less surprises as closing nears. In addition, the real estate agent, closing attorney, and finance and insurance professionals benefit from [service] in [state] through efficient transactions that help provide more simplified closings and happier homebuyers.\r\n\r\n\r\n\r\nFOOT:\tA [service] in [state] creates a positive purchase experience for homebuyers, sellers and the professionals involved. If you are ready to learn more about what AmeriSpec can do for you, choose your city from the list to receive additional information about a [service] in [state].\r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:\tDownload our brochures for more detailed information about [service] in [state]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('z/*\r\nType: Home Inspection\r\nLayer: State\r\nVariation: 2\r\n*/\r\nHEAD:			AmeriSpec [service] in [state] helps seal the deal\r\n\r\nINTRO:	Nothing helps seal the deal for potential homebuyers like a home inspection] in [state] by [AmeriSpec]. Regardless of how perfect a home seems to be on the surface or how emotionally attached a homebuyer might be, there is always a lingering hint of doubt. That’s where an AmeriSpec [service] in [state] can help make a difference. A reliable and thorough [service] in [state] can help provide homebuyers with peace of mind and the confidence they need in order to make a home their own.\r\n\r\n\r\nCTA H:	Schedule a [service] in [state] today \r\n\r\nCTA B:	For local information about a home inspection] in [state], choose your city from the list.\r\n\r\nSUB:			The details about a [Home Inspection] in [state]\r\n\r\nBODY:	Increasingly more real estate professionals are advising home buyers to invest in a [service] in [state] before they purchase a home. The reason is simple: a [service] will help buyers learn about the property up front, which helps facilitate a faster and more confident purchasing decision.\r\n\r\nBODY:	A [service] in [state] allows sellers, especially those who have a prelisting inspection, to benefit from a quicker sale with less surprises as closing nears. In addition, the real estate agent, closing attorney, and finance and insurance professionals benefit from [service] in [state] through efficient transactions that help provide more simplified closings and happier homebuyers.\r\n\r\n\r\n\r\nFOOT:	A [service] in [state] creates a positive purchase experience for homebuyers, sellers and the professionals involved. If you are ready to learn more about what AmeriSpec can do for you, choose your city from the list to receive additional information about a [service] in [state].\r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:	Download our brochures for more detailed information about [service] in [state].', '2011-08-09 16:00:26', 2, '2011-08-09 16:00:26')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 95ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 12:00:26 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35mDocument Load (0.6ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2
+Rendered sites/show.html.haml within layouts/application (42.7ms)
+Completed 200 OK in 59ms (Views: 48.6ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 12:00:26 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 12:00:31 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+Rendered documents/_form.html.haml (16.1ms)
+Rendered documents/new.html.haml within layouts/application (17.7ms)
+Completed 200 OK in 46ms (Views: 23.7ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 12:00:31 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 12:00:33 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: State\r\nVariation: 3\r\n*/\r\nHEAD:\t\t\tAmeriSpec [service] in [state] helps seals the deal\r\n\r\nINTRO:\tNothing helps close the deal for potential homebuyers like a home inspection] in [state] by [AmeriSpec]. Despite how perfect a home may seem to be on the surface or how emotionally attached the homebuyer is, there is always a sense of doubt. That’s when an AmeriSpec [service] in [state] can help make the difference. A trustworthy and detailed [service] in [state] can help provide homebuyers with the peace of mind and confidence they deserve when making such a large and rare purchase.   \r\n\r\nCTA H:\tSchedule your [service] in [state] today \r\n\r\nCTA B:\tFor local information about our [service] in [state], choose your city from the list. \r\n\r\nSUB:\t\t\tWhy get a [Home Inspection] in [state]?\r\n\r\nBODY:\tMore real estate professionals are recommending that home buyers invest in a [service] in [state] before they make a final purchase. The reason is simple: a [service] helps buyers learn more about the property up front, which helps facilitate a quicker and confident purchasing decision.\r\n\r\nBODY:\tA [service] in [state] helps give sellers, especially those who have had a prelisting inspection, the benefit of a quicker sale with less surprises as closing nears. In addition, the real estate agent, closing attorney, finance and insurance professionals benefit from a [service] in [state] through efficient transactions that helps provide simple closings and happier homebuyers.\r\n\r\n\r\nFOOT:\tA [service] in [state] helps translates into a positive purchase experience for homebuyers, sellers and everyone else involved. If you are ready to learn more about what AmeriSpec can do for you, choose your city from the list to receive detailed information about a [service] in [state].\r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:\tDownload our brochures for more detailed information about [service] in [state]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  INSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\r\nType: Home Inspection\r\nLayer: State\r\nVariation: 3\r\n*/\r\nHEAD:			AmeriSpec [service] in [state] helps seals the deal\r\n\r\nINTRO:	Nothing helps close the deal for potential homebuyers like a home inspection] in [state] by [AmeriSpec]. Despite how perfect a home may seem to be on the surface or how emotionally attached the homebuyer is, there is always a sense of doubt. That’s when an AmeriSpec [service] in [state] can help make the difference. A trustworthy and detailed [service] in [state] can help provide homebuyers with the peace of mind and confidence they deserve when making such a large and rare purchase. \r\n\r\nCTA H:	Schedule your [service] in [state] today \r\n\r\nCTA B:	For local information about our [service] in [state], choose your city from the list. \r\n\r\nSUB:			Why get a [Home Inspection] in [state]?\r\n\r\nBODY:	More real estate professionals are recommending that home buyers invest in a [service] in [state] before they make a final purchase. The reason is simple: a [service] helps buyers learn more about the property up front, which helps facilitate a quicker and confident purchasing decision.\r\n\r\nBODY:	A [service] in [state] helps give sellers, especially those who have had a prelisting inspection, the benefit of a quicker sale with less surprises as closing nears. In addition, the real estate agent, closing attorney, finance and insurance professionals benefit from a [service] in [state] through efficient transactions that helps provide simple closings and happier homebuyers.\r\n\r\n\r\nFOOT:	A [service] in [state] helps translates into a positive purchase experience for homebuyers, sellers and everyone else involved. If you are ready to learn more about what AmeriSpec can do for you, choose your city from the list to receive detailed information about a [service] in [state].\r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:	Download our brochures for more detailed information about [service] in [state].', '2011-08-09 16:00:33', 2, '2011-08-09 16:00:33')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 90ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 12:00:33 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSite Load (0.8ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36mDocument Load (0.7ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2[0m
+Rendered sites/show.html.haml within layouts/application (84.6ms)
+Completed 200 OK in 101ms (Views: 90.0ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 12:00:33 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/2/documents/new" for 127.0.0.1 at 2011-08-09 12:00:40 -0400
+  Processing by DocumentsController#new as HTML
+  Parameters: {"site_id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+Rendered documents/_form.html.haml (17.0ms)
+Rendered documents/new.html.haml within layouts/application (18.4ms)
+Completed 200 OK in 50ms (Views: 24.7ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 12:00:40 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/sites/2/documents" for 127.0.0.1 at 2011-08-09 12:00:42 -0400
+  Processing by DocumentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: State\r\nVariation: 4\r\n*/\r\nHEAD:\t\t\tAn AmeriSpec [service] in [state] helps seal the deal\r\n\r\nINTRO:\tNothing can help close the deal for potential homebuyers like an [AmeriSpec] [service] in [state]. Despite how perfect a home may look on the surface or how emotionally attached the homebuyer is, there is always a sense of uncertainty. That’s where an AmeriSpec [service] in [state] can help make a difference. A reliable and meticulous [service] in [state] can help provide homebuyers with the peace of mind and assurance they deserve when Purchasing a property.\r\n\r\nCTA H:\tSchedule a [service] in [state] now \r\n\r\nCTA B:\tFor local information and details about our [service] in [state], choose your city from the list. \r\n\r\nSUB:\tGet the certainty you deserve: A [Home Inspection] in [state]\r\n\r\nBODY:\tMore real estate agents and brokers are suggesting home buyers invest in a [service] in [state] before they make a final purchase. The reason is obvious: a [service] helps buyers learn more about the property up front, which helps facilitate a faster and smoother purchase.\r\n\r\nBODY:\tA [service] in [state] helps to provide sellers, especially those who have had a prelisting inspection, with the benefit of a faster sale with less surprises as closing nears. The real estate agent, closing attorney, finance and insurance professionals also benefit from a [service] in [state] through efficient transactions that help provide simple closings and satisfied homebuyers.\r\n\r\n\r\n\r\nFOOT:\tA [service] in [state] helps create a positive purchase experience for homebuyers, sellers and everyone else involved in the purchase or sale of a property. If you want to learn more about how AmeriSpec can help, choose your city from the list to receive detailed information about a [service] in [state].\r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:\tDownload our brochures for more detailed information about [service] in [state]."}, "commit"=>"Create Document", "site_id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `documents` (`content`, `created_at`, `site_id`, `updated_at`) VALUES ('/*\r\nType: Home Inspection\r\nLayer: State\r\nVariation: 4\r\n*/\r\nHEAD:			An AmeriSpec [service] in [state] helps seal the deal\r\n\r\nINTRO:	Nothing can help close the deal for potential homebuyers like an [AmeriSpec] [service] in [state]. Despite how perfect a home may look on the surface or how emotionally attached the homebuyer is, there is always a sense of uncertainty. That’s where an AmeriSpec [service] in [state] can help make a difference. A reliable and meticulous [service] in [state] can help provide homebuyers with the peace of mind and assurance they deserve when Purchasing a property.\r\n\r\nCTA H:	Schedule a [service] in [state] now \r\n\r\nCTA B:	For local information and details about our [service] in [state], choose your city from the list. \r\n\r\nSUB:	Get the certainty you deserve: A [Home Inspection] in [state]\r\n\r\nBODY:	More real estate agents and brokers are suggesting home buyers invest in a [service] in [state] before they make a final purchase. The reason is obvious: a [service] helps buyers learn more about the property up front, which helps facilitate a faster and smoother purchase.\r\n\r\nBODY:	A [service] in [state] helps to provide sellers, especially those who have had a prelisting inspection, with the benefit of a faster sale with less surprises as closing nears. The real estate agent, closing attorney, finance and insurance professionals also benefit from a [service] in [state] through efficient transactions that help provide simple closings and satisfied homebuyers.\r\n\r\n\r\n\r\nFOOT:	A [service] in [state] helps create a positive purchase experience for homebuyers, sellers and everyone else involved in the purchase or sale of a property. If you want to learn more about how AmeriSpec can help, choose your city from the list to receive detailed information about a [service] in [state].\r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:	Download our brochures for more detailed information about [service] in [state].', '2011-08-09 16:00:42', 2, '2011-08-09 16:00:42')[0m
+  [1m[35m (0.9ms)[0m  COMMIT
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 46ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 12:00:42 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35mDocument Load (0.8ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2
+Rendered sites/show.html.haml within layouts/application (91.9ms)
+Completed 200 OK in 107ms (Views: 97.7ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 12:00:42 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started POST "/compile_documents/2.csv" for 127.0.0.1 at 2011-08-09 12:00:44 -0400
+  Processing by SitesController#compile_documents as CSV
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "commit"=>"Compile Documents", "id"=>"2"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1[0m
+  [1m[35mDocument Load (0.7ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2
+Rendered text template (0.0ms)
+Sent data Amerispec US.csv (30.0ms)
+Completed 200 OK in 195ms (Views: 29.8ms | ActiveRecord: 7.2ms)
+
+
+Started GET "/sites/2/documents/15/edit" for 127.0.0.1 at 2011-08-09 12:03:17 -0400
+  Processing by DocumentsController#edit as HTML
+  Parameters: {"site_id"=>"2", "id"=>"15"}
+  [1m[36mDocument Load (0.3ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 15 LIMIT 1[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+Rendered documents/_form.html.haml (55.0ms)
+Rendered documents/edit.html.haml within layouts/application (58.2ms)
+Completed 200 OK in 124ms (Views: 101.6ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 12:03:17 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started PUT "/sites/2/documents/15" for 127.0.0.1 at 2011-08-09 12:03:23 -0400
+  Processing by DocumentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: State\r\nVariation: 4\r\n*/\r\nHEAD:\t\t\tAn AmeriSpec [service] in [state] helps seal the deal\r\n\r\nINTRO:\tNothing can help close the deal for potential homebuyers like an [AmeriSpec] [service] in [state]. Despite how perfect a home may look on the surface or how emotionally attached the homebuyer is, there is always a sense of uncertainty. That’s where an AmeriSpec [service] in [state] can help make a difference. A reliable and meticulous [service] in [state] can help provide homebuyers with the peace of mind and assurance they deserve when Purchasing a property.\r\n\r\nCTA H:\tSchedule a [service] in [state] now \r\n\r\nCTA B:\tFor local information and details about our [service] in [state], choose your city from the list. \r\n\r\nSUB:\tGet the certainty you deserve: A [Home Inspection] in [state]\r\n\r\nBODY:\tMore real estate agents and brokers are suggesting home buyers invest in a [service] in [state] before they make a final purchase. The reason is obvious: a [service] helps buyers learn more about the property up front, which helps facilitate a faster and smoother purchase.\r\n\r\nA [service] in [state] helps to provide sellers, especially those who have had a prelisting inspection, with the benefit of a faster sale with less surprises as closing nears. The real estate agent, closing attorney, finance and insurance professionals also benefit from a [service] in [state] through efficient transactions that help provide simple closings and satisfied homebuyers.\r\n\r\n\r\n\r\nFOOT:\tA [service] in [state] helps create a positive purchase experience for homebuyers, sellers and everyone else involved in the purchase or sale of a property. If you want to learn more about how AmeriSpec can help, choose your city from the list to receive detailed information about a [service] in [state].\r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:\tDownload our brochures for more detailed information about [service] in [state]."}, "commit"=>"Update Document", "site_id"=>"2", "id"=>"15"}
+  [1m[36mDocument Load (0.3ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 15 LIMIT 1[0m
+  [1m[35mDocument Load (0.2ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 2 LIMIT 1
+Completed 404 Not Found in 5ms
+
+ActiveRecord::RecordNotFound (Couldn't find Document with id=2):
+  app/controllers/documents_controller.rb:64:in `update'
+
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.4ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (1.5ms)
+Rendered /Users/aaronmcleod/.rvm/gems/ruby-1.9.2-p180/gems/actionpack-3.1.0.rc5/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (6.7ms)
+
+
+Started PUT "/sites/2/documents/15" for 127.0.0.1 at 2011-08-09 12:04:52 -0400
+  Processing by DocumentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"F8Nyj66qNZ+P6uSF2cExp/HqqzOLqlVy9paMBxUE++Q=", "document"=>{"content"=>"/*\r\nType: Home Inspection\r\nLayer: State\r\nVariation: 4\r\n*/\r\nHEAD:\t\t\tAn AmeriSpec [service] in [state] helps seal the deal\r\n\r\nINTRO:\tNothing can help close the deal for potential homebuyers like an [AmeriSpec] [service] in [state]. Despite how perfect a home may look on the surface or how emotionally attached the homebuyer is, there is always a sense of uncertainty. That’s where an AmeriSpec [service] in [state] can help make a difference. A reliable and meticulous [service] in [state] can help provide homebuyers with the peace of mind and assurance they deserve when Purchasing a property.\r\n\r\nCTA H:\tSchedule a [service] in [state] now \r\n\r\nCTA B:\tFor local information and details about our [service] in [state], choose your city from the list. \r\n\r\nSUB:\tGet the certainty you deserve: A [Home Inspection] in [state]\r\n\r\nBODY:\tMore real estate agents and brokers are suggesting home buyers invest in a [service] in [state] before they make a final purchase. The reason is obvious: a [service] helps buyers learn more about the property up front, which helps facilitate a faster and smoother purchase.\r\n\r\nA [service] in [state] helps to provide sellers, especially those who have had a prelisting inspection, with the benefit of a faster sale with less surprises as closing nears. The real estate agent, closing attorney, finance and insurance professionals also benefit from a [service] in [state] through efficient transactions that help provide simple closings and satisfied homebuyers.\r\n\r\n\r\n\r\nFOOT:\tA [service] in [state] helps create a positive purchase experience for homebuyers, sellers and everyone else involved in the purchase or sale of a property. If you want to learn more about how AmeriSpec can help, choose your city from the list to receive detailed information about a [service] in [state].\r\n\r\nDOWNLOAD H:\tThe AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:\tDownload our brochures for more detailed information about [service] in [state]."}, "commit"=>"Update Document", "site_id"=>"2", "id"=>"15"}
+  [1m[36mDocument Load (0.3ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 15 LIMIT 1[0m
+  [1m[35mSite Load (0.4ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.6ms)[0m  UPDATE `documents` SET `content` = '/*\r\nType: Home Inspection\r\nLayer: State\r\nVariation: 4\r\n*/\r\nHEAD:			An AmeriSpec [service] in [state] helps seal the deal\r\n\r\nINTRO:	Nothing can help close the deal for potential homebuyers like an [AmeriSpec] [service] in [state]. Despite how perfect a home may look on the surface or how emotionally attached the homebuyer is, there is always a sense of uncertainty. That’s where an AmeriSpec [service] in [state] can help make a difference. A reliable and meticulous [service] in [state] can help provide homebuyers with the peace of mind and assurance they deserve when Purchasing a property.\r\n\r\nCTA H:	Schedule a [service] in [state] now \r\n\r\nCTA B:	For local information and details about our [service] in [state], choose your city from the list. \r\n\r\nSUB:	Get the certainty you deserve: A [Home Inspection] in [state]\r\n\r\nBODY:	More real estate agents and brokers are suggesting home buyers invest in a [service] in [state] before they make a final purchase. The reason is obvious: a [service] helps buyers learn more about the property up front, which helps facilitate a faster and smoother purchase.\r\n\r\nA [service] in [state] helps to provide sellers, especially those who have had a prelisting inspection, with the benefit of a faster sale with less surprises as closing nears. The real estate agent, closing attorney, finance and insurance professionals also benefit from a [service] in [state] through efficient transactions that help provide simple closings and satisfied homebuyers.\r\n\r\n\r\n\r\nFOOT:	A [service] in [state] helps create a positive purchase experience for homebuyers, sellers and everyone else involved in the purchase or sale of a property. If you want to learn more about how AmeriSpec can help, choose your city from the list to receive detailed information about a [service] in [state].\r\n\r\nDOWNLOAD H:	The AmeriSpec InfoCenter\r\n\r\nDOWNLOAD B:	Download our brochures for more detailed information about [service] in [state].', `updated_at` = '2011-08-09 16:04:52' WHERE `documents`.`id` = 15
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+Redirected to http://copy_process.dev/sites/2
+Completed 302 Found in 110ms
+
+
+Started GET "/sites/2" for 127.0.0.1 at 2011-08-09 12:04:52 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 2 LIMIT 1
+  [1m[36mDocument Load (0.7ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 2[0m
+Rendered sites/show.html.haml within layouts/application (83.5ms)
+Completed 200 OK in 96ms (Views: 88.7ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-09 12:04:52 -0400
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-09 12:04:52 -0400
+Served asset /application.css - 304 Not Modified (9ms)
+Served asset /application.js - 304 Not Modified (12ms)

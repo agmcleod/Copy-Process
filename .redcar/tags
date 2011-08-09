@@ -1,4 +1,4 @@
-1312807144
+1312909124
 AddSiteIdToDocuments	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729185151_add_site_id_to_documents.rb	class AddSiteIdToDocuments 
 Application	/Users/aaronmcleod/Documents/work/copy_process/config/application.rb	  class Application 
 ApplicationController	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/application_controller.rb	class ApplicationController 
@@ -28,20 +28,28 @@ Site	/Users/aaronmcleod/Documents/work/copy_process/app/models/site.rb	class Sit
 SitesController	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	class SitesController 
 SitesHelper	/Users/aaronmcleod/Documents/work/copy_process/app/helpers/sites_helper.rb	module SitesHelper
 WithinHelpers	/Users/aaronmcleod/Documents/work/copy_process/features/step_definitions/web_steps.rb	module WithinHelpers
+addToPrefiltersOrTransports	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function addToPrefiltersOrTransports( structure )
 addToPrefiltersOrTransports	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function addToPrefiltersOrTransports( structure )
 add_missing_elements	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def add_missing_elements(final_rows, keywords, types, types_and_keywords)
+ajaxConvert	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function ajaxConvert( s, response )
 ajaxConvert	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function ajaxConvert( s, response )
+ajaxHandleResponses	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function ajaxHandleResponses( s, jqXHR, responses )
 ajaxHandleResponses	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function ajaxHandleResponses( s, jqXHR, responses )
 append_content_to_array	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def append_content_to_array(output_array, element, counter)
 append_file_if_valid	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def append_file_if_valid(file_contents, headers, files, file_name)
 bad_test_data	/Users/aaronmcleod/Documents/work/copy_process/app/models/document.rb	  def self.bad_test_data
+buildParams	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function buildParams( prefix, obj, traditional, add )
 buildParams	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function buildParams( prefix, obj, traditional, add )
 change	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729181752_create_sites.rb	  def change
 change	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729183446_create_documents.rb	  def change
 change	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729185151_add_site_id_to_documents.rb	  def change
+clearFxNow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function clearFxNow()
 clearFxNow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function clearFxNow()
+click	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function click()
 click	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function click()
+cloneCopyEvent	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function cloneCopyEvent( src, dest )
 cloneCopyEvent	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function cloneCopyEvent( src, dest )
+cloneFixAttributes	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function cloneFixAttributes( src, dest )
 cloneFixAttributes	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function cloneFixAttributes( src, dest )
 compile_documents	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def compile_documents
 compile_files_to_csv	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def compile_files_to_csv(files)
@@ -53,51 +61,75 @@ content_to_write	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess
 contents	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
 create	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def create
 create	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def create
+createActiveXHR	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function createActiveXHR()
 createActiveXHR	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function createActiveXHR()
+createFxNow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function createFxNow()
 createFxNow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function createFxNow()
+createStandardXHR	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function createStandardXHR()
 createStandardXHR	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function createStandardXHR()
 create_test_files	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	    def create_test_files
+dataAttr	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function dataAttr( elem, key, data )
 dataAttr	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function dataAttr( elem, key, data )
+defaultDisplay	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function defaultDisplay( nodeName )
 defaultDisplay	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function defaultDisplay( nodeName )
 destroy	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def destroy
 destroy	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def destroy
+dirCheck	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function dirCheck( dir, cur, doneName, checkSet, nodeCheck, isXML )
 dirCheck	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function dirCheck( dir, cur, doneName, checkSet, nodeCheck, isXML )
+dirNodeCheck	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function dirNodeCheck( dir, cur, doneName, checkSet, nodeCheck, isXML )
 dirNodeCheck	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function dirNodeCheck( dir, cur, doneName, checkSet, nodeCheck, isXML )
+doScrollCheck	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function doScrollCheck()
 doScrollCheck	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function doScrollCheck()
 document_is_in_valid_format	/Users/aaronmcleod/Documents/work/copy_process/app/models/document.rb	  def document_is_in_valid_format
+done	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function done( status, statusText, responses, headers )
 done	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function done( status, statusText, responses, headers )
 edit	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def edit
 edit	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def edit
 elements	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_reader :elements
 elements_out	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def elements_out
 enclose	/Users/aaronmcleod/Documents/work/copy_process/lib/helpers.rb	  def enclose(string)
+evalScript	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function evalScript( i, elem )
 evalScript	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function evalScript( i, elem )
 expected_format	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/copyprocess_spec.rb	      def expected_format(cf, element_name, counter, s_counter, sentence)
 file_name	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
+findInputs	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function findInputs( elem )
 findInputs	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function findInputs( elem )
+fixDefaultChecked	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function fixDefaultChecked( elem )
 fixDefaultChecked	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function fixDefaultChecked( elem )
 four_sentence_array	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/copyprocess_spec.rb	      def four_sentence_array
+genFx	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function genFx( type, num )
 genFx	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function genFx( type, num )
+getAll	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function getAll( elem )
 getAll	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function getAll( elem )
+getWH	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function getWH( elem, name, extra )
 getWH	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function getWH( elem, name, extra )
+getWindow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function getWindow( elem )
 getWindow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function getWindow( elem )
 get_inner_index	/Users/aaronmcleod/Documents/work/copy_process/lib/helpers.rb	  def get_inner_index(value, arr)
+handleQueueMarkDefer	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function handleQueueMarkDefer( elem, type, src )
 handleQueueMarkDefer	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function handleQueueMarkDefer( elem, type, src )
+handler	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function handler( donor )
 handler	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function handler( donor )
 includes_inner?	/Users/aaronmcleod/Documents/work/copy_process/lib/helpers.rb	  def includes_inner?(value, arr)
 index	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def index
 index	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def index
+init	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function init( selector, context )
 init	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function init( selector, context )
 initialize	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_element.rb	    def initialize(name, content)
 initialize	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	    def initialize(type_name, content, kw)
 initialize	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def initialize(contents, type, layer, variation, file_name)
 input	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    attr_accessor :input
+isDisconnected	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function isDisconnected( node )
 isDisconnected	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function isDisconnected( node )
+isEmptyDataObject	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function isEmptyDataObject( obj )
 isEmptyDataObject	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function isEmptyDataObject( obj )
+jQuerySub	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function jQuerySub( selector, context )
 jQuerySub	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function jQuerySub( selector, context )
 kw	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	    attr_reader(:type_name, :content, :kw)
 layer	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
+liveConvert	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function liveConvert( type, selector )
 liveConvert	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function liveConvert( type, selector )
+liveHandler	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function liveHandler( event )
 liveHandler	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function liveHandler( event )
 name	/Users/aaronmcleod/Documents/work/copy_process/app/models/document.rb	  def name
 name	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_element.rb	    attr_reader :name, :content
@@ -107,11 +139,16 @@ note	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.r
 parse_each_document	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def parse_each_document(content, files)
 parse_file	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def parse_file
 path_to	/Users/aaronmcleod/Documents/work/copy_process/features/support/paths.rb	  def path_to(page_name)
+resolve	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function resolve()
 resolve	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function resolve()
+resolveFunc	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function resolveFunc( i )
 resolveFunc	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function resolveFunc( i )
 retrieve_content_rows	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def retrieve_content_rows(files)
+returnFalse	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function returnFalse()
 returnFalse	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function returnFalse()
+returnTrue	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function returnTrue()
 returnTrue	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function returnTrue()
+root	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function root( elem, cur )
 root	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function root( elem, cur )
 selector_for	/Users/aaronmcleod/Documents/work/copy_process/features/support/selectors.rb	  def selector_for(locator)
 set_element_counter	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def set_element_counter(element_names, name)
@@ -119,11 +156,14 @@ set_element_name_and_counter	/Users/aaronmcleod/Documents/work/copy_process/lib/
 set_file_names	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def set_file_names(contents)
 show	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def show
 show	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def show
+t	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function t( gotoEnd )
 t	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function t( gotoEnd )
+testChange	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function testChange( e )
 testChange	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function testChange( e )
 test_data	/Users/aaronmcleod/Documents/work/copy_process/app/models/document.rb	  def self.test_data
 test_number_of_elements_with_content	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/copyprocess_spec.rb	        def test_number_of_elements_with_content(content, expectation)
 to_csv	/Users/aaronmcleod/Documents/work/copy_process/app/models/site.rb	  def to_csv
+trigger	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function trigger( type, elem, args )
 trigger	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function trigger( type, elem, args )
 type	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
 type_name	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	    attr_reader(:type_name, :content, :kw)
@@ -131,5 +171,6 @@ update	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_
 update	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def update
 valid_headers	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	    def valid_headers
 variation	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
+winnow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function winnow( elements, qualifier, keep )
 winnow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function winnow( elements, qualifier, keep )
 with_scope	/Users/aaronmcleod/Documents/work/copy_process/features/step_definitions/web_steps.rb	  def with_scope(locator)

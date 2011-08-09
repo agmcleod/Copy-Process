@@ -61,7 +61,7 @@ class DocumentsController < ApplicationController
   # PUT /documents/1.json
   def update
     @document = Document.find(params[:id])
-    @site = Document.find(params[:site_id])
+    @site = Site.find(params[:site_id])
     respond_to do |format|
       if @document.update_attributes(params[:document])
         format.html { redirect_to site_url(@site), notice: 'Document was successfully updated.' }
