@@ -1,7 +1,12 @@
 CopyProcess::Application.routes.draw do
 
+  get "element_types/index"
+
   resources :sites do
     resources :documents
+    resources :element_types do
+      resources :elements
+    end
   end
   
   root to: 'sites#index'

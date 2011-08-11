@@ -1,0 +1,6 @@
+%h1= @element_type.name
+
+%p Elements:
+%ul
+  - @element_type.elements.each do |ele|
+    %li= ele.content

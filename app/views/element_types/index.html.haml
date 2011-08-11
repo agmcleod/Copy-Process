@@ -1,0 +1,5 @@
+%h1 Listing Element Types
+
+%ul
+  - @element_types.each do |et|
+    %li= link_to et.name, site_element_type_path(@site, et)

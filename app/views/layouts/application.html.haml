@@ -1,0 +1,12 @@
+!!! 5
+
+%html{ :lang => "en" }
+  %head
+    %title CopyProcess
+    = stylesheet_link_tag 'application'
+    = javascript_include_tag 'application'
+    = csrf_meta_tags
+    
+  %body
+    .container
+      = yield

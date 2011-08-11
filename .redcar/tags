@@ -1,4 +1,5 @@
-1312909124
+1313090370
+AddElementTypeIdToElements	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110811145000_add_element_type_id_to_elements.rb	class AddElementTypeIdToElements 
 AddSiteIdToDocuments	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729185151_add_site_id_to_documents.rb	class AddSiteIdToDocuments 
 Application	/Users/aaronmcleod/Documents/work/copy_process/config/application.rb	  class Application 
 ApplicationController	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/application_controller.rb	class ApplicationController 
@@ -16,10 +17,16 @@ CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/cont
 CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/copyprocess_spec.rb	module CopyProcess
 CopyProcess	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	module CopyProcess
 CreateDocuments	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729183446_create_documents.rb	class CreateDocuments 
+CreateElementTypes	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110811144638_create_element_types.rb	class CreateElementTypes 
+CreateElements	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110811144928_create_elements.rb	class CreateElements 
 CreateSites	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729181752_create_sites.rb	class CreateSites 
 Document	/Users/aaronmcleod/Documents/work/copy_process/app/models/document.rb	class Document 
 DocumentsController	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	class DocumentsController 
 DocumentsHelper	/Users/aaronmcleod/Documents/work/copy_process/app/helpers/documents_helper.rb	module DocumentsHelper
+Element	/Users/aaronmcleod/Documents/work/copy_process/app/models/element.rb	class Element 
+ElementType	/Users/aaronmcleod/Documents/work/copy_process/app/models/element_type.rb	class ElementType 
+ElementTypesController	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/element_types_controller.rb	class ElementTypesController 
+ElementTypesHelper	/Users/aaronmcleod/Documents/work/copy_process/app/helpers/element_types_helper.rb	module ElementTypesHelper
 Helpers	/Users/aaronmcleod/Documents/work/copy_process/lib/helpers.rb	module Helpers
 HtmlSelectorsHelpers	/Users/aaronmcleod/Documents/work/copy_process/features/support/selectors.rb	module HtmlSelectorsHelpers
 NavigationHelpers	/Users/aaronmcleod/Documents/work/copy_process/features/support/paths.rb	module NavigationHelpers
@@ -43,6 +50,9 @@ buildParams	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/
 change	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729181752_create_sites.rb	  def change
 change	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729183446_create_documents.rb	  def change
 change	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729185151_add_site_id_to_documents.rb	  def change
+change	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110811144638_create_element_types.rb	  def change
+change	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110811144928_create_elements.rb	  def change
+change	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110811145000_add_element_type_id_to_elements.rb	  def change
 clearFxNow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function clearFxNow()
 clearFxNow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function clearFxNow()
 click	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function click()
@@ -53,6 +63,8 @@ cloneFixAttributes	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/asse
 cloneFixAttributes	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function cloneFixAttributes( src, dest )
 compile_documents	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def compile_documents
 compile_files_to_csv	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def compile_files_to_csv(files)
+compile_files_to_element_types	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def compile_files_to_element_types(files, site_id)
+compile_to_save	/Users/aaronmcleod/Documents/work/copy_process/app/models/site.rb	  def compile_to_save
 contains_valid_headers	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def contains_valid_headers(value)
 content	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_element.rb	    attr_reader :name, :content
 content	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	    attr_reader(:type_name, :content, :kw)
@@ -112,6 +124,7 @@ handler	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/
 handler	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function handler( donor )
 includes_inner?	/Users/aaronmcleod/Documents/work/copy_process/lib/helpers.rb	  def includes_inner?(value, arr)
 index	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def index
+index	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/element_types_controller.rb	  def index
 index	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def index
 init	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function init( selector, context )
 init	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function init( selector, context )
@@ -139,6 +152,7 @@ note	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.r
 parse_each_document	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def parse_each_document(content, files)
 parse_file	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def parse_file
 path_to	/Users/aaronmcleod/Documents/work/copy_process/features/support/paths.rb	  def path_to(page_name)
+prepare_documents	/Users/aaronmcleod/Documents/work/copy_process/app/models/site.rb	  def prepare_documents(files)
 resolve	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function resolve()
 resolve	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function resolve()
 resolveFunc	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function resolveFunc( i )
@@ -155,6 +169,7 @@ set_element_counter	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_proc
 set_element_name_and_counter	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def set_element_name_and_counter(element_names, name)
 set_file_names	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def set_file_names(contents)
 show	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def show
+show	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/element_types_controller.rb	  def show
 show	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def show
 t	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function t( gotoEnd )
 t	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function t( gotoEnd )
@@ -167,6 +182,7 @@ trigger	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/
 trigger	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function trigger( type, elem, args )
 type	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
 type_name	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	    attr_reader(:type_name, :content, :kw)
+uniq_to_site	/Users/aaronmcleod/Documents/work/copy_process/app/models/element_type.rb	  def uniq_to_site
 update	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def update
 update	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def update
 valid_headers	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	    def valid_headers

@@ -4,8 +4,5 @@ Feature: Compile Documents and download CSV
   
   Scenario: Documents Exist
     Given I am on the homepage
-    When site "My Test" exists
-    And site "My Test" has documents
-    And I go to site page My Test
-    And I press "Compile Documents"
+    When I compile and export documents
     Then I should get a response with content-type "text/csv"

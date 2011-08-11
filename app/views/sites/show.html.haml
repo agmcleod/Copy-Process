@@ -1,12 +1,13 @@
 %p#notice= notice
 
-%p
-  %b Name:
-  = @site.name
+%h1= @site.name
 
 %p
   %b Url:
   = @site.url
+  
+- if @site.element_types.size > 0
+  %p= link_to 'View Element Types', site_element_types_path(@site)
 
 %p
   =button_to "Add Document", new_site_document_path(@site), method: :get, id: 'add_document'
@@ -16,8 +17,11 @@
     %li= link_to doc.name, edit_site_document_path(@site, doc.id)
 %div
   =form_for(@site, url: compile_documents_path(@site, format: :csv), html: { method: :post }) do |f|
-    %p  
-      =f.submit "Compile Documents", id: 'compile_documents'
+    %p= f.submit "Compile and Export Documents", id: 'compile_documents'
+      
+%div
+  =form_for(@site, url: compile_documents_path(@site), html: { method: :post }) do |f|
+    %p= f.submit "Compile Documents", id: 'compile_documents'
 
 = link_to 'Edit', edit_site_path(@site) + "|"
 = link_to 'Back', sites_path
