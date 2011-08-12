@@ -7,19 +7,25 @@
   = @site.url
   
 - if @site.element_types.size > 0
-  %p= link_to 'View Element Types', site_element_types_path(@site)
-  %p= link_to 'Export CSV', export_csv_path(@site, format: :csv)
+  %p
+    = link_to 'View Element Types', site_element_types_path(@site)
+    = link_to 'Export CSV', export_csv_path(@site, format: :csv)
 
+%h3 Documents:
+
+%table
+  %tr
+    %th View/Edit
+    %th
+  - @site.documents.each do |doc|
+    %tr
+    %td= link_to doc.name, edit_site_document_path(@site, doc.id)
+    %td= link_to "Destroy", site_document_path(@site, doc), confirm: 'Are you sure?', method: :delete
+      
 %p
   =button_to "Add Document", new_site_document_path(@site), method: :get, id: 'add_document'
-  
-%ul
-  - @site.documents.each do |doc|
-    %li
-      = link_to "Destroy", site_document_path(@site, doc), confirm: 'Are you sure?', method: :delete
-      = link_to doc.name, edit_site_document_path(@site, doc.id)
-      
-%h3 Compile/Export
+
+%h3 Compile/Export:
 %p 
   If you wish to re-compile and export the documents, click "Compile and Export Documents".
 %p

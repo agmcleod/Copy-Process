@@ -1,5 +1,7 @@
+- content_for(:head) do
+  = stylesheet_link_tag 'jquery-ui-1.8.15.custom.css'
+  = javascript_include_tag 'jquery-ui-1.8.15.custom.min.js'
 %h1 Listing Element Types
 
-%ul
-  - @element_types.each do |et|
-    %li= link_to et.name, site_element_type_path(@site, et)
+#accordion
+  =show_element_content(@element_types, @site)

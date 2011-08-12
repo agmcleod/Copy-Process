@@ -1,4 +1,4 @@
-1313165843
+1313178432
 AddElementTypeIdToElements	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110811145000_add_element_type_id_to_elements.rb	class AddElementTypeIdToElements 
 AddSiteIdToDocuments	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729185151_add_site_id_to_documents.rb	class AddSiteIdToDocuments 
 Application	/Users/aaronmcleod/Documents/work/copy_process/config/application.rb	  class Application 
@@ -27,14 +27,19 @@ Element	/Users/aaronmcleod/Documents/work/copy_process/app/models/element.rb	cla
 ElementType	/Users/aaronmcleod/Documents/work/copy_process/app/models/element_type.rb	class ElementType 
 ElementTypesController	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/element_types_controller.rb	class ElementTypesController 
 ElementTypesHelper	/Users/aaronmcleod/Documents/work/copy_process/app/helpers/element_types_helper.rb	module ElementTypesHelper
+H	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function H(a,b){d.extend(a,b);for(var c in b)if(b[c]==null||b[c]==C)a[c]=b[c];return a}d.extend(d.ui,{datepicker:{version:"1.8.15"}});var B=(new Date).getTime(),J;d.extend(M.prototype,{markerClassName:"hasDatepicker",maxRows:4,log:function(){this.debug&&console.log.apply("",arguments)},_widgetDatepicker:function()
 Helpers	/Users/aaronmcleod/Documents/work/copy_process/lib/helpers.rb	module Helpers
 HtmlSelectorsHelpers	/Users/aaronmcleod/Documents/work/copy_process/features/support/selectors.rb	module HtmlSelectorsHelpers
+M	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function M()
+N	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function N(a)
 NavigationHelpers	/Users/aaronmcleod/Documents/work/copy_process/features/support/paths.rb	module NavigationHelpers
 Processor	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	  class Processor
 Site	/Users/aaronmcleod/Documents/work/copy_process/app/models/site.rb	class Site 
 SitesController	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	class SitesController 
 SitesHelper	/Users/aaronmcleod/Documents/work/copy_process/app/helpers/sites_helper.rb	module SitesHelper
 WithinHelpers	/Users/aaronmcleod/Documents/work/copy_process/features/step_definitions/web_steps.rb	module WithinHelpers
+a	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function a(f){return{position:f.position,offset:f.offset}}var b=this,d=b.options,e=c(document)
+action	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A1E/611/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.nestedaccordian.js	function action(obj)
 addToPrefiltersOrTransports	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function addToPrefiltersOrTransports( structure )
 addToPrefiltersOrTransports	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function addToPrefiltersOrTransports( structure )
 add_missing_elements	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def add_missing_elements(final_rows, keywords, types, types_and_keywords)
@@ -44,6 +49,7 @@ ajaxHandleResponses	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/ass
 ajaxHandleResponses	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function ajaxHandleResponses( s, jqXHR, responses )
 append_content_to_array	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def append_content_to_array(output_array, element, counter)
 append_file_if_valid	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def append_file_if_valid(file_contents, headers, files, file_name)
+b	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function b(f)
 bad_test_data	/Users/aaronmcleod/Documents/work/copy_process/app/models/document.rb	  def self.bad_test_data
 buildParams	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function buildParams( prefix, obj, traditional, add )
 buildParams	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function buildParams( prefix, obj, traditional, add )
@@ -80,6 +86,7 @@ createFxNow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/
 createStandardXHR	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function createStandardXHR()
 createStandardXHR	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function createStandardXHR()
 create_test_files	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/processor_spec.rb	    def create_test_files
+d	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function d(f,g,m,n){c.each(e,function(){g-=parseFloat(c.curCSS(f,"padding"+this,true))||0;if(m)g-=parseFloat(c.curCSS(f,"border"+this+"Width",true))||0;if(n)g-=parseFloat(c.curCSS(f,"margin"+this,true))||0});return g}var e=b==="Width"?["Left","Right"]:["Top","Bottom"],h=b.toLowerCase()
 dataAttr	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function dataAttr( elem, key, data )
 dataAttr	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function dataAttr( elem, key, data )
 defaultDisplay	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function defaultDisplay( nodeName )
@@ -95,6 +102,7 @@ doScrollCheck	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD
 document_is_in_valid_format	/Users/aaronmcleod/Documents/work/copy_process/app/models/document.rb	  def document_is_in_valid_format
 done	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function done( status, statusText, responses, headers )
 done	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function done( status, statusText, responses, headers )
+e	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function e(g,f){g.css("display","");!d.support.opacity&&f.opacity&&g[0].style.removeAttribute("filter")}var a=this,c=this.options,h=/^#.+/;this.list=this.element.find("ol,ul").eq(0);this.lis=d(" > li:has(a[href])",this.list);this.anchors=this.lis.map(function(){return d("a",this)[0]});this.panels=d([]);this.anchors.each(function(g,f){var i=d(f).attr("href"),l=i.split("#")[0],q;if(l&&(l===location.toString().split("#")
 edit	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def edit
 edit	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def edit
 elements	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_reader :elements
@@ -118,6 +126,8 @@ getWH	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sp
 getWH	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function getWH( elem, name, extra )
 getWindow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function getWindow( elem )
 getWindow	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function getWindow( elem )
+get_element_content	/Users/aaronmcleod/Documents/work/copy_process/app/helpers/element_types_helper.rb	  def get_element_content(ele)
+get_element_type_name	/Users/aaronmcleod/Documents/work/copy_process/app/helpers/element_types_helper.rb	  def get_element_type_name(ele)
 get_inner_index	/Users/aaronmcleod/Documents/work/copy_process/lib/helpers.rb	  def get_inner_index(value, arr)
 handleQueueMarkDefer	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function handleQueueMarkDefer( elem, type, src )
 handleQueueMarkDefer	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function handleQueueMarkDefer( elem, type, src )
@@ -139,17 +149,21 @@ isEmptyDataObject	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/asset
 isEmptyDataObject	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function isEmptyDataObject( obj )
 jQuerySub	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function jQuerySub( selector, context )
 jQuerySub	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function jQuerySub( selector, context )
+k	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function k(a,b){var d=a.nodeName.toLowerCase();if("area"===d){b=a.parentNode;d=b.name;if(!a.href||!d||b.nodeName.toLowerCase()!=="map")return false;a=c("img[usemap=#"+d+"]")[0];return!!a&&l(a)}return(/input|select|textarea|button|object/.test(d)?!a.disabled:"a"==d?a.href||b:b)&&l(a)}function l(a){return!c(a).parents().andSelf().filter(function(){return c.curCSS(this,"visibility")==="hidden"||c.expr.filters.hidden(this)}).length}c.ui=c.ui||{};if(!c.ui.version)
 kw	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	    attr_reader(:type_name, :content, :kw)
+l	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function l(c){if(!c||typeof c==="number"||f.fx.speeds[c])return true;if(typeof c==="string"&&!f.effects[c])
 layer	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
 liveConvert	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function liveConvert( type, selector )
 liveConvert	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function liveConvert( type, selector )
 liveHandler	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function liveHandler( event )
 liveHandler	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function liveHandler( event )
+m	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function m(c){var a;if(c&&c.constructor==Array&&c.length==3)return c;if(a=/rgb\(\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*,\s*([0-9]{1,3})\s*\)/.exec(c))return[parseInt(a[1],10),parseInt(a[2],10),parseInt(a[3],10)];if(a=/rgb\(\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*,\s*([0-9]+(?:\.[0-9]+)?)\%\s*\)/.exec(c))return[parseFloat(a[1])*2.55,parseFloat(a[2])*2.55,parseFloat(a[3])*2.55];if(a=/#([a-fA-F0-9]{2})([a-fA-F0-9]{2})([a-fA-F0-9]{2})/.exec(c))
 name	/Users/aaronmcleod/Documents/work/copy_process/app/models/document.rb	  def name
 name	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_element.rb	    attr_reader :name, :content
 new	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def new
 new	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def new
 note	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def note
+p	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function p(c){var a,b;for(a in c){b=c[a];if(b==null||f.isFunction(b)||a in t||/scrollbar/.test(a)||!/color/i.test(a)&&isNaN(parseFloat(b)))delete c[a]}return c}function u(c,a){var b={_:0},d;for(d in a)if(c[d]!=a[d])b[d]=a[d];return b}function k(c,a,b,d){if(typeof c=="object")
 parse_each_document	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def parse_each_document(content, files)
 parse_file	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def parse_file
 path_to	/Users/aaronmcleod/Documents/work/copy_process/features/support/paths.rb	  def path_to(page_name)
@@ -165,6 +179,8 @@ returnTrue	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/9
 returnTrue	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function returnTrue()
 root	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function root( elem, cur )
 root	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function root( elem, cur )
+s	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function s(c,a){var b;do{b=f.curCSS(c,a);if(b!=""&&b!="transparent"||f.nodeName(c,"body"))break;a="backgroundColor"}while(c=c.parentNode);return m(b)}function o(){var c=document.defaultView?document.defaultView.getComputedStyle(this,null)
+scrollableElement	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A1E/611/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.nestedaccordian.js	function scrollableElement(els)
 selector_for	/Users/aaronmcleod/Documents/work/copy_process/features/support/selectors.rb	  def selector_for(locator)
 set_element_counter	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def set_element_counter(element_names, name)
 set_element_name_and_counter	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    def set_element_name_and_counter(element_names, name)
@@ -172,6 +188,7 @@ set_file_names	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/p
 show	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def show
 show	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/element_types_controller.rb	  def show
 show	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def show
+show_element_content	/Users/aaronmcleod/Documents/work/copy_process/app/helpers/element_types_helper.rb	  def show_element_content(element_types, site)
 t	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function t( gotoEnd )
 t	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function t( gotoEnd )
 testChange	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function testChange( e )
@@ -183,6 +200,7 @@ trigger	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/
 trigger	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function trigger( type, elem, args )
 type	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
 type_name	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/content_row.rb	    attr_reader(:type_name, :content, :kw)
+u	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/A67/F21/sprockets%2Fvendor%2Fassets%2Fjavascripts%2Fjquery-ui-1.8.15.custom.min.js	function u(){return++v}function w(){return++x}var v=0,x=0;d.widget("ui.tabs",{options:{add:null,ajaxOptions:null,cache:false,cookie:null,collapsible:false,disable:null,disabled:[],enable:null,event:"click",fx:null,idPrefix:"ui-tabs-",load:null,panelTemplate:"<div></div>",remove:null,select:null,show:null,spinner:"<em>Loading&#8230;</em>",tabTemplate:"<li><a href='#{href}'><span>#{label}</span></a></li>"},_create:function(){this._tabify(true)},_setOption:function(b,e){if(b=="selected")
 uniq_to_site	/Users/aaronmcleod/Documents/work/copy_process/app/models/element_type.rb	  def uniq_to_site
 update	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/documents_controller.rb	  def update
 update	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def update
