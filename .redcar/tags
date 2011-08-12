@@ -1,4 +1,4 @@
-1313090370
+1313165843
 AddElementTypeIdToElements	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110811145000_add_element_type_id_to_elements.rb	class AddElementTypeIdToElements 
 AddSiteIdToDocuments	/Users/aaronmcleod/Documents/work/copy_process/db/migrate/20110729185151_add_site_id_to_documents.rb	class AddSiteIdToDocuments 
 Application	/Users/aaronmcleod/Documents/work/copy_process/config/application.rb	  class Application 
@@ -62,7 +62,7 @@ cloneCopyEvent	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/D
 cloneFixAttributes	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function cloneFixAttributes( src, dest )
 cloneFixAttributes	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function cloneFixAttributes( src, dest )
 compile_documents	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def compile_documents
-compile_files_to_csv	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def compile_files_to_csv(files)
+compile_files_to_csv	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def compile_files_to_csv(site)
 compile_files_to_element_types	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def compile_files_to_element_types(files, site_id)
 compile_to_save	/Users/aaronmcleod/Documents/work/copy_process/app/models/site.rb	  def compile_to_save
 contains_valid_headers	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/processor.rb	    def contains_valid_headers(value)
@@ -103,6 +103,7 @@ enclose	/Users/aaronmcleod/Documents/work/copy_process/lib/helpers.rb	  def encl
 evalScript	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function evalScript( i, elem )
 evalScript	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function evalScript( i, elem )
 expected_format	/Users/aaronmcleod/Documents/work/copy_process/spec/copyprocess/copyprocess_spec.rb	      def expected_format(cf, element_name, counter, s_counter, sentence)
+export_csv	/Users/aaronmcleod/Documents/work/copy_process/app/controllers/sites_controller.rb	  def export_csv
 file_name	/Users/aaronmcleod/Documents/work/copy_process/lib/copy_process/copy_file.rb	    attr_accessor :contents, :type, :layer, :variation, :file_name
 findInputs	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD8/962/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p180%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function findInputs( elem )
 findInputs	/Users/aaronmcleod/Documents/work/copy_process/tmp/cache/assets/DD9/DB2/sprockets%2FUsers%2Faaronmcleod%2F.rvm%2Fgems%2Fruby-1.9.2-p136%2Fgems%2Fjquery-rails-1.0.12%2Fvendor%2Fassets%2Fjavascripts%2Fjquery.js	function findInputs( elem )

@@ -1,11 +1,16 @@
 module CopyProcess
   class Processor
     require 'csv'
+    require 'helpers'
+    include Helpers
+    
     attr_accessor :input
-    def compile_files_to_csv(files)
+    def compile_files_to_csv(site)
       output = "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
-      retrieve_content_rows(files).each do |r|
-        output << ",,,,#{r}\n"
+      site.element_types.each do |et|
+        et.elements.each do |e|
+          output << ",,,,#{et.name},#{enclose(e.content)},#{e.note}\n"
+        end
       end
       output
     end

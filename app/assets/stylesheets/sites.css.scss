@@ -13,3 +13,17 @@ body {
   background:white;
   padding:20px 30px;
 }
+
+.bottom-content {
+  overflow:hidden;
+  .left {
+    width:210px;
+    float:left;
+  }
+  
+  .right {
+    float:left;
+    width:150px;
+  }
+}
+

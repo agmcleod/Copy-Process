@@ -78,9 +78,10 @@ class DocumentsController < ApplicationController
   def destroy
     @document = Document.find(params[:id])
     @document.destroy
+    @site = Site.find(params[:site_id])
 
     respond_to do |format|
-      format.html { redirect_to documents_url }
+      format.html { redirect_to @site }
       format.json { head :ok }
     end
   end

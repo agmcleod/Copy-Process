@@ -1,7 +1,3 @@
-# require 'copy_process/content_element'
-# require 'copy_process/content_row'
-# require 'copy_process/processor'
-
 module Helpers
   # Gets the index of a value inside an array of the given array
   def get_inner_index(value, arr)

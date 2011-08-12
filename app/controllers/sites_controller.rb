@@ -84,10 +84,15 @@ class SitesController < ApplicationController
   def compile_documents
     @site = Site.find(params[:id])
     respond_to do |format|
-      format.html do
-        @site.compile_to_save
-        redirect_to site_path(@site), notice: 'Documents compiled'
-      end
+      @site.compile_to_save
+      format.html { redirect_to site_path(@site), notice: 'Documents compiled' }
+      format.csv { send_data(@site.to_csv, filename: "#{@site.name}.csv", type: 'text/csv') }
+    end
+  end
+  
+  def export_csv
+    @site = Site.find(params[:id])
+    respond_to do |format|
       format.csv { send_data(@site.to_csv, filename: "#{@site.name}.csv", type: 'text/csv') }
     end
   end
