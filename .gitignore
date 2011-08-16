@@ -9,3 +9,4 @@ cl
 .bundle
 log/*.log
 .sass-cache/
+*.tmproj
