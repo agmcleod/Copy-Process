@@ -6,3 +6,6 @@ bin/test_run.rb
 *.txt
 cl
 .redcar/
+.bundle
+log/*.log
+.sass-cache/
