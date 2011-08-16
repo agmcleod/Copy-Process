@@ -7811,3 +7811,18 @@ Served asset /images/ui-bg_inset-hard_100_fcfdfd_1x100.png - 304 Not Modified (0
 
 Started GET "/assets/images/ui-bg_glass_85_dfeffc_1x400.png" for 127.0.0.1 at 2011-08-12 15:47:15 -0400
 Served asset /images/ui-bg_glass_85_dfeffc_1x400.png - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-16 09:06:13 -0400
+  Processing by SitesController#index as HTML
+  [1m[36mSite Load (1.9ms)[0m  [1mSELECT `sites`.* FROM `sites` [0m
+Rendered sites/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 166ms (Views: 160.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-16 09:06:14 -0400
+Served asset /application.css - 200 OK (36ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-16 09:06:24 -0400
+Served asset /application.js - 200 OK (115ms)
