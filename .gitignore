@@ -10,3 +10,4 @@ cl
 log/*.log
 .sass-cache/
 *.tmproj
+test.rb

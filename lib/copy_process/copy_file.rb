@@ -1,6 +1,8 @@
 module CopyProcess
   class CopyFile
     require 'helpers'
+    require 'nokogiri'
+    
     include Helpers
     attr_accessor :contents, :type, :layer, :variation, :file_name
     attr_reader :elements
@@ -120,15 +122,38 @@ module CopyProcess
     # It loops through the given content, splits it by an asterisk, and appends the appropriate content
     def content_sentence_split_helper(contents, ele_name, counter)
       to_return = []
+      vals = escape_punctuation_in_html(contents)
+      contents, replaced = vals[0], vals[1]
+      
       sentences = contents.split(/(?<=[.!?])(?!\*)/)
-      sentences.each_with_index do |sentence, s_counter|
-        # remove whitespace
-        sentence.strip!
-        et_name = "#{@layer} #{ele_name}#{counter} S#{s_counter + 1}"
-        to_return << ContentRow.new(et_name, "#{et_name},#{enclose(sentence)},#{self.note}", self.type)
+      if replaced
+        sentences[0] = sentences[0].strip.gsub(/\n/, '')
+        et_name = "#{@layer} #{ele_name}#{counter}"
+        to_return << ContentRow.new(et_name, "#{et_name},#{enclose(sentences[0])},#{self.note}", self.type)
+      else
+        sentences.each_with_index do |sentence, s_counter|
+          # remove whitespace
+          sentence.strip!
+          et_name = "#{@layer} #{ele_name}#{counter} S#{s_counter + 1}"
+          to_return << ContentRow.new(et_name, "#{et_name},#{enclose(sentence)},#{self.note}", self.type)
+        end
       end
       return to_return
     end
-
+    
+    def escape_punctuation_in_html(contents)
+      doc = Nokogiri::HTML::DocumentFragment.parse(contents)
+      is_html = false
+      doc.search("*").each do |node|
+        if node.element?
+          is_html = true
+        end
+        dummy = node.add_previous_sibling(Nokogiri::XML::Node.new("dummy", doc))
+        dummy.add_previous_sibling(Nokogiri::XML::Text.new(node.to_s.gsub(/(?<=[.!?])(?!\*)/, "#{$1}*"), doc))
+        node.remove
+        dummy.remove
+      end
+      return [doc.to_html.to_s.gsub("&lt;", "<").gsub("&gt;", ">"), is_html]
+    end
   end
 end

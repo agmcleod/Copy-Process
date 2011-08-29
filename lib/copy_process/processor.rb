@@ -28,17 +28,17 @@ module CopyProcess
       end
       
       rows.each_key do |k|
-        et = ElementType.create!(name: k, site_id: site_id)
+        et = ElementType.new(name: k, site_id: site_id)
         should_save = false
         rows.each_value do |row|
           if et.name == row[0][0]
             row.each do |r|
-              et.elements << Element.create!(content: r[1], note: r[2])
+              et.elements.build(content: r[1], note: r[2])
             end
             should_save = true
           end
         end
-        et.save if should_save
+        et.save! if should_save
       end
     end
     
@@ -50,7 +50,7 @@ module CopyProcess
       files.each do |file_obj|
         file_obj.elements_out.each do |ele|
           keywords << ele.kw unless keywords.include?(ele.kw)
-          types << ele.type_name unless types.include?(ele.type_name)
+          types << ele.type_name unless types.include?(ele.
           final_rows << ele.content
           types_and_keywords << "#{ele.type_name}+#{ele.kw}" unless types_and_keywords.include?("#{ele.type_name}+#{ele.kw}")
         end

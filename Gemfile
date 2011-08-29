@@ -25,6 +25,8 @@ gem 'jquery-rails'
 
 gem 'haml-rails'
 
+gem 'nokogiri'
+
 group :test, :development do
   gem 'autotest'
   gem 'capybara'
