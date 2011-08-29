@@ -11,34 +11,37 @@
     = link_to 'View Element Types', site_element_types_path(@site)
     = link_to 'Export CSV', export_csv_path(@site, format: :csv)
 
-%h3 Documents:
 
-%table
-  %tr
-    %th View/Edit
-    %th
-  - @site.documents.each do |doc|
+- if @site.documents.size > 0
+  %h3 Documents:
+
+  %table
     %tr
-    %td= link_to doc.name, edit_site_document_path(@site, doc.id)
-    %td= link_to "Destroy", site_document_path(@site, doc), confirm: 'Are you sure?', method: :delete
+      %th View/Edit
+      %th
+    - @site.documents.each do |doc|
+      %tr
+      %td= link_to doc.name, edit_site_document_path(@site, doc.id)
+      %td= link_to "Destroy", site_document_path(@site, doc), confirm: 'Are you sure?', method: :delete
       
 %p
   =button_to "Add Document", new_site_document_path(@site), method: :get, id: 'add_document'
 
-%h3 Compile/Export:
-%p 
-  If you wish to re-compile and export the documents, click "Compile and Export Documents".
-%p
-  If you wish to just compile them for now, click "Compile Documents"
+- if @site.documents.size > 0
+  %h3 Compile/Export:
+  %p 
+    If you wish to re-compile and export the documents, click "Compile and Export Documents".
+  %p
+    If you wish to just compile them for now, click "Compile Documents"
       
-.bottom-content
-  .left
-    =form_for(@site, url: compile_documents_path(@site, format: :csv), html: { method: :post }) do |f|
-      %p= f.submit "Compile and Export Documents", id: 'compile_documents'
+  .bottom-content
+    .left
+      =form_for(@site, url: compile_documents_path(@site, format: :csv), html: { method: :post }) do |f|
+        %p= f.submit "Compile and Export Documents", id: 'compile_documents'
         
-  .right
-    =form_for(@site, url: compile_documents_path(@site), html: { method: :post }) do |f|
-      %p= f.submit "Compile Documents", id: 'compile_documents'
+    .right
+      =form_for(@site, url: compile_documents_path(@site), html: { method: :post }) do |f|
+        %p= f.submit "Compile Documents", id: 'compile_documents'
 
 = link_to 'Edit', edit_site_path(@site)
 = link_to 'Back', sites_path

@@ -1,6 +1,7 @@
 class ElementType < ActiveRecord::Base
   validate :uniq_to_site
   has_many :elements, dependent: :destroy
+  belongs_to :site
   
   private
   

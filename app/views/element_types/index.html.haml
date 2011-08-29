@@ -1,7 +1,12 @@
 - content_for(:head) do
   = stylesheet_link_tag 'jquery-ui-1.8.15.custom.css'
   = javascript_include_tag 'jquery-ui-1.8.15.custom.min.js'
+  = javascript_include_tag 'element_types.js.coffee'
 %h1 Listing Element Types
+
+%p= link_to "View all elements at once", site_elements_path(@site)
 
 #accordion
   =show_element_content(@element_types, @site)
+  
+%p= link_to 'Back', site_path(@site)

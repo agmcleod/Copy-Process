@@ -1,0 +1,13 @@
+%h1 Elements
+
+- if @elements.size > 0
+  %ul
+    - @elements.each do |ele|
+      %li= ele.content
+- else
+  #accordion
+    =list_elements(@element_types)
+    
+%p
+  = link_to 'Site', site_path(@site)
+  = link_to 'Element Types', site_element_types_path(@site)

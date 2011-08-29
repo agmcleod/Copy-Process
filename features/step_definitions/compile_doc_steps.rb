@@ -34,5 +34,5 @@ When /^I compile and export documents$/ do
 end
 
 Then /^I should see (\d+) "([^"]*)" tags$/ do |amount, tag_name|
-  page.has_css?(tag_name, :count=>amount)
+  page.find(:css, tag_name, :count=>amount)
 end
