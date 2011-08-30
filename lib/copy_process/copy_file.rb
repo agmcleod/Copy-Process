@@ -126,7 +126,7 @@ module CopyProcess
       contents, replaced = vals[0], vals[1]
       
       sentences = contents.split(/(?<=[.!?])(?!\*)/)
-      if replaced
+      if replaced || sentences.size == 1
         sentences[0] = sentences[0].strip.gsub(/\n/, '')
         et_name = "#{@layer} #{ele_name}#{counter}"
         to_return << ContentRow.new(et_name, "#{et_name},#{enclose(sentences[0])},#{self.note}", self.type)
@@ -147,7 +147,6 @@ module CopyProcess
       doc.search("*").each do |node|
         if node.element?
           is_html = true
-          Rails.logger.debug "is html"
         end
         dummy = node.add_previous_sibling(Nokogiri::XML::Node.new("dummy", doc))
         dummy.add_previous_sibling(Nokogiri::XML::Text.new(node.to_s.gsub(/(?<=[.!?])(?!\*)/, "#{$1}*"), doc))
