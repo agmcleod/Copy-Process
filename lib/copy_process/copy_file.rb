@@ -147,6 +147,7 @@ module CopyProcess
       doc.search("*").each do |node|
         if node.element?
           is_html = true
+          Rails.logger.debug "is html"
         end
         dummy = node.add_previous_sibling(Nokogiri::XML::Node.new("dummy", doc))
         dummy.add_previous_sibling(Nokogiri::XML::Text.new(node.to_s.gsub(/(?<=[.!?])(?!\*)/, "#{$1}*"), doc))

@@ -6,3 +6,6 @@
     %li= ele.content
   
 %p= link_to 'Delete this element type', site_element_type_path(@site, @element_type), method: :delete, confirm: 'Are you sure?'
+%p
+  = link_to 'Back to element types', site_element_types_path(@site)
+  = link_to 'Back to site', site_path(@site)
