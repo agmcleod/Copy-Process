@@ -352,3 +352,1462 @@ Served asset /application.css - 304 Not Modified (0ms)
 
 Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-29 16:06:57 -0400
 Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-08-30 08:13:21 -0400
+  Processing by SitesController#index as HTML
+  [1m[36mSite Load (1.1ms)[0m  [1mSELECT `sites`.* FROM `sites` [0m
+Rendered sites/index.html.erb within layouts/application (55.6ms)
+Completed 200 OK in 249ms (Views: 235.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:13:23 -0400
+Served asset /application.css - 304 Not Modified (123ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:13:23 -0400
+Served asset /application.js - 304 Not Modified (106ms)
+
+
+Started GET "/sites/3" for 127.0.0.1 at 2011-08-30 08:13:26 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSite Load (1.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE `element_types`.`site_id` = 3[0m
+  [1m[35m (2.7ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 3
+  [1m[36mDocument Load (0.6ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3[0m
+Rendered sites/show.html.haml within layouts/application (429.2ms)
+Completed 200 OK in 458ms (Views: 333.9ms | ActiveRecord: 119.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:13:26 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:13:26 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3/element_types" for 127.0.0.1 at 2011-08-30 08:13:30 -0400
+  Processing by ElementTypesController#index as HTML
+  Parameters: {"site_id"=>"3"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36mElementType Load (0.5ms)[0m  [1mSELECT `element_types`.* FROM `element_types` WHERE `element_types`.`site_id` = 3 LIMIT 1[0m
+  [1m[35mElementType Load (4.5ms)[0m  SELECT `element_types`.* FROM `element_types` WHERE `element_types`.`site_id` = 3
+Rendered element_types/index.html.haml within layouts/application (119.5ms)
+Completed 200 OK in 226ms (Views: 133.2ms | ActiveRecord: 17.4ms)
+
+
+Started GET "/assets/element_types.js.coffee" for 127.0.0.1 at 2011-08-30 08:13:30 -0400
+Served asset /element_types.js.coffee - 304 Not Modified (72ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:13:30 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.8.15.custom.css" for 127.0.0.1 at 2011-08-30 08:13:30 -0400
+Served asset /jquery-ui-1.8.15.custom.css - 304 Not Modified (52ms)
+
+
+Started GET "/assets/jquery-ui-1.8.15.custom.min.js" for 127.0.0.1 at 2011-08-30 08:13:30 -0400
+Served asset /jquery-ui-1.8.15.custom.min.js - 304 Not Modified (130ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:13:30 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3/element_types/1830" for 127.0.0.1 at 2011-08-30 08:13:37 -0400
+  Processing by ElementTypesController#show as HTML
+  Parameters: {"site_id"=>"3", "id"=>"1830"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+  [1m[35mElementType Load (1.1ms)[0m  SELECT `element_types`.* FROM `element_types` WHERE `element_types`.`id` = 1830 LIMIT 1
+  [1m[36mElement Load (1.5ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1830[0m
+Rendered element_types/show.html.haml within layouts/application (103.1ms)
+Completed 200 OK in 194ms (Views: 56.7ms | ActiveRecord: 73.4ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:13:37 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:13:37 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3/documents/17/edit" for 127.0.0.1 at 2011-08-30 08:13:44 -0400
+  Processing by DocumentsController#edit as HTML
+  Parameters: {"site_id"=>"3", "id"=>"17"}
+  [1m[35mDocument Load (0.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 17 LIMIT 1
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+Rendered documents/_form.html.haml (48.3ms)
+Rendered documents/edit.html.haml within layouts/application (104.4ms)
+Completed 200 OK in 159ms (Views: 124.7ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:13:44 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:13:44 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3" for 127.0.0.1 at 2011-08-30 08:23:52 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE `element_types`.`site_id` = 3[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 3
+  [1m[36mDocument Load (0.5ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3[0m
+Rendered sites/show.html.haml within layouts/application (113.9ms)
+Completed 200 OK in 126ms (Views: 115.5ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:23:52 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:23:52 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3/documents/19/edit" for 127.0.0.1 at 2011-08-30 08:23:53 -0400
+  Processing by DocumentsController#edit as HTML
+  Parameters: {"site_id"=>"3", "id"=>"19"}
+  [1m[35mDocument Load (0.4ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 19 LIMIT 1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+Rendered documents/_form.html.haml (14.7ms)
+Rendered documents/edit.html.haml within layouts/application (16.4ms)
+Completed 200 OK in 54ms (Views: 25.1ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:23:53 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:23:53 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3/documents/18/edit" for 127.0.0.1 at 2011-08-30 08:24:10 -0400
+  Processing by DocumentsController#edit as HTML
+  Parameters: {"site_id"=>"3", "id"=>"18"}
+  [1m[35mDocument Load (0.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 18 LIMIT 1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+Rendered documents/_form.html.haml (13.6ms)
+Rendered documents/edit.html.haml within layouts/application (15.2ms)
+Completed 200 OK in 52ms (Views: 24.4ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:24:10 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:24:10 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3/documents/19/edit" for 127.0.0.1 at 2011-08-30 08:24:21 -0400
+  Processing by DocumentsController#edit as HTML
+  Parameters: {"site_id"=>"3", "id"=>"19"}
+  [1m[35mDocument Load (0.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 19 LIMIT 1
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+Rendered documents/_form.html.haml (13.9ms)
+Rendered documents/edit.html.haml within layouts/application (15.4ms)
+Completed 200 OK in 57ms (Views: 23.8ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:24:22 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:24:22 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started PUT "/sites/3/documents/19" for 127.0.0.1 at 2011-08-30 08:24:25 -0400
+  Processing by DocumentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PfdFr76OzFSh+QXyY3stWaSrZskeRC7L002UHU8mT+U=", "document"=>{"content"=>"/*\r\nType: Stain\r\nLayer: Province\r\nVariation: 4\r\n*/\r\nHEAD:\t Looking for the perfect outdoor stain in [Province]?\r\n\r\nBODY:\tNothing finishes a project like gorgeous, high quality stain from your local Sikkens dealer in [province]. Whether you’re staining a deck, fence, siding, or windows and doors, Sikkens provides you with an extensive variety of stains guaranteed to bring any project to life. Sikkens is trusted by professionals and homeowners alike, to provide innovative, high performance stain products to suite any environment. \r\n\r\nCTA:\tSelect your location and a Sikkens product\r\n\r\nSUB:\tThere’s a Sikkens stain for every project \r\n\r\nBODY:\tWhen looking for an outdoor stain in [province] visiting your local Sikkens dealer will provide you with a seemingly endless array of choices. You’ll find Sikkens stain products available in transparent, translucent, semi-transparent and solid colour options.\r\n\r\n\tOur stains were made for your exterior project. Consult the Sikkens dealer nearest you finding the right stains for windows and doors, siding, fences, decks and any other uses for our wood stain.\r\n\r\nCTA:\tSelect your product and the city nearest you.\r\n\r\nSUB:\tAdvanced product technology and environment friendly\r\n\r\nBODY:\tAt Sikkens we’re constantly searching for ways to provide our customers with better performing, more environmentally sustainable stain products.  Our alkyd/oil high solid coatings meet rigorous VOC (volatile organic compounds) regulations. Your projects will benefit, because alkyds are made from renewable plant-based oils such as linseed and soy, and offer the best level of protection for wood structures.\r\n\r\nLIST HEADER: The benefits of using Sikkens solventborne products on your outdoor projects include:\r\n\r\nLIST: <ul><li>Deeply penetrates the wood</li>\r\n<li>Offers more durable protection</li>\r\n<li>Water-repellent </li>\r\n<li>Provides excellent colour retention</li>\r\n<li>All products meet Canadian VOC requirements</li></ul>\r\n\r\nTITLE: Stain in [Province] from your local Sikkens dealer\r\n\r\nDESCRIPTION: Need the perfect stain in [Province] for your outdoor building projects?* Contact your local Sikkens dealer.* Many stains to choose from.* Visit now. "}, "commit"=>"Update Document", "site_id"=>"3", "id"=>"19"}
+  [1m[35mDocument Load (0.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 19 LIMIT 1
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.3ms)[0m  [1mUPDATE `documents` SET `content` = '/*\r\nType: Stain\r\nLayer: Province\r\nVariation: 4\r\n*/\r\nHEAD:	 Looking for the perfect outdoor stain in [Province]?\r\n\r\nBODY:	Nothing finishes a project like gorgeous, high quality stain from your local Sikkens dealer in [province]. Whether you’re staining a deck, fence, siding, or windows and doors, Sikkens provides you with an extensive variety of stains guaranteed to bring any project to life. Sikkens is trusted by professionals and homeowners alike, to provide innovative, high performance stain products to suite any environment. \r\n\r\nCTA:	Select your location and a Sikkens product\r\n\r\nSUB:	There’s a Sikkens stain for every project \r\n\r\nBODY:	When looking for an outdoor stain in [province] visiting your local Sikkens dealer will provide you with a seemingly endless array of choices. You’ll find Sikkens stain products available in transparent, translucent, semi-transparent and solid colour options.\r\n\r\n	Our stains were made for your exterior project. Consult the Sikkens dealer nearest you finding the right stains for windows and doors, siding, fences, decks and any other uses for our wood stain.\r\n\r\nCTA:	Select your product and the city nearest you.\r\n\r\nSUB:	Advanced product technology and environment friendly\r\n\r\nBODY:	At Sikkens we’re constantly searching for ways to provide our customers with better performing, more environmentally sustainable stain products. Our alkyd/oil high solid coatings meet rigorous VOC (volatile organic compounds) regulations. Your projects will benefit, because alkyds are made from renewable plant-based oils such as linseed and soy, and offer the best level of protection for wood structures.\r\n\r\nLIST HEADER: The benefits of using Sikkens solventborne products on your outdoor projects include:\r\n\r\nLIST: <ul><li>Deeply penetrates the wood</li>\r\n<li>Offers more durable protection</li>\r\n<li>Water-repellent </li>\r\n<li>Provides excellent colour retention</li>\r\n<li>All products meet Canadian VOC requirements</li></ul>\r\n\r\nTITLE: Stain in [Province] from your local Sikkens dealer\r\n\r\nDESCRIPTION: Need the perfect stain in [Province] for your outdoor building projects?* Contact your local Sikkens dealer.* Many stains to choose from.* Visit now. ', `updated_at` = '2011-08-30 12:24:25' WHERE `documents`.`id` = 19[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/sites/3
+Completed 302 Found in 175ms
+
+
+Started GET "/sites/3" for 127.0.0.1 at 2011-08-30 08:24:25 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+  [1m[35m (2.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE `element_types`.`site_id` = 3
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 3[0m
+  [1m[35mDocument Load (0.5ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3
+Rendered sites/show.html.haml within layouts/application (78.3ms)
+Completed 200 OK in 96ms (Views: 78.9ms | ActiveRecord: 11.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:24:25 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:24:25 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started POST "/compile_documents/3" for 127.0.0.1 at 2011-08-30 08:24:28 -0400
+  Processing by SitesController#compile_documents as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PfdFr76OzFSh+QXyY3stWaSrZskeRC7L002UHU8mT+U=", "commit"=>"Compile Documents", "id"=>"3"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+  [1m[35mElementType Load (1.3ms)[0m  SELECT `element_types`.* FROM `element_types` WHERE `element_types`.`site_id` = 3
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mElement Load (0.9ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1811
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3708[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3709
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3710[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1811
+  [1m[36mElement Load (1.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1812[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3711
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3712[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3713
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3714[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1812
+  [1m[36mElement Load (1.0ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1813[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3715
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3716[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3717
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3718[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1813
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1814[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3719
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3720[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3721
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3722[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1814
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1815[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3723
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3724[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3725
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3726[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1815
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1816[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3727
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3728[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3729
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3730[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1816
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1817[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3731
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3732[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3733
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3734[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1817
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1818[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3735
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3736[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3737
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3738[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1818
+  [1m[36mElement Load (1.0ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1819[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3739
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3740[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3741
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3742[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1819
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1820[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3743
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3744[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3745
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3746[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1820
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1821[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3747
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3748[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3749
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3750[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1821
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1822[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3751
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3752[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3753
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1822[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1823
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3754[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3755
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1823[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1824
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3756[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3757
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1824[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1825
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3758[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3759
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1825[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1826
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3760[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3761
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3762[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3763
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1826[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1827
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3764[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3765
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3766[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3767
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1827[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1828
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3768[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3769
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3770[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3771
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1828[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1829
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3772[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3773
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3774[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3775
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1829[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1830
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3776[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1830
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1831[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3777
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3778[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1831
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1832[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3779
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3780[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1832
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1833[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3781
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3782[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1833
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1834[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3783
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1834[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1835
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3784[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1835
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1836[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3785
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1836[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1837
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3786[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1837
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1838[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3787
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1838[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1839
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3788[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1839
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1840[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3789
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1840[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1841
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3790[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1841
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1842[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3791
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1842[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1843
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3792[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1843
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1844[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3793
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1844[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1845
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3794[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1845
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1846[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3795
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1846[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1847
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3796[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1847
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1848[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3797
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1848[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1849
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3798[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1849
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1850[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3799
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1850[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1851
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3800[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1851
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1852[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3801
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1852[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1853
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3802[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1853
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1854[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3803
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1854[0m
+  [1m[35m (40.9ms)[0m  COMMIT
+  [1m[36mDocument Load (0.6ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province HEAD1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province HEAD1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('The perfect stain for your exterior project in [Province]', '2011-08-30 12:24:29', 1855, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('An excellent stain for the professional touch in [Province]', '2011-08-30 12:24:29', 1855, '2-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Outstanding stains for versatile applications in [Province]', '2011-08-30 12:24:29', 1855, '3-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY1 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY1 S1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Nothing enriches the beauty of an outdoor building project like stain from your local Sikkens dealer in [Province].', '2011-08-30 12:24:29', 1856, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Make every exterior project superior and special with Sikkens stains from your closest authorized dealer in [Province].', '2011-08-30 12:24:29', 1856, '2-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Create an outstanding appeal for any outdoor paint project with market-proven stains from the Sikkens dealership nearest to you in [Province].', '2011-08-30 12:24:29', 1856, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Nothing finishes a project like gorgeous, high quality stain from your local Sikkens dealer in [province].', '2011-08-30 12:24:29', 1856, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (1.2ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY1 S2')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY1 S2', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Bring decks to life, add beauty and depth to siding and fences or give doors and windows just the right pop of natural colour.', '2011-08-30 12:24:29', 1857, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Now you can give the premium touch-up to decks, superior results to sidings and fences and the perfect finish for doors and windows.', '2011-08-30 12:24:29', 1857, '2-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('With their easy application and exceptional touch, Sikkens stains make your decks, sidings, fences, doors and windows second to none.', '2011-08-30 12:24:29', 1857, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Whether you&rsquo;re staining a deck, fence, siding, or windows and doors, Sikkens provides you with an extensive variety of stains guaranteed to bring any project to life.', '2011-08-30 12:24:29', 1857, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY1 S3')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY1 S3', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('As the professional&rsquo;s and the homeowner&rsquo;s most relied upon [stain], you can trust Sikkens for innovative, high-performance products to suite any project and environment.', '2011-08-30 12:24:29', 1858, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('That\'s the reason, everyone from professional painters to residence owners depend on the excellent range of top-quality stains from Sikkens to refinish all kinds of projects whatever the environment.', '2011-08-30 12:24:29', 1858, '2-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('It\'s no surprise why Sikkens stains continue to be trusted by professional and domestic users to enhance the appearance of their versatile projects in every environment possible.', '2011-08-30 12:24:29', 1858, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens is trusted by professionals and homeowners alike, to provide innovative, high performance stain products to suite any environment.', '2011-08-30 12:24:29', 1858, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province CTA1')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province CTA1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Select your location and a Sikkens product', '2011-08-30 12:24:29', 1859, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Choose your area; choose your Sikkens stain', '2011-08-30 12:24:29', 1859, '2-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Select your location and a Sikkens product', '2011-08-30 12:24:29', 1859, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Select your location and a Sikkens product', '2011-08-30 12:24:29', 1859, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province SUB1')
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province SUB1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stain versatility', '2011-08-30 12:24:29', 1860, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('High performance Sikkens stains for every need', '2011-08-30 12:24:29', 1860, '2-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('A range of Sikkens stains for diverse projects', '2011-08-30 12:24:29', 1860, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('There&rsquo;s a Sikkens stain for every project', '2011-08-30 12:24:29', 1860, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY2 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY2 S1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('When you visit your local Sikkens dealer you&rsquo;re certain to find a stain that enlivens your project with precisely the finish you&rsquo;ve been imagining.', '2011-08-30 12:24:29', 1861, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('There\'s always a perfect stain to enhance the appeal and finish of every project and you\'ll surely locate it at the Sikkens dealer close to you.', '2011-08-30 12:24:29', 1861, '2-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('If it\'s on your mind, you\'ll find the appropriate stain to enhance the finish of your project, at your nearest Sikkens dealership.', '2011-08-30 12:24:29', 1861, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('When looking for an outdoor stain in [province] visiting your local Sikkens dealer will provide you with a seemingly endless array of choices.', '2011-08-30 12:24:29', 1861, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY2 S2')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY2 S2', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Whether traditional or ultra-modern, any look can be achieved with Sikkens stain products, available in transparent, translucent, semi-transparent and solid colour options.', '2011-08-30 12:24:29', 1862, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stains come in a variety of transparent, translucent, semi-transparent and solid colour choices and you can use them to make every project stand out, whatever style you wish to achieve.', '2011-08-30 12:24:29', 1862, '2-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('You can choose from stains in transparent, translucent, semi-transparent and solid colour options to create anything from a classic to avant garde finish.', '2011-08-30 12:24:29', 1862, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('You&rsquo;ll find Sikkens stain products available in transparent, translucent, semi-transparent and solid colour options.', '2011-08-30 12:24:29', 1862, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY3 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY3 S1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Our stains are perfect for all exterior projects.', '2011-08-30 12:24:29', 1863, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stains can be trusted for every type of outdoor application.', '2011-08-30 12:24:29', 1863, '2-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens has distinguished itself as the acknowledged stain leader with top-of-the-line products that raise the bar in performance and sustainability.', '2011-08-30 12:24:29', 1863, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('At Sikkens we&rsquo;re constantly searching for ways to provide our customers with better performing, more environmentally sustainable stain products.', '2011-08-30 12:24:29', 1863, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY3 S2')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY3 S2', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Talk to your local Sikkens dealer about stains for windows and doors, siding, fences, decks and any other uses for our high-quality wood stain.', '2011-08-30 12:24:29', 1864, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Discover our wide complement of durable, dependable stains for every application including decks, sidings, fences, doors, and windows at the Sikkens dealer closest to you.', '2011-08-30 12:24:29', 1864, '2-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Thanks to their alkyd/oil high solid coatings, our products clear all the strict VOC (volatile organic compounds) requirements.', '2011-08-30 12:24:29', 1864, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Our alkyd/oil high solid coatings meet rigorous VOC (volatile organic compounds) regulations.', '2011-08-30 12:24:29', 1864, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province CTA2 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province CTA2 S1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Choose your product and city to find the Sikkens dealer nearest you.', '2011-08-30 12:24:29', 1865, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Locate your nearest Sikkens dealership by selecting your Sikkens product and city.', '2011-08-30 12:24:29', 1865, '2-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Pick your product and city to find your local Sikkens dealer.', '2011-08-30 12:24:29', 1865, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Select your product and the city nearest you.', '2011-08-30 12:24:29', 1865, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province SUB2')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province SUB2', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('About Sikkens product innovation & environmental impact', '2011-08-30 12:24:29', 1866, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stain products: Durable, environment-sensitive and state-of-the-art', '2011-08-30 12:24:29', 1866, '3-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Advanced product technology and environment friendly', '2011-08-30 12:24:29', 1866, '4-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY4 S1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY4 S1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('As an industry leader, Sikkens is dedicated to providing you with more sustainable, better performing stain products.', '2011-08-30 12:24:29', 1867, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Our stain products enjoy a solid reputation for durability and excellence making Sikkens the top-ranked brand in the market.', '2011-08-30 12:24:29', 1867, '2-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY4 S2')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY4 S2', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('We provide alkyd/oil high solid coatings that meet rigorous VOC (volatile organic compounds) requirements.', '2011-08-30 12:24:29', 1868, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('The stains also conform to stringent VOC (volatile organic compounds) standards with their alkyd/oil high solid coatings.', '2011-08-30 12:24:29', 1868, '2-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY4 S3')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY4 S3', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Additionally, alkyds are made from renewable plant-based oils such as linseed and soy, and provide the highest level of protection for wood structures.', '2011-08-30 12:24:29', 1869, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('What\'s more, the alkyds also offer the ultimate protection for wood surfaces due to their composition from linseed and soy, renowned plant seed oils.', '2011-08-30 12:24:29', 1869, '2-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province LIST HEADER1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province LIST HEADER1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Here are some of the benefits of using Sikkens solventborne products on your outdoor projects:', '2011-08-30 12:24:29', 1870, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens solventborne products - tested by professionals, trusted for outdoor applications:', '2011-08-30 12:24:29', 1870, '2-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Ideal and proven Sikkens solventborne products for external uses:', '2011-08-30 12:24:29', 1870, '3-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('The benefits of using Sikkens solventborne products on your outdoor projects include:', '2011-08-30 12:24:29', 1870, '4-Stain', '2011-08-30 12:24:29')
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (1.0ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province LIST1')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province LIST1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('<ul><li>Deeply penetrates the wood.*</li><li>Offers more durable protection.*</li><li>Water-repellent?*</li><li>Provides excellent colour retention</li><li>All products meet Canadian VOC requirements</li></ul>', '2011-08-30 12:24:29', 1871, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('<ul><li>Deeply penetrates the wood</li><li>Offers more durable protection</li><li>Water-repellent </li><li>Provides excellent colour retention</li><li>All products meet Canadian VOC requirements</li></ul>', '2011-08-30 12:24:29', 1871, '2-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('<ul><li>Deeply penetrates the wood</li><li>Offers more durable protection</li><li>Water-repellent </li><li>Provides excellent colour retention</li><li>All products meet Canadian VOC requirements</li></ul>', '2011-08-30 12:24:29', 1871, '3-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('<ul><li>Deeply penetrates the wood</li><li>Offers more durable protection</li><li>Water-repellent </li><li>Provides excellent colour retention</li><li>All products meet Canadian VOC requirements</li></ul>', '2011-08-30 12:24:29', 1871, '4-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province TITLE1')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province TITLE1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stain in [Province]', '2011-08-30 12:24:29', 1872, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stain in [Province]', '2011-08-30 12:24:29', 1872, '2-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('[Stain] in [Province] from Sikkens', '2011-08-30 12:24:29', 1872, '3-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Stain in [Province] from your local Sikkens dealer', '2011-08-30 12:24:29', 1872, '4-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province DESCRIPTION1 S1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province DESCRIPTION1 S1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Bring projects to life with Sikkens wood stain in [Province] for decks, windows and doors, fences, siding and more.* Visit today.', '2011-08-30 12:24:29', 1873, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens wood stains in -[Province] help decks, windows and doors, fences, and sidings shine and sparkle.* Get in today.', '2011-08-30 12:24:29', 1873, '2-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Create an enduring, elegant appeal for decks, windows and doors, fences, sidings and more with Sikkens wood stains in [Province].* Contact today.', '2011-08-30 12:24:29', 1873, '3-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Need the perfect stain in [Province] for your outdoor building projects?* Contact your local Sikkens dealer.* Many stains to choose from.* Visit now.', '2011-08-30 12:24:29', 1873, '4-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province SUB2 S1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province SUB2 S1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Trend setting, environment-friendly, high performing Sikkens products.', '2011-08-30 12:24:29', 1874, '2-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY2 S3')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY2 S3', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Whatever your requirement, there is a Sikkens stain that\'ll be ideal for your exterior jobs.', '2011-08-30 12:24:29', 1875, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Our stains were made for your exterior project.', '2011-08-30 12:24:29', 1875, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY2 S4')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY2 S4', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Get in touch with your nearest Sikkens dealership to check out our acclaimed range of wood stains for decks, sidings, fences, doors, windows and more.', '2011-08-30 12:24:29', 1876, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Consult the Sikkens dealer nearest you finding the right stains for windows and doors, siding, fences, decks and any other uses for our wood stain.', '2011-08-30 12:24:29', 1876, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY3 S3')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province BODY3 S3', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Plus, the alkyds offer superior protection for wood products, thanks to their special formulation from linseed and say, oils that are renewable and plant-based.', '2011-08-30 12:24:29', 1877, '3-Stain', '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Your projects will benefit, because alkyds are made from renewable plant-based oils such as linseed and soy, and offer the best level of protection for wood structures.', '2011-08-30 12:24:29', 1877, '4-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province HEAD1 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province HEAD1 S1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Looking for the perfect outdoor stain in [Province]?', '2011-08-30 12:24:29', 1878, '4-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR HEAD1')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR HEAD1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('La teinture #1 pour vos projets extérieurs', '2011-08-30 12:24:29', 1879, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY1 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR BODY1 S1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Rien ne donne plus de cachet à vos projets de rénovation extérieure que la teinture de votre détaillant local Sikkens.', '2011-08-30 12:24:29', 1880, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY1 S2')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR BODY1 S2', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Celle-ci contribue à redonner un nouvel éclat à votre terrasse, à enjoliver et à ajouter une profondeur à vos revêtements et clôtures et à raviver la couleur naturelle de vos portes et fenêtres.', '2011-08-30 12:24:29', 1881, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY1 S3')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR BODY1 S3', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('En tant que teinture la plus prisée chez les professionnels et propriétaires de maison, vous pouvez compter sur les produits innovants et de haute performance Sikkens pour vous prêter main forte dans tous vos projets.', '2011-08-30 12:24:29', 1882, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR CTA1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR CTA1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sélectionnez votre emplacement et un produit Sikkens', '2011-08-30 12:24:29', 1883, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR SUB1')
+  [1m[36mSQL (0.5ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR SUB1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('La polyvalence de la teinture Sikkens', '2011-08-30 12:24:29', 1884, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY2 S1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR BODY2 S1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Lorsque vous vous rendez chez votre détaillant local Sikkens, vous êtes assuré de trouver la teinture qui conviendra parfaitement à votre projet et ce, avec la qualité de finition dont vous rêvez.', '2011-08-30 12:24:29', 1885, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY2 S2')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR BODY2 S2', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Que vous soyez du type classique ou contemporain, Sikkens offre une gamme de teinture pouvant assurément combler vos attentes.', '2011-08-30 12:24:29', 1886, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY2 S3')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR BODY2 S3', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('En somme, une multitude d\'options, telles que la teinture transparente, translucide, semi-transparente ou opaque sont à votre disposition.', '2011-08-30 12:24:29', 1887, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY2 S4')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR BODY2 S4', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Nos teintures conviennent à tout type de projet extérieur.', '2011-08-30 12:24:29', 1888, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY2 S5')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR BODY2 S5', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('N\'hésitez surtout pas à questionner votre détaillant local Sikkens relativement à nos teintures pour portes, fenêtres, revêtement, clôtures, terrasses, ou encore, pour toute application spéciale requérant une teinture pour bois de haute qualité.', '2011-08-30 12:24:29', 1889, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR CTA2 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR CTA2 S1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Choisissez votre produit et votre province pour trouver le détaillant Sikkens situé le plus près de chez vous.', '2011-08-30 12:24:29', 1890, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR SUB2')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR SUB2', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('La teinture Sikkens, un produit innovant préservant la qualité de l\'environnement', '2011-08-30 12:24:29', 1891, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY3 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR BODY3 S1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('En tant que chef de file de l\'industrie, Sikkens se fait un devoir de créer des teintures durables des plus performantes.', '2011-08-30 12:24:29', 1892, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY3 S2')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR BODY3 S2', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Nos revêtements à base d\'alkyde/huile à haute teneur en solides, rencontrent tous rigoureusement les exigences COV (composé organique volatil).', '2011-08-30 12:24:29', 1893, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY3 S3')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR BODY3 S3', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('En outre, ces alkydes sont conçus à base d\'huile de plante renouvelable, telle la graine de lin et de soya, et assurent un niveau de protection optimal pour les surfaces faites en bois.', '2011-08-30 12:24:29', 1894, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR LIST HEADER1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR LIST HEADER1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Voici quelques-uns des bienfaits des produits Sikkens à base de solvant pour vos projets extérieurs :', '2011-08-30 12:24:29', 1895, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR LIST1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR LIST1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('<ul><li>Pénètrent profondément dans le bois</li><li>Offrent une protection plus durable</li><li>Hydrofuge</li><li>Assurent une excellente rétention de la couleur</li><li>Rencontrent les exigences COV canadiennes</li></ul>', '2011-08-30 12:24:29', 1896, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR TITLE1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR TITLE1', 3, '2011-08-30 12:24:29')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('La teinture Sikkens au Québec', '2011-08-30 12:24:29', 1897, '1-Stain', '2011-08-30 12:24:29')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR DESCRIPTION1 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 12:24:29', 'Province FR DESCRIPTION1 S1', 3, '2011-08-30 12:24:29')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Choisissez la teinture #1 au Québec pour vos projets extérieurs incluant terrasses, portes, fenêtres, revêtement etc.* Visitez-nous aujourd\'hui!', '2011-08-30 12:24:29', 1898, '1-Stain', '2011-08-30 12:24:29')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/sites/3
+Completed 302 Found in 845ms
+
+
+Started GET "/sites/3" for 127.0.0.1 at 2011-08-30 08:24:29 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE `element_types`.`site_id` = 3[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 3
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3[0m
+Rendered sites/show.html.haml within layouts/application (111.6ms)
+Completed 200 OK in 125ms (Views: 115.2ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:24:30 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:24:30 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3/element_types" for 127.0.0.1 at 2011-08-30 08:24:31 -0400
+  Processing by ElementTypesController#index as HTML
+  Parameters: {"site_id"=>"3"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36mElementType Load (0.4ms)[0m  [1mSELECT `element_types`.* FROM `element_types` WHERE `element_types`.`site_id` = 3 LIMIT 1[0m
+  [1m[35mElementType Load (1.4ms)[0m  SELECT `element_types`.* FROM `element_types` WHERE `element_types`.`site_id` = 3
+Rendered element_types/index.html.haml within layouts/application (31.7ms)
+Completed 200 OK in 115ms (Views: 35.8ms | ActiveRecord: 7.0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:24:31 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:24:31 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/element_types.js.coffee" for 127.0.0.1 at 2011-08-30 08:24:31 -0400
+Served asset /element_types.js.coffee - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.8.15.custom.min.js" for 127.0.0.1 at 2011-08-30 08:24:31 -0400
+Served asset /jquery-ui-1.8.15.custom.min.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/jquery-ui-1.8.15.custom.css" for 127.0.0.1 at 2011-08-30 08:24:31 -0400
+Served asset /jquery-ui-1.8.15.custom.css - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3/element_types/1878" for 127.0.0.1 at 2011-08-30 08:24:36 -0400
+  Processing by ElementTypesController#show as HTML
+  Parameters: {"site_id"=>"3", "id"=>"1878"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+  [1m[35mElementType Load (1.5ms)[0m  SELECT `element_types`.* FROM `element_types` WHERE `element_types`.`id` = 1878 LIMIT 1
+  [1m[36mElement Load (1.2ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1878[0m
+Rendered element_types/show.html.haml within layouts/application (36.1ms)
+Completed 200 OK in 123ms (Views: 38.5ms | ActiveRecord: 11.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:24:36 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:24:36 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3/documents/16/edit" for 127.0.0.1 at 2011-08-30 08:26:37 -0400
+  Processing by DocumentsController#edit as HTML
+  Parameters: {"site_id"=>"3", "id"=>"16"}
+  [1m[35mDocument Load (0.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 16 LIMIT 1
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+Rendered documents/_form.html.haml (13.7ms)
+Rendered documents/edit.html.haml within layouts/application (15.2ms)
+Completed 200 OK in 49ms (Views: 22.4ms | ActiveRecord: 5.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 08:26:38 -0400
+Served asset /application.js - 304 Not Modified (3ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 08:26:38 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3" for 127.0.0.1 at 2011-08-30 09:14:23 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE `element_types`.`site_id` = 3[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 3
+  [1m[36mDocument Load (0.5ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3[0m
+Rendered sites/show.html.haml within layouts/application (64.2ms)
+Completed 200 OK in 77ms (Views: 67.4ms | ActiveRecord: 7.1ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 09:14:23 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 09:14:23 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3/documents/20/edit" for 127.0.0.1 at 2011-08-30 09:14:24 -0400
+  Processing by DocumentsController#edit as HTML
+  Parameters: {"site_id"=>"3", "id"=>"20"}
+  [1m[35mDocument Load (1.3ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 20 LIMIT 1
+  [1m[36mSite Load (0.9ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+Rendered documents/_form.html.haml (15.5ms)
+Rendered documents/edit.html.haml within layouts/application (17.1ms)
+Completed 200 OK in 57ms (Views: 26.5ms | ActiveRecord: 7.8ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 09:14:25 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 09:14:25 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/sites/3" for 127.0.0.1 at 2011-08-30 09:14:44 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE `element_types`.`site_id` = 3[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 3
+  [1m[36mDocument Load (0.5ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3[0m
+Rendered sites/show.html.haml within layouts/application (120.8ms)
+Completed 200 OK in 136ms (Views: 125.4ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 09:14:44 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 09:14:44 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/export_as_csv/3.csv" for 127.0.0.1 at 2011-08-30 09:14:46 -0400
+  Processing by SitesController#export_csv as CSV
+  Parameters: {"id"=>"3"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE `element_types`.`site_id` = 3[0m
+  [1m[35mElementType Load (1.4ms)[0m  SELECT `element_types`.* FROM `element_types` WHERE `element_types`.`site_id` = 3
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1855[0m
+  [1m[35mElement Load (1.0ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1856
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1857[0m
+  [1m[35mElement Load (1.0ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1858
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1859[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1860
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1861[0m
+  [1m[35mElement Load (0.9ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1862
+  [1m[36mElement Load (1.1ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1863[0m
+  [1m[35mElement Load (0.9ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1864
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1865[0m
+  [1m[35mElement Load (0.9ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1866
+  [1m[36mElement Load (1.4ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1867[0m
+  [1m[35mElement Load (1.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1868
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1869[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1870
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1871[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1872
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1873[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1874
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1875[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1876
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1877[0m
+  [1m[35mElement Load (1.2ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1878
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1879[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1880
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1881[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1882
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1883[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1884
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1885[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1886
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1887[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1888
+  [1m[36mElement Load (2.3ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1889[0m
+  [1m[35mElement Load (1.2ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1890
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1891[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1892
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1893[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1894
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1895[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1896
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1897[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1898
+Rendered text template (0.0ms)
+Sent data Sikkens.csv (20.0ms)
+Completed 200 OK in 222ms (Views: 19.8ms | ActiveRecord: 49.7ms)
+
+
+Started GET "/sites/3/documents/20/edit" for 127.0.0.1 at 2011-08-30 09:17:18 -0400
+  Processing by DocumentsController#edit as HTML
+  Parameters: {"site_id"=>"3", "id"=>"20"}
+  [1m[36mDocument Load (0.3ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 20 LIMIT 1[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+Rendered documents/_form.html.haml (62.9ms)
+Rendered documents/edit.html.haml within layouts/application (64.4ms)
+Completed 200 OK in 98ms (Views: 71.8ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 09:17:18 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 09:17:18 -0400
+Served asset /application.css - 304 Not Modified (1ms)
+
+
+Started PUT "/sites/3/documents/20" for 127.0.0.1 at 2011-08-30 09:17:29 -0400
+  Processing by DocumentsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PfdFr76OzFSh+QXyY3stWaSrZskeRC7L002UHU8mT+U=", "document"=>{"content"=>"/*\r\nType: Stain\r\nLayer: Province FR\r\nVariation: 1\r\n*/\r\n\r\nHEAD:\tLa teinture #1 pour vos projets extérieurs\r\n\r\nBODY:\tRien ne donne plus de cachet à vos projets de rénovation extérieure que la teinture de votre détaillant local Sikkens. Celle-ci contribue à redonner un nouvel éclat  à votre terrasse, à enjoliver et à ajouter une profondeur à vos revêtements et clôtures et à raviver la couleur naturelle de vos portes et fenêtres. En tant que teinture la plus prisée chez les professionnels et propriétaires de maison, vous pouvez compter sur les produits innovants et de haute performance Sikkens pour vous prêter main forte dans tous vos projets. \r\n\r\nCTA:\tSélectionnez votre emplacement et un produit Sikkens\r\n\r\nSUB:\tLa polyvalence de la teinture Sikkens \r\n\r\nBODY:\tLorsque vous vous rendez chez votre détaillant local Sikkens, vous êtes assuré de trouver la teinture qui conviendra parfaitement à votre projet et ce, avec la qualité de finition dont vous rêvez. Que vous soyez du type classique ou contemporain, Sikkens offre une gamme de teinture pouvant assurément combler vos attentes. En  somme, une multitude d'options, telles que la teinture transparente, translucide, semi-transparente ou opaque sont à votre disposition.\r\n\r\nBODY:\tNos teintures conviennent à tout type de projet extérieur. N'hésitez surtout pas à questionner votre détaillant local Sikkens relativement à nos teintures pour portes, fenêtres, revêtement, clôtures, terrasses, ou encore, pour toute application spéciale requérant une teinture pour bois de haute qualité.\r\n\r\nCTA:\tChoisissez votre produit et votre province pour trouver le détaillant Sikkens situé le plus près de chez vous.\r\n\r\nSUB:\tLa teinture Sikkens, un produit innovant préservant la qualité de l'environnement\r\n\r\nBODY:\tEn tant que chef de file de l'industrie, Sikkens se fait un devoir de créer des teintures durables des plus performantes. Nos revêtements à base d'alkyde/huile à haute teneur en solides, rencontrent tous rigoureusement les exigences COV (composé organique volatil). En outre, ces alkydes sont conçus à base d'huile de plante renouvelable, telle la graine de lin et de soya, et assurent un niveau de protection optimal pour les surfaces faites en bois. \r\n\r\nLIST HEADER: Voici quelques-uns des bienfaits des produits Sikkens à base de solvant pour vos projets extérieurs :\r\n\r\nLIST: <ul><li>Pénètrent profondément dans le bois</li>\r\n<li>Offrent une protection plus durable</li>\r\n<li>Hydrofuge</li>\r\n<li>Assurent une excellente rétention de la couleur</li>\r\n<li>Rencontrent les exigences COV canadiennes</li></ul>\r\n\r\nTITLE: La teinture Sikkens au Québec\r\n\r\nDESCRIPTION: Choisissez la teinture #1 au Québec pour vos projets extérieurs incluant terrasses, portes, fenêtres, revêtement etc.* Visitez-nous aujourd'hui!"}, "commit"=>"Update Document", "site_id"=>"3", "id"=>"20"}
+  [1m[36mDocument Load (0.3ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`id` = 20 LIMIT 1[0m
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  UPDATE `documents` SET `content` = '/*\r\nType: Stain\r\nLayer: Province FR\r\nVariation: 1\r\n*/\r\n\r\nHEAD:	La teinture #1 pour vos projets extérieurs\r\n\r\nBODY:	Rien ne donne plus de cachet à vos projets de rénovation extérieure que la teinture de votre détaillant local Sikkens. Celle-ci contribue à redonner un nouvel éclat à votre terrasse, à enjoliver et à ajouter une profondeur à vos revêtements et clôtures et à raviver la couleur naturelle de vos portes et fenêtres. En tant que teinture la plus prisée chez les professionnels et propriétaires de maison, vous pouvez compter sur les produits innovants et de haute performance Sikkens pour vous prêter main forte dans tous vos projets. \r\n\r\nCTA:	Sélectionnez votre emplacement et un produit Sikkens\r\n\r\nSUB:	La polyvalence de la teinture Sikkens \r\n\r\nBODY:	Lorsque vous vous rendez chez votre détaillant local Sikkens, vous êtes assuré de trouver la teinture qui conviendra parfaitement à votre projet et ce, avec la qualité de finition dont vous rêvez. Que vous soyez du type classique ou contemporain, Sikkens offre une gamme de teinture pouvant assurément combler vos attentes. En somme, une multitude d\'options, telles que la teinture transparente, translucide, semi-transparente ou opaque sont à votre disposition.\r\n\r\nBODY:	Nos teintures conviennent à tout type de projet extérieur. N\'hésitez surtout pas à questionner votre détaillant local Sikkens relativement à nos teintures pour portes, fenêtres, revêtement, clôtures, terrasses, ou encore, pour toute application spéciale requérant une teinture pour bois de haute qualité.\r\n\r\nCTA:	Choisissez votre produit et votre province pour trouver le détaillant Sikkens situé le plus près de chez vous.\r\n\r\nSUB:	La teinture Sikkens, un produit innovant préservant la qualité de l\'environnement\r\n\r\nBODY:	En tant que chef de file de l\'industrie, Sikkens se fait un devoir de créer des teintures durables des plus performantes. Nos revêtements à base d\'alkyde/huile à haute teneur en solides, rencontrent tous rigoureusement les exigences COV (composé organique volatil). En outre, ces alkydes sont conçus à base d\'huile de plante renouvelable, telle la graine de lin et de soya, et assurent un niveau de protection optimal pour les surfaces faites en bois. \r\n\r\nLIST HEADER: Voici quelques-uns des bienfaits des produits Sikkens à base de solvant pour vos projets extérieurs :\r\n\r\nLIST: <ul><li>Pénètrent profondément dans le bois</li>\r\n<li>Offrent une protection plus durable</li>\r\n<li>Hydrofuge</li>\r\n<li>Assurent une excellente rétention de la couleur</li>\r\n<li>Rencontrent les exigences COV canadiennes</li></ul>\r\n\r\nTITLE: La teinture Sikkens au Québec\r\n\r\nDESCRIPTION: Choisissez la teinture #1 au Québec pour vos projets extérieurs incluant terrasses, portes, fenêtres, revêtement etc.* Visitez-nous aujourd\'hui!', `updated_at` = '2011-08-30 13:17:29' WHERE `documents`.`id` = 20
+  [1m[36m (19.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/sites/3
+Completed 302 Found in 77ms
+
+
+Started GET "/sites/3" for 127.0.0.1 at 2011-08-30 09:17:29 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE `element_types`.`site_id` = 3[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 3
+  [1m[36mDocument Load (0.4ms)[0m  [1mSELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3[0m
+Rendered sites/show.html.haml within layouts/application (117.9ms)
+Completed 200 OK in 130ms (Views: 120.9ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 09:17:30 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 09:17:30 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started POST "/compile_documents/3" for 127.0.0.1 at 2011-08-30 09:17:33 -0400
+  Processing by SitesController#compile_documents as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PfdFr76OzFSh+QXyY3stWaSrZskeRC7L002UHU8mT+U=", "commit"=>"Compile Documents", "id"=>"3"}
+  [1m[35mSite Load (0.3ms)[0m  SELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1
+  [1m[36mElementType Load (1.3ms)[0m  [1mSELECT `element_types`.* FROM `element_types` WHERE `element_types`.`site_id` = 3[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1855[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3804
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3805[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3806
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1855[0m
+  [1m[35mElement Load (0.9ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1856
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3807[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3808
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3809[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3810
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1856[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1857
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3811[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3812
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3813[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3814
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1857[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1858
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3815[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3816
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3817[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3818
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1858[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1859
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3819[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3820
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3821[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3822
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1859[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1860
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3823[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3824
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3825[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3826
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1860[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1861
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3827[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3828
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3829[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3830
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1861[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1862
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3831[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3832
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3833[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3834
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1862[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1863
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3835[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3836
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3837[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3838
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1863[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1864
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3839[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3840
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3841[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3842
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1864[0m
+  [1m[35mElement Load (0.9ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1865
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3843[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3844
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3845[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3846
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1865[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1866
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3847[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3848
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3849[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1866
+  [1m[36mElement Load (1.2ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1867[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3850
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3851[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1867
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1868[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3852
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3853[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1868
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1869[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3854
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3855[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1869
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1870[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3856
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3857[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3858
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3859[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1870
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1871[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3860
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3861[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3862
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3863[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1871
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1872[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3864
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3865[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3866
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3867[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1872
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1873[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3868
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3869[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3870
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3871[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1873
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1874[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3872
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1874[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1875
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3873[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3874
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1875[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1876
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3875[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3876
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1876[0m
+  [1m[35mElement Load (1.1ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1877
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3877[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3878
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1877[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1878
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3879[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1878
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1879[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3880
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1879[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1880
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3881[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1880
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1881[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3882
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1881[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1882
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3883[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1882
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1883[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3884
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1883[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1884
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3885[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1884
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1885[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3886
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1885[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1886
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3887[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1886
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1887[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3888
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1887[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1888
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3889[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1888
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1889[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3890
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1889[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1890
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3891[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1890
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1891[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3892
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1891[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1892
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3893[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1892
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1893[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3894
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1893[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1894
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3895[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1894
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1895[0m
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3896
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1895[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1896
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3897[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1896
+  [1m[36mElement Load (0.6ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1897[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `elements` WHERE `elements`.`id` = 3898
+  [1m[36mSQL (0.1ms)[0m  [1mDELETE FROM `element_types` WHERE `element_types`.`id` = 1897[0m
+  [1m[35mElement Load (0.6ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1898
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM `elements` WHERE `elements`.`id` = 3899[0m
+  [1m[35mSQL (0.1ms)[0m  DELETE FROM `element_types` WHERE `element_types`.`id` = 1898
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mDocument Load (0.5ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province HEAD1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province HEAD1', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('The perfect stain for your exterior project in [Province]', '2011-08-30 13:17:33', 1899, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('An excellent stain for the professional touch in [Province]', '2011-08-30 13:17:33', 1899, '2-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Outstanding stains for versatile applications in [Province]', '2011-08-30 13:17:33', 1899, '3-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY1 S1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY1 S1', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Nothing enriches the beauty of an outdoor building project like stain from your local Sikkens dealer in [Province].', '2011-08-30 13:17:33', 1900, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Make every exterior project superior and special with Sikkens stains from your closest authorized dealer in [Province].', '2011-08-30 13:17:33', 1900, '2-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Create an outstanding appeal for any outdoor paint project with market-proven stains from the Sikkens dealership nearest to you in [Province].', '2011-08-30 13:17:33', 1900, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Nothing finishes a project like gorgeous, high quality stain from your local Sikkens dealer in [province].', '2011-08-30 13:17:33', 1900, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY1 S2')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY1 S2', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Bring decks to life, add beauty and depth to siding and fences or give doors and windows just the right pop of natural colour.', '2011-08-30 13:17:33', 1901, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Now you can give the premium touch-up to decks, superior results to sidings and fences and the perfect finish for doors and windows.', '2011-08-30 13:17:33', 1901, '2-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('With their easy application and exceptional touch, Sikkens stains make your decks, sidings, fences, doors and windows second to none.', '2011-08-30 13:17:33', 1901, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Whether you&rsquo;re staining a deck, fence, siding, or windows and doors, Sikkens provides you with an extensive variety of stains guaranteed to bring any project to life.', '2011-08-30 13:17:33', 1901, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY1 S3')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY1 S3', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('As the professional&rsquo;s and the homeowner&rsquo;s most relied upon [stain], you can trust Sikkens for innovative, high-performance products to suite any project and environment.', '2011-08-30 13:17:33', 1902, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('That\'s the reason, everyone from professional painters to residence owners depend on the excellent range of top-quality stains from Sikkens to refinish all kinds of projects whatever the environment.', '2011-08-30 13:17:33', 1902, '2-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('It\'s no surprise why Sikkens stains continue to be trusted by professional and domestic users to enhance the appearance of their versatile projects in every environment possible.', '2011-08-30 13:17:33', 1902, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens is trusted by professionals and homeowners alike, to provide innovative, high performance stain products to suite any environment.', '2011-08-30 13:17:33', 1902, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province CTA1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province CTA1', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (1.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Select your location and a Sikkens product', '2011-08-30 13:17:33', 1903, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Choose your area; choose your Sikkens stain', '2011-08-30 13:17:33', 1903, '2-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Select your location and a Sikkens product', '2011-08-30 13:17:33', 1903, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Select your location and a Sikkens product', '2011-08-30 13:17:33', 1903, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province SUB1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province SUB1', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stain versatility', '2011-08-30 13:17:33', 1904, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('High performance Sikkens stains for every need', '2011-08-30 13:17:33', 1904, '2-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('A range of Sikkens stains for diverse projects', '2011-08-30 13:17:33', 1904, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('There&rsquo;s a Sikkens stain for every project', '2011-08-30 13:17:33', 1904, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY2 S1')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY2 S1', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('When you visit your local Sikkens dealer you&rsquo;re certain to find a stain that enlivens your project with precisely the finish you&rsquo;ve been imagining.', '2011-08-30 13:17:33', 1905, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('There\'s always a perfect stain to enhance the appeal and finish of every project and you\'ll surely locate it at the Sikkens dealer close to you.', '2011-08-30 13:17:33', 1905, '2-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('If it\'s on your mind, you\'ll find the appropriate stain to enhance the finish of your project, at your nearest Sikkens dealership.', '2011-08-30 13:17:33', 1905, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('When looking for an outdoor stain in [province] visiting your local Sikkens dealer will provide you with a seemingly endless array of choices.', '2011-08-30 13:17:33', 1905, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY2 S2')[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY2 S2', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Whether traditional or ultra-modern, any look can be achieved with Sikkens stain products, available in transparent, translucent, semi-transparent and solid colour options.', '2011-08-30 13:17:33', 1906, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stains come in a variety of transparent, translucent, semi-transparent and solid colour choices and you can use them to make every project stand out, whatever style you wish to achieve.', '2011-08-30 13:17:33', 1906, '2-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('You can choose from stains in transparent, translucent, semi-transparent and solid colour options to create anything from a classic to avant garde finish.', '2011-08-30 13:17:33', 1906, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('You&rsquo;ll find Sikkens stain products available in transparent, translucent, semi-transparent and solid colour options.', '2011-08-30 13:17:33', 1906, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY3 S1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY3 S1', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Our stains are perfect for all exterior projects.', '2011-08-30 13:17:33', 1907, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stains can be trusted for every type of outdoor application.', '2011-08-30 13:17:33', 1907, '2-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens has distinguished itself as the acknowledged stain leader with top-of-the-line products that raise the bar in performance and sustainability.', '2011-08-30 13:17:33', 1907, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('At Sikkens we&rsquo;re constantly searching for ways to provide our customers with better performing, more environmentally sustainable stain products.', '2011-08-30 13:17:33', 1907, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY3 S2')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY3 S2', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Talk to your local Sikkens dealer about stains for windows and doors, siding, fences, decks and any other uses for our high-quality wood stain.', '2011-08-30 13:17:33', 1908, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Discover our wide complement of durable, dependable stains for every application including decks, sidings, fences, doors, and windows at the Sikkens dealer closest to you.', '2011-08-30 13:17:33', 1908, '2-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Thanks to their alkyd/oil high solid coatings, our products clear all the strict VOC (volatile organic compounds) requirements.', '2011-08-30 13:17:33', 1908, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Our alkyd/oil high solid coatings meet rigorous VOC (volatile organic compounds) regulations.', '2011-08-30 13:17:33', 1908, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province CTA2 S1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province CTA2 S1', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Choose your product and city to find the Sikkens dealer nearest you.', '2011-08-30 13:17:33', 1909, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Locate your nearest Sikkens dealership by selecting your Sikkens product and city.', '2011-08-30 13:17:33', 1909, '2-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Pick your product and city to find your local Sikkens dealer.', '2011-08-30 13:17:33', 1909, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Select your product and the city nearest you.', '2011-08-30 13:17:33', 1909, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province SUB2')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province SUB2', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('About Sikkens product innovation & environmental impact', '2011-08-30 13:17:33', 1910, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stain products: Durable, environment-sensitive and state-of-the-art', '2011-08-30 13:17:33', 1910, '3-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Advanced product technology and environment friendly', '2011-08-30 13:17:33', 1910, '4-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY4 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY4 S1', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('As an industry leader, Sikkens is dedicated to providing you with more sustainable, better performing stain products.', '2011-08-30 13:17:33', 1911, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Our stain products enjoy a solid reputation for durability and excellence making Sikkens the top-ranked brand in the market.', '2011-08-30 13:17:33', 1911, '2-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY4 S2')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY4 S2', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('We provide alkyd/oil high solid coatings that meet rigorous VOC (volatile organic compounds) requirements.', '2011-08-30 13:17:33', 1912, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('The stains also conform to stringent VOC (volatile organic compounds) standards with their alkyd/oil high solid coatings.', '2011-08-30 13:17:33', 1912, '2-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY4 S3')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY4 S3', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Additionally, alkyds are made from renewable plant-based oils such as linseed and soy, and provide the highest level of protection for wood structures.', '2011-08-30 13:17:33', 1913, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (1.0ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('What\'s more, the alkyds also offer the ultimate protection for wood surfaces due to their composition from linseed and soy, renowned plant seed oils.', '2011-08-30 13:17:33', 1913, '2-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province LIST HEADER1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province LIST HEADER1', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Here are some of the benefits of using Sikkens solventborne products on your outdoor projects:', '2011-08-30 13:17:33', 1914, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens solventborne products - tested by professionals, trusted for outdoor applications:', '2011-08-30 13:17:33', 1914, '2-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Ideal and proven Sikkens solventborne products for external uses:', '2011-08-30 13:17:33', 1914, '3-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('The benefits of using Sikkens solventborne products on your outdoor projects include:', '2011-08-30 13:17:33', 1914, '4-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province LIST1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province LIST1', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.9ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('<ul><li>Deeply penetrates the wood.*</li><li>Offers more durable protection.*</li><li>Water-repellent?*</li><li>Provides excellent colour retention</li><li>All products meet Canadian VOC requirements</li></ul>', '2011-08-30 13:17:33', 1915, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('<ul><li>Deeply penetrates the wood</li><li>Offers more durable protection</li><li>Water-repellent </li><li>Provides excellent colour retention</li><li>All products meet Canadian VOC requirements</li></ul>', '2011-08-30 13:17:33', 1915, '2-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('<ul><li>Deeply penetrates the wood</li><li>Offers more durable protection</li><li>Water-repellent </li><li>Provides excellent colour retention</li><li>All products meet Canadian VOC requirements</li></ul>', '2011-08-30 13:17:33', 1915, '3-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('<ul><li>Deeply penetrates the wood</li><li>Offers more durable protection</li><li>Water-repellent </li><li>Provides excellent colour retention</li><li>All products meet Canadian VOC requirements</li></ul>', '2011-08-30 13:17:33', 1915, '4-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province TITLE1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province TITLE1', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stain in [Province]', '2011-08-30 13:17:33', 1916, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens stain in [Province]', '2011-08-30 13:17:33', 1916, '2-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('[Stain] in [Province] from Sikkens', '2011-08-30 13:17:33', 1916, '3-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Stain in [Province] from your local Sikkens dealer', '2011-08-30 13:17:33', 1916, '4-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province DESCRIPTION1 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province DESCRIPTION1 S1', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Bring projects to life with Sikkens wood stain in [Province] for decks, windows and doors, fences, siding and more.* Visit today.', '2011-08-30 13:17:33', 1917, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sikkens wood stains in -[Province] help decks, windows and doors, fences, and sidings shine and sparkle.* Get in today.', '2011-08-30 13:17:33', 1917, '2-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Create an enduring, elegant appeal for decks, windows and doors, fences, sidings and more with Sikkens wood stains in [Province].* Contact today.', '2011-08-30 13:17:33', 1917, '3-Stain', '2011-08-30 13:17:33')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Need the perfect stain in [Province] for your outdoor building projects?* Contact your local Sikkens dealer.* Many stains to choose from.* Visit now.', '2011-08-30 13:17:33', 1917, '4-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province SUB2 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province SUB2 S1', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Trend setting, environment-friendly, high performing Sikkens products.', '2011-08-30 13:17:33', 1918, '2-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY2 S3')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY2 S3', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Whatever your requirement, there is a Sikkens stain that\'ll be ideal for your exterior jobs.', '2011-08-30 13:17:33', 1919, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Our stains were made for your exterior project.', '2011-08-30 13:17:33', 1919, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY2 S4')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY2 S4', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Get in touch with your nearest Sikkens dealership to check out our acclaimed range of wood stains for decks, sidings, fences, doors, windows and more.', '2011-08-30 13:17:33', 1920, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Consult the Sikkens dealer nearest you finding the right stains for windows and doors, siding, fences, decks and any other uses for our wood stain.', '2011-08-30 13:17:33', 1920, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province BODY3 S3')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province BODY3 S3', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Plus, the alkyds offer superior protection for wood products, thanks to their special formulation from linseed and say, oils that are renewable and plant-based.', '2011-08-30 13:17:33', 1921, '3-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Your projects will benefit, because alkyds are made from renewable plant-based oils such as linseed and soy, and offer the best level of protection for wood structures.', '2011-08-30 13:17:33', 1921, '4-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province HEAD1 S1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province HEAD1 S1', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Looking for the perfect outdoor stain in [Province]?', '2011-08-30 13:17:33', 1922, '4-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR HEAD1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province FR HEAD1', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('La teinture #1 pour vos projets extérieurs', '2011-08-30 13:17:33', 1923, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY1 S1')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province FR BODY1 S1', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Rien ne donne plus de cachet à vos projets de rénovation extérieure que la teinture de votre détaillant local Sikkens.', '2011-08-30 13:17:33', 1924, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY1 S2')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province FR BODY1 S2', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Celle-ci contribue à redonner un nouvel éclat à votre terrasse, à enjoliver et à ajouter une profondeur à vos revêtements et clôtures et à raviver la couleur naturelle de vos portes et fenêtres.', '2011-08-30 13:17:33', 1925, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY1 S3')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province FR BODY1 S3', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('En tant que teinture la plus prisée chez les professionnels et propriétaires de maison, vous pouvez compter sur les produits innovants et de haute performance Sikkens pour vous prêter main forte dans tous vos projets.', '2011-08-30 13:17:33', 1926, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR CTA1')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province FR CTA1', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Sélectionnez votre emplacement et un produit Sikkens', '2011-08-30 13:17:33', 1927, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR SUB1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province FR SUB1', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('La polyvalence de la teinture Sikkens', '2011-08-30 13:17:33', 1928, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY2 S1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province FR BODY2 S1', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Lorsque vous vous rendez chez votre détaillant local Sikkens, vous êtes assuré de trouver la teinture qui conviendra parfaitement à votre projet et ce, avec la qualité de finition dont vous rêvez.', '2011-08-30 13:17:33', 1929, '1-Stain', '2011-08-30 13:17:33')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY2 S2')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province FR BODY2 S2', 3, '2011-08-30 13:17:33')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Que vous soyez du type classique ou contemporain, Sikkens offre une gamme de teinture pouvant assurément combler vos attentes.', '2011-08-30 13:17:33', 1930, '1-Stain', '2011-08-30 13:17:33')[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY2 S3')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:33', 'Province FR BODY2 S3', 3, '2011-08-30 13:17:33')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('En somme, une multitude d\'options, telles que la teinture transparente, translucide, semi-transparente ou opaque sont à votre disposition.', '2011-08-30 13:17:34', 1931, '1-Stain', '2011-08-30 13:17:34')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY3 S1')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:34', 'Province FR BODY3 S1', 3, '2011-08-30 13:17:34')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Nos teintures conviennent à tout type de projet extérieur.', '2011-08-30 13:17:34', 1932, '1-Stain', '2011-08-30 13:17:34')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY3 S2')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:34', 'Province FR BODY3 S2', 3, '2011-08-30 13:17:34')[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('N\'hésitez surtout pas à questionner votre détaillant local Sikkens relativement à nos teintures pour portes, fenêtres, revêtement, clôtures, terrasses, ou encore, pour toute application spéciale requérant une teinture pour bois de haute qualité.', '2011-08-30 13:17:34', 1933, '1-Stain', '2011-08-30 13:17:34')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR CTA2 S1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:34', 'Province FR CTA2 S1', 3, '2011-08-30 13:17:34')
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Choisissez votre produit et votre province pour trouver le détaillant Sikkens situé le plus près de chez vous.', '2011-08-30 13:17:34', 1934, '1-Stain', '2011-08-30 13:17:34')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR SUB2')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:34', 'Province FR SUB2', 3, '2011-08-30 13:17:34')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('La teinture Sikkens, un produit innovant préservant la qualité de l\'environnement', '2011-08-30 13:17:34', 1935, '1-Stain', '2011-08-30 13:17:34')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY4 S1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:34', 'Province FR BODY4 S1', 3, '2011-08-30 13:17:34')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('En tant que chef de file de l\'industrie, Sikkens se fait un devoir de créer des teintures durables des plus performantes.', '2011-08-30 13:17:34', 1936, '1-Stain', '2011-08-30 13:17:34')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY4 S2')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:34', 'Province FR BODY4 S2', 3, '2011-08-30 13:17:34')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Nos revêtements à base d\'alkyde/huile à haute teneur en solides, rencontrent tous rigoureusement les exigences COV (composé organique volatil).', '2011-08-30 13:17:34', 1937, '1-Stain', '2011-08-30 13:17:34')
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR BODY4 S3')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:34', 'Province FR BODY4 S3', 3, '2011-08-30 13:17:34')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('En outre, ces alkydes sont conçus à base d\'huile de plante renouvelable, telle la graine de lin et de soya, et assurent un niveau de protection optimal pour les surfaces faites en bois.', '2011-08-30 13:17:34', 1938, '1-Stain', '2011-08-30 13:17:34')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR LIST HEADER1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:34', 'Province FR LIST HEADER1', 3, '2011-08-30 13:17:34')[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Voici quelques-uns des bienfaits des produits Sikkens à base de solvant pour vos projets extérieurs :', '2011-08-30 13:17:34', 1939, '1-Stain', '2011-08-30 13:17:34')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR LIST1')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:34', 'Province FR LIST1', 3, '2011-08-30 13:17:34')
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('<ul><li>Pénètrent profondément dans le bois</li><li>Offrent une protection plus durable</li><li>Hydrofuge</li><li>Assurent une excellente rétention de la couleur</li><li>Rencontrent les exigences COV canadiennes</li></ul>', '2011-08-30 13:17:34', 1940, '1-Stain', '2011-08-30 13:17:34')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR TITLE1')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:34', 'Province FR TITLE1', 3, '2011-08-30 13:17:34')[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('La teinture Sikkens au Québec', '2011-08-30 13:17:34', 1941, '1-Stain', '2011-08-30 13:17:34')
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `element_types` WHERE (site_id = 3 AND name = 'Province FR DESCRIPTION1 S1')[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `element_types` (`created_at`, `name`, `site_id`, `updated_at`) VALUES ('2011-08-30 13:17:34', 'Province FR DESCRIPTION1 S1', 3, '2011-08-30 13:17:34')
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO `elements` (`content`, `created_at`, `element_type_id`, `note`, `updated_at`) VALUES ('Choisissez la teinture #1 au Québec pour vos projets extérieurs incluant terrasses, portes, fenêtres, revêtement etc.* Visitez-nous aujourd\'hui!', '2011-08-30 13:17:34', 1942, '1-Stain', '2011-08-30 13:17:34')[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+Redirected to http://localhost:3000/sites/3
+Completed 302 Found in 791ms
+
+
+Started GET "/sites/3" for 127.0.0.1 at 2011-08-30 09:17:34 -0400
+  Processing by SitesController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mSite Load (0.3ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE `element_types`.`site_id` = 3
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `documents` WHERE `documents`.`site_id` = 3[0m
+  [1m[35mDocument Load (0.9ms)[0m  SELECT `documents`.* FROM `documents` WHERE `documents`.`site_id` = 3
+Rendered sites/show.html.haml within layouts/application (123.5ms)
+Completed 200 OK in 136ms (Views: 125.6ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/assets/application.css" for 127.0.0.1 at 2011-08-30 09:17:34 -0400
+Served asset /application.css - 304 Not Modified (0ms)
+
+
+Started GET "/assets/application.js" for 127.0.0.1 at 2011-08-30 09:17:34 -0400
+Served asset /application.js - 304 Not Modified (0ms)
+
+
+Started GET "/export_as_csv/3.csv" for 127.0.0.1 at 2011-08-30 09:17:35 -0400
+  Processing by SitesController#export_csv as CSV
+  Parameters: {"id"=>"3"}
+  [1m[36mSite Load (0.4ms)[0m  [1mSELECT `sites`.* FROM `sites` WHERE `sites`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `element_types` WHERE `element_types`.`site_id` = 3
+  [1m[36mElementType Load (2.1ms)[0m  [1mSELECT `element_types`.* FROM `element_types` WHERE `element_types`.`site_id` = 3[0m
+  [1m[35mElement Load (0.9ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1899
+  [1m[36mElement Load (1.1ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1900[0m
+  [1m[35mElement Load (0.9ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1901
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1902[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1903
+  [1m[36mElement Load (1.2ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1904[0m
+  [1m[35mElement Load (0.9ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1905
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1906[0m
+  [1m[35mElement Load (0.9ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1907
+  [1m[36mElement Load (1.1ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1908[0m
+  [1m[35mElement Load (1.1ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1909
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1910[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1911
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1912[0m
+  [1m[35mElement Load (0.9ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1913
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1914[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1915
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1916[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1917
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1918[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1919
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1920[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1921
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1922[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1923
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1924[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1925
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1926[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1927
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1928[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1929
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1930[0m
+  [1m[35mElement Load (1.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1931
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1932[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1933
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1934[0m
+  [1m[35mElement Load (1.1ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1935
+  [1m[36mElement Load (0.9ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1936[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1937
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1938[0m
+  [1m[35mElement Load (0.7ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1939
+  [1m[36mElement Load (0.7ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1940[0m
+  [1m[35mElement Load (0.8ms)[0m  SELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1941
+  [1m[36mElement Load (0.8ms)[0m  [1mSELECT `elements`.* FROM `elements` WHERE `elements`.`element_type_id` = 1942[0m
+Rendered text template (0.0ms)
+Sent data Sikkens.csv (5.2ms)
+Completed 200 OK in 208ms (Views: 5.1ms | ActiveRecord: 52.0ms)

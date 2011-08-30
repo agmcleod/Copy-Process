@@ -16,7 +16,7 @@ class Site < ActiveRecord::Base
     # build new
     files = []
     p = prepare_documents(files)
-    p.compile_files_to_element_types(files, self.id)
+    p.compile_files_to_element_types(files, self)
   end
   
   private

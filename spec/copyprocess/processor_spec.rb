@@ -188,29 +188,44 @@ module CopyProcess
       end
     end
     
+    describe "#compile_files_to_element_types"  do
+      pending
+    end
+    
     describe "#compile_files_to_csv" do
       before(:all) do
         create_test_files
+        DatabaseCleaner.strategy = :truncation
+        DatabaseCleaner.clean_with(:truncation)
       end
       
       before(:each) do
+        DatabaseCleaner.start
         @files = []
+        @site = Site.new(name: 'somesite')
         %w{recycling1.txt recycling2.txt garbage1.txt}.each do |fn|
-          d = Document.new(content: IO.read(fn))
-          processor.parse_each_document(d.content, @files)
+          @site.documents.build(content: IO.read(fn))
         end
+        @site.save!
       end
       
-      it "should return a string" do
-        processor.compile_files_to_csv(@files).class.should == String
+      it "should return a non empty string" do
+        @site.compile_to_save
+        processor.compile_files_to_csv(@site).empty?.should be_false
       end
       
       it "should return proper csv headers" do
-        processor.compile_files_to_csv(@files).split("\n")[0].should == "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes"
+        @site.compile_to_save
+        processor.compile_files_to_csv(@site).split("\n")[0].should == "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes"
       end
       
       it "should return a string of 38 lines - 37 content, 1 header row" do
-        processor.compile_files_to_csv(@files).split("\n").size.should == 38
+        @site.compile_to_save
+        processor.compile_files_to_csv(@site).split("\n").size.should == 38
+      end
+      
+      after(:each) do
+        DatabaseCleaner.clean
       end
       
       after(:all) do

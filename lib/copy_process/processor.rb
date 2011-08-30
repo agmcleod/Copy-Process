@@ -6,16 +6,21 @@ module CopyProcess
     
     attr_accessor :input
     def compile_files_to_csv(site)
-      output = "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
-      site.element_types.each do |et|
-        et.elements.each do |e|
-          output << ",,,,#{et.name},#{enclose(e.content)},#{e.note}\n"
+      Rails.logger.debug "compile called. size: #{site.element_types.size} id: #{site.id}"
+      if site.element_types.size > 0
+        output = "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
+        site.element_types.each do |et|
+          et.elements.each do |e|
+            output << ",,,,#{et.name},#{enclose(e.content)},#{e.note}\n"
+          end
         end
+        output
+      else
+        ''
       end
-      output
     end
     
-    def compile_files_to_element_types(files, site_id)
+    def compile_files_to_element_types(files, site)
       types = []
       rows = {}
       retrieve_content_rows(files).each do |r|
@@ -26,10 +31,9 @@ module CopyProcess
           rows[row[0]] << row
         end
       end
-      
+      should_save = false
       rows.each_key do |k|
-        et = ElementType.new(name: k, site_id: site_id)
-        should_save = false
+        et = site.element_types.build(name: k)
         rows.each_value do |row|
           if et.name == row[0][0]
             row.each do |r|
@@ -38,8 +42,8 @@ module CopyProcess
             should_save = true
           end
         end
-        et.save! if should_save
       end
+      site.save! if should_save
     end
     
     def retrieve_content_rows(files)
@@ -50,7 +54,7 @@ module CopyProcess
       files.each do |file_obj|
         file_obj.elements_out.each do |ele|
           keywords << ele.kw unless keywords.include?(ele.kw)
-          types << ele.type_name unless types.include?(ele.
+          types << ele.type_name unless types.include?(ele.type_name)
           final_rows << ele.content
           types_and_keywords << "#{ele.type_name}+#{ele.kw}" unless types_and_keywords.include?("#{ele.type_name}+#{ele.kw}")
         end
