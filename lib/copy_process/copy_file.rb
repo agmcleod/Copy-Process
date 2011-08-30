@@ -107,7 +107,7 @@ module CopyProcess
     # @param [int] counter - the counter needed to mark the element type
     # @return [Array] output_array
     def append_content_to_array(output_array, element, counter)
-      if element.content.index(/[.!?]/)
+      if element.content.scan(/[.!?]/).size > 1
         content_sentence_split_helper(element.content, element.name, counter).each do |sentence|
           output_array << sentence
         end
