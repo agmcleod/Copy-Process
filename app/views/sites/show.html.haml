@@ -42,6 +42,12 @@
     .right
       =form_for(@site, url: compile_documents_path(@site), html: { method: :post }) do |f|
         %p= f.submit "Compile Documents", id: 'compile_documents'
+        
+  %h4 Tokens to replace:
+  = render partial: 'hash', locals: { hash: @site.tokens }
+    
+  %h4 Active Tokens:
+  = render partial: 'hash', locals: { hash: @site.active_tokens }
 
 = link_to 'Edit', edit_site_path(@site)
 = link_to 'Back', sites_path

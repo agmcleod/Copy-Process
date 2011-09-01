@@ -3,6 +3,10 @@ class ElementType < ActiveRecord::Base
   has_many :elements, dependent: :destroy
   belongs_to :site
   
+  def all_content
+    self.elements.collect { |e| e.content }.join('\n')
+  end
+  
   private
   
   def uniq_to_site
