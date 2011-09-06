@@ -4,4 +4,10 @@
 
 require File.expand_path('../config/application', __FILE__)
 
+module ::CopyProcess
+  class Application
+    include Rake::DSL
+  end
+end
+
 CopyProcess::Application.load_tasks
