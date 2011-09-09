@@ -211,17 +211,17 @@ module CopyProcess
       
       it "should return a non empty string" do
         @site.compile_to_save
-        processor.compile_files_to_csv(@site).empty?.should be_false
+        processor.compile_files_to_csv(@site, false).empty?.should be_false
       end
       
       it "should return proper csv headers" do
         @site.compile_to_save
-        processor.compile_files_to_csv(@site).split("\n")[0].should == "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes"
+        processor.compile_files_to_csv(@site, false).split("\n")[0].should == "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes"
       end
       
       it "should return a string of 38 lines - 37 content, 1 header row" do
         @site.compile_to_save
-        processor.compile_files_to_csv(@site).split("\n").size.should == 38
+        processor.compile_files_to_csv(@site, false).split("\n").size.should == 38
       end
       
       after(:each) do

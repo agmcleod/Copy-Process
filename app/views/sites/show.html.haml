@@ -37,7 +37,10 @@
   .bottom-content
     .left
       =form_for(@site, url: compile_documents_path(@site, format: :csv), html: { method: :post }) do |f|
-        %p= f.submit "Compile and Export Documents", id: 'compile_documents'
+        %p
+          = label_tag :parent_strucutre, "Compile with parent folders?"
+          = check_box_tag :parent_structure
+          = f.submit "Compile and Export Documents", id: 'compile_documents'
         
     .right
       =form_for(@site, url: compile_documents_path(@site), html: { method: :post }) do |f|

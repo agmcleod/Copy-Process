@@ -5,16 +5,28 @@ module CopyProcess
     include Helpers
     
     attr_accessor :input
-    def compile_files_to_csv(site)
-      Rails.logger.debug "compile called. size: #{site.element_types.size} id: #{site.id}"
+    def compile_files_to_csv(site, with_parents)
       if site.element_types.size > 0
-        output = "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes\n"
+        headers = ["ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes"]
+        parent_names = []
+        output = ""
         site.element_types.each do |et|
           et.elements.each do |e|
-            output << ",,,,#{et.name},#{enclose(e.content)},#{e.note}\n"
+            if with_parents
+              pn = et.name.split(' ').first
+              output << ",,,#{pn},#{et.name},#{enclose(e.content)},#{e.note}\n"
+              parent_names << pn unless parent_names.include?(pn)
+            else
+              output << ",,,,#{et.name},#{enclose(e.content)},#{e.note}\n"
+            end
           end
         end
-        output
+        
+        parent_names.each do |pn|
+          headers << ",,,,#{pn},<!-- -->,"
+        end
+        
+        [headers.join("\n"), output].join("\n")
       else
         ''
       end
