@@ -220,7 +220,7 @@ module CopyProcess
         processor.compile_files_to_csv(@site, false).split("\n")[0].should == "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes"
       end
       
-      it "should return a string of 37 lines - 36 content, 1 header row" do
+      it "should return a string of 37 lines - 3 content, 1 header row" do
         @site.compile_to_save
         processor.compile_files_to_csv(@site, false).split("\n").size.should == 37
       end
