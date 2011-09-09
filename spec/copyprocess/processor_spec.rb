@@ -170,8 +170,9 @@ module CopyProcess
         end
       end
       
-      it "should return 37 rows/sentences. 36 regular, 1 empty" do
-        processor.retrieve_content_rows(@files).size.should == 37
+      it "should return 36 rows/sentences. 35 regular, 1 empty" do
+        row_data = processor.retrieve_content_rows(@files)
+        row_data.size.should == 36
       end
       
       it "should return 2 rows" do
@@ -219,9 +220,9 @@ module CopyProcess
         processor.compile_files_to_csv(@site, false).split("\n")[0].should == "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes"
       end
       
-      it "should return a string of 38 lines - 37 content, 1 header row" do
+      it "should return a string of 37 lines - 36 content, 1 header row" do
         @site.compile_to_save
-        processor.compile_files_to_csv(@site, false).split("\n").size.should == 38
+        processor.compile_files_to_csv(@site, false).split("\n").size.should == 37
       end
       
       after(:each) do
