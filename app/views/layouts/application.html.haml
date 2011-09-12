@@ -10,4 +10,5 @@
     
   %body
     .container
+      %p{:class => "logo"}= link_to image_tag('ics.jpg', alt: 'intelligent content separator'), root_path
       = yield

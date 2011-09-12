@@ -11,7 +11,12 @@ body {
   margin:30px auto;
   border:1px solid black;
   background:white;
-  padding:20px 30px;
+  padding:0px 30px 20px;
+}
+
+.logo a:hover, .logo a {
+  text-decoration:none;
+  background:none;
 }
 
 .bottom-content {
