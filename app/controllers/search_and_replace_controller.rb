@@ -11,6 +11,15 @@ class SearchAndReplaceController < ApplicationController
       @element_results = Element.search_by_content(@site.id, params)
       if @element_results.size == 0
         nothing_found(@site.id)
+      elsif !params[:replace].blank?
+        case_sensitive = (params[:case_sensitive] == "1")
+        @element_results.each do |ele|
+          if case_sensitive
+            ele.update_attribute(:content, ele.content.gsub(/#{params[:search]}/, params[:replace]))
+          else
+            ele.update_attribute(:content, ele.content.gsub(/#{params[:search]}/i, params[:replace]))
+          end
+        end
       end
     end
   end

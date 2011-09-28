@@ -22,7 +22,7 @@ class Document < ActiveRecord::Base
     "Variation: 2\n" +
     "*/\n" +
     "HEADER: A second recycling header.\n" +
-    "BODY: Recycling sentence one, again. A second sentence about\n" +
+    "BODY: Recycling sentence one, again - recycling. A second sentence about\n" +
     "recycling, i think. A third sentence about recycling. A fouth sentence about \n" +
     "recycling.\n" +
     "CTA: A call to action - important.\n" +

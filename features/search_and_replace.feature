@@ -19,3 +19,26 @@ Feature: Search and replace
     And I fill in "search" with "sdfhjusehnf"
     And I press "Search"
     Then I should see "Content not found."
+    
+  Scenario: Enters in an available search term and a replace term, case insensive
+    Given I am on the homepage
+    When I compile documents
+    And I follow "Search/Replace"
+    And I fill in "search" with "Recycling"
+    And I fill in "replace" with "Fishing"
+    And I press "Search"
+    Then I should see "Fishing"
+    And I should not see "Recycling"
+    And I should not see "recyling"
+    
+  Scenario: Enters in an available search term and a replace term, case sensitive
+    Given I am on the homepage
+    When I compile documents
+    And I follow "Search/Replace"
+    And I fill in "search" with "Recycling"
+    And I fill in "replace" with "Fishing"
+    And I check "case_sensitive"
+    And I press "Search"
+    Then I should see "Fishing"
+    And I should see "recycling"
+    And I should not see "Recycling"
