@@ -1,0 +1,12 @@
+%h1 Content found:
+%table
+  %tr
+    %th Type Name
+    %th Content
+  - @element_results.each do |element|
+    %tr
+      %td.etname= element.element_type_name
+      %td= element.content
+
+
+= link_to 'Search again', new_site_search_and_replace_path(@site)

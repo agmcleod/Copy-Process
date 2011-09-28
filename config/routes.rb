@@ -1,11 +1,9 @@
 CopyProcess::Application.routes.draw do
-
   resources :sites do
     resources :documents
-    resources :element_types do
-      resources :elements
-    end
+    resources :element_types
     resources :elements, only: [:index]
+    resource :search_and_replace, only: [:new, :create], controller: 'search_and_replace'
   end
   
   root to: 'sites#index'

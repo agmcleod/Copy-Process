@@ -1,0 +1,18 @@
+%h1 Search & replace
+
+%p 
+  Use the form to search for content. If you wish, you can replace that content as well. Leave the replace box empty if you
+  just wish to search.
+
+= form_tag site_search_and_replace_path(@site) do 
+  .field
+    = label_tag :search, 'Search: '
+    = text_field_tag :search
+  .field
+    = label_tag :replace, 'Replace with: '
+    = text_field_tag :replace
+  .field
+    = label_tag :case_sensitive, 'Case sensitive: '
+    = check_box_tag :case_sensitive
+  .actions
+    = submit_tag 'Search'
