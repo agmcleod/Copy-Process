@@ -1,5 +1,5 @@
 CopyProcess::Application.routes.draw do
-  devise_for :users
+  devise_for :users, skip: [:registrations]
 
   resources :sites do
     resources :documents

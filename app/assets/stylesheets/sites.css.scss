@@ -6,6 +6,14 @@ body {
   background-color:#B5E0AD;
 }
 
+#error {
+  color:red;
+}
+
+.right {
+  float:right;
+}
+
 .container {
   width:900px;
   margin:30px auto;
@@ -17,6 +25,13 @@ body {
 .logo a:hover, .logo a {
   text-decoration:none;
   background:none;
+}
+
+header.top {
+  overflow:hidden;
+  .logo {
+    float:left;
+  }
 }
 
 .bottom-content {
