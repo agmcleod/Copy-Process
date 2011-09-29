@@ -1,4 +1,5 @@
 class SearchAndReplaceController < ApplicationController
+  before_filter :authenticate_user!
   def new
     @site = Site.find(params[:site_id])
   end

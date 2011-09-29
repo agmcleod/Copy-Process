@@ -1,4 +1,6 @@
 CopyProcess::Application.routes.draw do
+  devise_for :users
+
   resources :sites do
     resources :documents
     resources :element_types

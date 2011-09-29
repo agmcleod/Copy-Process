@@ -233,7 +233,6 @@ module CopyProcess
         File.delete('recycling1.txt')
         File.delete('recycling2.txt')
         File.delete('garbage1.txt')
-        File.delete('testfile_rspec.txt')
       end
     end
   end
