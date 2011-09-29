@@ -32,14 +32,10 @@ test: &test
   socket: /tmp/mysql.sock
 
 production:
-  adapter: mysql2
-  encoding: utf8
-  reconnect: false
-  database: copy_process_production
-  pool: 5
-  username: root
-  password:
-  socket: /tmp/mysql.sock
+  adapter: mysql
+  database: dacgroup_ics
+  username: dacgroup_ics
+  password: 21940651
 
 cucumber:
   <<: *test
