@@ -30,8 +30,6 @@ gem 'haml-rails'
 
 gem 'nokogiri'
 
-gem 'therubyracer', :group => :production
-
 group :test, :development do
   gem 'autotest'
   gem 'capybara'
