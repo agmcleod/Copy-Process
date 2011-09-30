@@ -13,7 +13,7 @@
   %body
     .container
       %header.top
-        %p{ :class => "logo"}= link_to image_tag('ics.jpg', alt: 'intelligent content separator'), root_path
+        %p{ :class => "logo"}= link_to image_tag('ics.jpg', :alt => 'intelligent content separator'), root_path
         - if current_user
           %p{ :class => "right"}= link_to 'Sign out', destroy_user_session_path, :method => :delete
       = yield
