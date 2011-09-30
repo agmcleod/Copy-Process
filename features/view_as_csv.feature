@@ -3,7 +3,8 @@ Feature: Download elements as CSV
   as a user, I want to download a CSV of the copy.
   
   Scenario: Elements already compiled
-    Given I am on the homepage
+    Given I am logged in
+    When I am on the homepage
     When I compile documents
     And I go to site page My Test
     And I follow "Export CSV"

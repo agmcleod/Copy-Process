@@ -3,7 +3,8 @@ Feature: View Element Types
   for a particular site
   
   Scenario: Valid documents compiled
-    Given I am on the homepage
+    Given I am logged in
+    When I am on the homepage
     When I compile documents
     And I go to site page My Test
     And I follow "View Element Types"

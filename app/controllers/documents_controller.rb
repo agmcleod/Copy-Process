@@ -7,7 +7,7 @@ class DocumentsController < ApplicationController
     @site = Site.find(params[:site_id])
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @documents }
+      format.json { render :json => @documents }
     end
   end
 
@@ -19,7 +19,7 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @document }
+      format.json { render :json => @document }
     end
   end
 
@@ -31,7 +31,7 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @document }
+      format.json { render :json => @document }
     end
   end
 
@@ -49,11 +49,11 @@ class DocumentsController < ApplicationController
     @document.site_id = @site.id
     respond_to do |format|
       if @document.save
-        format.html { redirect_to site_url(@site), notice: 'Document was successfully created.' }
-        format.json { render json: @document, status: :created, location: @document }
+        format.html { redirect_to site_url(@site), :notice => 'Document was successfully created.' }
+        format.json { render :json => @document, :status => :created, location: @document }
       else
-        format.html { render action: "new" }
-        format.json { render json: @document.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @document.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -65,11 +65,11 @@ class DocumentsController < ApplicationController
     @site = Site.find(params[:site_id])
     respond_to do |format|
       if @document.update_attributes(params[:document])
-        format.html { redirect_to site_url(@site), notice: 'Document was successfully updated.' }
+        format.html { redirect_to site_url(@site), :notice => 'Document was successfully updated.' }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @document.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { render :json => @document.errors, :status => :unprocessable_entity }
       end
     end
   end

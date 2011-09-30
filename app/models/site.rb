@@ -1,9 +1,9 @@
 class Site < ActiveRecord::Base
   include CopyProcess
   
-  validates :name, presence: true
-  has_many :documents, dependent: :destroy
-  has_many :element_types, dependent: :destroy
+  validates :name, :presence => true
+  has_many :documents, :dependent => :destroy
+  has_many :element_types, :dependent => :destroy
   
   def to_csv(with_parents)
     p = CopyProcess::Processor.new

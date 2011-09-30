@@ -1,5 +1,9 @@
 CopyProcess::Application.routes.draw do
-  devise_for :users, skip: [:registrations]
+  devise_for :users, skip: [:registrations] do
+    get "/login" => "devise/sessions#new", :as => :login
+    post '/login' => "devise/sessions#create"
+    get "/logout" => "devise/sessions#destroy", :as => :logout
+  end
 
   resources :sites do
     resources :documents

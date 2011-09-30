@@ -1,19 +1,19 @@
 !!! 5
 
-%html{ lang: "en" }
+%html{ :lang => "en" }
   %head
     %title CopyProcess
     = stylesheet_link_tag 'application'
     = javascript_include_tag 'application'
     /[if lt IE 9]
-      %script{ source: 'http://html5shiv.googlecode.com/svn/trunk/html5.js' }
+      %script{ :source => 'http://html5shiv.googlecode.com/svn/trunk/html5.js' }
     = csrf_meta_tags
     = yield :head
     
   %body
     .container
       %header.top
-        %p{ class: "logo"}= link_to image_tag('ics.jpg', alt: 'intelligent content separator'), root_path
+        %p{ :class => "logo"}= link_to image_tag('ics.jpg', alt: 'intelligent content separator'), root_path
         - if current_user
-          %p{ class: "right"}= link_to 'Sign out', destroy_user_session_path, method: :delete
+          %p{ :class => "right"}= link_to 'Sign out', destroy_user_session_path, :method => :delete
       = yield

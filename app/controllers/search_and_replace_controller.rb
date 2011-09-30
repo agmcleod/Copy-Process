@@ -28,6 +28,6 @@ class SearchAndReplaceController < ApplicationController
   private
   
   def nothing_found(site)
-    redirect_to new_site_search_and_replace_url(site), notice: 'Content not found.'
+    redirect_to new_site_search_and_replace_url(site), :notice => 'Content not found.'
   end
 end

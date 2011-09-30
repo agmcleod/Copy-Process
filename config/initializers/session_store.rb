@@ -1,6 +1,6 @@
 # Be sure to restart your server when you modify this file.
 
-CopyProcess::Application.config.session_store :cookie_store, key: '_copy_process_session'
+CopyProcess::Application.config.session_store :cookie_store, :key => '_copy_process_session'
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information

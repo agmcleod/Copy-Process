@@ -4,7 +4,8 @@ Feature: Add Documents To Site
   I want to be able to add documents
   
   Scenario: Valid document format
-    Given I am on the homepage
+    Given I am logged in
+    When I am on the homepage
     When site "My Test" exists
     And I go to site page My Test
     And I press "add_document"    
@@ -14,7 +15,8 @@ Feature: Add Documents To Site
     
     
   Scenario: Invalid document format
-    Given I am on the homepage
+    Given I am logged in
+    When I am on the homepage
     When site "My Test" exists
     And I go to site page My Test
     And I press "add_document"    

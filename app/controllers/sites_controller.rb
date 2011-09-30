@@ -7,7 +7,7 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.json { render json: @sites }
+      format.json { render :json => @sites }
     end
   end
 
@@ -18,7 +18,7 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       format.html # show.html.erb
-      format.json { render json: @site }
+      format.json { render :json => @site }
     end
   end
 
@@ -29,7 +29,7 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       format.html # new.html.erb
-      format.json { render json: @site }
+      format.json { render :json => @site }
     end
   end
 
@@ -45,11 +45,11 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.save
-        format.html { redirect_to @site, notice: 'Site was successfully created.' }
-        format.json { render json: @site, status: :created, location: @site }
+        format.html { redirect_to @site, :notice => 'Site was successfully created.' }
+        format.json { render :json => @site, :status => :created, location: @site }
       else
-        format.html { render action: "new" }
-        format.json { render json: @site.errors, status: :unprocessable_entity }
+        format.html { render :action => "new" }
+        format.json { render :json => @site.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -61,11 +61,11 @@ class SitesController < ApplicationController
 
     respond_to do |format|
       if @site.update_attributes(params[:site])
-        format.html { redirect_to @site, notice: 'Site was successfully updated.' }
+        format.html { redirect_to @site, :notice => 'Site was successfully updated.' }
         format.json { head :ok }
       else
-        format.html { render action: "edit" }
-        format.json { render json: @site.errors, status: :unprocessable_entity }
+        format.html { render :action => "edit" }
+        format.json { render :json => @site.errors, :status => :unprocessable_entity }
       end
     end
   end
@@ -90,15 +90,15 @@ class SitesController < ApplicationController
     end
     respond_to do |format|
       @site.compile_to_save
-      format.html { redirect_to site_path(@site), notice: 'Documents compiled' }
-      format.csv { send_data(@site.to_csv(with_parents), filename: "#{@site.name}.csv", type: 'text/csv') }
+      format.html { redirect_to site_path(@site), :notice => 'Documents compiled' }
+      format.csv { send_data(@site.to_csv(with_parents), :filename => "#{@site.name}.csv", :type => 'text/csv') }
     end
   end
   
   def export_csv
     @site = Site.find(params[:id])
     respond_to do |format|
-      format.csv { send_data(@site.to_csv(false), filename: "#{@site.name}.csv", type: 'text/csv') }
+      format.csv { send_data(@site.to_csv(false), :filename => "#{@site.name}.csv", :type => 'text/csv') }
     end
   end
 end
