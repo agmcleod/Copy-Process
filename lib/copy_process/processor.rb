@@ -45,11 +45,11 @@ module CopyProcess
       end
       should_save = false
       rows.each_key do |k|
-        et = site.element_types.build(name: k)
+        et = site.element_types.build(:name => k)
         rows.each_value do |row|
           if et.name == row[0][0]
             row.each do |r|
-              et.elements.build(content: r[1], note: r[2])
+              et.elements.build(:content => r[1], :note => r[2])
             end
             should_save = true
           end

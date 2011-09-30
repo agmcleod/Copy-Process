@@ -48,10 +48,10 @@
         %p= f.submit "Compile Documents", :id => 'compile_documents'
         
   %h4 Tokens to replace:
-  = render :partial => 'hash', locals: { :hash => @site.tokens }
+  = render :partial => 'hash', :locals { :hash => @site.tokens }
     
   %h4 Active Tokens:
-  = render :partial => 'hash', locals: { :hash => @site.active_tokens }
+  = render :partial => 'hash', :locals { :hash => @site.active_tokens }
 
 = link_to 'Edit', edit_site_path(@site)
 = link_to 'Back', sites_path
