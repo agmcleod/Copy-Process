@@ -20,7 +20,7 @@
     %tr
       %th View/Edit
       %th
-    - @site.documents.each do |doc|
+    - @site.documents_by_name.each do |k, doc|
       %tr
       %td= link_to doc.name, edit_site_document_path(@site, doc.id)
       %td= link_to "Destroy", site_document_path(@site, doc), :confirm => 'Are you sure?', :method => :delete

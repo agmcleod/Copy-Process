@@ -35,6 +35,14 @@ class Site < ActiveRecord::Base
     tokens_to_hash(scan_elements(/\$\{[a-zA-Z]+\.[a-zA-Z]+\}/))
   end
   
+  def documents_by_name
+    docs = {}
+    documents.each do |d|
+      docs[d.name] = d
+    end
+    docs.sort{ |a, b| a[0]<=>b[0] }
+  end
+  
   private
   
   def prepare_documents(files)

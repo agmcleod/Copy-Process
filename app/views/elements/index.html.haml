@@ -3,10 +3,7 @@
 - if @elements.size > 0
   %ul
     - @elements.each do |ele|
-      %li= ele.content
-- else
-  #accordion
-    =list_elements(@element_types)
+      %li= ele.content.html_safe
     
 %p
   = link_to 'Site', site_path(@site)
