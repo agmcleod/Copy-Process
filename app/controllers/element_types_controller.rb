@@ -22,4 +22,14 @@ class ElementTypesController < ApplicationController
     @site = Site.find(params[:site_id])
     @element_type = ElementType.find(params[:id])
   end
+  
+  def update
+    @site = Site.find(params[:site_id])
+    @element_type = ElementType.find(params[:id])
+    if @element_type.update_attributes(params[:element_type])
+      redirect_to [@site, @element_type], :notice => 'Element type updated successfully!'
+    else
+      render :action => 'edit'
+    end
+  end
 end

@@ -10,7 +10,7 @@ class ElementType < ActiveRecord::Base
   private
   
   def uniq_to_site
-    et = ElementType.where(["site_id = ? AND name = ?", self.site_id, self.name])
+    et = ElementType.where(["site_id = ? AND name = ? AND id <> ?", self.site_id, self.name, self.id])
     if et.size > 0
       errors.add(:name, "must be unique to this site")
     end
