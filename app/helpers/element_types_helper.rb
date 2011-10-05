@@ -1,25 +1,26 @@
 module ElementTypesHelper
   
   def show_element_content(element_types, site)
-    loop_through_elements(element_types) do |output, last|
+    loop_through_elements(element_types, 'table') do |output, last|
       element_types.each do |ele|
         if last != get_element_type_name(ele.name)
           last = get_element_type_name(ele.name)
-          output << "</ul></div><h3><a href=\"#\">#{last}</a></h3><div><ul>"
+          output << "</table></div><h3><a href=\"#\">#{last}</a></h3><div><table>"
         end
-        output << "<li>#{link_to(get_element_content(ele.name), site_element_type_path(site, ele.id))}</li>"
+        output << "<tr><td>#{link_to(get_element_content(ele.name), site_element_type_path(site, ele.id))}</td>" + 
+          "<td>#{link_to('Edit', edit_site_element_type_path(site, ele.id))}</td></tr>"
       end
     end
   end
   
-  def loop_through_elements(element_types, &block)
+  def loop_through_elements(element_types, tag = 'ul', &block)
     last = get_element_type_name(element_types.first.name)
-    output = "<h3><a href=\"#\">#{last}</a></h3><div><ul>"
+    output = "<h3><a href=\"#\">#{last}</a></h3><div><#{tag}>"
     if last.nil?
       raise "ElementReturnedNullException - this shouldn't happen."
     else
       yield(output, last)
-      output << "</ul></div>"
+      output << "</#{tag}></div>"
     end
     output.html_safe
   end
