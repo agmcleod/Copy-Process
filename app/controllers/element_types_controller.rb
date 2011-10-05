@@ -3,7 +3,7 @@ class ElementTypesController < ApplicationController
   
   def index
     @site = Site.find(params[:site_id])
-    @element_types = ElementType.where(:site_id => @site.id)
+    @element_types = ElementType.where(:site_id => @site.id).order(:name)
   end
   
   def show
