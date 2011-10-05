@@ -1,5 +1,7 @@
 %h1= @element_type.name
 
+%p= link_to 'Edit', edit_site_element_type_path(@site, @element_type)
+
 %p Elements:
 %ul
   - @element_type.elements.each do |ele|

@@ -1,0 +1,17 @@
+%h1= "Editing #{@element_type.name}"
+
+= form_for([@site, @element_type]) do |f|
+  - if @element_type.errors.any?
+    #error_explanation
+      %h2= pluralize(@element_type.errors.count, 'error') |
+      prohibited this document from being saved:
+      
+      %ul
+      - @element_type.errors.full_messages.each do |msg|
+        %li= msg
+        
+  .field
+    = f.label :name
+    = f.text_field :name
+  .actions
+    = f.submit

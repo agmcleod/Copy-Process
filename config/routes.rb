@@ -7,7 +7,7 @@ CopyProcess::Application.routes.draw do
 
   resources :sites do
     resources :documents
-    resources :element_types
+    resources :element_types, :only => [:index, :show, :destroy, :edit]
     resources :elements, :only => [:index]
     resource :search_and_replace, :only => [:new, :create], :controller => 'search_and_replace'
   end
