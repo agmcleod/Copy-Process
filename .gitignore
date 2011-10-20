@@ -13,3 +13,4 @@ log/*.log
 test.rb
 *.log
 config/deploy.rb
+config/database.yml
