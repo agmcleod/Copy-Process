@@ -26,7 +26,7 @@ module CopyProcess
       contents = contents[5..contents.size-1]
       contents = contents.join('\n')
       content_elements = []
-      r = /((([A-Z]\s?)|([0-9]\s?)){1,}){1,}\s?:/
+      r = /((([A-Z]{1,}\s?)([0-9]\s?)?){1,}){1,}\s?:/
       until done
         et = r.match(contents, idx)
         if et.nil?

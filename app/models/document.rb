@@ -7,6 +7,7 @@ class Document < ActiveRecord::Base
   
   validate :document_is_in_valid_format
   
+  
   def name
     if content.blank?
       'Document'

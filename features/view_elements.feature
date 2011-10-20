@@ -9,4 +9,4 @@ Feature: View Element Types
     And I go to site page My Test
     And I follow "View Element Types"
     Then I should see "Listing Element Types"
-    And I should see 6 "li" tags
+    And I should see 6 "tr" tags

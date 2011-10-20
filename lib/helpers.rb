@@ -21,7 +21,12 @@ module Helpers
   # @param [String] - the string to enclose
   # @return [String]
   def enclose(string)
-    string = string.gsub(/\u2019/, '&rsquo;')
+    begin
+      string = string.gsub(/\u2019/, '&rsquo;')
+    rescue NoMethodError => ex
+      raise "Something came back null in one of the elements. Double check the names & formatting in your documents, and re-compile. " + 
+      "\n#{ex.message}\n#{ex.backtrace}"
+    end
     if string.index(',')
       return "\"#{string}\""
     else

@@ -79,18 +79,6 @@ module CopyProcess
       append_file_if_valid(content, headers, files, '')
     end
 
-    # Returns the file names in the correct format
-    # @params [String] contents - entered file names
-    # @return [Array] returns an array of the file names
-    def set_file_names(contents)
-      raise "set_file_names called"
-      if contents.match(/^\*\.[a-z]{1,}/).nil?
-        contents.split(';')
-      else
-        Dir[contents]
-      end
-    end
-
     def append_file_if_valid(file_contents, headers, files, file_name)
       unless headers
         raise "Headers not found in file: #{file_name}"
