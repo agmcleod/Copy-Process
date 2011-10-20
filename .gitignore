@@ -14,3 +14,4 @@ test.rb
 *.log
 config/deploy.rb
 config/database.yml
+db/seeds.rb
