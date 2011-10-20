@@ -10,7 +10,7 @@
 
   .field
     = f.label :content 
-    = f.text_area :content, :cols => 90, :rows => 40
+    = f.text_area :content , :cols => 90, :rows => 40, :value => @document.value
   .actions
     = f.submit
     

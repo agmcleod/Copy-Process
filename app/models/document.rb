@@ -15,6 +15,14 @@ class Document < ActiveRecord::Base
     end
   end
   
+  def value
+    if self.content.blank?
+      "/*\nType: \nLayer: \nVariation: \n*/"
+    else
+      self.content
+    end
+  end
+  
   def self.test_data
     "/*\n" +
     "Type: Recycling\n" +

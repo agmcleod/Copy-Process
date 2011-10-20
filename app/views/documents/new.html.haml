@@ -1,5 +1,13 @@
 %h1 New document
 
+%p
+  %strong Read first: 
+  Each document requires 5 lines at the top, to identify what it is about. For example:
+  
+="<pre>\n/*\nType: Lawn Care\nLayer: State\nVariation: 1\n*/</pre>".html_safe
+%p
+  Simply increase the variation number for each "Lawn Care" document at the "State layer"
+
 = render 'form'
 
 = link_to 'Back', site_documents_path(@site)
