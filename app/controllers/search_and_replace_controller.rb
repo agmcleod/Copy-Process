@@ -16,9 +16,9 @@ class SearchAndReplaceController < ApplicationController
         case_sensitive = (params[:case_sensitive] == "1")
         @element_results.each do |ele|
           if case_sensitive
-            ele.update_attribute(:content, ele.content.gsub(/#{params[:search]}/, params[:replace]))
+            ele.update_attribute(:content, ele.content.gsub("#{params[:search]}", params[:replace]))
           else
-            ele.update_attribute(:content, ele.content.gsub(/#{params[:search]}/i, params[:replace]))
+            ele.update_attribute(:content, ele.content.gsub("#{params[:search]}", params[:replace]))
           end
         end
       end
