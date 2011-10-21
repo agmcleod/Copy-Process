@@ -18,7 +18,7 @@ class SearchAndReplaceController < ApplicationController
           if case_sensitive
             ele.update_attribute(:content, ele.content.gsub("#{params[:search]}", params[:replace]))
           else
-            ele.update_attribute(:content, ele.content.gsub("#{params[:search]}", params[:replace]))
+            ele.update_attribute(:content, ele.content.gsub(/#{regex_safe(params[:search])}/i, params[:replace]))
           end
         end
       end
@@ -29,5 +29,9 @@ class SearchAndReplaceController < ApplicationController
   
   def nothing_found(site)
     redirect_to new_site_search_and_replace_url(site), :notice => 'Content not found.'
+  end
+  
+  def regex_safe(str)
+    str.gsub(/\W+/) { |match| "\\#{match}" }
   end
 end
