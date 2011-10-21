@@ -7,10 +7,17 @@
       %ul
       - @document.errors.full_messages.each do |msg|
         %li= msg
-
-  .field
-    = f.label :content 
-    = f.text_area :content , :cols => 90, :rows => 40, :value => @document.value
+  .area_container
+    .field
+      = f.label :content 
+      = f.text_area :content , :cols => 90, :rows => 40, :value => @document.value
+    .tips
+      %h3 Always consider the following:
+      %ul
+        %li The combination of the Type/Layer/City at the top must be unique
+        %li The Type/Layer/City values are case sensitive. Please keep to your own conventions
+        %li Any sentences you dont want split (think title tags), add an * to the end of ? ! . as you need to.
+        %li Can easily convert lines of text to a bullet list by selecting and clicking the button below.
   .actions
     = f.submit
     

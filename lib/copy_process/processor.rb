@@ -14,10 +14,10 @@ module CopyProcess
           et.elements.each do |e|
             if with_parents
               pn = et.name.split(' ').first
-              output << ",,,#{pn},#{et.name},#{enclose(e.content)},#{e.note}\n"
+              output << ",,,#{pn},#{enclose(et.name)},#{enclose(e.content)},#{e.note}\n"
               parent_names << pn unless parent_names.include?(pn)
             else
-              output << ",,,,#{et.name},#{enclose(e.content)},#{e.note}\n"
+              output << ",,,,#{enclose(et.name)},#{enclose(e.content)},#{e.note}\n"
             end
           end
         end

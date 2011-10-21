@@ -1,3 +1,18 @@
-// Place all the styles related to the Documents controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.area_container {
+  overflow:hidden;
+  .field {
+    float:left;
+    width:635px;
+  }
+  .tips {
+    float:right;
+    width:250px;
+    h3 {
+      margin-left:20px;
+    }
+    li {
+      margin:5px 0;
+      line-height:22px;
+    }
+  }
+}
