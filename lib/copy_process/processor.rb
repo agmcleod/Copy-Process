@@ -89,10 +89,12 @@ module CopyProcess
     
     # Adds missing element variations for restriction purposes.
     def add_missing_elements(final_rows, keywords, types, types_and_keywords)
+      used_types = []
       keywords.each do |k|
         types.each do |t|
-          unless types_and_keywords.include?("#{t}+#{k}")
-            final_rows << "#{t},<!-- empty -->,empty for: #{k}"
+          if !types_and_keywords.include?("#{t}+#{k}") && !used_types.include?(t)
+            used_types << t
+            final_rows << "#{t},<!-- empty -->,empty for restrictions"
           end
         end
       end

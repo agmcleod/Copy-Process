@@ -121,14 +121,31 @@ module CopyProcess
         processor.add_missing_elements([], keywords, types, tk).size.should == 1
       end
       
-      it "should return a string containing city+outdoor pestcontrol" do
+      it "should return a string containing city,<!-- empty -->,empty for restrictions" do
         keywords = ['lawncare', 'outdoor pestcontrol']
         types = ['national', 'state', 'city']
         tk = ["national+lawncare", "national+outdoor pestcontrol", 
           "state+lawncare", "state+outdoor pestcontrol",
           "city+lawncare"]
-        processor.add_missing_elements([], keywords, types, tk).first.should == "city,<!-- empty -->,empty for: outdoor pestcontrol"
+        processor.add_missing_elements([], keywords, types, tk).first.should == "city,<!-- empty -->,empty for restrictions"
       end
+      
+      context "missing 2 from same type" do
+        before :each do
+          @keywords = ['lawncare', 'outdoor pestcontrol', 'termites']
+          @types = ['national']
+          @tk = ['national+termites']
+        end
+        it "should return 1 string (not 2) for missing two types from national" do
+          processor.add_missing_elements([], @keywords, @types, @tk).size.should == 1
+        end
+        
+        it "should return a string containing national,<!-- empty -->,empty for restrictions" do
+          processor.add_missing_elements([], @keywords, @types, @tk).first.should == "national,<!-- empty -->,empty for restrictions"
+        end
+        
+      end
+      
     end
     
     describe "#contains_valid_headers" do
