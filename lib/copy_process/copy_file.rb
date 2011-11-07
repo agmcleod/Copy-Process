@@ -129,13 +129,13 @@ module CopyProcess
       if replaced || sentences.size == 1
         sentences[0] = sentences[0].strip.gsub(/\n/, '')
         et_name = "#{@layer} #{ele_name}#{counter}"
-        to_return << ContentRow.new(et_name, "#{et_name},#{enclose(sentences[0])},#{self.note}", self.type)
+        to_return << ContentRow.new(et_name, "#{et_name},#{enclose(remove_extra_asterisks(sentences[0]))},#{self.note}", self.type)
       else
         sentences.each_with_index do |sentence, s_counter|
           # remove whitespace
           sentence.strip!
           et_name = "#{@layer} #{ele_name}#{counter} S#{s_counter + 1}"
-          to_return << ContentRow.new(et_name, "#{et_name},#{enclose(sentence)},#{self.note}", self.type)
+          to_return << ContentRow.new(et_name, "#{et_name},#{enclose(remove_extra_asterisks(sentence))},#{self.note}", self.type)
         end
       end
       return to_return
@@ -154,6 +154,12 @@ module CopyProcess
         dummy.remove
       end
       return [doc.to_html.to_s.gsub("&lt;", "<").gsub("&gt;", ">"), is_html]
+    end
+    
+    private
+    
+    def remove_extra_asterisks(string)
+      string.gsub(/\.\*|\?\*|\!\*/) { |m| m[0, 1] }
     end
   end
 end

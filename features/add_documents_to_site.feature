@@ -22,4 +22,4 @@ Feature: Add Documents To Site
     And I press "add_document"    
     When I copy and paste an invalid document
     And I press "Create Document"
-    Then I should see "Contents must be in valid format"
+    Then I should see "Content Headers must be in valid format"
