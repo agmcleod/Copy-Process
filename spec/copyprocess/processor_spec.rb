@@ -181,6 +181,11 @@ module CopyProcess
         processor.retrieve_content_rows(t).size.should == 2
       end
       
+      it "should not contain ?*" do
+        row_data = processor.retrieve_content_rows(@files)
+        row_data.join(' ').index('?*').should == nil
+      end
+      
       after(:all) do
         File.delete('recycling1.txt')
         File.delete('recycling2.txt')
