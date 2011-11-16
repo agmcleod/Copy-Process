@@ -41,16 +41,6 @@ When /^I compile documents$/ do
     And I press "Compile Documents"
   }
 end
-
-When /^I compile and export documents$/ do
-  steps %Q{
-    When site "My Test" exists
-    And site "My Test" has documents
-    And I go to site page My Test
-    And I press "Compile and Export Documents"
-  }
-end
-
 Then /^I should see (\d+) "([^"]*)" tags$/ do |amount, tag_name|
   page.find(:css, tag_name, :count=>amount)
 end

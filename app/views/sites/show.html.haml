@@ -18,34 +18,33 @@
 
   %table
     %tr
-      %th View/Edit
-      %th
+      %th Edit
+      %th Mark for change
+      %th Delete
     - @site.documents_by_name.each do |k, doc|
       %tr
       %td= link_to doc.name, edit_site_document_path(@site, doc.id)
-      %td= link_to "Destroy", site_document_path(@site, doc), :confirm => 'Are you sure?', :method => :delete
+      %td= link_to 'Edit for changes', [@site, doc]
+      %td= link_to "Delete", site_document_path(@site, doc), :confirm => 'Are you sure?', :method => :delete
       
 %p
   =button_to "Add Document", new_site_document_path(@site), :method => :get, :id => 'add_document'
 
 - if @site.documents.size > 0
-  %h3 Compile/Export:
-  %p 
-    If you wish to re-compile and export the documents, click "Compile and Export Documents".
-  %p
-    If you wish to just compile them for now, click "Compile Documents"
+  %p Run "Compile Documents" when you wish to input the content into PAGETorrent.
       
-  .bottom-content
-    .left
-      =form_for(@site, :url => compile_documents_path(@site, :format => :csv), :html => { :method => :post }) do |f|
-        %p
-          = label_tag :parent_strucutre, "Export with parent types?"
-          = check_box_tag :parent_structure
-          = f.submit "Compile and Export Documents", :id => 'compile_documents'
-        
-    .right
-      =form_for(@site, :url => compile_documents_path(@site), :html => { :method => :post }) do |f|
-        %p= f.submit "Compile Documents", :id => 'compile_documents'
+  =form_for(@site, :url => compile_documents_path(@site), :html => { :method => :post }) do |f|
+    %p= f.submit "Compile Documents", :id => 'compile_documents'
+    
+- if @site.element_types.size > 0
+  %h3 Export
+  
+  =form_for(@site, url: export_csv_path(@site, format: :csv), html: { method: :get }) do |f|
+    %p
+      = label_tag :parent_structure, "Export with parent types?"
+      = check_box_tag :parent_structure
+    %p= f.submit "Export", id: 'export_csv'
+      
         
   %h4 Tokens to replace:
   = render :partial => 'hash', :locals => { :hash => @site.tokens }
