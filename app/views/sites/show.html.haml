@@ -9,7 +9,6 @@
 - if @site.element_types.size > 0
   %p
     = link_to 'View Element Types', site_element_types_path(@site)
-    = link_to 'Export CSV', export_csv_path(@site, :format => :csv)
     = link_to 'Search/Replace', new_site_search_and_replace_path(@site)
 
 
