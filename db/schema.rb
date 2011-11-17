@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110929121936) do
+ActiveRecord::Schema.define(:version => 20111117160448) do
 
   create_table "documents", :force => true do |t|
     t.text     "content"
@@ -33,6 +33,16 @@ ActiveRecord::Schema.define(:version => 20110929121936) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "element_type_id"
+  end
+
+  create_table "notes", :force => true do |t|
+    t.text     "body"
+    t.integer  "start_character"
+    t.integer  "end_character"
+    t.string   "author"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "document_id"
   end
 
   create_table "sites", :force => true do |t|

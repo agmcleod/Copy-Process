@@ -7,6 +7,8 @@ class Document < ActiveRecord::Base
   
   validate :document_is_in_valid_format
   
+  has_many :notes
+  
   
   def name
     if content.blank?
@@ -15,6 +17,8 @@ class Document < ActiveRecord::Base
       content.split(/\n/)[1..3].join(' - ').gsub(/\/\*|\\\*/,'')
     end
   end
+  
+  
   
   def value
     if self.content.blank?
