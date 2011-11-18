@@ -29,6 +29,8 @@ gem 'haml-rails'
 
 gem 'nokogiri'
 
+gem 'differ'
+
 group :test, :development do
   gem 'autotest'
   gem 'capybara'

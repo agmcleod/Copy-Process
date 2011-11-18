@@ -1,4 +1,12 @@
 CopyProcess::Application.routes.draw do
+  get "notes/index"
+
+  get "notes/create"
+
+  get "notes/update"
+
+  get "notes/destroy"
+
   devise_for :users, :skip => [:registrations] do
     get "/login" => "devise/sessions#new", :as => :login
     post '/login' => "devise/sessions#create"
