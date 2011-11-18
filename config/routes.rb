@@ -1,11 +1,4 @@
 CopyProcess::Application.routes.draw do
-  get "notes/index"
-
-  get "notes/create"
-
-  get "notes/update"
-
-  get "notes/destroy"
 
   devise_for :users, :skip => [:registrations] do
     get "/login" => "devise/sessions#new", :as => :login
@@ -18,6 +11,11 @@ CopyProcess::Application.routes.draw do
     resources :element_types, :only => [:index, :show, :destroy, :edit, :update]
     resources :elements, :only => [:index]
     resource :search_and_replace, :only => [:new, :create], :controller => 'search_and_replace'
+  end
+  
+  
+  resources :documents do
+    resources :notes, :except => [:show, :new, :edit]
   end
   
   root :to => 'sites#index'
