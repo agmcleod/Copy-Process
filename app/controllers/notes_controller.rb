@@ -10,10 +10,16 @@ class NotesController < ApplicationController
   def create
     @document = parent_document(params)
     @note = Note.new(params[:note])
-    @note.save
-    respond_with(@note)
+    
+    respond_to do |format|
+      if @note.save
+        format.json { render json: @note }
+      else
+        format.json { render json: @note.errors, status: :unprocessable_entity }
+      end
+    end
   end
-
+  
   def update
     @document = parent_document(params)
     @note = Note.find(params[:id])

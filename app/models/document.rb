@@ -1,14 +1,13 @@
 class Document < ActiveRecord::Base
   include CopyProcess
   
-  validates :content, :presence => true
-  
   belongs_to :site
+  has_many :notes, order: 'start_character'
   
   validate :document_is_in_valid_format
+  validates :content, :presence => true
   
-  has_many :notes
-  
+  before_create :remove_windows_lines
   
   def name
     if content.blank?
@@ -17,8 +16,6 @@ class Document < ActiveRecord::Base
       content.split(/\n/)[1..3].join(' - ').gsub(/\/\*|\\\*/,'')
     end
   end
-  
-  
   
   def value
     if self.content.blank?
@@ -76,6 +73,12 @@ class Document < ActiveRecord::Base
         end
       end
     end
+  end
+  
+  private
+  
+  def remove_windows_lines
+    self.content = self.content.gsub(/\r\n/, "\n")
   end
   
 end

@@ -35,14 +35,8 @@
     }
   }
   .note {
-    border:1px solid #ffb8c9;
     padding:0 8px;
     width:150px;
-    -webkit-border-radius:5px;
-    -moz-border-radius:5px;
-    border-radius:5px;
-    position:absolute;
-    background-color:#fff;
     left:-175px;
     z-index:2;
     p {
@@ -54,10 +48,27 @@
       line-height:10px;
     }
   }
-  .note_line {
+  .new_note, .note_line, .note {
     position:absolute;
+  }
+  .note, .new_note {
+    border:1px solid #ffb8c9;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    border-radius:5px;
+    background-color:#fff;
+  }
+  .note_line {
     left:-7px;
     border-top:1px solid #ffb8c9;
     height:1px;
   }
+  .new_note {
+    width:180px;
+    height:180px;
+    fieldset {
+      border:0;
+    }
+  }
+  
 }
