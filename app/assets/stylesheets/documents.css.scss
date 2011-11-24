@@ -39,13 +39,17 @@
     width:150px;
     left:-175px;
     z-index:2;
-    p {
+    p, a {
       margin:0;
       font-weight:bold;
     }
-    p, cite {
+    p, cite, a {
       font-size:10px;
       line-height:10px;
+    }
+    a {
+      float:right;
+      cursor:pointer;
     }
   }
   .new_note, .note_line, .note {

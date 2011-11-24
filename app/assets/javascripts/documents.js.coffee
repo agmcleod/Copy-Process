@@ -4,8 +4,27 @@ NoteView = Backbone.View.extend({
   el: null,
   initialize: ->
     this.model.view = this
-    $('.view').append("<div class=\"note\" id=\"note_#{this.model.get('id')}\"><p>#{this.model.get('body')}</p><cite>#{this.model.get('author')}</cite></div>")
+    $('.view').append("<div class=\"note\" id=\"note_#{this.model.get('id')}\"><a>X</a><p>#{this.model.get('body')}</p><cite>#{this.model.get('author')}</cite></div>")
     this.el = $("#note_#{this.model.get('id')}")
+    self = this
+    this.el.children('a').click ->
+      $.ajax({
+        url:"/documents/#{self.model.get('document_id')}/notes/#{self.model.get('id')}.json",
+        type: "DELETE",
+        beforeSend: (jqXHR, settings) ->
+          jqXHR.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+        ,
+        success: (data) ->
+          $("#note_#{self.model.get('id')}").remove()
+          $("#line_#{self.model.get('id')}").remove()
+          text = $("#sel_#{self.model.get('id')}").text()
+          outer = $("#sel_#{self.model.get('id')}").outer()
+          html = $('.view pre').first().html()
+          
+          html = html.substring(0, html.indexOf(outer)) + 
+            text + html.substring(html.indexOf(outer) + outer.length)
+          $('.view pre').first().html(html)
+      })
     
   setup: ->
     self = this
@@ -16,7 +35,7 @@ NoteView = Backbone.View.extend({
       $(this).css({ 'z-index':'3' })
     .mouseout ->
       $(this).css({ 'z-index':'2' })
-    .click ->
+    this.el.children('p').click ->
       self.edit(self.el, self.model)
         
 
@@ -40,11 +59,11 @@ NoteView = Backbone.View.extend({
       else
         total_span_tag_size += size
     
-    html = html.substring(0, start_character) + 
+    html = html.substring(0, start_character) +
       "<span class=\"to_change\" id=\"sel_#{this.model.get('id')}\">" +
       html.substring(start_character, end_character) +
       "</span>" +
-      html.substring(end_character)
+      html.substring(end_character) +
     $('.view pre').first().html(html)
     
   edit: (el, n)->
@@ -84,7 +103,7 @@ find_x_position = (node) ->
   while node.offsetParent
     x += node.offsetLeft
     node = node.offsetParent
-  x
+  x - window.scrollX
   
 find_y_position = (node) ->
   y = 0
@@ -92,7 +111,7 @@ find_y_position = (node) ->
   while node.offsetParent
     y += node.offsetTop
     node = node.offsetParent
-  y
+  y - window.scrollY
 
 get_document_id = ->
   current_url = document.location.pathname.split('/')
