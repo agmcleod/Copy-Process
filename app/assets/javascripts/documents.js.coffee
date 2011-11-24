@@ -157,7 +157,7 @@ add_text_selection = ->
     end_offset = selection.extentOffset - selection.anchorOffset + start_offset
     # if the end is less then the start, that means they are selecting in a current <span> tag
     if end_offset != null && start_offset != null
-      text = view.children('pre').first().text()
+      text = $('.view pre').first().text()
       text = text.substring(start_offset, end_offset)
       # check that selection is valid, and that it does not contain HTML tags.
       if end_offset > start_offset && text.indexOf('<') == -1 && text.indexOf('>') == -1
