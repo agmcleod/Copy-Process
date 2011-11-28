@@ -1,13 +1,14 @@
 class Document < ActiveRecord::Base
   include CopyProcess
   
+  # has_paper_trail only: [:content]
   belongs_to :site
   has_many :notes, order: 'start_character', dependent: :destroy
   
   validate :document_is_in_valid_format
   validates :content, :presence => true
   
-  before_create :remove_windows_lines
+  before_save :remove_windows_lines
   
   def name
     if content.blank?

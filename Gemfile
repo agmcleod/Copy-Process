@@ -31,6 +31,12 @@ gem 'nokogiri'
 
 gem 'differ'
 
+# gem 'paper_trail'
+
+group :production do
+  gem 'pg'
+end
+
 group :test, :development do
   gem 'autotest'
   gem 'capybara'
