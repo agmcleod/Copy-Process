@@ -19,11 +19,13 @@
     %tr
       %th Edit
       %th Mark for change
+      %th Create new version
       %th Delete
     - @site.documents_by_name.each do |k, doc|
       %tr
       %td= link_to doc.name, edit_site_document_path(@site, doc.id)
       %td= link_to 'Edit for changes', [@site, doc]
+      %td= link_to 'Create new version', '/'
       %td= link_to "Delete", site_document_path(@site, doc), :confirm => 'Are you sure?', :method => :delete
       
 %p

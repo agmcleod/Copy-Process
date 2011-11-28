@@ -3,8 +3,10 @@ require 'csv'
 When /^site "([^"]*)" has documents$/ do |name|
   site = Site.find_by_name(name)
   if site.documents.nil? || site.documents.size == 0
-    d = Document.new(:content => Document.test_data)
-    d2 = Document.new(:content => Document.test_data.gsub('Variation: 2', 'Variation: 3'))
+    doc = Factory.build(:good_document)
+    d = doc
+    d2 = doc
+    d2.content = d2.content.gsub('Variation 2', 'Variation: 3')
     d.save
     d2.save
     site.documents << d
@@ -18,7 +20,6 @@ Then /^I should get a response with content-type "([^"]*)"$/ do |content_type|
 end
 
 Then /^column (\d+) row (\d+) should have a value$/ do |col, row|
-  Rails.logger.debug "Data: #{page.source}"
   rows = CSV.parse(page.source)
   col = col.to_i - 1
   row = row.to_i - 1

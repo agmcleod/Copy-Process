@@ -5,9 +5,11 @@ When /^site "([^"]*)" exists$/ do |name|
 end
 
 When /^I copy and paste a document$/ do
-  fill_in "document_content", :with => Document.test_data
+  doc = Factory.build(:good_document)
+  fill_in "document_content", :with => doc.content
 end
 
 When /^I copy and paste an invalid document$/ do
-  fill_in "document_content", :with => Document.bad_test_data
+  doc = Factory.build(:bad_document)
+  fill_in "document_content", :with => doc.content
 end

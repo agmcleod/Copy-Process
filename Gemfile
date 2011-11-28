@@ -41,4 +41,5 @@ group :test, :development do
   gem 'spork'
   gem 'launchy'
   gem 'timecop'
+  gem 'factory_girl_rails'
 end

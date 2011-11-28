@@ -48,6 +48,7 @@ class Site < ActiveRecord::Base
   def prepare_documents(files)
     p = CopyProcess::Processor.new
     self.documents.each do |doc|
+      Rails.logger.debug "Content: #{doc.content}"
       p.parse_each_document(doc.content, files)
     end
     p
