@@ -3,14 +3,22 @@ require 'csv'
 When /^site "([^"]*)" has documents$/ do |name|
   site = Site.find_by_name(name)
   if site.documents.nil? || site.documents.size == 0
-    doc = Factory.build(:good_document)
-    d = doc
-    d2 = doc
-    d2.content = d2.content.gsub('Variation 2', 'Variation: 3')
-    d.save
-    d2.save
-    site.documents << d
-    site.documents << d2
+    doc = site.documents.build
+    doc2 = site.documents.build
+    version = Factory.build(:version)
+    version2 = version
+    version2.content = version.content.gsub('Variation 2', 'Variation: 3')
+    
+    doc.versions << version
+    doc.active_version = version
+    version.document = doc
+    version.save
+    
+    doc2.versions << version2
+    doc2.active_version = version2
+    version2.document = doc2
+    version2.save
+    
     site.save
   end
 end

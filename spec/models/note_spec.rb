@@ -1,8 +1,13 @@
 describe Note do
   describe "#note_does_not_overlap" do
     before do
-      site = Site.create(name: 'Test')
-      @document = Document.create(content: "/*\nType: Test\nLayer: Fake\nVariation: 1\n*/", site_id: site.id)
+      site = Site.create!(name: 'Test')
+      @document = site.documents.build
+      version = Version.new(content: "/*\nType: Test\nLayer: Fake\nVariation: 1\n*/")
+      @document.versions << version
+      @document.active_version = version
+      version.document = @document
+      version.save
       Note.create(document_id: @document.id, body: "Test", start_character: 1, end_character: 10)
       Note.create(document_id: @document.id, body: "Test", start_character: 15, end_character: 20)
     end

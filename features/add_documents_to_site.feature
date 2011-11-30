@@ -13,6 +13,20 @@ Feature: Add Documents To Site
     And I press "Create Document"
     Then I should see "Document was successfully created."
     
+  Scenario: Valid but already existing
+    Given I am logged in
+    When I am on the homepage
+    When site "My Test" exists
+    And I go to site page My Test
+    And I press "add_document"    
+    When I copy and paste a document
+    And I press "Create Document"
+    Then I should see "Document was successfully created."
+    And I go to site page My Test
+    And I press "add_document"    
+    When I copy and paste a document
+    And I press "Create Document"
+    Then I should see "Content headers are not unique."
     
   Scenario: Invalid document format
     Given I am logged in

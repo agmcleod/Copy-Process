@@ -182,7 +182,14 @@ module CopyProcess
       before(:each) do
         @files = []
         %w{recycling1.txt recycling2.txt garbage1.txt}.each do |filename|
-          d = Document.create(content: IO.read(filename))
+          s = Site.create!(name: "test")
+          d = s.documents.build
+          v = Version.new(content: IO.read(filename))
+          d.versions << v
+          v.document = d
+          d.active_version = v
+          # d.save!
+          v.save!
           processor.parse_each_document(d.content, @files)
         end
       end
@@ -227,7 +234,12 @@ module CopyProcess
         @files = []
         @site = Site.create!(name: 'somesite')
         %w{recycling1.txt recycling2.txt garbage1.txt}.each do |fn|
-          d = Document.create!(site_id: @site.id, content: IO.read(fn))
+          d = @site.documents.build
+          v = Version.new(content: IO.read(fn))
+          v.document = d
+          d.versions << v
+          d.active_version = v
+          v.save!
         end
       end
       
