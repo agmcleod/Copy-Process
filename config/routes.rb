@@ -16,6 +16,7 @@ CopyProcess::Application.routes.draw do
   
   resources :documents do
     resources :notes, :except => [:show, :new, :edit]
+    resources :versions, only: :create
   end
   
   root :to => 'sites#index'

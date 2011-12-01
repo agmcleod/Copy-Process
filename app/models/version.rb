@@ -25,7 +25,8 @@ class Version < ActiveRecord::Base
     else
       headers = content.split(/\n/)[1..3].join(' - ').gsub(/\/\*|\\\*/,'')
       site_documents = []
-      if self.id
+      # Rails.logger.debug("Site id: #{self.site_id} Doc id: #{self.id}")
+      if self.document_id
         site_documents = Document.where(["site_id = ? AND id <> ?", self.site_id, self.document_id])
       else
         site_documents = Document.where(["site_id = ?", self.site_id])
