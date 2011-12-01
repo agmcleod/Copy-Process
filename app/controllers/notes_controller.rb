@@ -2,13 +2,13 @@ class NotesController < ApplicationController
   respond_to :json
   
   def index
-    @document = parent_document(params)
-    @notes = @document.notes
+    @version = parent_version(params)
+    @notes = @version.notes
     respond_with(@notes)
   end
 
   def create
-    @document = parent_document(params)
+    @version = parent_version(params)
     @note = Note.new(params[:note])
     
     respond_to do |format|
@@ -21,7 +21,7 @@ class NotesController < ApplicationController
   end
   
   def update
-    @document = parent_document(params)
+    @version = parent_version(params)
     @note = Note.find(params[:id])
     respond_to do |format|
       if @note.update_attributes(params[:note])
@@ -33,7 +33,7 @@ class NotesController < ApplicationController
   end
 
   def destroy
-    @document = parent_document(params)
+    @version = parent_version(params)
     @note = Note.find(params[:id])
     @note.destroy
     respond_with(@note)
@@ -41,8 +41,8 @@ class NotesController < ApplicationController
   
   private
   
-  def parent_document(params)
-    Document.find(params[:document_id])
+  def parent_version(params)
+    Version.find(params[:version_id])
   end
 
 end

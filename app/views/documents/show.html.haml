@@ -1,9 +1,11 @@
+:javascript
+  window['version-id'] = "#{@document.active_version_id}";
 %p#notice= notice
 
 .view
   %p
     %b Content:
-    %pre= content_with_notes(@document)
+    %pre= content_with_notes(@document.active_version)
 
 = link_to 'Edit', edit_site_document_path(@site, @document) 
 |

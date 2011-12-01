@@ -1,5 +1,7 @@
 class Version < ActiveRecord::Base
   belongs_to :document
+  has_many :notes, order: 'start_character', dependent: :destroy
+  
   after_validation :add_validations_to_parent
   
   validate :content_is_in_valid_format

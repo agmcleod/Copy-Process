@@ -9,7 +9,7 @@ NoteView = Backbone.View.extend({
     self = this
     this.el.children('a').click ->
       $.ajax({
-        url:"/documents/#{self.model.get('document_id')}/notes/#{self.model.get('id')}.json",
+        url:"/versions/#{self.model.get('version_id')}/notes/#{self.model.get('id')}.json",
         type: "DELETE",
         beforeSend: (jqXHR, settings) ->
           jqXHR.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
@@ -76,7 +76,7 @@ NoteView = Backbone.View.extend({
       en = $(this)
       if e.keyCode == 13
         $.ajax({
-          url: '/documents/' + n.get('document_id') + '/notes/' + n.get('id') + '.json'
+          url: '/versions/' + n.get('version_id') + '/notes/' + n.get('id') + '.json'
           type:'PUT',
           data: 'note[body]=' + en.val(),
           beforeSend: (jqXHR, settings) ->
@@ -114,11 +114,7 @@ find_y_position = (node) ->
   y - window.scrollY
 
 get_document_id = ->
-  current_url = document.location.pathname.split('/')
-  d_id = 0
-  if current_url[4] != null
-    d_id = current_url[4]
-  d_id
+  window['version-id']
   
 load_notes_on_page = (notes) ->
   view_top = $('.view').first().position().top
@@ -211,9 +207,9 @@ new_note_setup_event = ->
       author = $('#note_author').val()
       d_id = get_document_id()
       $.ajax({
-        url:'/documents/' + d_id + '/notes.json',
+        url:'/versions/' + d_id + '/notes.json',
         type:'POST',
-        data:'note[body]=' + body + '&note[start_character]=' + start + '&note[end_character]=' + end + '&note[author]=' + author + '&note[document_id]=' + d_id,
+        data:'note[body]=' + body + '&note[start_character]=' + start + '&note[end_character]=' + end + '&note[author]=' + author + '&note[version_id]=' + d_id,
         beforeSend: (jqXHR, settings) ->
           jqXHR.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
         ,
@@ -257,7 +253,7 @@ $ ->
   
   # retrieves and loads the notes from the JSON response
   $.ajax({
-    url: '/documents/' + get_document_id() + '/notes.json',
+    url: '/versions/' + get_document_id() + '/notes.json',
     type: 'GET',
     
     beforeSend: (jqXHR, settings) ->

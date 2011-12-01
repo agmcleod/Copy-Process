@@ -2,7 +2,6 @@ class Document < ActiveRecord::Base
   include CopyProcess
 
   belongs_to :site
-  has_many :notes, order: 'start_character', dependent: :destroy
   has_many :versions, before_add: :set_version_parent
   belongs_to :active_version, class_name: "Version", foreign_key: "active_version_id"
   

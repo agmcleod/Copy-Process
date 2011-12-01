@@ -10,5 +10,10 @@ class VersionsController < ApplicationController
       redirect_to site_path(@document.site)
     end
   end
+  
+  def show
+    @document = Document.find(params[:document_id])
+    @version = Version.find(params[:id])
+  end
 
 end

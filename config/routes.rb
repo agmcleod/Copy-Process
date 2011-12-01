@@ -13,9 +13,12 @@ CopyProcess::Application.routes.draw do
     resource :search_and_replace, :only => [:new, :create], :controller => 'search_and_replace'
   end
   
+  resources :versions, only: :show do
+    resources :notes, :except => [:show, :new, :edit]
+  end
+  
   
   resources :documents do
-    resources :notes, :except => [:show, :new, :edit]
     resources :versions, only: :create
   end
   
