@@ -16,6 +16,12 @@ class DocumentsController < ApplicationController
   def show
     @document = Document.find(params[:id])
     @site = Site.find(params[:site_id])
+    
+    if params[:version_id]
+      @version = Version.find(params[:version_id])
+    else
+      @version = @document.active_version
+    end
 
     respond_to do |format|
       format.html # show.html.erb

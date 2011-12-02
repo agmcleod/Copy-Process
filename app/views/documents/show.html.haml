@@ -1,11 +1,21 @@
 :javascript
-  window['version-id'] = "#{@document.active_version_id}";
+  window['version-id'] = "#{@version.id}";
 %p#notice= notice
 
 .view
+  %p 
+    Version: 
+    %br
+    %select#select-version
+      - @document.versions.each_with_index do |v, i|
+        - if v.id == @version.id
+          %option{ value: "#{v.id}", selected: "selected" }= i + 1
+        - else
+          %option{ value: "#{v.id}" }= i + 1
+        
   %p
     %b Content:
-    %pre= content_with_notes(@document.active_version)
+    %pre= content_with_notes(@version)
 
 = link_to 'Edit', edit_site_document_path(@site, @document) 
 |

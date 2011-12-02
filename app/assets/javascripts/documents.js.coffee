@@ -47,6 +47,7 @@ NoteView = Backbone.View.extend({
   draw_selection: (start_character, end_character) ->
     total_span_tag_size = 0
     html = $('.view pre').first().html()
+    
     $('.to_change').each ->
       l = $(this).outer().length
       t = $(this).text().length
@@ -63,7 +64,9 @@ NoteView = Backbone.View.extend({
       "<span class=\"to_change\" id=\"sel_#{this.model.get('id')}\">" +
       html.substring(start_character, end_character) +
       "</span>" +
-      html.substring(end_character) +
+      html.substring(end_character)
+      
+    
     $('.view pre').first().html(html)
     
   edit: (el, n)->
@@ -113,7 +116,7 @@ find_y_position = (node) ->
     node = node.offsetParent
   y - window.scrollY
 
-get_document_id = ->
+get_version_id = ->
   window['version-id']
   
 load_notes_on_page = (notes) ->
@@ -205,7 +208,7 @@ new_note_setup_event = ->
       start = $('#note_start_character').val()
       end = $('#note_end_character').val()
       author = $('#note_author').val()
-      d_id = get_document_id()
+      d_id = get_version_id()
       $.ajax({
         url:'/versions/' + d_id + '/notes.json',
         type:'POST',
@@ -220,7 +223,6 @@ new_note_setup_event = ->
           new NoteView({
             model: model
           })
-          console.log(model.get('id'))
           notes[data.id] = model
           draw_selection_tags(notes)
           load_notes_on_page(notes)
@@ -236,6 +238,8 @@ $.fn.outer = ->
 
 $ ->
   
+  $('#select-version').change ->
+    window.location.href = window.location.pathname + "?version_id=" + $(this).val()
     
   $('#listify').click ->
     contents = $('#document_content')
@@ -253,7 +257,7 @@ $ ->
   
   # retrieves and loads the notes from the JSON response
   $.ajax({
-    url: '/versions/' + get_document_id() + '/notes.json',
+    url: '/versions/' + get_version_id() + '/notes.json',
     type: 'GET',
     
     beforeSend: (jqXHR, settings) ->
