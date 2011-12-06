@@ -11,7 +11,6 @@ class Site < ActiveRecord::Base
   end
   
   def compile_to_save
-    Rails.logger.debug("site.compile_to_save")
     # Destroy all existing
     self.element_types.destroy_all
     # build new
@@ -49,7 +48,6 @@ class Site < ActiveRecord::Base
   def prepare_documents(files)
     p = CopyProcess::Processor.new
     self.documents.each do |doc|
-      Rails.logger.debug "Parsing: #{doc.name}"
       p.parse_each_document(doc.content, files)
     end
     p

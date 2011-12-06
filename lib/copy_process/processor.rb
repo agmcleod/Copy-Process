@@ -83,7 +83,6 @@ module CopyProcess
       unless headers
         raise "Headers not found in file: #{file_name}"
       else
-        Rails.logger.debug "Adding file"
         files << CopyFile.new(file_contents, headers[0], headers[1], headers[2], file_name)
       end
     end
@@ -107,7 +106,6 @@ module CopyProcess
     # @return [Array]
     def contains_valid_headers(value)
       split_value = value.split(/\n/)
-      Rails.logger.debug "Checking for valid headers"
       if split_value.size == 0 || split_value[4].nil?
         return false
       else
