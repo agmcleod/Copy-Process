@@ -256,24 +256,25 @@ $ ->
     contents.val(val.substring(0, start) + "<ul>" + list.join("\n") + "</ul>" + val.substring(end, len))
   
   # retrieves and loads the notes from the JSON response
-  $.ajax({
-    url: '/versions/' + get_version_id() + '/notes.json',
-    type: 'GET',
+  if get_version_id() != null && typeof get_version_id() != 'undefined'
+    $.ajax({
+      url: '/versions/' + get_version_id() + '/notes.json',
+      type: 'GET',
     
-    beforeSend: (jqXHR, settings) ->
-      jqXHR.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
-    ,
-    success: (data) ->
-      notes = {}
-      for note in data
-        model = new Note(note)
-        notes[note.id] = model
-        new NoteView({
-          model: model
-        })
+      beforeSend: (jqXHR, settings) ->
+        jqXHR.setRequestHeader('X-CSRF-Token', $('meta[name="csrf-token"]').attr('content'));
+      ,
+      success: (data) ->
+        notes = {}
+        for note in data
+          model = new Note(note)
+          notes[note.id] = model
+          new NoteView({
+            model: model
+          })
       
-      load_notes_on_page(notes)
-  })
+        load_notes_on_page(notes)
+    })
   
   add_text_selection()
   

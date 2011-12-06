@@ -24,28 +24,37 @@ module CopyProcess
       idx = 0
       contents = @contents.split(/\n/)
       contents = contents[5..contents.size-1]
-      contents = contents.join('\n')
+      contents = contents.join("\n")
       content_elements = []
-      r = /((([A-Z]{1,}\s?)([0-9]\s?)?){1,}){1,}\s?:/
+      # r = /((([A-Z]{1,}\s?)([0-9]\s?)?){1,}){1,}\s?:/
+      r = /[A-Z]+(\s)?([0-9]+)?(\s)?:/
       until done
+        Rails.logger.debug("Done: #{done}")
         et = r.match(contents, idx)
         if et.nil?
           done = true
         else
           et = et.to_s
+          Rails.logger.info("Element type content: #{et}")
           unless et.empty?
+            Rails.logger.debug("unless")
             idx = contents.index(et, idx) + et.size + 1
+            Rails.logger.debug("idx: #{idx}")
             next_et = r.match(contents, idx)
+            Rails.logger.debug("Next: #{next_et}")
             if next_et.nil?
-              next_et = contents.size 
+              next_et = contents.size
             else
               next_et = next_et.to_s
               next_et = contents.index(next_et, idx)
             end
             @elements << ContentElement.new(et.strip.gsub(/:/,''), contents[idx-1..next_et-1].gsub(/\n|\\n|\r|\t/, '').strip)
+          else
+            Rails.logger.debug("else")
           end
         end
       end
+      Rails.logger.debug("Out of loop")
     end
 
     # returns the string to use in the note field of the CSV

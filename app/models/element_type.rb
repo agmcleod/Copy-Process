@@ -1,6 +1,6 @@
 class ElementType < ActiveRecord::Base
   validate :uniq_to_site
-  has_many :elements, :dependent => :destroy
+  has_many :elements, dependent: :destroy, order: "content"
   belongs_to :site
   
   def all_content

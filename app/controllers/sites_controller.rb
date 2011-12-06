@@ -84,6 +84,7 @@ class SitesController < ApplicationController
   end
   
   def compile_documents
+    Rails.logger.debug("compile_documents requested")
     @site = Site.find(params[:id])
     respond_to do |format|
       @site.compile_to_save
