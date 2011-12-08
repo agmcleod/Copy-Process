@@ -1,7 +1,6 @@
 module CopyProcess
   class Processor
     require 'csv'
-    require 'helpers'
     include Helpers
     
     attr_accessor :input
@@ -14,10 +13,10 @@ module CopyProcess
           et.elements.each do |e|
             if with_parents
               pn = et.name.split(' ').first
-              output << ",,,#{pn},#{enclose(et.name)},#{enclose(e.content)},#{e.note}\n"
+              output << ",,,#{pn},#{Helpers::enclose(et.name)},#{e.content.gsub("&quot;", "\"")},#{e.note}\n"
               parent_names << pn unless parent_names.include?(pn)
             else
-              output << ",,,,#{enclose(et.name)},#{enclose(e.content)},#{e.note}\n"
+              output << ",,,,#{Helpers::enclose(et.name)},#{e.content.gsub("&quot;", "\"")},#{e.note}\n"
             end
           end
         end
@@ -36,6 +35,7 @@ module CopyProcess
       types = []
       rows = {}
       retrieve_content_rows(files).each do |r|
+        Rails.logger.debug("R: #{r}")
         row = CSV.parse_line(r)
         if rows[row[0]].nil?
           rows[row[0]] = [row]

@@ -7,12 +7,12 @@ module CopyProcess
     describe "#enclose" do
       context "text contains a comma" do
         it "should enclose in double quotes" do
-          enclose('some, string').should == '"some, string"'
+          Helpers::enclose('some, string').should == '"some, string"'
         end
       end
       context "text does contain a comma" do
         it "should not be enclosed" do
-          enclose('some string').should == 'some string'
+          Helpers::enclose('some string').should == 'some string'
         end
       end
     end
@@ -46,7 +46,7 @@ module CopyProcess
         else
           s_counter = " S#{s_counter}"
         end
-        "#{cf.layer} #{element_name}#{counter}#{s_counter},#{enclose(sentence)},#{cf.note}"
+        "#{cf.layer} #{element_name}#{counter}#{s_counter},#{Helpers::enclose(sentence)},#{cf.note}"
       end
       
       describe "#initialize" do
@@ -73,7 +73,7 @@ module CopyProcess
             # @cf.elements.size.should == 4
             
             test_number_of_elements_with_content(
-              "#{@valid_headers}HEAD: A header\nBODY: Some body\n BODY: Another body FOOTER: A footer",
+              "#{@valid_headers}HEAD: A header\nBODY: Some body\nBODY: Another body\nFOOTER: A footer",
               4
             )
           end
@@ -82,7 +82,7 @@ module CopyProcess
         context "contents contains 5 keys" do
           it "should result in an elements collection of 5" do     
             test_number_of_elements_with_content(
-              "#{@valid_headers}HEAD: A headerBODY: Some body\n BODY: Another body FOOTER: A footerCTA: A call to action" +
+              "#{@valid_headers}HEAD: A header\nBODY: Some body\nBODY: Another body\nFOOTER: A footer\nCTA: A call to action" +
               "FakeHeader: not a header",
               5
             )
@@ -92,7 +92,7 @@ module CopyProcess
         context "contains 3 keys" do
           it "should contain accurate key/value pairs" do
             test_number_of_elements_with_content(
-              "#{@valid_headers}HEAD: A headerBODY: Some body\n BODY: Another body",
+              "#{@valid_headers}HEAD: A header\nBODY: Some body\nBODY: Another body",
               3
             )
             first, second, third = @cf.elements[0], @cf.elements[1], @cf.elements[2]
@@ -190,12 +190,12 @@ module CopyProcess
       describe "#elements_out" do
         context "Elements variable populated with 5 ContentElements" do
           before(:each) do
-            @cf.contents = "#{@valid_headers}HEAD: A header\nBODY: Some body\nCTA: Callto actionBODY: Another body FOOTER: A footer"
+            @cf.contents = "#{@valid_headers}HEAD: A header\nBODY: Some body\nCTA: Callto action\nBODY: Another body FOOTER: A footer"
             @cf.parse_file
           end
           
-          it "should return a collection of 5" do
-            @cf.elements_out.size.should == 5
+          it "should return a collection of 4" do
+            @cf.elements_out.size.should == 4
           end
           
           it "first element should return correct contents" do
@@ -205,7 +205,7 @@ module CopyProcess
         end  
         
         it "should return a collection 8" do
-          @cf.contents = "#{@valid_headers}HEAD: A header\nBODY: Some body. With a sentence. And a question? and a sentence\nCTA: Callto actionBODY: Another body FOOTER: A footer"
+          @cf.contents = "#{@valid_headers}HEAD: A header\nBODY: Some body. With a sentence. And a question? and a sentence\nCTA: Callto action\nBODY: Another body\nFOOTER: A footer"
           @cf.parse_file
           @cf.elements_out.size.should == 8
         end    

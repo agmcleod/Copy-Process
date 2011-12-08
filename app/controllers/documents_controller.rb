@@ -54,7 +54,9 @@ class DocumentsController < ApplicationController
   # POST /documents.json
   def create
     @site = Site.find(params[:site_id])
-    @document = @site.documents.build(params[:document])
+    @document = @site.documents.build
+    @version = @document.versions.build(params[:document][:active_version])
+    @document.active_version = @version
     respond_to do |format|
       if @site.save
         format.html { redirect_to site_url(@site), :notice => 'Document was successfully created.' }
@@ -72,7 +74,7 @@ class DocumentsController < ApplicationController
     @document = Document.find(params[:id])
     @site = Site.find(params[:site_id])
     respond_to do |format|
-      if @document.update_attributes(params[:document])
+      if @document.active_version.update_attributes(params[:document][:active_version])
         format.html { redirect_to site_url(@site), :notice => 'Document was successfully updated.' }
         format.json { head :ok }
       else

@@ -8,7 +8,7 @@
       - @document.errors.full_messages.each do |msg|
         %li= msg
   
-  = f.fields_for :versions do |builder|
+  = f.fields_for :active_version do |builder|
     .area_container
       .field
         = builder.label :content 

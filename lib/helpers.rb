@@ -20,17 +20,21 @@ module Helpers
   # Encloses the string in double quotes, in case it contains a comma
   # @param [String] - the string to enclose
   # @return [String]
-  def enclose(string)
+  def self.enclose(string)
     begin
       string = string.gsub(/\u2019/, '&rsquo;')
     rescue NoMethodError => ex
       raise "Something came back null in one of the elements. Double check the names & formatting in your documents, and re-compile. " + 
       "\n#{ex.message}\n#{ex.backtrace}"
     end
+    string.gsub!(/\"/, "&quot;")
+    if string.index('blower')
+      Rails.logger.debug("Enclosed: #{string}")
+    end
     if string.index(',')
-      return "\"#{string}\""
+      "\"#{string}\""
     else
-      return string
+      string
     end
   end
 end

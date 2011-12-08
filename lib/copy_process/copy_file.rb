@@ -1,9 +1,8 @@
 module CopyProcess
   class CopyFile
-    require 'helpers'
-    require 'nokogiri'
     
     include Helpers
+    
     attr_accessor :contents, :type, :layer, :variation, :file_name
     attr_reader :elements
     def initialize(contents, type, layer, variation, file_name)
@@ -26,8 +25,7 @@ module CopyProcess
       contents = contents[5..contents.size-1]
       contents = contents.join("\n")
       content_elements = []
-      # r = /((([A-Z]{1,}\s?)([0-9]\s?)?){1,}){1,}\s?:/
-      r = /([A-Z](\s)?)+([0-9]+)?(\s)?:/
+      r = /^([A-Z](\s)?)+([0-9]+)?(\s)?:/
       until done
         et = r.match(contents, idx)
         if et.nil?
@@ -114,7 +112,7 @@ module CopyProcess
         end
       else
         et_name = "#{@layer} #{element.name}#{counter}"
-        output_array << ContentRow.new(et_name, "#{et_name},#{enclose(element.content)},#{self.note}", self.type)
+        output_array << ContentRow.new(et_name, "#{et_name},#{Helpers::enclose(element.content)},#{self.note}", self.type)
       end
       output_array
     end
@@ -130,13 +128,13 @@ module CopyProcess
       if replaced || sentences.size == 1
         sentences[0] = sentences[0].strip.gsub(/\n/, '')
         et_name = "#{@layer} #{ele_name}#{counter}"
-        to_return << ContentRow.new(et_name, "#{et_name},#{enclose(remove_extra_asterisks(sentences[0]))},#{self.note}", self.type)
+        to_return << ContentRow.new(et_name, "#{et_name},#{Helpers::enclose(remove_extra_asterisks(sentences[0]))},#{self.note}", self.type)
       else
         sentences.each_with_index do |sentence, s_counter|
           # remove whitespace
           sentence.strip!
           et_name = "#{@layer} #{ele_name}#{counter} S#{s_counter + 1}"
-          to_return << ContentRow.new(et_name, "#{et_name},#{enclose(remove_extra_asterisks(sentence))},#{self.note}", self.type)
+          to_return << ContentRow.new(et_name, "#{et_name},#{Helpers::enclose(remove_extra_asterisks(sentence))},#{self.note}", self.type)
         end
       end
       return to_return
