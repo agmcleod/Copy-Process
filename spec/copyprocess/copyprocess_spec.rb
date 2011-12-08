@@ -67,10 +67,7 @@ module CopyProcess
           @cf.elements.size.should == expectation
         end
         context "contents contains 4 keys" do          
-          it "should result in an elements collection of 4" do     
-            # @cf.contents = "#{@valid_headers}HEAD: A header\nBODY: Some body\n BODY: Another body FOOTER: A footer"       
-            # @cf.parse_file
-            # @cf.elements.size.should == 4
+          it "should result in an elements collection of 4" do
             
             test_number_of_elements_with_content(
               "#{@valid_headers}HEAD: A header\nBODY: Some body\nBODY: Another body\nFOOTER: A footer",
@@ -84,6 +81,20 @@ module CopyProcess
             test_number_of_elements_with_content(
               "#{@valid_headers}HEAD: A header\nBODY: Some body\nBODY: Another body\nFOOTER: A footer\nCTA: A call to action" +
               "FakeHeader: not a header",
+              5
+            )
+          end
+          
+          it "with a mix of names, it should result in an elements collection of 5," do
+            test_number_of_elements_with_content(
+              "#{@valid_headers}HEAD: A header\nBODY: Some body\nBODY: Another body\nFEATURE 1: A footer\nFEATURE 1 BODY: A call to action",
+              5
+            )
+          end
+          
+          it "with caps in the content, it should still have 5" do
+            test_number_of_elements_with_content(
+              "#{@valid_headers}HEAD: A header\nBODY: Some body\nBODY: Another body\nFOOTER: ZOMG, YAY!\nCTA: A call to action",
               5
             )
           end

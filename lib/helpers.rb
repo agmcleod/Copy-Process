@@ -19,18 +19,16 @@ module Helpers
 
   # Encloses the string in double quotes, in case it contains a comma
   # @param [String] - the string to enclose
+  # @param [Boolean] - whether to escape double quotes or not. Default to true
   # @return [String]
-  def self.enclose(string)
+  def self.enclose(string, escape_quotes = true)
     begin
       string = string.gsub(/\u2019/, '&rsquo;')
     rescue NoMethodError => ex
       raise "Something came back null in one of the elements. Double check the names & formatting in your documents, and re-compile. " + 
       "\n#{ex.message}\n#{ex.backtrace}"
     end
-    string.gsub!(/\"/, "&quot;")
-    if string.index('blower')
-      Rails.logger.debug("Enclosed: #{string}")
-    end
+    string.gsub!(/\"/, "&quot;") if escape_quotes
     if string.index(',')
       "\"#{string}\""
     else
