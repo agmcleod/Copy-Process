@@ -20,6 +20,11 @@ class SitesController < ApplicationController
       format.html # show.html.erb
       format.json { render :json => @site }
       format.js { render :layout => false }
+      with_parents = false
+      if params[:parent_structure] == "1"
+        with_parents = true
+      end
+      format.csv { send_data(@site.to_csv(with_parents), :filename => "#{@site.name}.csv", :type => 'text/csv') }
     end
   end
 
@@ -88,17 +93,6 @@ class SitesController < ApplicationController
     respond_to do |format|
       @site.compile_to_save
       format.html { redirect_to site_path(@site), :notice => 'Documents compiled' }
-    end
-  end
-  
-  def export_csv
-    @site = Site.find(params[:id])
-    respond_to do |format|
-      with_parents = false
-      if params[:parent_structure] == "1"
-        with_parents = true
-      end
-      format.csv { send_data(@site.to_csv(with_parents), :filename => "#{@site.name}.csv", :type => 'text/csv') }
     end
   end
 end
