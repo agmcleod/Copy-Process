@@ -5,7 +5,7 @@ gem 'rails', '3.1.0'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2', '0.3.11'
+gem 'mysql2', '0.3.7'
 
 # Asset template engines
 gem 'sass-rails', "~> 3.1.0.rc"
