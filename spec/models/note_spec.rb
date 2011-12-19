@@ -1,3 +1,4 @@
+require 'spec_helper'
 describe Note do
   describe "#note_does_not_overlap" do
     before do
