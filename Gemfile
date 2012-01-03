@@ -37,6 +37,10 @@ group :production do
   gem 'pg'
 end
 
+group :test do
+  gem 'factory_girl_rails'
+end
+
 group :test, :development do
   gem 'autotest'
   gem 'capybara'
@@ -47,5 +51,4 @@ group :test, :development do
   gem 'spork'
   gem 'launchy'
   gem 'timecop'
-  gem 'factory_girl_rails'
 end
