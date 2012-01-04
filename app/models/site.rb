@@ -1,6 +1,8 @@
 class Site < ActiveRecord::Base
   include CopyProcess
   
+  default_scope order: "name"
+  
   validates :name, :presence => true
   has_many :documents, :dependent => :destroy
   has_many :element_types, :dependent => :destroy
