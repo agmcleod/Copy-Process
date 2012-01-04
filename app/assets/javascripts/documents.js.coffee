@@ -242,7 +242,7 @@ $ ->
     window.location.href = window.location.pathname + "?version_id=" + $(this).val()
     
   $('#listify').click ->
-    contents = $('#document_content')
+    contents = $('#document_active_version_content')
     val = contents.val()
     len = val.length
     start = contents[0].selectionStart
