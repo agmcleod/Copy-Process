@@ -1,8 +1,6 @@
 module CopyProcess
   class CopyFile
-    
     include Helpers
-    
     attr_accessor :contents, :type, :layer, :variation, :file_name
     attr_reader :elements
     def initialize(contents, type, layer, variation, file_name)
@@ -121,12 +119,13 @@ module CopyProcess
     # It loops through the given content, splits it by an asterisk, and appends the appropriate content
     def content_sentence_split_helper(contents, ele_name, counter)
       to_return = []
+      contents = escape_links(contents)
       vals = escape_punctuation_in_html(contents)
       contents, replaced = vals[0], vals[1]
       
       sentences = contents.split(/(?<=[.!?])(?!\*)/)
       if replaced || sentences.size == 1
-        sentences[0] = sentences[0].strip.gsub(/\n/, '')
+        sentences[0] = unescape_links(sentences[0].strip.gsub(/\n/, ''))
         et_name = "#{@layer} #{ele_name}#{counter}"
         to_return << ContentRow.new(et_name, "#{et_name},#{Helpers::enclose(remove_extra_asterisks(sentences[0]))},#{self.note}", self.type)
       else
@@ -134,7 +133,7 @@ module CopyProcess
           # remove whitespace
           sentence.strip!
           et_name = "#{@layer} #{ele_name}#{counter} S#{s_counter + 1}"
-          to_return << ContentRow.new(et_name, "#{et_name},#{Helpers::enclose(remove_extra_asterisks(sentence))},#{self.note}", self.type)
+          to_return << ContentRow.new(et_name, "#{et_name},#{Helpers::enclose(remove_extra_asterisks(unescape_links(sentence)))},#{self.note}", self.type)
         end
       end
       return to_return
@@ -153,6 +152,14 @@ module CopyProcess
         dummy.remove
       end
       return [doc.to_html.to_s.gsub("&lt;", "<").gsub("&gt;", ">"), is_html]
+    end
+    
+    def escape_links(contents)
+      contents.match(/([a-z\-\_A-Z0-9]\.)+(ca|com|org)/) ? contents.gsub(/\.(com|ca|org)/) { "~@@#{$1}" } : contents
+    end
+    
+    def unescape_links(contents)
+      contents.gsub(/~@@(ca|com|org)/) { ".#{$1}" }
     end
     
     private

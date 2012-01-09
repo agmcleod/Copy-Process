@@ -35,7 +35,6 @@ module CopyProcess
       types = []
       rows = {}
       retrieve_content_rows(files).each do |r|
-        Rails.logger.debug("R: #{r}")
         row = CSV.parse_line(r)
         if rows[row[0]].nil?
           rows[row[0]] = [row]

@@ -35,8 +35,8 @@ module CopyProcess
       end
       
       # helper methods
-      def four_sentence_array
-        paragraph = "A sentence* with an asterisk. Another sentence. This paragraph rocks, what do you think? It's cool!"
+      def four_sentence_array(paragraph = "")
+        paragraph = paragraph != "" ? paragraph : "A sentence* with an asterisk. Another sentence. This paragraph rocks, what do you think? It's cool!"
         sentences = @cf.content_sentence_split_helper(paragraph, 'P1', '')
       end
 
@@ -174,6 +174,46 @@ module CopyProcess
             ce2.content.should == expected_format(@cf, 'P1', '', 2, 'Another sentence.')
             ce3.content.should == expected_format(@cf, 'P1', '', 3, 'This paragraph rocks, what do you think?')
           end
+          
+          it "should return 4 sentences, even with a url in it." do
+            four_sentence_array("A sentence* with an asterisk. Another sentence. This paragraph rocks, agmprojects.com? It's cool!").size.should == 4
+          end
+          
+          it "Url sentence should still contain the url" do
+            four_sentence_array("A sentence* with an asterisk. Another sentence. This paragraph rocks, agmprojects.com? It's cool!").size[2] == "This paragraph rocks, agmprojects.com?"
+          end
+        end
+      end
+      
+      describe "#escape_links" do
+        subject { @cf.escape_links(paragraph) }
+        context "multiple sentences" do
+          let(:paragraph) { "A sentence* with an asterisk. A second sentence going to google.com." }
+          it { should == "A sentence* with an asterisk. A second sentence going to google~@@com." }
+        end
+        
+        context "with http" do
+          let(:paragraph) { "Here you go http://www.google.com!" }
+          it { should == "Here you go http://www.google~@@com!" }
+        end
+        
+        context "inside a link" do
+          let(:paragraph) { 'Go <a href="http://www.google.com">here</a>' }
+          it { should == 'Go <a href="http://www.google~@@com">here</a>' }
+        end
+      end
+      
+      describe "#unescape_links" do
+        subject { @cf.unescape_links(paragraph) }
+        
+        context "multiple links" do
+          let(:paragraph) { "http://google~@@com and http://admin.ptdev.dacgroup~@@ca" }
+          it { should == "http://google.com and http://admin.ptdev.dacgroup.ca" }
+        end
+        
+        context "inside an anchor tag" do
+          let(:paragraph) { '<a href="http://www.google~@@com">google</a>' }
+          it { should == '<a href="http://www.google.com">google</a>' }
         end
       end
       
