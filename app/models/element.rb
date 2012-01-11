@@ -1,6 +1,8 @@
 class Element < ActiveRecord::Base
   belongs_to :element_type
   
+  before_save :set_content_if_nil
+  
   def element_type_name
     self.element_type.name
   end
@@ -11,5 +13,10 @@ class Element < ActiveRecord::Base
     else
       where(["element_types.site_id = ? AND UPPER(elements.content) LIKE ?", site_id, "%#{params[:search].upcase}%"]).includes(:element_type)
     end
+  end
+  
+  def set_content_if_nil
+    self.content ||= ''
+    true
   end
 end

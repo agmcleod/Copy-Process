@@ -155,17 +155,21 @@ module CopyProcess
     end
     
     def escape_links(contents)
-      contents.match(/([a-z\-\_A-Z0-9]\.)+(ca|com|org)/) ? contents.gsub(/\.(com|ca|org)/) { "~@@#{$1}" } : contents
+      contents.match(/([a-z\-\_A-Z0-9]\.)+(#{tlds})/) ? contents.gsub(/\.(#{tlds})/) { "~@@#{$1}" } : contents
     end
     
     def unescape_links(contents)
-      contents.gsub(/~@@(ca|com|org)/) { ".#{$1}" }
+      contents.gsub(/~@@(#{tlds})/) { ".#{$1}" }
     end
     
     private
     
     def remove_extra_asterisks(string)
       string.gsub(/\.\*|\?\*|\!\*/) { |m| m[0, 1] }
+    end
+    
+    def tlds
+      "ca|com|org|edu|net"
     end
   end
 end
