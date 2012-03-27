@@ -57,20 +57,30 @@ module CopyProcess
       site.save! if should_save
     end
     
+    # Iterates through each copy file, and returns an array of 
+    # content element objects
+    # This is used to parse it out and store Element AR objects.
+    
+    # TODO: Presently, the types and keywords are scoped across the whole site. It should be per the layer name, so empty
+    # rows are added accurately
     def retrieve_content_rows(files)
       final_rows = []
       types_and_keywords = []
       keywords = []
       types = []
       files.each do |file_obj|
+        file_rows = []
         file_obj.elements_out.each do |ele|
           keywords << ele.kw unless keywords.include?(ele.kw)
           types << ele.type_name unless types.include?(ele.type_name)
-          final_rows << ele.content
+          file_rows << ele.content
           types_and_keywords << "#{ele.type_name}+#{ele.kw}" unless types_and_keywords.include?("#{ele.type_name}+#{ele.kw}")
         end
+        file_rows = add_missing_elements(file_rows, keywords, types, types_and_keywords)
+        final_rows += file_rows
       end
-      add_missing_elements(final_rows, keywords, types, types_and_keywords)
+      # add_missing_elements(final_rows, keywords, types, types_and_keywords)
+      final_rows
     end
     
     def parse_each_document(content, files)
