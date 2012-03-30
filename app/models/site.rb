@@ -22,7 +22,7 @@ class Site < ActiveRecord::Base
   end
   
   def tokens
-    tokens_to_hash(scan_elements(/\[[a-zA-Z]+\]/))
+    tokens_to_hash(scan_elements(/\[[a-zA-Z\s]+\]/))
   end
   
   def scan_elements(regex)
