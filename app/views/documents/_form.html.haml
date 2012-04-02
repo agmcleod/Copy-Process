@@ -18,7 +18,9 @@
         %ul
           %li The combination of the Type/Layer/City at the top must be unique
           %li The Type/Layer/City values are case sensitive. Please keep to your own conventions
-          %li Any sentences you dont want split (think title tags), add an * to the end of ? ! . as you need to.
+          %li 
+            Any sentences you dont want split (think title tags), add an * to the end of ? ! . as you need to. You
+            can use the Delimit sentences button to do this easily.
           %li For asterisks you actually need in the copy that follow ? ! ., simply double it up. (.**)
           %li Can easily convert lines of text to a bullet list by selecting and clicking the button below.
   .actions
@@ -27,3 +29,4 @@
   
 %p
   %input{ :id => 'listify', :value => 'Listify Text', :type => 'button'  }
+  %input{ :id => 'add_asterisks', :value => "Delimit Sentences", :type => 'button'}

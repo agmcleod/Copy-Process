@@ -235,12 +235,8 @@ is_valid = (value) ->
 
 $.fn.outer = ->
   $( $('<div></div>').html(this.clone()) ).html()
-
-$ ->
   
-  $('#select-version').change ->
-    window.location.href = window.location.pathname + "?version_id=" + $(this).val()
-    
+listify = ->
   $('#listify').click ->
     contents = $('#document_active_version_content')
     val = contents.val()
@@ -252,9 +248,28 @@ $ ->
     items = selectedText.split(/\n/)
     list = for item in items
       "<li>#{item}</li>"
-    
     contents.val(val.substring(0, start) + "<ul>" + list.join("\n") + "</ul>" + val.substring(end, len))
+      
+add_asterisks_to_delimiters = ->
+  contents = $('#document_active_version_content')
+  val = contents.val()
+  len = val.length
+  start = contents[0].selectionStart
+  end = contents[0].selectionEnd
+  selectedText = val.substring(start, end)
   
+  text = selectedText.replace(".", ".*").replace("!", "!*").replace("?", "?*")
+  text = text.substring(0, text.size-2) if text.slice(-1) == "*"
+  contents.val(val.substring(0, start) + text + val.substring(end, len))
+  
+$ ->
+  
+  $('#select-version').change ->
+    window.location.href = window.location.pathname + "?version_id=" + $(this).val()
+    
+  listify()
+    
+  $('#add_asterisks').click(add_asterisks_to_delimiters)  
   # retrieves and loads the notes from the JSON response
   if get_version_id() != null && typeof get_version_id() != 'undefined'
     $.ajax({
