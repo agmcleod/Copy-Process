@@ -15,6 +15,8 @@ FactoryGirl.define do
     "FOOTER: Some sort of footer\n" +
     "CTA2: A second call to action\n"
     
+    
+    
   end
   
   factory :bad_document, :class => 'Document' do
