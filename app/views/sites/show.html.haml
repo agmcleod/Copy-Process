@@ -19,16 +19,18 @@
 
   %table
     %tr
+      %th
       %th Edit
       %th Mark for change
       %th Create new version
       %th Delete
     - @site.documents_by_name.each do |k, doc|
       %tr
-      %td= link_to doc.name, edit_site_document_path(@site, doc.id)
-      %td= link_to 'Edit for changes', [@site, doc]
-      %td= link_to 'Create new version', document_versions_path(doc.id), method: :post
-      %td= link_to "Delete", site_document_path(@site, doc), confirm: 'Are you sure?', method: :delete
+        %td= check_box_tag "include[#{doc.id}]"
+        %td= link_to doc.name, edit_site_document_path(@site, doc.id)
+        %td= link_to 'Edit for changes', [@site, doc]
+        %td= link_to 'Create new version', document_versions_path(doc.id), method: :post
+        %td= link_to "Delete", site_document_path(@site, doc), confirm: 'Are you sure?', method: :delete
       
 %p
   =button_to "Add Document", new_site_document_path(@site), method: :get, id: 'add_document'
@@ -36,7 +38,7 @@
 - if @site.documents.size > 0
   %p Run "Compile Documents" when you wish to input the content into PAGETorrent.
       
-  =form_for(@site, :url => compile_documents_path(@site), :html => { :method => :post }) do |f|
+  =form_for(@site, :url => compile_documents_path(@site), :html => { method: :post, id: "compile_documents_form" }) do |f|
     %p= f.submit "Compile Documents", :id => 'compile_documents'
     
 - if @site.element_types.size > 0

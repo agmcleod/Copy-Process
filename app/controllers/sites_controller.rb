@@ -91,7 +91,7 @@ class SitesController < ApplicationController
   def compile_documents
     @site = Site.find(params[:id])
     respond_to do |format|
-      @site.compile_to_save
+      @site.compile_to_save(params)
       format.html { redirect_to site_path(@site), :notice => 'Documents compiled' }
     end
   end

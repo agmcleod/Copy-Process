@@ -12,9 +12,12 @@ class Site < ActiveRecord::Base
     p.compile_files_to_csv(self, with_parents)
   end
   
-  def compile_to_save
+  def compile_to_save(params)
     # Destroy all existing
     self.element_types.destroy_all
+
+    set_documents(params[:include]) unless params[:include].nil?
+
     # build new
     files = []
     p = prepare_documents(files)
@@ -46,6 +49,16 @@ class Site < ActiveRecord::Base
   end
   
   private
+
+  def set_documents(include_ids)
+    ids = []
+    include_ids.each do |k, v|
+      if v == "1"
+        ids << k.to_i
+      end
+    end
+    self.documents.delete_if { |d| !ids.include?(d.id) }
+  end
   
   def prepare_documents(files)
     p = CopyProcess::Processor.new

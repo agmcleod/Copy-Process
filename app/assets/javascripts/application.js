@@ -9,3 +9,4 @@
 //= require underscore
 //= require backbone
 //= require documents.js.coffee
+//= require sites.js.coffee
