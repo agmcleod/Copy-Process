@@ -14,7 +14,7 @@ class Site < ActiveRecord::Base
   
   def compile_to_save(params)
     # Destroy all existing
-    self.element_types.destroy_all
+    destroy_all_element_types
 
     set_documents(params[:include]) unless params[:include].nil?
 
@@ -28,6 +28,10 @@ class Site < ActiveRecord::Base
     tokens_to_hash(scan_elements(/\[[a-zA-Z\s]+\]/))
   end
   
+  def destroy_all_element_types
+    self.element_types.destroy_all
+  end
+
   def scan_elements(regex)
     content = ''
     self.element_types.each do |et|

@@ -49,4 +49,40 @@ describe Site do
       @site.send("prepare_documents", [])
     end
   end
+
+  describe "#to_csv" do
+    it "should call compile_files_to_csv on the processor" do
+      @processor = CopyProcess::Processor.new
+      @processor.stub!(:compile_files_to_csv)
+      CopyProcess::Processor.stub!(:new).and_return(@processor)
+      @processor.should_receive(:compile_files_to_csv)
+      Site.new.to_csv(false)
+    end
+  end
+
+  describe "#compile_to_save" do
+    before do
+      simple_site
+      @processor = CopyProcess::Processor.new
+      @processor.stub!(:compile_files_to_element_types)
+      CopyProcess::Processor.stub!(:new).and_return(@processor)
+      @site.stub!(:destroy_all_element_types)
+    end
+
+    it "should destroy all existing element types" do
+      @site.should_receive(:destroy_all_element_types)
+      @site.compile_to_save({})
+    end
+
+    it "should call set_documents if params[:include] exists" do
+      @site.stub!(:set_documents)
+      @site.should_receive(:set_documents)
+      @site.compile_to_save({ include: [1, 2] })
+    end
+
+    it "should call compile_files_to_element_types" do
+      @processor.should_receive(:compile_files_to_element_types)
+      @site.compile_to_save({ include: [1, 2] })
+    end
+  end
 end
