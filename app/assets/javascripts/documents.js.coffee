@@ -257,9 +257,9 @@ add_asterisks_to_delimiters = ->
   start = contents[0].selectionStart
   end = contents[0].selectionEnd
   selectedText = val.substring(start, end)
-  
-  text = selectedText.replace(".", ".*").replace("!", "!*").replace("?", "?*")
-  text = text.substring(0, text.size-2) if text.slice(-1) == "*"
+
+  text = selectedText.replace(/\./g, ".*").replace(/\!/g, "!*").replace(/\?/g, "?*")
+  text = text.substring(0, text.length-1) if text.slice(-1) == "*"
   contents.val(val.substring(0, start) + text + val.substring(end, len))
   
 $ ->
