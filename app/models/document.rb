@@ -41,26 +41,26 @@ class Document < ActiveRecord::Base
     self.active_version_object.content
   end
   
-  def document_is_in_valid_format
-    p = CopyProcess::Processor.new
-    if !p.contains_valid_headers(self.content)
-      errors.add(:content, "Headers must be in valid format")
-    else
-      headers = content.split(/\n/)[1..3].join(' - ').gsub(/\/\*|\\\*/,'')
-      site_documents = []
-      if self.id
-        site_documents = Document.where(["site_id = ? AND id <> ?", self.site_id, self.id])
-      else
-        site_documents = Document.where(["site_id = ?", self.site_id])
-      end
-      site_documents.each do |doc|
-        if doc.name == headers
-          errors.add(:content, "headers are not unique.")
-          break
-        end
-      end
-    end
-  end
+  # def document_is_in_valid_format
+  #   p = CopyProcess::Processor.new
+  #   if !p.contains_valid_headers(self.content)
+  #     errors.add(:content, "Headers must be in valid format")
+  #   else
+  #     headers = content.split(/\n/)[1..3].join(' - ').gsub(/\/\*|\\\*/,'')
+  #     site_documents = []
+  #     if self.id
+  #       site_documents = Document.where(["site_id = ? AND id <> ?", self.site_id, self.id])
+  #     else
+  #       site_documents = Document.where(["site_id = ?", self.site_id])
+  #     end
+  #     site_documents.each do |doc|
+  #       if doc.name == headers
+  #         errors.add(:content, "headers are not unique.")
+  #         break
+  #       end
+  #     end
+  #   end
+  # end
   
   private
   
