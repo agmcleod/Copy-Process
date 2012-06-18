@@ -2,9 +2,7 @@ require 'spec_helper'
 
 module CopyProcess
   describe Processor do
-    let(:output) { double('output').as_null_object }
-    let(:input) { double('input').as_null_object }
-    let(:processor) { Processor.new(output, input) }
+    let(:processor) { Processor.new }
     
     def valid_headers
       "/*\nType: Some Keyword \nLayer: State \nVariation: 1 \n*/"
@@ -194,9 +192,15 @@ module CopyProcess
         end
       end
       
-      it "should return 36 rows/sentences. 35 regular, 1 empty" do
-        row_data = processor.retrieve_content_rows(@files)
-        row_data.size.should == 36
+      # Test changed to below for removing empty lines
+      #it "should return 36 rows/sentences. 34 regular, 2 empty" do
+      #  row_data = processor.retrieve_content_rows(@files)
+      #  row_data.size.should == 36
+      #end
+
+      it "should return 34 rows/sentences" do
+        row_data = processor.retrieve_content_rows @files
+        row_data.size.should == 34
       end
       
       it "should return 2 rows" do
@@ -253,9 +257,9 @@ module CopyProcess
         processor.compile_files_to_csv(@site, false).split("\n")[0].should == "ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes"
       end
       
-      it "should return a string of 37 lines - 3 content, 1 header row" do
+      it "should return a string of 35 lines - 34 content, 1 header row" do
         @site.compile_to_save({})
-        processor.compile_files_to_csv(@site, false).split("\n").size.should == 37
+        processor.compile_files_to_csv(@site, false).split("\n").size.should == 35
       end
       
       after(:each) do
