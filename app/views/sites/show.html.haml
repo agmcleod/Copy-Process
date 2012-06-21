@@ -16,7 +16,8 @@
 
 - if @site.documents.size > 0
   %h3 Documents:
-
+  %p
+    =button_to "Add Document", new_site_document_path(@site), method: :get, id: 'add_document'
   %table
     %tr
       %th
