@@ -48,7 +48,7 @@
   =form_for(@site, url: site_path(@site, format: :csv), html: { method: :get }) do |f|
     %p
       = label_tag :parent_structure, "Export with parent types?"
-      = check_box_tag :parent_structure
+      = check_box_tag :parent_structure, "1", true
     %p= f.submit "Export", id: 'export_csv'
       
         
