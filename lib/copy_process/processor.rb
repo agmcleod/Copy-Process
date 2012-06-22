@@ -9,11 +9,13 @@ module CopyProcess
         headers = ["ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes"]
         parent_names = []
         output = ""
+        encoder = HTMLEntities.new
         site.element_types.each do |et|
           et.elements.each do |e|
             if with_parents
               pn = et.name.split(' ').first
-              output << ",,,#{pn},#{Helpers::enclose(et.name)},#{Helpers::enclose(e.content.gsub("&quot;", "\""), false)},#{e.note}\n"
+              content = Helpers::enclose(e.content.gsub("&quot;", "\""), false)
+              output << ",,,#{pn},#{Helpers::enclose(et.name)},#{encoder.encode(content, :named)},#{e.note}\n"
               parent_names << pn unless parent_names.include?(pn)
             else
               output << ",,,,#{Helpers::enclose(et.name)},#{Helpers::enclose(e.content.gsub("&quot;", "\""), false)},#{e.note}\n"

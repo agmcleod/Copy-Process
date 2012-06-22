@@ -11,10 +11,10 @@ gem 'mysql2' # , '0.3.7'
 gem 'sass-rails', "~> 3.1.0.rc"
 gem 'coffee-script'
 gem 'uglifier'
-
 gem 'devise'
-
 gem 'jquery-rails'
+
+gem 'htmlentities'
 
 # Use unicorn as the web server
 # gem 'unicorn'
