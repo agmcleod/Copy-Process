@@ -4,7 +4,7 @@ module CopyProcess
     include Helpers
     
     attr_accessor :input
-    def compile_files_to_csv(site, with_parents)
+    def compile_files_to_csv(site, with_parents, encode_content)
       if site.element_types.size > 0
         headers = ["ParentTypeID,TypeID,ElementID,ParentTypeName,TypeName,Content,Notes"]
         parent_names = []
@@ -15,7 +15,10 @@ module CopyProcess
             if with_parents
               pn = et.name.split(' ').first
               content = Helpers::enclose(e.content.gsub("&quot;", "\""), false)
-              output << ",,,#{pn},#{Helpers::enclose(et.name)},#{encoder.encode(content, :named)},#{e.note}\n"
+              if encode_content
+                content = encoder.encode(content, :named)
+              end
+              output << ",,,#{pn},#{Helpers::enclose(et.name)},#{content},#{e.note}\n"
               parent_names << pn unless parent_names.include?(pn)
             else
               output << ",,,,#{Helpers::enclose(et.name)},#{Helpers::enclose(e.content.gsub("&quot;", "\""), false)},#{e.note}\n"

@@ -7,9 +7,9 @@ class Site < ActiveRecord::Base
   has_many :documents, :dependent => :destroy
   has_many :element_types, :dependent => :destroy
   
-  def to_csv(with_parents)
+  def to_csv(with_parents, encode)
     p = CopyProcess::Processor.new
-    p.compile_files_to_csv(self, with_parents)
+    p.compile_files_to_csv(self, with_parents, encode)
   end
   
   def compile_to_save(params)

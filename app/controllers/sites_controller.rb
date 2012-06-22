@@ -20,11 +20,9 @@ class SitesController < ApplicationController
       format.html # show.html.erb
       format.json { render :json => @site }
       format.js { render :layout => false }
-      with_parents = false
-      if params[:parent_structure] == "1"
-        with_parents = true
-      end
-      format.csv { send_data(@site.to_csv(with_parents), :filename => "#{@site.name}.csv", :type => 'text/csv') }
+      with_parents = params[:parent_structure] == "1"
+      encode = params[:html_encode] == "1"
+      format.csv { send_data(@site.to_csv(with_parents, encode), :filename => "#{@site.name}.csv", :type => 'text/csv') }
     end
   end
 
