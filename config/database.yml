@@ -33,9 +33,13 @@ test: &test
 
 production:
   adapter: mysql2
-  database: dacgroup_ics
-  username: dacgroup_ics
-  password: '21940651'
+  encoding: utf8
+  reconnect: false
+  database: copy_process_production
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
 
 cucumber:
   <<: *test
